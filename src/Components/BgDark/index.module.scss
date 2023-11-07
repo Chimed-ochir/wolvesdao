@@ -1,0 +1,15 @@
+.dark {
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
+  display: block;
+  transform: scale(0);
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+}
+
+.scale {
+  transform: scale(1);
+}

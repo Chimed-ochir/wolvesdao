@@ -1,0 +1,156 @@
+:root {
+  background-color: var(--body-background-color);
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  font-family: var(--body-font);
+  line-height: 1.4;
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+  max-height: max-content;
+  position: relative;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--header-font);
+  }
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: inherit;
+    outline: none;
+    text-decoration: none !important;
+  }
+  button {
+    padding: 0;
+  }
+  button,
+  button:focus,
+  button:active {
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  select,
+  input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    background-color: transparent; /* 1 */
+    border-style: none; /* 1 */
+    color: inherit; /* 1 */
+    font-size: 1em; /* 1 */
+    margin: 0; /* 3 */
+  }
+  button,
+  input {
+    /* 1 */
+    overflow: visible;
+  }
+  button,
+  select {
+    /* 1 */
+    text-transform: none;
+  }
+  button,
+  html [type="button"], /* 1 */
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button; /* 2 */
+  }
+  ::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  img {
+    font-size: 11px;
+  }
+}
+
+div#lottie-wrap > svg:first-child:not(:last-child) {
+  width: 0 !important;
+  height: 0 !important;
+  content-visibility: hidden !important;
+}
+
+.lock {
+  overflow: hidden !important;
+}
+
+.layoutFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.hideDesktop {
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+}
+
+.hideMobile {
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+}
+
+::placeholder {
+  color: rgba(223, 255, 36, 0.5);
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: rgba(223, 255, 36, 0.5);
+}
+
+.content {
+  max-width: 1440px;
+  width: 1440px;
+  @media (max-width: 1440px) {
+    max-width: 1200px;
+    width: 1200px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 95%;
+    width: 95%;
+  }
+  @media (max-width: 992px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.fb_dialog iframe {
+  display: none !important;
+}
+
+.fb_iframe_widget iframe {
+  margin-right: 50px !important;
+  @media (max-width: 991px) {
+    margin-right: 0 !important;
+  }
+}
