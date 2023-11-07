@@ -11,7 +11,7 @@ import styles from "./index.module.scss";
 import { Container } from "../Container";
 import { BgDark } from "../BgDark";
 import localFont from "next/font/local";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Button, Text } from "@chakra-ui/react";
 import Link from "next/link";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
@@ -131,10 +131,11 @@ export const Header = () => {
             </a>
           ))}
           <a
-            href="https://opensea.io/collection/the-wolves-of-crypto-street"
+            href="#"
+            // href="https://opensea.io/collection/the-wolves-of-crypto-street"
             className={styles.jumpButton}
             style={{ ...myFont.style, color: "black" }}
-            target="_blank"
+            // target="_blank"
           >
             LOG IN
           </a>
