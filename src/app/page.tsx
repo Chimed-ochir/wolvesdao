@@ -10,17 +10,16 @@ const mFont = localFont({
 export default function Home() {
   return (
     <Box
-      h={"1310px"}
+      h={{ lg: "1310px" }}
       // mx={{ base: "auto", lg: "0", xl: "0", "2xl": "0" }}
       marginY={"-162px"}
       w={"100%"}
     >
-      <Flex h={"1310px"} w={"100vw"} zIndex={"100"}>
+      <Flex h={{ lg: "1310px" }} w={"100vw"} zIndex={"100"}>
         <Box
           mx={"auto"}
           // w={"100%"}
           marginTop={"-162.5px"}
-          top={"0px"}
           // bgGradient={
           //   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
           // }
@@ -31,17 +30,29 @@ export default function Home() {
                 " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
               }
               borderRadius={"100%"}
-              w={"1605px"}
-              h={"1605px"}
-              marginX={"-82.5"}
+              w={{ base: "922px", sm: "1605px" }}
+              h={{ base: "922px", sm: "1605px" }}
+              marginX={{
+                base: "-300px",
+                sm: "-600px",
+                md: "-600px",
+                lg: "-400px",
+                xl: "-200px",
+                "2xl": "-82.5",
+              }}
+              marginBottom={{
+                base: "-200px",
+                sm: "-400px",
+                lg: "",
+              }}
               display={"fixed"}
               border={"3px solid black"}
             >
               <Box
                 // bg="black"
                 borderRadius={"100%"}
-                w={"1183px"}
-                h={"1183px"}
+                w={{ base: "688.66px", sm: "1183px" }}
+                h={{ base: "688.66px", sm: "1183px" }}
                 display={"fixed"}
                 margin={"auto"}
                 border={"3px solid black"}
@@ -51,63 +62,22 @@ export default function Home() {
               >
                 <Box
                   borderRadius={"100%"}
-                  w={"782px"}
-                  h={"782px"}
+                  w={{ base: "455.55px", sm: "782px" }}
+                  h={{ base: "455.55px", sm: "782px" }}
                   display={"fixed"}
                   margin={"auto"}
                   border={"1px solid black"}
                   bgGradient={
                     " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
                   }
-                >
-                  {/* <Box
-                    borderRadius={"100%"}
-                    w={"385px"}
-                    h={"385px"}
-                    display={"flex"}
-                    margin={"auto"}
-                    justifyContent={"center"}
-                    alignItems={"center"}
-                    animation={"none"}
-                    bgGradient={
-                      " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%);"
-                    }
-                  >
-                    {/* <Box w={"220px"} h={"220px"} position={"absolute"}>
-                      <Image src={wolf} alt="Wolves.dao"></Image>
-                    </Box>
-                    <Box
-                      position={"absolute"}
-                      alignItems={"center"}
-                      h={"68px"}
-                      w={"352px"}
-                      gap={"5px"}
-                    >
-                      <Text
-                        {...mFont.style}
-                        fontSize={"20.19px"}
-                        color={"#DFFF24"}
-                      >
-                        THE
-                      </Text>
-
-                      <Text
-                        {...mFont.style}
-                        lineHeight={"45px"}
-                        fontSize={"46.6px"}
-                      >
-                        WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
-                      </Text>
-                    </Box> */}
-                  {/* </Box> */}
-                </Box>
+                ></Box>
               </Box>
             </Box>
           </div>
           <Box
             borderRadius={"100%"}
-            w={"385px"}
-            h={"385px"}
+            w={{ base: "198.21px", sm: "385px" }}
+            h={{ base: "198.21px", sm: "385px" }}
             display={"flex"}
             margin={"auto"}
             justifyContent={"center"}
@@ -118,7 +88,7 @@ export default function Home() {
             // }
             bg={"black"}
             position={"relative"}
-            top={"-1000px"}
+            top={{ base: "-360px", sm: "-600px" }}
           >
             <Box w={"220px"} h={"220px"} position={"absolute"}>
               <Image src={wolf} alt="Wolves.dao"></Image>
@@ -126,15 +96,23 @@ export default function Home() {
             <Box
               position={"absolute"}
               alignItems={"center"}
-              h={"68px"}
-              w={"352px"}
+              h={{ base: "34.78px", sm: "68px" }}
+              w={{ base: "181.25px", sm: "352px" }}
               gap={"5px"}
             >
-              <Text {...mFont.style} fontSize={"20.19px"} color={"#DFFF24"}>
+              <Text
+                {...mFont.style}
+                fontSize={{ base: "10.4px", sm: "20.19px" }}
+                color={"#DFFF24"}
+              >
                 THE
               </Text>
 
-              <Text {...mFont.style} lineHeight={"45px"} fontSize={"46.6px"}>
+              <Text
+                {...mFont.style}
+                lineHeight={{ base: "22.79px", sm: "45px" }}
+                fontSize={{ base: "23.99px", sm: "46.6px" }}
+              >
                 WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
               </Text>
             </Box>
