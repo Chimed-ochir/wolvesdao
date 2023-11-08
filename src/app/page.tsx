@@ -112,6 +112,7 @@ export default function Home() {
                 {...mFont.style}
                 lineHeight={{ base: "22.79px", sm: "45px" }}
                 fontSize={{ base: "23.99px", sm: "46.6px" }}
+                color={"white"}
               >
                 WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
               </Text>
