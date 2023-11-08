@@ -15,7 +15,7 @@ export const FooterData = [
     children: [
       {
         name: "Home",
-        link: "https://www.thewolves.io/",
+        link: "#",
         newTab: false,
       },
       {
@@ -35,7 +35,7 @@ export const FooterData = [
       },
       {
         name: "Facebook",
-        link: "https://www.instagram.com/thewolves.io/",
+        link: "https://www.facebook.com/mongolnft/",
         newTab: true,
       },
       {
@@ -45,7 +45,7 @@ export const FooterData = [
       },
       {
         name: "Telegram",
-        link: "https://discord.gg/scGTzn6Fcn",
+        link: "https://telegram.org/",
         newTab: true,
       },
     ],
