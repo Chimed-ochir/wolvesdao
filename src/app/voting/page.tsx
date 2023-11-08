@@ -4,7 +4,9 @@ export default function Voting() {
   return (
     <Stack h={"500px"} justifyContent={"center"} alignItems={"center"}>
       <Box>
-        <Text fontSize={"36px"}>Coming soon...</Text>
+        <Text fontSize={"36px"} color={"white"}>
+          Coming soon...
+        </Text>
       </Box>
     </Stack>
   );
