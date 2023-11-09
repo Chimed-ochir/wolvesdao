@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import Logo from "../../../public/assets/svgs/logo.svg";
-import LogoMobile from "../../../public/assets/svgs/logoMobile.svg";
 // import { BgDark } from '@/components/BgDark';
 // import { Container } from '@/components/Container';
 import styled from "@/Components/Footer/index.module.scss";
@@ -122,7 +120,31 @@ export const Header = () => {
           </Box>
         </a>
         <a href="/" className={`hideDesktop ${styles.logo}`}>
-          <LogoMobile />
+          <Box
+            // position={"absolute"}
+            alignItems={"center"}
+            h={"42.42px"}
+            w={"218px"}
+            gap={"2.42px"}
+          >
+            <Text
+              {...myFont.style}
+              fontSize={"13px"}
+              color={"#DFFF24"}
+              lineHeight={"12px"}
+            >
+              THE
+            </Text>
+
+            <Text
+              {...myFont.style}
+              lineHeight={"27px"}
+              fontSize={"29px"}
+              color={"white"}
+            >
+              WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
+            </Text>
+          </Box>
         </a>
         <div className={`hideMobile ${styles.menu}`}>
           {sideBarData.map((el, ind) => (
@@ -147,7 +169,7 @@ export const Header = () => {
             style={{ ...myFont.style, color: "black" }}
             target=""
           >
-            LOG INN
+            LOG IN
           </a>
           <button className={styles.btn} onClick={click}>
             <span
