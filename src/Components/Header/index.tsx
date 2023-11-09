@@ -28,7 +28,7 @@ export const FooterData = [
     children: [
       {
         name: "Home",
-        link: "https://www.thewolves.io/",
+        link: "#",
         newTab: false,
       },
       {
@@ -36,15 +36,10 @@ export const FooterData = [
         link: "https://feast.thewolves.io/#faq",
         newTab: true,
       },
-      {
-        name: "The Feast Web",
-        link: "https://feast.thewolves.io/",
-        newTab: true,
-      },
     ],
   },
   {
-    title: "Social Addresses",
+    title: "Social",
     children: [
       {
         name: "Twitter",
@@ -52,18 +47,18 @@ export const FooterData = [
         newTab: true,
       },
       {
-        name: "instagram",
-        link: "https://www.instagram.com/thewolves.io/",
-        newTab: true,
-      },
-      {
-        name: "Youtube",
-        link: "https://www.youtube.com/channel/UCIPaM8os3lDhiPEfNBXQJXQ",
+        name: "Facebook",
+        link: "https://www.facebook.com/mongolnft/",
         newTab: true,
       },
       {
         name: "Discord",
         link: "https://discord.gg/scGTzn6Fcn",
+        newTab: true,
+      },
+      {
+        name: "Telegram",
+        link: "https://telegram.org/",
         newTab: true,
       },
     ],
@@ -116,7 +111,12 @@ export const Header = () => {
               THE
             </Text>
 
-            <Text {...myFont.style} lineHeight={"27.55px"} fontSize={"29px"}>
+            <Text
+              {...myFont.style}
+              lineHeight={"27.55px"}
+              fontSize={"29px"}
+              color={"white"}
+            >
               WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
             </Text>
           </Box>
@@ -135,17 +135,17 @@ export const Header = () => {
             // href="https://opensea.io/collection/the-wolves-of-crypto-street"
             className={styles.jumpButton}
             style={{ ...myFont.style, color: "black" }}
-            // target="_blank"
+            target=""
           >
             LOG IN
           </a>
         </div>
         <div className={`hideDesktop ${styles.menuWrapper}`}>
           <a
-            href="https://opensea.io/collection/the-wolves-of-crypto-street"
+            href="#"
             className={styles.jumpButton}
             style={{ ...myFont.style, color: "black" }}
-            target="_blank"
+            target=""
           >
             LOG IN
           </a>
