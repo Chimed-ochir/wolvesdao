@@ -9,7 +9,7 @@ import styles from "./index.module.scss";
 import { Container } from "../Container";
 import { BgDark } from "../BgDark";
 import localFont from "next/font/local";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
@@ -120,31 +120,33 @@ export const Header = () => {
           </Box>
         </a>
         <a href="/" className={`hideDesktop ${styles.logo}`}>
-          <Box
+          <Stack
             // position={"absolute"}
-            alignItems={"center"}
+            // alignItems={"center"}
             h={"42.42px"}
-            w={"218px"}
+            w={{ sm: "218px" }}
             gap={"2.42px"}
           >
-            <Text
-              {...myFont.style}
-              fontSize={"13px"}
-              color={"#DFFF24"}
-              lineHeight={"12px"}
-            >
-              THE
-            </Text>
+            <Box my={"auto"} h={"22px"}>
+              <Text
+                {...myFont.style}
+                fontSize={"6px"}
+                color={"#DFFF24"}
+                lineHeight={"6px"}
+              >
+                THE
+              </Text>
 
-            <Text
-              {...myFont.style}
-              lineHeight={"27px"}
-              fontSize={"29px"}
-              color={"white"}
-            >
-              WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
-            </Text>
-          </Box>
+              <Text
+                {...myFont.style}
+                lineHeight={"16px"}
+                fontSize={"14px"}
+                color={"white"}
+              >
+                WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
+              </Text>
+            </Box>
+          </Stack>
         </a>
         <div className={`hideMobile ${styles.menu}`}>
           {sideBarData.map((el, ind) => (
