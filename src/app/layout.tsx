@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Golos_Text } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/Components/Header";
 import "@/styles/colors.scss";
@@ -29,10 +29,21 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body
         style={{
-          background: "black",
+          background:
+            " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%);",
           fontFamily: `"Mortend",sans-serif`,
         }}
       >

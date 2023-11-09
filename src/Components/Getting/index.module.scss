@@ -1,0 +1,14 @@
+.getting {
+  /* Define styles for the element with the "my-box" class */
+  height: 461px;
+  width: 256px;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 108px;
+
+  @media (min-width: 1536px) {
+    /* Apply different left position for extra-large screens ("2xl") */
+    left: 10%;
+  }
+}
