@@ -104,16 +104,16 @@ export const Header = () => {
           >
             <Text
               {...myFont.style}
-              fontSize={"12.57px"}
+              fontSize={"13px"}
               color={"#DFFF24"}
-              lineHeight={"11.94px"}
+              lineHeight={"12px"}
             >
               THE
             </Text>
 
             <Text
               {...myFont.style}
-              lineHeight={"27.55px"}
+              lineHeight={"27px"}
               fontSize={"29px"}
               color={"white"}
             >
@@ -147,7 +147,7 @@ export const Header = () => {
             style={{ ...myFont.style, color: "black" }}
             target=""
           >
-            LOG IN
+            LOG INN
           </a>
           <button className={styles.btn} onClick={click}>
             <span
