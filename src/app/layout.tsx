@@ -45,6 +45,7 @@ export default function RootLayout({
           background:
             " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%);",
           fontFamily: `"Mortend",sans-serif`,
+          overflow: "hidden",
         }}
       >
         <div
@@ -61,7 +62,9 @@ export default function RootLayout({
 
           {/* </Box> */}
         </div>
-        <div style={{ padding: "80px 0", marginTop: "30px" }}>
+        <div
+          style={{ padding: "80px 0", marginTop: "30px", overflow: "hidden" }}
+        >
           <ChakraProvider>{children} </ChakraProvider>
         </div>
 

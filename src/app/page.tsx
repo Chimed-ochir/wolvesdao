@@ -46,7 +46,7 @@ export default function Home() {
                 lg: "",
               }}
               display={"fixed"}
-              border={"3px solid black"}
+              border={"1px solid black"}
             >
               <Box
                 // bg="black"
@@ -55,7 +55,7 @@ export default function Home() {
                 h={{ base: "688.66px", sm: "1183px" }}
                 display={"fixed"}
                 margin={"auto"}
-                border={"3px solid black"}
+                border={"1px solid black"}
                 bgGradient={
                   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
                 }
