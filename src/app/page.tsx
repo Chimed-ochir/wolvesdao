@@ -27,7 +27,7 @@ export default function Home() {
           <div className={styles.circle}>
             <Box
               bgGradient={
-                " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
+                " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
               }
               borderRadius={"100%"}
               w={{ base: "922px", sm: "1605px" }}
@@ -57,7 +57,7 @@ export default function Home() {
                 margin={"auto"}
                 border={"1px solid black"}
                 bgGradient={
-                  " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
+                  " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
                 }
               >
                 <Box
@@ -68,7 +68,7 @@ export default function Home() {
                   margin={"auto"}
                   border={"1px solid black"}
                   bgGradient={
-                    " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
+                    " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
                   }
                 ></Box>
               </Box>
