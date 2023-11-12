@@ -90,6 +90,8 @@ export default function Voting() {
       </Stack>
       <Stack>
         <PollCard />
+        <PollCard />
+        <PollCard />
       </Stack>
     </Stack>
   );

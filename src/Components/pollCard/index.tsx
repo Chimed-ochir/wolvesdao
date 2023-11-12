@@ -72,101 +72,118 @@ function PollCard() {
           review the proposals and provide feedback within 7 calendar days.
         </Text>
         <Stack>
-          <Stack
-            w={"798px"}
-            bg={"#1C1C1C"}
-            height={"42px"}
-            borderRadius={"6px"}
-            justifyContent={"center"}
-          >
+          <Box w={"798px"} bg={"#1C1C1C"}>
             <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              w={"700px"}
-              mx={"auto"}
+              w={"99%"}
+              bg={"#303030"}
+              borderRadius={"6px"}
+              justifyContent={"center"}
+              h={"42px"}
             >
-              <Stack direction={"row"}>
-                {" "}
-                <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                  <BsCheckSquareFill color="#228200" size="18px" />
-                </Box>
-                <Text>Yes: </Text>
-                <Text>1123 Wolves</Text>
-              </Stack>
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={"18px"}
-                fontSize={"15px"}
+              <Stack
+                direction={"row"}
+                justifyContent={"space-between"}
+                w={"700px"}
+                mx={"auto"}
+                ml={"20px"}
               >
-                98.75%
-              </Text>
+                <Stack direction={"row"}>
+                  {" "}
+                  <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
+                    <BsCheckSquareFill color="#228200" size="18px" />
+                  </Box>
+                  <Text>Yes: </Text>
+                  <Text>1123 Wolves</Text>
+                </Stack>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={"18px"}
+                  fontSize={"15px"}
+                >
+                  98.75%
+                </Text>
+              </Stack>
             </Stack>
-          </Stack>
-          <Stack
-            w={"798px"}
-            bg={"#1C1C1C"}
-            height={"42px"}
-            borderRadius={"6px"}
-            justifyContent={"center"}
-          >
+          </Box>
+          <Box w={"798px"} bg={"#1C1C1C"}>
             <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              w={"700px"}
-              mx={"auto"}
+              w={"40%"}
+              bg={"#303030"}
+              borderRadius={"6px"}
+              justifyContent={"center"}
+              h={"42px"}
             >
-              <Stack direction={"row"}>
-                {" "}
-                <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                  <BsFillXSquareFill color="red" size="18px" />
-                </Box>
-                <Text>No: </Text>
-                <Text>12 Wolves</Text>
-              </Stack>
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={"18px"}
-                fontSize={"15px"}
+              <Stack
+                direction={"row"}
+                justifyContent={"space-between"}
+                w={"700px"}
+                mx={"auto"}
+                ml={"20px"}
               >
-                98.75%
-              </Text>
+                <Stack direction={"row"}>
+                  {" "}
+                  <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
+                    <BsFillXSquareFill color="red" size="18px" />
+                  </Box>
+                  <Text>No: </Text>
+                  <Text>12 Wolves</Text>
+                </Stack>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={"18px"}
+                  fontSize={"15px"}
+                >
+                  98.75%
+                </Text>
+              </Stack>
             </Stack>
-          </Stack>
-          <Stack
-            w={"798px"}
-            bg={"#1C1C1C"}
-            height={"42px"}
-            borderRadius={"6px"}
-            justifyContent={"center"}
-          >
+          </Box>
+          <Box w={"798px"} bg={"#1C1C1C"}>
             <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              w={"700px"}
-              mx={"auto"}
+              w={"70%"}
+              bg={"#303030"}
+              borderRadius={"6px"}
+              justifyContent={"center"}
+              h={"42px"}
             >
-              <Stack direction={"row"}>
-                {" "}
-                <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                  <BsDashSquareFill color="#303030" size="18px" />
-                </Box>
-                <Text>Abstain: </Text>
-                <Text>1</Text>
-              </Stack>
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={"18px"}
-                fontSize={"15px"}
+              <Stack
+                direction={"row"}
+                justifyContent={"space-between"}
+                w={"700px"}
+                mx={"auto"}
+                ml={"20px"}
               >
-                28.75%
-              </Text>
+                <Stack direction={"row"}>
+                  {" "}
+                  <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
+                    <BsDashSquareFill color="#303030" size="18px" />
+                  </Box>
+                  <Text>Abstain: </Text>
+                  <Text>1</Text>
+                </Stack>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={"18px"}
+                  fontSize={"15px"}
+                >
+                  28.75%
+                </Text>
+              </Stack>
             </Stack>
-          </Stack>
+          </Box>
         </Stack>
-        <Text>Ends in 6 days</Text>
+        <Text
+          {...satFont.style}
+          color={"#95999D"}
+          fontSize="12px"
+          lineHeight={"18px"}
+          fontWeight="500"
+        >
+          Ends in 6 days
+        </Text>
       </Stack>
     </Stack>
   );
