@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import BackImg from "@/assets/images/footerAlso.png";
 import { Container } from "@/Components/Container";
 import styled from "./index.module.scss";
+import InitialFocus from "../Login";
 export const FooterData = [
   {
     title: "The Wolves",

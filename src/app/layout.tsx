@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 //   src: "@/Components/fonts/mortend/mortend-bolf.ttf",
 // });
 import localFont from "next/font/local";
+import { AuthProvider } from "@/Components/Account";
 export const metadata: Metadata = {
   title: "Wolves DAO",
   description: "Wolves DAO description",
@@ -40,6 +41,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
+
       <body
         style={{
           background:
@@ -48,29 +50,35 @@ export default function RootLayout({
           overflow: "hidden",
         }}
       >
-        <div
-          style={{
-            height: "88px",
-            background: "black",
-            position: "fixed",
-            zIndex: 10,
-          }}
-        >
-          {/* <Box my={"auto"}> */}
+        {" "}
+        <ChakraProvider>
+          <AuthProvider>
+            <div
+              style={{
+                height: "88px",
+                background: "black",
+                position: "fixed",
+                zIndex: 10,
+              }}
+            >
+              {/* <Box my={"auto"}> */}
 
-          <Header />
+              <Header />
 
-          {/* </Box> */}
-        </div>
-        <div
-          style={{ padding: "80px 0", marginTop: "30px", overflow: "hidden" }}
-        >
-          <ChakraProvider>{children} </ChakraProvider>
-        </div>
-
-        <footer
-          style={{ position: "relative", bottom: "0px", background: "black" }}
-        >
+              {/* </Box> */}
+            </div>
+            <div
+              style={{
+                padding: "80px 0",
+                marginTop: "30px",
+                overflow: "hidden",
+              }}
+            >
+              {children}
+            </div>{" "}
+          </AuthProvider>
+        </ChakraProvider>
+        <footer style={{ position: "relative", bottom: "0px" }}>
           <Footer />
         </footer>
       </body>

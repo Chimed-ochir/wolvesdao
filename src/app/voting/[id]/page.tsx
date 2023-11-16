@@ -1,3 +1,4 @@
+"use client";
 import { Box, Button, Show, Progress, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import localFont from "next/font/local";
@@ -7,15 +8,21 @@ import { RiSquareLine } from "react-icons/ri";
 import { PiHourglassSimpleLight } from "react-icons/pi";
 import { SlEnergy } from "react-icons/sl";
 import { BsChevronLeft } from "react-icons/bs";
-function pollService(param: number) {
-  return param;
-}
+import { useQuery } from "@/utils";
+import api from "@/utils/CustomAxios";
+
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-function Page({ params }: { params: { id: number } }) {
-  const data = pollService(params.id);
-  const period: string = "active";
+function Page({ params: { id } }: { params: { id: string } }) {
+  const { data, loading, fetchData } = useQuery<{ data: any }>({
+    uri: `/poll/${id}`,
+  });
+  // console.log("123456789987654321", data?.data);
+  // console.log("123456789987654321", data?.data._id);
+  // console.log("123456789987654321", data?.data.startDate);
+  var moment = require("moment");
+  const period: string = data?.data.status;
   return (
     <Stack
       mx={{ base: "auto" }}
@@ -114,7 +121,7 @@ function Page({ params }: { params: { id: number } }) {
                 lineHeight={{ base: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
               >
-                ID 53536475
+                ID {data?.data._id}
               </Text>
               <Text>•</Text>
               <Text
@@ -123,18 +130,19 @@ function Page({ params }: { params: { id: number } }) {
                 lineHeight={{ base: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
               >
-                Proposed on: 2023-09-22
+                Proposed on:{" "}
+                {moment.utc(data?.data.startDate).format("MM-DD-YYYY")}
               </Text>
             </Stack>
           </Box>
         </Stack>
         <Stack
-          h={{ base: "289px", sm: "392px" }}
+          // h={{ base: "289px", sm: "392px" }}
           justifyContent={{ base: "space-evenly", sm: "space-between" }}
           w={{ lg: "521px" }}
           mb={{ base: "38px", sm: "" }}
         >
-          <Text
+          {/* <Text
             {...satFont.style}
             color={"#F2F2F2"}
             fontSize={{ base: "16px", sm: "24px" }}
@@ -142,8 +150,8 @@ function Page({ params }: { params: { id: number } }) {
             fontWeight="700"
           >
             Proposal phases
-          </Text>
-          <Stack ml={"20px"} h={{ base: "235px", sm: "362px" }}>
+          </Text> */}
+          {/* <Stack ml={"20px"} h={{ base: "235px", sm: "362px" }}>
             <Text
               {...satFont.style}
               color={"#E0E0E0"}
@@ -156,7 +164,7 @@ function Page({ params }: { params: { id: number } }) {
             </Text>
             <Stack alignItems={"center"}>
               {/* <Text></Text> */}
-              <Text
+          {/* <Text
                 {...satFont.style}
                 color={"#949494"}
                 fontSize={{ base: "12px", sm: "18px" }}
@@ -221,7 +229,7 @@ function Page({ params }: { params: { id: number } }) {
                   </span>{" "}
                   The management and Coincil will schedule a meeting the third
                   week of every month to gather and discuss
-                  <div
+                  <span
                     style={{
                       ...satFont.style,
                       filter: "blur(3px)",
@@ -231,7 +239,7 @@ function Page({ params }: { params: { id: number } }) {
                     }}
                   >
                     the proposals{" "}
-                  </div>
+                  </span>
                 </Text>
               </Box>
               <Button
@@ -243,62 +251,69 @@ function Page({ params }: { params: { id: number } }) {
                 Show more
               </Button>
             </Stack>
-          </Stack>
+          </Stack> */}
+          <div dangerouslySetInnerHTML={{ __html: `${data?.data.content}` }} />
         </Stack>
-        <Stack h={{ base: "241px", sm: "301px" }}>
-          <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
-            <Stack
-              justifyContent={"space-around"}
-              borderBottom={"1px solid  #282828"}
+        {period === "active" ? (
+          <Stack h={{ base: "241px", sm: "301px" }}>
+            <Box
+              borderRadius={"6px"}
+              border={"1px solid #282828"}
+              bg={"#101010"}
             >
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={"42px"}
-                fontSize={{ base: "16px", sm: "24px" }}
-                py={"2px"}
-                px={"6px"}
-                ml={"20px"}
-                color={"#F2F2F2"}
+              <Stack
+                justifyContent={"space-around"}
+                borderBottom={"1px solid  #282828"}
               >
-                Cast your vote
-              </Text>
-            </Stack>
-            <Stack justifyContent={"center"} my={"10px"}>
-              <Button
-                variant={"outline"}
-                mx={"auto"}
-                w={{ base: "85%", sm: "458px", md: "498px" }}
-              >
-                Yes
-              </Button>
-              <Button
-                variant={"outline"}
-                mx={"auto"}
-                w={{ base: "85%", sm: "458px", md: "498px" }}
-              >
-                No
-              </Button>
-              <Button
-                variant={"outline"}
-                mx={"auto"}
-                w={{ base: "85%", sm: "458px", md: "498px" }}
-                leftIcon={<AiOutlineCheck size="18px" />}
-              >
-                Abstain
-              </Button>
-              <Button
-                bg="white"
-                mx={"auto"}
-                w={{ base: "85%", sm: "458px", md: "498px" }}
-                variant={"solid"}
-                color={"black"}
-              >
-                Vote
-              </Button>
-            </Stack>
-          </Box>
-        </Stack>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={"42px"}
+                  fontSize={{ base: "16px", sm: "24px" }}
+                  py={"2px"}
+                  px={"6px"}
+                  ml={"20px"}
+                  color={"#F2F2F2"}
+                >
+                  Cast your vote
+                </Text>
+              </Stack>
+              <Stack justifyContent={"center"} my={"10px"}>
+                <Button
+                  variant={"outline"}
+                  mx={"auto"}
+                  w={{ base: "85%", sm: "458px", md: "498px" }}
+                >
+                  Yes
+                </Button>
+                <Button
+                  variant={"outline"}
+                  mx={"auto"}
+                  w={{ base: "85%", sm: "458px", md: "498px" }}
+                >
+                  No
+                </Button>
+                <Button
+                  variant={"outline"}
+                  mx={"auto"}
+                  w={{ base: "85%", sm: "458px", md: "498px" }}
+                  leftIcon={<AiOutlineCheck size="18px" />}
+                >
+                  Abstain
+                </Button>
+                <Button
+                  bg="white"
+                  mx={"auto"}
+                  w={{ base: "85%", sm: "458px", md: "498px" }}
+                  variant={"solid"}
+                  color={"black"}
+                >
+                  Vote
+                </Button>
+              </Stack>
+            </Box>
+          </Stack>
+        ) : null}
         <Stack h={{ base: "298px", sm: "322px" }} mt={{ base: "10px", sm: "" }}>
           <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
             <Stack borderBottom={"1px solid  #282828"}>
@@ -332,7 +347,7 @@ function Page({ params }: { params: { id: number } }) {
                   borderRadius={"4px"}
                   ml={"-15px"}
                 >
-                  59789
+                  {data?.data.count}
                 </Text>
               </Stack>
             </Stack>

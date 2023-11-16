@@ -11,6 +11,8 @@ import { BgDark } from "../BgDark";
 import localFont from "next/font/local";
 import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import InitialFocus from "../Login";
+import { AuthModal } from "../Account/AuthModal";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
   src: string;
@@ -89,7 +91,7 @@ export const Header = () => {
   const click = () => setOpen(!open);
   return (
     <Container className={`${styles.container} `}>
-      <BgDark open={open} toggle={() => setOpen(false)} />
+      {/* <BgDark open={open} toggle={() => setOpen(false)} /> */}
       <div className={`content ${styles.row} `}>
         <div className={`${styles.redCircle} hideMobile`} />
         <a href="/" className={`hideMobile ${styles.logo}`}>
@@ -154,7 +156,7 @@ export const Header = () => {
               {el.name}
             </a>
           ))}
-          <a
+          {/* <a
             href="#"
             // href="https://opensea.io/collection/the-wolves-of-crypto-street"
             className={styles.jumpButton}
@@ -162,7 +164,10 @@ export const Header = () => {
             target=""
           >
             LOG IN
-          </a>
+          </a> */}
+          <AuthModal>
+            <Button>LOG IN</Button>
+          </AuthModal>
         </div>
         <div className={`hideDesktop ${styles.menuWrapper}`}>
           <a

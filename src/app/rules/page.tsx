@@ -1,6 +1,6 @@
 import Getting from "@/Components/Getting";
 import GettingStarted from "@/Components/GettingStarted";
-import { Box, Stack, Text } from "@chakra-ui/react";
+import { Box, Show, Stack, Text } from "@chakra-ui/react";
 
 export default function Rules() {
   return (
@@ -33,7 +33,7 @@ export default function Rules() {
             mx={"auto"}
             w={{ base: "", xl: "1010px" }}
           >
-            <div className="hideMobile">
+            <Show above="lg">
               <Box w={"1px"} h={"2293px"} bg={"white"}>
                 <Stack
                   w={"21px"}
@@ -182,7 +182,7 @@ export default function Rules() {
                   ></Box>
                 </Stack>
               </Box>
-            </div>
+            </Show>
             <Box w={{ xl: "980px" }} h={{ lg: "2433px" }}>
               <Box
                 w={{ xl: "897px" }}
