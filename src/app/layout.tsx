@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 // });
 import localFont from "next/font/local";
 import { AuthProvider } from "@/Components/Account";
+import { ThemeContextProvider } from "@/contexts/ThemeContext";
 export const metadata: Metadata = {
   title: "Wolves DAO",
   description: "Wolves DAO description",
@@ -48,35 +49,38 @@ export default function RootLayout({
             " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%)",
           fontFamily: `"Mortend",sans-serif`,
           overflow: "hidden",
+          minHeight: "100vh",
         }}
       >
         {" "}
         <ChakraProvider>
-          <AuthProvider>
-            <div
-              style={{
-                height: "88px",
-                background: "black",
-                position: "fixed",
-                zIndex: 10,
-              }}
-            >
-              {/* <Box my={"auto"}> */}
+          <ThemeContextProvider>
+            <AuthProvider>
+              <div
+                style={{
+                  height: "88px",
+                  background: "black",
+                  position: "fixed",
+                  zIndex: 10,
+                }}
+              >
+                {/* <Box my={"auto"}> */}
 
-              <Header />
+                <Header />
 
-              {/* </Box> */}
-            </div>
-            <div
-              style={{
-                padding: "80px 0",
-                marginTop: "30px",
-                overflow: "hidden",
-              }}
-            >
-              {children}
-            </div>{" "}
-          </AuthProvider>
+                {/* </Box> */}
+              </div>
+              <div
+                style={{
+                  padding: "80px 0",
+                  marginTop: "30px",
+                  overflow: "hidden",
+                }}
+              >
+                {children}
+              </div>{" "}
+            </AuthProvider>
+          </ThemeContextProvider>
         </ChakraProvider>
         <footer style={{ position: "relative", bottom: "0px" }}>
           <Footer />

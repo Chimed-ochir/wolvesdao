@@ -1,1 +1,1 @@
-export { FormSelect } from '@/components/form/FormSelect/FormSelect';
+export { FormSelect } from "@/Components/form/FormSelect/FormSelect";

@@ -9,11 +9,23 @@ import styles from "./index.module.scss";
 import { Container } from "../Container";
 import { BgDark } from "../BgDark";
 import localFont from "next/font/local";
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import InitialFocus from "../Login";
 import { AuthModal } from "../Account/AuthModal";
+import { useAuth } from "@/Components/Account/index";
+import { useParams, usePathname, useRouter } from "next/navigation";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+const mortendFont = localFont({ src: "../fonts/mortend/mortend-bold.otf" });
 type SideBarProp = {
   src: string;
   name: string;
@@ -67,23 +79,44 @@ export const FooterData = [
 const sideBarData: SideBarProp[] = [
   {
     src: "/",
-    name: "Home",
+    name: "home",
   },
   {
     src: "/rules",
-    name: "RULES",
+    name: "rules",
   },
   {
     src: "/discussion",
-    name: "DISCUSSION",
+    name: "discussion",
   },
   {
     src: "/voting",
-    name: "VOTING",
+    name: "voting",
   },
 ];
 export const Header = () => {
+  const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState(false);
+  const [act, setAct] = useState("home");
+  const path = usePathname();
+  const router = useRouter();
+  let a: string = "home";
+
+  // const router = useRouter();
+  // const params = useParams();
+  console.log("path", path);
+  useEffect(() => {
+    if (path === "/") {
+      setAct("home");
+    } else {
+      sideBarData.forEach((e) => {
+        if (path.includes(e.name)) {
+          setAct(e.name);
+        }
+      });
+    }
+  }, [path]);
   useEffect(() => {
     document.body.classList.toggle("lock", open);
   }, [open]);
@@ -152,9 +185,34 @@ export const Header = () => {
         </a>
         <div className={`hideMobile ${styles.menu}`}>
           {sideBarData.map((el, ind) => (
-            <a key={ind} className={styles.headerClick} href={el.src}>
-              {el.name}
-            </a>
+            // <a
+            //   key={ind}
+            //   style={{
+            //     ...mortendFont.style,
+            //     color: el.name === act ? "#DFFF24" : "#FCFCFC",
+            //   }}
+            //   className={styles.headerClick}
+            //   href={el.src}
+            // >
+            //   {el.name}
+            // </a>
+            <Box
+              key={ind}
+              onClick={() => {
+                router.push(el.src);
+              }}
+              cursor="pointer"
+            >
+              <Text
+                {...mortendFont.style}
+                color={el.name === act ? "#DFFF24" : "#FCFCFC"}
+                fontWeight={"700"}
+                fontSize="14px"
+                lineHeight={"22px"}
+              >
+                {el.name.toUpperCase()}
+              </Text>
+            </Box>
           ))}
           {/* <a
             href="#"
@@ -165,19 +223,77 @@ export const Header = () => {
           >
             LOG IN
           </a> */}
-          <AuthModal>
-            <Button>LOG IN</Button>
-          </AuthModal>
+
+          {user ? (
+            <Menu>
+              <MenuButton
+                border={"1px solid #FCFCFC"}
+                borderRadius={"6px"}
+                h="43px"
+              >
+                {" "}
+                <Text
+                  {...myFont.style}
+                  lineHeight={"24px"}
+                  fontWeight={"700px"}
+                  fontSize={"14px"}
+                  color="#FCFCFC"
+                  py={"auto"}
+                  mx={"10px"}
+                >
+                  {user}
+                </Text>
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={() => logout()}>LOG OUT</MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <AuthModal>
+              <Button
+                style={{ ...myFont.style }}
+                bg={"#dfff24"}
+                h={{ sm: "24px", lg: "43px" }}
+                color="black"
+              >
+                LOG IN
+              </Button>
+            </AuthModal>
+          )}
         </div>
         <div className={`hideDesktop ${styles.menuWrapper}`}>
-          <a
-            href="#"
-            className={styles.jumpButton}
-            style={{ ...myFont.style, color: "black" }}
-            target=""
-          >
-            LOG IN
-          </a>
+          {user ? (
+            <Menu>
+              <MenuButton border={"1px solid #FCFCFC"} borderRadius={"6px"}>
+                {" "}
+                <Text
+                  {...myFont.style}
+                  lineHeight={"24px"}
+                  fontWeight={"700px"}
+                  fontSize={"14px"}
+                  color="#FCFCFC"
+                  py={"auto"}
+                  mx={"10px"}
+                >
+                  {user}
+                </Text>
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={() => logout()}>LOG OUT</MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <AuthModal>
+              <Button
+                style={{ ...myFont.style }}
+                bg={"#dfff24"}
+                h={{ sm: "24px", lg: "43px" }}
+                color="black"
+              >
+                LOG IN
+              </Button>
+            </AuthModal>
+          )}
           <button className={styles.btn} onClick={click}>
             <span
               className={`${styles.stroke} ${styles.stroke_one} ${
@@ -197,6 +313,18 @@ export const Header = () => {
           </button>
         </div>
       </div>
+      {/* <Stack
+        display={"flex"}
+        bg="red"
+        zIndex={100}
+        position="fixed"
+        top="0"
+        right={"0"}
+      >
+        <Box>
+          <Text>LOG OUT</Text>
+        </Box>
+      </Stack> */}
       <div className="hideDesktop">
         <SideBar open={open} />
       </div>

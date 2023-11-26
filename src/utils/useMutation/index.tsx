@@ -1,13 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AxiosResponse } from "axios";
 import api from "../CustomAxios";
-
 // import axios from '@/lib/axios';
 
 export interface UseMutationProps {
   uri: string;
-  method?: "post" | "put" | "delete";
+  method?: "post" | "put" | "delete" | "patch";
 }
 
 export interface UseMutationValue {
@@ -33,7 +32,6 @@ export const useMutation = ({
       })
       .then((res) => {
         setLoading(false);
-        console.log("+++", res);
         return res;
       })
       .catch((e) => {

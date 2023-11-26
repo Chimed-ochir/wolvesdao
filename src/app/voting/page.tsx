@@ -5,7 +5,9 @@ import { Box, Stack, Text, Show } from "@chakra-ui/react";
 import axios from "axios";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
+import Loading from "../loading";
+import Link from "next/link";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -35,21 +37,25 @@ function useScrollPosition() {
 }
 export default function Voting() {
   // const [status, setStatus] = useState<string>("");
-  const [polls, setPolls] = useState<null | any[]>([]);
-  const [tags, setTags] = useState("active");
+  const [polls, setPolls] = useState<null | any>([]);
+  const [tags, setTags] = useState("all_propsal");
   const [manu, setManu] = useState("");
   const [page, setPage] = useState(1);
   const pathname = usePathname();
+  const params = useParams();
+  const router = useRouter();
   const array = [
     {
-      label: " All proposals",
+      label: "All proposals",
+      query: "all_propsal",
       onclick: () => {
-        setTags("All proposals");
-        console.log("898989", tags);
+        setTags("all_propsal");
       },
     },
+
     {
       label: " Active",
+      query: "active",
       onclick: () => {
         setTags("active");
         console.log("898989", tags);
@@ -57,6 +63,7 @@ export default function Voting() {
     },
     {
       label: "Pending",
+      query: "pending",
       onclick: () => {
         setTags("pending");
         console.log("898989", tags);
@@ -64,6 +71,7 @@ export default function Voting() {
     },
     {
       label: "Executed",
+      query: "executed",
       onclick: () => {
         setTags("executed");
         console.log("898989", tags);
@@ -92,7 +100,11 @@ export default function Voting() {
   // }, [scrollPosition]);
   useEffect(() => {
     console.log("tags", tags);
-    fetchData(`/poll?status=${tags}`);
+    if (tags === "all_propsal") {
+      fetchData(`/poll`);
+    } else {
+      fetchData(`/poll?status=${tags}`);
+    }
   }, [tags]);
   useEffect(() => {
     setPolls(data);
@@ -106,8 +118,9 @@ export default function Voting() {
       w={{ base: "90%", lg: "865px" }}
       mx={"auto"}
     >
-      <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
-        <Show above="sm">
+      {" "}
+      <Show above="sm">
+        <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
           <Box w={{ lg: "790px" }}>
             <Text
               {...satFont.style}
@@ -119,37 +132,59 @@ export default function Voting() {
             </Text>
           </Box>{" "}
           <Stack
-            w={{ sm: "100%", md: "85%", lg: "706px" }}
+            w={{ sm: "100%", md: "70%", lg: "571px" }}
             h={"42px"}
             direction={{ base: "row" }}
             justifyContent={"space-between"}
+            borderBottom={"1px solid #282828"}
           >
             {array.map((el, id) => (
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                fontSize={"15px"}
-                lineHeight={"24px"}
-                // onClick={el.onclick}
-                borderBottom={"1px solid white"}
+              <Link
                 key={id}
-                px={{ md: "10px" }}
-                color={"#FCFCFC"}
-                onClick={el.onclick}
-                cursor={"pointer"}
+                href={{
+                  pathname: "/voting",
+                  query: { status: el.query },
+                }}
               >
-                {el.label}
-              </Text>
+                <Box
+                  mb={"-5px"}
+                  h="42px"
+                  borderBottom={el.query === tags ? "1px solid white" : ""}
+                >
+                  <Text
+                    {...satFont.style}
+                    fontWeight={"700"}
+                    fontSize={"15px"}
+                    lineHeight={"24px"}
+                    // onClick={el.onclick}
+
+                    px={{ md: "10px" }}
+                    color={"#FCFCFC"}
+                    onClick={el.onclick}
+                    cursor={"pointer"}
+                  >
+                    {el.label}
+                  </Text>
+                </Box>
+              </Link>
             ))}
           </Stack>
-        </Show>
-      </Stack>
-      <Stack>
+        </Stack>
+      </Show>
+      <Stack alignItems={"center"}>
         <Stack>
           {polls?.length ? (
             polls.map((el: any, id: number) => <PollCard key={id} el={el} />)
           ) : (
-            <p>loading</p>
+            <Stack my={"20px"} h={"350px"} w="100%" justifyContent={"center"}>
+              {" "}
+              {/* <Loading /> */}
+              <Box py={"auto"} h="36px">
+                <Text fontSize={"32px"} lineHeight={"35px"}>
+                  No results
+                </Text>
+              </Box>
+            </Stack>
           )}
         </Stack>
       </Stack>

@@ -15,7 +15,7 @@ interface AuthProviderValueType {
   loading: boolean;
   logout: () => void;
   access: string | null;
-  user: PayloadType | null;
+  user: string | null;
   toLogin: (pathname?: string) => void;
   login: (data: LoginDataType) => void;
 }
@@ -33,7 +33,7 @@ const AuthContext = createContext({ isAuth: false } as AuthProviderValueType);
 
 export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const [access, setAccess] = useState<string | null>(null);
-  const [user, setUser] = useState<PayloadType | null>(null);
+  const [user, setUser] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const toast = useToast();
@@ -62,7 +62,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
   const login = (data: LoginDataType, isRefresh?: boolean) => {
     if (data.accessToken) {
-      console.log("<<<<data>>>>", data.accessToken);
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
@@ -74,7 +73,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
       api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
 
-      setUser(usr);
+      setUser(usr?.username);
       setAccess(data.accessToken);
       if (!isRefresh) {
         toast({
@@ -84,7 +83,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
           duration: 5000,
           isClosable: true,
         });
-        router.push(Cookies.get("redirect") || "/");
+        // router.push(Cookies.get("redirect") || "/");
       }
     }
   };
@@ -120,7 +119,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         toLogin,
         isAuth: !!user,
         user,
-        loading: loading || loadingRefresh || loadingLogout,
+        loading: loading,
+        // loading: loading || loadingRefresh || loadingLogout,
         access,
       }}
     >

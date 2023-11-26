@@ -1,1 +1,1 @@
-export { FormRadio } from '@/components/form/FormRadio/FormRadio';
+export { FormRadio } from "@/Components/form/FormRadio/FormRadio";

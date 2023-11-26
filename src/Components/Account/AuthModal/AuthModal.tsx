@@ -25,9 +25,9 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-
+import { LoginDataType } from "..";
 // const LoginFormBody = ({ isLoading }: { isLoading: boolean }) => {
-const LoginFormBody = () => {
+const LoginFormBody = ({ loading }: { loading: boolean }) => {
   const [type, setType] = useState("password");
 
   //   const { openLogin, seeLogin } = useAuthContext();
@@ -105,6 +105,7 @@ const LoginFormBody = () => {
         color={"black"}
         fontWeight={"700"}
         my={"20px"}
+        isLoading={loading}
       >
         Login
       </Button>
@@ -115,7 +116,7 @@ const LoginFormBody = () => {
 const LoginForm = () => {
   const { onClose } = useModalContext();
   const { showErrorToast, showSuccessToast } = useToast();
-  const { login, loading } = useAuth();
+  const { login } = useAuth();
   const [sessionData, setSessionData] = useState<any>(null);
   const [isOp, setIsOp] = useState(false);
   const [ner, setNer] = useState("");
@@ -155,21 +156,24 @@ const LoginForm = () => {
   //       }
   //     }
   //   );
-  const { loading: loadingRefresh, request } = useMutation({
-    uri: "http://localhost:8000/auth/login",
+  const { loading, request } = useMutation({
+    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
   });
   const onSubmit = (values: any) => {
-    // spell = values.username;
-    // setNer(spell);
-    request(values).then((res) => {
-      login(res);
-      console.log("---111", res);
-    });
-    // login(res);
-    // console.log("<<<<>>>>", values);
-
-    // console.log("---", res);
+    request(values)
+      .then((res: any) => {
+        login(res);
+      })
+      .catch((error) => {
+        console.log("error", error);
+        showErrorToast(error.message);
+      });
   };
+
+  // login(res);
+  // console.log("<<<<>>>>", values);
+
+  // console.log("---", res);
 
   const onFinish = (data: any) => {
     // const authenticationResult = login(data);
@@ -188,7 +192,7 @@ const LoginForm = () => {
       >
         {() => (
           <Form>
-            <LoginFormBody />
+            <LoginFormBody loading={loading} />
           </Form>
         )}
       </Formik>

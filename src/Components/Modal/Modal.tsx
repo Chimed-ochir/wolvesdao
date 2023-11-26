@@ -59,14 +59,26 @@ export const Modal = ({
         {/* <ModalOverlay zIndex={1500} backdropFilter='blur(10px)' /> */}
         <ModalContent bg="#1A1A1C">
           {title ? (
-            <ModalHeader>
-              <Text size="h5" cursor="default" fontWeight={600}>
-                {title}
-              </Text>
+            <ModalHeader
+              borderBottom={title !== "Votes" ? "1px solid #0D0D0D" : undefined}
+            >
+              {title === "Cast your vote" || title === "Votes" ? (
+                <Stack alignItems={"center"}>
+                  <Text size="h5" cursor="default" fontWeight={600}>
+                    {title}
+                  </Text>
+                </Stack>
+              ) : (
+                <Text size="h5" cursor="default" fontWeight={600}>
+                  {title}
+                </Text>
+              )}
             </ModalHeader>
           ) : null}
-          <ModalCloseButton />
-          <ModalBody pt="14px">{children}</ModalBody>
+          {title === "Cast your vote" ? null : <ModalCloseButton />}
+          <ModalBody pt={title === "Cast your vote" ? "" : "14px"}>
+            {children}
+          </ModalBody>
         </ModalContent>
       </ChakraModal>
     </>
