@@ -60,9 +60,9 @@ function Faq() {
             The Wolves DAO гэж юу вэ?
           </Text>
           {state1 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state1 ? (
@@ -109,9 +109,9 @@ function Faq() {
             The Wolves DAO-д хэн санал гаргах боломжтой вэ?
           </Text>
           {state2 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state2 ? (
@@ -156,9 +156,9 @@ function Faq() {
             The Wolves DAO-д ямар төрлийн саналууд гаргах боломжтой вэ?
           </Text>
           {state3 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state3 ? (
@@ -293,9 +293,9 @@ function Faq() {
             Шаардлагад нийцсэн санал гэж ямар саналыг хэлэх вэ?
           </Text>
           {state4 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state4 ? (
@@ -405,9 +405,9 @@ function Faq() {
             Хаана саналаа гаргах вэ?
           </Text>
           {state5 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state5 ? (
@@ -452,9 +452,9 @@ function Faq() {
             Нэг The Wolves NFT-ээ ашиглан нэгээс дээш санал гаргаж болох уу?
           </Text>
           {state6 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state6 ? (
@@ -499,9 +499,9 @@ function Faq() {
             Миний гаргасан саналыг хэн хүлээж авах вэ?
           </Text>
           {state7 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state7 ? (
@@ -545,9 +545,9 @@ function Faq() {
             Миний гаргасан санал яаж хэлэлцүүлэгт орох вэ?
           </Text>
           {state8 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state8 ? (
@@ -601,9 +601,9 @@ function Faq() {
             Хэлэлцүүлэг хэдэн хоног үргэлжлэх вэ?
           </Text>
           {state9 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state9 ? (
@@ -650,9 +650,9 @@ function Faq() {
             Хэлэлцүүлгийн үед гаргасан саналдаа өөрчлөлт оруулах боломжтой юу?
           </Text>
           {state10 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state10 ? (
@@ -701,9 +701,9 @@ function Faq() {
             Миний гаргасан санал хэрэгжих эсэхийг хэн шийдэх вэ?
           </Text>
           {state11 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state11 ? (
@@ -751,9 +751,9 @@ function Faq() {
             Миний санал дэмжигдлээ одоо яах вэ?
           </Text>
           {state12 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state12 ? (
@@ -800,9 +800,9 @@ function Faq() {
             Комюнити менежер гэж хэн бэ?
           </Text>
           {state13 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state13 ? (
@@ -849,9 +849,9 @@ function Faq() {
             Комюнити менежер ямар эрх, үүрэгтэй вэ?
           </Text>
           {state14 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state14 ? (
@@ -900,9 +900,9 @@ function Faq() {
             Комюнити менежер хэрхэн сонгогдох вэ?
           </Text>
           {state15 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state15 ? (
@@ -950,9 +950,9 @@ function Faq() {
             Хяналтын зөвлөл гэж юу вэ?
           </Text>
           {state16 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state16 ? (
@@ -998,9 +998,9 @@ function Faq() {
             Хяналтын зөвлөл ямар эрх, үүрэгтэй вэ?
           </Text>
           {state17 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state17 ? (
@@ -1052,9 +1052,9 @@ function Faq() {
             Хяналтын зөвлөлийн гишүүд хэрхэн сонгогдох вэ?
           </Text>
           {state18 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state18 ? (
@@ -1104,9 +1104,9 @@ function Faq() {
             Саналын эрхтэй гишүүд гэж хэн бэ?
           </Text>
           {state19 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state19 ? (
@@ -1154,9 +1154,9 @@ function Faq() {
             Саналын эрхтэй гишүүн болоход ямар шалгуур тавигдах вэ?
           </Text>
           {state20 ? (
-            <MdOutlineExpandMore size={32} />
+            <MdOutlineExpandMore size={32} color="white" />
           ) : (
-            <MdExpandLess size={32} />
+            <MdExpandLess size={32} color="white" />
           )}
         </Stack>
         {state20 ? (

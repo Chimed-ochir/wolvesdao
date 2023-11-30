@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+// import { useParams, usePathname, useRouter } from "next/navigation";
 import Loading from "../loading";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
@@ -26,39 +26,39 @@ import SkeletonCard from "@/Components/skeletonCard";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-function useScrollPosition() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+// function useScrollPosition() {
+//   const [scrollPosition, setScrollPosition] = useState(0);
 
-  function handleScroll() {
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+//   function handleScroll() {
+//     const height =
+//       document.documentElement.scrollHeight -
+//       document.documentElement.clientHeight;
 
-    const windowScroll = document.documentElement.scrollTop;
+//     const windowScroll = document.documentElement.scrollTop;
 
-    const scrolled = (windowScroll / height) * 100;
+//     const scrolled = (windowScroll / height) * 100;
 
-    setScrollPosition(scrolled);
-  }
+//     setScrollPosition(scrolled);
+//   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll, { passive: true });
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   });
 
-  return scrollPosition;
-}
+//   return scrollPosition;
+// }
 export default function Voting() {
   // const [status, setStatus] = useState<string>("");
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page, setPage] = useState(1);
   const [prop, setProp] = useState(" All propsals");
-  const pathname = usePathname();
-  const params = useParams();
-  const router = useRouter();
+  //   const pathname = usePathname();
+
+  //   const router = useRouter();
   const array = [
     {
       label: "All proposals",
@@ -119,13 +119,9 @@ export default function Voting() {
     },
   });
   // scroll data fetching section
-  console.log("000", pageCount);
-  console.log("000", page);
-  const scrollPosition = useScrollPosition();
+
   const { ref, inView } = useInView();
-  const a = 5;
   useEffect(() => {
-    console.log("inview", inView);
     if (inView) {
       // something happens after it reaches 80% of the screen
       setPage((prevPage) => prevPage + 1);
@@ -135,25 +131,10 @@ export default function Voting() {
       }).then((res) => {
         setPolls([...polls, ...res]);
       });
-      console.log("--------un de", page);
     }
   }, [inView]);
-  // useEffect(() => {
-  //   if (scrollPosition > 99.9 && !loading) {
-  //     // something happens after it reaches 80% of the screen
-  //     setPage((prevPage) => prevPage + 1);
-  //     fetchData(`/poll`, {
-  //       ...(tags === "all_propsal" ? {} : { status: tags }),
-  //       page,
-  //     }).then((res) => {
-  //       setPolls([...polls, ...res]);
-  //     });
-  //     console.log("--------un de", page);
-  //   }
-  // }, [scrollPosition]);
 
   useEffect(() => {
-    console.log("tags", tags);
     setPage(1);
     if (!loading) {
       fetchData(`/poll`, {
