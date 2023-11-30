@@ -43,7 +43,7 @@ export default function RootLayout({
       <body
         style={{
           background:
-            " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%);",
+            " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%)",
           fontFamily: `"Mortend",sans-serif`,
           overflow: "hidden",
         }}
