@@ -119,13 +119,9 @@ export default function Voting() {
     },
   });
   // scroll data fetching section
-  console.log("000", pageCount);
-  console.log("000", page);
-  const scrollPosition = useScrollPosition();
+
   const { ref, inView } = useInView();
-  const a = 5;
   useEffect(() => {
-    console.log("inview", inView);
     if (inView) {
       // something happens after it reaches 80% of the screen
       setPage((prevPage) => prevPage + 1);
@@ -135,25 +131,10 @@ export default function Voting() {
       }).then((res) => {
         setPolls([...polls, ...res]);
       });
-      console.log("--------un de", page);
     }
   }, [inView]);
-  // useEffect(() => {
-  //   if (scrollPosition > 99.9 && !loading) {
-  //     // something happens after it reaches 80% of the screen
-  //     setPage((prevPage) => prevPage + 1);
-  //     fetchData(`/poll`, {
-  //       ...(tags === "all_propsal" ? {} : { status: tags }),
-  //       page,
-  //     }).then((res) => {
-  //       setPolls([...polls, ...res]);
-  //     });
-  //     console.log("--------un de", page);
-  //   }
-  // }, [scrollPosition]);
 
   useEffect(() => {
-    console.log("tags", tags);
     setPage(1);
     if (!loading) {
       fetchData(`/poll`, {
