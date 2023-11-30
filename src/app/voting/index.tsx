@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+// import { useParams, usePathname, useRouter } from "next/navigation";
 import Loading from "../loading";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
@@ -26,39 +26,39 @@ import SkeletonCard from "@/Components/skeletonCard";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-function useScrollPosition() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+// function useScrollPosition() {
+//   const [scrollPosition, setScrollPosition] = useState(0);
 
-  function handleScroll() {
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+//   function handleScroll() {
+//     const height =
+//       document.documentElement.scrollHeight -
+//       document.documentElement.clientHeight;
 
-    const windowScroll = document.documentElement.scrollTop;
+//     const windowScroll = document.documentElement.scrollTop;
 
-    const scrolled = (windowScroll / height) * 100;
+//     const scrolled = (windowScroll / height) * 100;
 
-    setScrollPosition(scrolled);
-  }
+//     setScrollPosition(scrolled);
+//   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll, { passive: true });
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   });
 
-  return scrollPosition;
-}
+//   return scrollPosition;
+// }
 export default function Voting() {
   // const [status, setStatus] = useState<string>("");
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page, setPage] = useState(1);
   const [prop, setProp] = useState(" All propsals");
-  const pathname = usePathname();
-  const params = useParams();
-  const router = useRouter();
+  //   const pathname = usePathname();
+
+  //   const router = useRouter();
   const array = [
     {
       label: "All proposals",
