@@ -13,7 +13,7 @@
 
 .redCircle {
   width: 854px;
-  height: 852px;
+  height: 88px;
   border-radius: 854px;
   background: #95120a;
   filter: blur(250px);
@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--body-background-color);
+  // background-color: var(--body-background-color);
   margin-top: 8.5px;
   z-index: 999;
   will-change: transform;
@@ -51,6 +51,7 @@
   justify-content: center;
   flex-direction: row;
   gap: 40px;
+  background: black;
 }
 
 .logo {
@@ -82,10 +83,13 @@
 .btn {
   width: 20px;
   height: 20px;
+  font-size: 20px;
   padding: 0;
   z-index: 103;
-  position: relative;
-  margin-left: 20px;
+  // position: relative;
+  margin-left: 10px;
+  // margin-right: 24px;
+  overflow: auto;
 }
 
 .stroke {
@@ -93,13 +97,15 @@
   display: block;
   border-radius: 4px;
   transition: all 200ms ease-in-out 0s;
-  background-color: rgb(255, 255, 255);
+  background-color: #dfff24;
 }
 
 .stroke_one {
   transform-origin: left center;
+  // margin-top: "-3px";
   &.rotate {
     margin-right: 0;
+
     transform: rotate(45deg);
   }
 }
@@ -123,8 +129,8 @@
 
 .headerClick {
   text-decoration: none;
-  font-family: var(--mortend);
-  color: #fff;
+  // font-family: var(--mortend);
+  // color: #fff;
   text-transform: uppercase;
   font-size: 14px;
   font-style: normal;
@@ -142,21 +148,26 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  // width: 100px;
 }
 
 .sideBar {
   display: flex;
   flex-direction: column;
   padding: 80px 20px;
-  width: 90vw;
+  width: 40vw;
   z-index: 102;
   background-color: var(--body-background-color);
+  // background-color: "red";
   transition: all 200ms ease-in-out 0s;
   position: fixed;
   right: -400vw;
   bottom: 0;
   top: 0;
   overflow: auto;
+  @media (max-width: 480px) {
+    width: 80vw;
+  }
 }
 
 .open {

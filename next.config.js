@@ -7,6 +7,7 @@ const {
 const ANALYZE = process.env.ANALYZE;
 
 const nextConfig = {
+  reactStrictMode: false,
   modularizeImports: {
     lodash: {
       transform: "lodash/{{member}}",
@@ -43,7 +44,9 @@ const nextConfig = {
 
     return config;
   },
-
+  images: {
+    domains: ["placehold.co"], // Add the domain(s) you're using for images
+  },
   compress: true,
   poweredByHeader: false,
 };

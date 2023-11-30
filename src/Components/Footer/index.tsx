@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import BackImg from "@/assets/images/footerAlso.png";
 import { Container } from "@/Components/Container";
 import styled from "./index.module.scss";
+import InitialFocus from "../Login";
+import { Box } from "@chakra-ui/react";
 export const FooterData = [
   {
     title: "The Wolves",
@@ -20,8 +22,8 @@ export const FooterData = [
       },
       {
         name: "FAQ",
-        link: "https://feast.thewolves.io/#faq",
-        newTab: true,
+        link: "/rules/faq",
+        newTab: false,
       },
     ],
   },
@@ -59,7 +61,11 @@ export const Footer = () => {
   return (
     <Container className={styled.wrapper}>
       <div className={`content ${styled.container}`}>
-        <div className={`hideMobile ${styled.gridWrapper}`}>
+        <Box
+          className={`hideMobile ${styled.gridWrapper}`}
+          w={pathname === "/rules" ? "793px" : "100%"}
+          ml={pathname === "/rules" ? "332px" : ""}
+        >
           {FooterData.map((el: any, ind: any) => (
             <div key={ind} className={styled.colWrapper}>
               <h4 className={styled.title}>{el.title}</h4>
@@ -79,7 +85,7 @@ export const Footer = () => {
               ) : null}
             </div>
           ))}
-        </div>
+        </Box>
 
         <div className={styled.bottom}>
           <div className={styled.rowWrapper2}>

@@ -194,12 +194,13 @@
   align-items: center;
   justify-content: center;
   gap: 64px;
+  // margin-left: 312px;
 }
 
 .gridWrapper {
   display: flex;
   flex-direction: row;
-  width: 100%;
+
   justify-content: space-around;
 }
 

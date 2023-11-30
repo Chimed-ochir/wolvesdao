@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 //   src: "@/Components/fonts/mortend/mortend-bolf.ttf",
 // });
 import localFont from "next/font/local";
+import { AuthProvider } from "@/Components/Account";
+import { ThemeContextProvider } from "@/contexts/ThemeContext";
+import Getting from "@/Components/Getting";
 export const metadata: Metadata = {
   title: "Wolves DAO",
   description: "Wolves DAO description",
@@ -40,39 +43,42 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
+
       <body
         style={{
           background:
             " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%)",
           fontFamily: `"Mortend",sans-serif`,
           overflow: "hidden",
+          // minHeight: "100vh",
+          // position: "relative",
         }}
       >
-        <div
-          style={{
-            height: "88px",
-            background: "black",
-            position: "fixed",
-            zIndex: 10,
-          }}
-        >
-          {/* <Box my={"auto"}> */}
+        {" "}
+        <ChakraProvider>
+          <ThemeContextProvider>
+            <AuthProvider>
+              <div
+                style={{
+                  height: "88px",
+                  background: "black",
+                  position: "fixed",
+                  zIndex: 10,
+                }}
+              >
+                {/* <Box my={"auto"}> */}
 
-          <Header />
+                <Header />
 
-          {/* </Box> */}
-        </div>
-        <div
-          style={{ padding: "80px 0", marginTop: "30px", overflow: "hidden" }}
-        >
-          <ChakraProvider>{children} </ChakraProvider>
-        </div>
-
-        <footer
-          style={{ position: "relative", bottom: "0px", background: "black" }}
-        >
+                {/* </Box> */}
+              </div>
+              <div className="mybody"> {children}</div>{" "}
+            </AuthProvider>
+          </ThemeContextProvider>
+        </ChakraProvider>
+        <div style={{ position: "relative", bottom: "0px", marginTop: "10px" }}>
           <Footer />
-        </footer>
+        </div>
       </body>
     </html>
   );

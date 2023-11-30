@@ -118,3 +118,15 @@ a {
     color-scheme: dark;
   }
 }
+.mybody {
+  padding: 80px 0;
+  margin-top: 30px;
+  overflow: hidden;
+  min-height: 61vh;
+}
+
+@media (max-width: 992px) {
+  .mybody {
+    min-height: 82vh;
+  }
+}
