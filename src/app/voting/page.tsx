@@ -52,7 +52,7 @@ function useScrollPosition() {
 }
 export default function Voting() {
   // const [status, setStatus] = useState<string>("");
-  const [polls, setPolls] = useState([]);
+  const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page, setPage] = useState(1);
   const [prop, setProp] = useState(" All propsals");
