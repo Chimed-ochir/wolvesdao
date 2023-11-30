@@ -81,7 +81,7 @@ export const FormInput = ({
   // 	}
   // };
   return (
-    <Box w="100%">
+    <Box w="100%" mt={"15px"}>
       {label ? (
         <HStack alignItems="center" pb="sm">
           <Text opacity={opacity} fontWeight={500} lineHeight="150%">

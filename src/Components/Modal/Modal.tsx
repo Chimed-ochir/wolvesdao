@@ -9,9 +9,14 @@ import {
   ModalProps as ChakraModalProps,
   Text,
   Stack,
+  Box,
 } from "@chakra-ui/react";
+// import localFont from "next/dist/compiled/@next/font/dist/local";
 import { PropsWithChildren, ReactNode } from "react";
-
+import localFont from "next/font/local";
+const myFont = localFont({
+  src: "../fonts/revolution/revolution-bold.otf",
+});
 export type ModalProps = Omit<ChakraModalProps, "isOpen" | "onClose"> &
   PropsWithChildren<{
     title?: string | ReactNode;
@@ -68,6 +73,36 @@ export const Modal = ({
                     {title}
                   </Text>
                 </Stack>
+              ) : title === "Login" ? (
+                <Stack
+                  // position={"absolute"}
+                  alignItems={"flex-start"}
+                  justifyContent={"space-between"}
+                  h={"70px"}
+                  w={{ base: "100%", sm: "336px" }}
+                  gap={"2.42px"}
+                  // ml={"20px"}
+                  mx={"auto"}
+                >
+                  <Text
+                    {...myFont.style}
+                    fontSize={"23px"}
+                    color={"#DFFF24"}
+                    lineHeight={"23px"}
+                  >
+                    THE
+                  </Text>
+
+                  <Text
+                    {...myFont.style}
+                    lineHeight={"42px"}
+                    fontSize={"45px"}
+                    color={"white"}
+                    // textAlign={"center"}
+                  >
+                    WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
+                  </Text>
+                </Stack>
               ) : (
                 <Text size="h5" cursor="default" fontWeight={600}>
                   {title}
@@ -75,7 +110,9 @@ export const Modal = ({
               )}
             </ModalHeader>
           ) : null}
-          {title === "Cast your vote" ? null : <ModalCloseButton />}
+          {title === "Cast your vote" || title === "Login" ? null : (
+            <ModalCloseButton />
+          )}
           <ModalBody pt={title === "Cast your vote" ? "" : "14px"}>
             {children}
           </ModalBody>

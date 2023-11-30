@@ -16,6 +16,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Show,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -24,7 +25,9 @@ import InitialFocus from "../Login";
 import { AuthModal } from "../Account/AuthModal";
 import { useAuth } from "@/Components/Account/index";
 import { useParams, usePathname, useRouter } from "next/navigation";
+import { GiHamburgerMenu } from "react-icons/gi";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+import { MdClear } from "react-icons/md";
 const mortendFont = localFont({ src: "../fonts/mortend/mortend-bold.otf" });
 type SideBarProp = {
   src: string;
@@ -45,8 +48,8 @@ export const FooterData = [
       },
       {
         name: "FAQ",
-        link: "https://feast.thewolves.io/#faq",
-        newTab: true,
+        link: "/rules/faq",
+        newTab: false,
       },
     ],
   },
@@ -124,7 +127,7 @@ export const Header = () => {
   const click = () => setOpen(!open);
   return (
     <Container className={`${styles.container} `}>
-      {/* <BgDark open={open} toggle={() => setOpen(false)} /> */}
+      <BgDark open={open} toggle={() => setOpen(false)} />
       <div className={`content ${styles.row} `}>
         <div className={`${styles.redCircle} hideMobile`} />
         <a href="/" className={`hideMobile ${styles.logo}`}>
@@ -230,6 +233,7 @@ export const Header = () => {
                 border={"1px solid #FCFCFC"}
                 borderRadius={"6px"}
                 h="43px"
+                bg="#010101"
               >
                 {" "}
                 <Text
@@ -244,8 +248,10 @@ export const Header = () => {
                   {user}
                 </Text>
               </MenuButton>
-              <MenuList>
-                <MenuItem onClick={() => logout()}>LOG OUT</MenuItem>
+              <MenuList bg="#010101">
+                <MenuItem onClick={() => logout()} bg="#010101">
+                  LOG OUT
+                </MenuItem>
               </MenuList>
             </Menu>
           ) : (
@@ -255,45 +261,61 @@ export const Header = () => {
                 bg={"#dfff24"}
                 h={{ sm: "24px", lg: "43px" }}
                 color="black"
+                w="100px"
               >
                 LOG IN
               </Button>
             </AuthModal>
           )}
         </div>
-        <div className={`hideDesktop ${styles.menuWrapper}`}>
-          {user ? (
-            <Menu>
-              <MenuButton border={"1px solid #FCFCFC"} borderRadius={"6px"}>
-                {" "}
-                <Text
-                  {...myFont.style}
-                  lineHeight={"24px"}
-                  fontWeight={"700px"}
-                  fontSize={"14px"}
-                  color="#FCFCFC"
-                  py={"auto"}
-                  mx={"10px"}
+        <Show below="lg">
+          <Stack w="100%" justifyContent={"center"} alignItems={"flex-end"}>
+            {user ? (
+              <Menu>
+                <MenuButton
+                  border={"1px solid #FCFCFC"}
+                  borderRadius={"6px"}
+                  alignSelf={"right"}
                 >
-                  {user}
-                </Text>
-              </MenuButton>
-              <MenuList>
-                <MenuItem onClick={() => logout()}>LOG OUT</MenuItem>
-              </MenuList>
-            </Menu>
-          ) : (
-            <AuthModal>
-              <Button
-                style={{ ...myFont.style }}
-                bg={"#dfff24"}
-                h={{ sm: "24px", lg: "43px" }}
-                color="black"
-              >
-                LOG IN
-              </Button>
-            </AuthModal>
-          )}
+                  {" "}
+                  <Text
+                    {...myFont.style}
+                    lineHeight={"24px"}
+                    fontWeight={"700px"}
+                    fontSize={"14px"}
+                    color="#FCFCFC"
+                    py={"auto"}
+                    mx={"10px"}
+                  >
+                    {user}
+                  </Text>
+                </MenuButton>
+                <MenuList bg="#010101">
+                  <MenuItem onClick={() => logout()} bg="#010101">
+                    LOG OUT
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            ) : (
+              <Box w="100px">
+                <AuthModal>
+                  <Button
+                    style={{ ...myFont.style }}
+                    bg={"#dfff24"}
+                    h={{ sm: "24px", lg: "43px" }}
+                    color="black"
+                    w="100px"
+                    // mr={"20px"}
+                    alignSelf={"right"}
+                  >
+                    LOG IN
+                  </Button>
+                </AuthModal>
+              </Box>
+            )}
+          </Stack>
+        </Show>
+        <div className={`hideDesktop ${styles.menuWrapper}`}>
           <button className={styles.btn} onClick={click}>
             <span
               className={`${styles.stroke} ${styles.stroke_one} ${
@@ -311,6 +333,7 @@ export const Header = () => {
               }`}
             ></span>
           </button>
+          {/* {/* {open ? <GiHamburgerMenu /> : <MdClear size={20} />} */}
         </div>
       </div>
       {/* <Stack

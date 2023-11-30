@@ -46,78 +46,78 @@ const satFont = localFont({
 const VoteViewForm = ({
   onClose,
   isOpen,
-}: // data,
-{
+  data,
+}: {
   onClose: () => any;
   isOpen: boolean;
-  // data: any;
+  data: any;
 }) => {
   // const { onClose } = useModalContext();
   const [view, setView] = useState("");
   const { showErrorToast, showSuccessToast } = useToast();
   // const viewFilter = (people?: string) => {
-  const data = [
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7cc042e31cdfe5947b9",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "tiim",
-      createdAt: "2023-11-13T10:17:48.845Z",
-      updatedAt: "2023-11-25T09:50:45.408Z",
-    },
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7d2042e31cdfe5947be",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "ugui",
-      createdAt: "2023-11-13T10:17:54.631Z",
-      updatedAt: "2023-11-25T09:50:45.203Z",
-    },
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7d2042e31cdfe5947be",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "ugui",
-      createdAt: "2023-11-13T10:17:54.631Z",
-      updatedAt: "2023-11-25T09:50:45.203Z",
-    },
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7cc042e31cdfe5947b9",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "tiim",
-      createdAt: "2023-11-13T10:17:48.845Z",
-      updatedAt: "2023-11-25T09:50:45.408Z",
-    },
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7d2042e31cdfe5947be",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "ugui",
-      createdAt: "2023-11-13T10:17:54.631Z",
-      updatedAt: "2023-11-25T09:50:45.203Z",
-    },
-    {
-      userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-      userName: "discodisco",
-      optionId: "6551f7d2042e31cdfe5947be",
-      profile:
-        "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-      optionName: "ugui",
-      createdAt: "2023-11-13T10:17:54.631Z",
-      updatedAt: "2023-11-25T09:50:45.203Z",
-    },
-  ];
+  // const data = [
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7cc042e31cdfe5947b9",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "tiim",
+  //     createdAt: "2023-11-13T10:17:48.845Z",
+  //     updatedAt: "2023-11-25T09:50:45.408Z",
+  //   },
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7d2042e31cdfe5947be",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "ugui",
+  //     createdAt: "2023-11-13T10:17:54.631Z",
+  //     updatedAt: "2023-11-25T09:50:45.203Z",
+  //   },
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7d2042e31cdfe5947be",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "ugui",
+  //     createdAt: "2023-11-13T10:17:54.631Z",
+  //     updatedAt: "2023-11-25T09:50:45.203Z",
+  //   },
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7cc042e31cdfe5947b9",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "tiim",
+  //     createdAt: "2023-11-13T10:17:48.845Z",
+  //     updatedAt: "2023-11-25T09:50:45.408Z",
+  //   },
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7d2042e31cdfe5947be",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "ugui",
+  //     createdAt: "2023-11-13T10:17:54.631Z",
+  //     updatedAt: "2023-11-25T09:50:45.203Z",
+  //   },
+  //   {
+  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
+  //     userName: "discodisco",
+  //     optionId: "6551f7d2042e31cdfe5947be",
+  //     profile:
+  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
+  //     optionName: "ugui",
+  //     createdAt: "2023-11-13T10:17:54.631Z",
+  //     updatedAt: "2023-11-25T09:50:45.203Z",
+  //   },
+  // ];
   const [result, setResult] = useState<any[]>([]); // Initialize 'result' state as an empty array
   var moment = require("moment");
   // Assuming 'data' is another state or a prop provided to this component
@@ -156,9 +156,9 @@ const VoteViewForm = ({
           </InputGroup>
         </Stack>
         <Stack h="210px" overflowY="auto" css={{ scrollBehavior: "smooth" }}>
-          {result.length !== 0 ? (
+          {result?.length !== 0 ? (
             <Stack>
-              {result.map((e: any, id: number) => (
+              {result?.map((e: any, id: number) => (
                 <Stack justifyContent={"center"} my={"10px"} key={id}>
                   <Stack
                     mx={"auto"}
@@ -237,7 +237,7 @@ export const VoteViewModal = ({
 }) => {
   return (
     <Modal title={"Votes"} isOpen={isOpen} onClose={onClose} msize="md">
-      <VoteViewForm isOpen={isOpen} onClose={onClose} />
+      <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} />
       {/* <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} /> */}
     </Modal>
   );

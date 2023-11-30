@@ -5,17 +5,17 @@ import { BiLogoDiscourse } from "react-icons/bi";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 function GettingStarted() {
   return (
-    <Stack justifyContent={"space-between"} h={{ lg: "2433px" }}>
-      <Stack h={{ sm: "292px" }} justifyContent={"space-between"}>
-        <Box w={"125px"} h={"52px"}>
+    <Stack justifyContent={"space-between"} h={{ lg: "3199px" }} mx={"5px"}>
+      <Stack h={{ sm: "190px" }} justifyContent={"space-evenly"} id="started1">
+        <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
             fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
+            fontSize={{ base: "24px", sm: "32px" }}
+            lineHeight={{ base: "24px", sm: "32px" }}
             color={"#DFFF24"}
           >
-            001
+            001 <span style={{ fontFamily: "sans-serif" }}>The Wolves DAO</span>
           </Text>
         </Box>
         <Stack
@@ -24,6 +24,302 @@ function GettingStarted() {
           justifyContent={"space-between"}
         >
           <Box w={{ sm: "158px" }} h={"24px"}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Зорилго
+            </Text>
+          </Box>
+        </Stack>
+        <Stack w={{ xl: "800px" }}>
+          <Box>
+            <Text
+              fontFamily={"Golos Text"}
+              lineHeight={{
+                base: "15px",
+                sm: "",
+                xl: "22px",
+              }}
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              fontWeight={"600"}
+              color={"white"}
+              id="started12"
+            >
+              The Wolves NFT-ийн үнэ цэнэ, хэрэглээг нэмэгдүүлэх, чонон сүргийн
+              нэр хүндийг нийгэмд таниулах болон гишүүдийн тоог өсгөх,
+              идэвхжүүлэх чиглэлд хэрэгжүүлэх саналуудыг The Wolves DAO-р
+              дамжуулан гишүүдээсээ хүлээн авна.
+            </Text>
+          </Box>
+        </Stack>
+      </Stack>
+      <Stack justifyContent={"space-between"}>
+        <Stack
+          direction={"row"}
+          w={{ sm: "500px" }}
+          justifyContent={"space-between"}
+          h="48px"
+          alignItems={"center"}
+        >
+          <Box w={{ sm: "380px" }} h={"24px"}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Хүлээн авах саналын төрлүүд
+            </Text>
+          </Box>
+          <Button
+            color={"black"}
+            bg={"white"}
+            minW={"105px"}
+            h="24px"
+            gap={"8px"}
+            border={"1px solid black"}
+          >
+            <Stack direction={"row"} alignItems={"center"}>
+              <Box w={"14px"} h={"14px"}>
+                <BiLogoDiscourse size="14px" />
+              </Box>
+              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                Discourse
+              </Text>
+            </Stack>
+          </Button>
+        </Stack>
+
+        <Box w={{ xl: "826px" }}>
+          <Box ml={"10px"}>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              • The Wolves комюнититэй хамтран ажиллах бизнес төслийн саналууд
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • The Wolves комюнити гишүүдийг хамруулсан хаалттай арга
+              хэмжээнүүдийг зохиох саналууд
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • Сайн үйлсийн аян, хандив, мод тарих зэрэг нийгэм болон байгальд
+              тустай үйл ажиллагаа хэрэгжүүлэх саналууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • The Wolves NFT эзэмшигчдийн хүрээг тэлэх, The Wolves NFT-ийн
+              хэрэглээг нэмэгдүүлэх саналууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+              id="started13"
+            >
+              {" "}
+              • The Wolves NFT эзэмшигчдэд бодит үр өгөөж бий болгох
+              санаачилгуудыг MongolNFT-д хүргүүлэн ажил хэрэг болгож хамтран
+              ажиллах саналууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • The Wolves DAO-ийн засаглал болон үйл ажиллагааг сайжруулах
+              саналууд.
+            </Text>
+          </Box>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "218px" }} justifyContent={"space-between"}>
+        <Stack
+          direction={"row"}
+          w={{ sm: "351px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "229px" }} h={{ sm: "24px" }}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Саналын загвар
+            </Text>
+          </Box>
+          <Button
+            color={"black"}
+            bg={"white"}
+            w={"105px"}
+            h="24px"
+            gap={"8px"}
+            border={"1px solid black"}
+          >
+            <Stack direction={"row"} alignItems={"center"}>
+              <Box w={"14px"} h={"14px"}>
+                <BiLogoDiscourse size="14px" />
+              </Box>
+              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                Discourse
+              </Text>
+            </Stack>
+          </Button>
+        </Stack>
+        <Stack
+          h={{ xl: "93px" }}
+          alignItems={"start"}
+          justifyContent={"center"}
+          w={"100%"}
+        >
+          <Box>
+            <Text
+              fontFamily={"Golos Text"}
+              lineHeight={{
+                base: "12px",
+                sm: "15px",
+                xl: "18px",
+              }}
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              fontWeight={"600"}
+              color={"white"}
+            >
+              Санал гаргахдаа доорх загварын дагуу мэдээллээ үнэн зөв, гүйцэт
+              бөглөж ирүүлэх шаардлагатай. Үүнд:
+            </Text>
+          </Box>
+        </Stack>
+        <Box w={{ xl: "826px" }} h={{ xl: "220px" }}>
+          <Box h={{ lg: "220px" }} ml={"10px"}>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              • Саналын нэр;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • Саналын товч танилцуулга;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • Санал хэрэгжих үе шатууд болон харгалзах огноонууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • The Wolves комюнитид өгөх өгөөж, үр нөлөө (үндэслэл бүхий
+              тооцоололтой);
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+              id="started2"
+            >
+              {" "}
+              • Хариуцан гүйцэтгэх эзэн болон багийн гишүүдийн товч танилцуулга
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • Саналаас гарах бүтээгдэхүүн үйлчилгээ байгаа бол зураг болон
+              товч танилцуулга:
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              • Хүсэж буй санхүүжилтийн хэмжээ (шаардлагатай бол)
+            </Text>
+          </Box>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "159px" }} alignItems={"space-around"}>
+        <Box h={{ sm: "52px" }}>
+          <Text
+            {...myFont.style}
+            fontWeight={"700"}
+            fontSize={{ base: "24px", sm: "32px" }}
+            lineHeight={{ base: "24px", sm: "32px" }}
+            color={"#DFFF24"}
+          >
+            002{" "}
+            <span style={{ fontFamily: "sans-serif" }}>Саналын процесс</span>
+          </Text>
+        </Box>
+        <Stack
+          direction={"row"}
+          w={{ sm: "300px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "180px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -52,429 +348,23 @@ function GettingStarted() {
             </Stack>
           </Button>
         </Stack>
-        <Stack h={{ xl: "52px" }}>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
-            >
-              Хэн санал гаргах боломжтой вэ:
-            </Text>
-          </Box>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
-            >
-              1. The Wolves NFT эзэмшигч хүн бүр /At least 1 NFT/
-            </Text>
-          </Box>
-        </Stack>
-        <Box h={{ sm: "146px" }} id="started2">
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
             fontFamily={"Rubik"}
-            fontWeight={"400"}
+            fontWeight={"700"}
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
+            mt={"20px"}
+            id="started22"
           >
-            1. Хамтран ажиллах бизнес төслийн саналууд:
-          </Text>
-          <Text
-            fontFamily={"Rubik"}
-            fontWeight={"400"}
-            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            lineHeight={{ base: "13.8px", sm: "20.7px" }}
-            color={"#E0E0E0"}
-          >
-            2. MongolNFT-д хүргүүлж ажил хэрэг болгож хамтран ажиллах саналууд:
-          </Text>
-          <Text
-            fontFamily={"Rubik"}
-            fontWeight={"400"}
-            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            lineHeight={{ base: "13.8px", sm: "20.7px" }}
-            color={"#E0E0E0"}
-          >
-            3. Хаалттай арга хэмжээнүүдийг зохиох саналууд:
-          </Text>
-          <Text
-            fontFamily={"Rubik"}
-            fontWeight={"400"}
-            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            lineHeight={{ base: "13.8px", sm: "20.7px" }}
-            color={"#E0E0E0"}
-          >
-            4. Нийгэм болон байгальд тустай үйл ажиллагаа хэрэгжүүлэх саналууд:
-          </Text>
-          <Text
-            fontFamily={"Rubik"}
-            fontWeight={"400"}
-            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            lineHeight={{ base: "13.8px", sm: "20.7px" }}
-            color={"#E0E0E0"}
-          >
-            5. The Wolves DAO-ын засаглал болон үйл ажиллагааг сайжруулах
-            саналууд:
-          </Text>
-          <Text
-            fontFamily={"Rubik"}
-            fontWeight={"400"}
-            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            lineHeight={{ base: "13.8px", sm: "20.7px" }}
-            color={"#E0E0E0"}
-          >
-            6. The Wolves NFT эзэмшигчийн хүрээг өргөжүүлэх, The Wolves NFT-ийн
-            хэрэглээг тэглэх саналууд
+            The Wolves NFT эзэмшигч хүн бүр (багаар байж болно) нээлттэйгээр The
+            Wolves DAO-д санал гаргах боломжтой. The Wolves NFT эзэмшигчид
+            саналаа Discussion-ий New proposal хэсгээс гаргана.
           </Text>
         </Box>
       </Stack>
-
-      <Stack h={{ md: "460px" }} justifyContent={"space-between"}>
-        <Box w={"125px"} h={{ xl: "52px" }}>
-          <Text
-            {...myFont.style}
-            fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
-          >
-            002
-          </Text>
-        </Box>
-        <Stack
-          direction={"row"}
-          w={{ sm: "327px" }}
-          justifyContent={"space-between"}
-        >
-          <Box w={{ sm: "205px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Саналыг шалгах
-            </Text>
-          </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
-        </Stack>
-        <Stack h={{ xl: "52px" }}>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "15px",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
-            >
-              Коммюнити хариуцсан менежер нь The Wolves DAO-д ирж буй бүхий л
-              саналуудыг хүлээн авч, нийцлийг хянаж, эцэслээд шаардлага хангасан
-              саналыг тухай бүрд нь (ASAP горимоор) Хяналтын зөвлөлд оруулна.
-            </Text>
-          </Box>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={"18px"}
-              fontSize={"15px"}
-              fontWeight={"600"}
-              color={"white"}
-            ></Text>
-          </Box>
-        </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "314px" }}>
-          <Box w={{ xl: "826px" }} h={{ xl: "314px" }} pl={"10px"} mx={"auto"}>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"700"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              Коммюнити хариуцсан менежер (Community manager):
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              1. Коммюнити хариуцсан менежер нь The Wolves DAO-д ирж буй бүхий д
-              саналуудыг хүлээн авч, нийцлийг хангуулж Хяналтын зөвлөлд
-              шилжүүлнэ.
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              2. Коммюнити хариуцсан менежер нь Хяналтын зөвлөлийн гишүүдийн
-              ротацыг хариуцан 3 болон 9 дүгээр саруудад The Wolves DAO-д санал
-              оруулж шийдвэрлүүлнэ.
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              3. Коммюнити хариуцсан менежер нь Саналын эрхтэй гишүүдийн ротацыг
-              хариуцан улирал тутамд Discourse программын (Trust system)
-              түвшингээр нь эрэмбэлж шинэчлэл хийнэ.
-            </Text>
-
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              4. Коммюнити хариуцсан менежерийг хагас жил тутмын санал
-              хураалтаар сонгож ажиллуулах бөгөөд нийт 2 удаа (term) сонгогдож
-              ажиллах боломжтой. Хугацаанаас нь өмнө ажлаас чөлөөлөх асуудлыг
-              The Wolves DAO-аар санал хурааж шийдвэрлэнэ.
-            </Text>
-
-            <Box id="started3">
-              <Text
-                fontFamily={"Rubik"}
-                fontWeight={"400"}
-                fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                color={"#E0E0E0"}
-              >
-                5. Коммюнити хариуцсан менежер нь сарын ..... цалинтайгаар
-                ажиллана. Цалингийн хэмжээ, урамшуулал олгох талаарх асуудлыг
-                The Wolves DAO-аар санал хурааж шийдвэрлэнэ.
-              </Text>{" "}
-            </Box>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              6. The Wolves NFT эзэмшигчийн хүрээг өргөжүүлэх, The Wolves
-              NFT-ийн хэрэглээг тэглэх саналууд
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              7. Discourse программын Trust system-ийг ашиглан идэвхтэй гишүүд
-              нэр дэвших болон дэвшүүлэх эрхтэй бөгөөд санал хурааж томилно.
-            </Text>
-          </Box>
-        </Box>
-      </Stack>
-
-      <Stack h={{ md: "459px" }} justifyContent={"space-between"}>
-        <Box w={"125px"} h={"52px"}>
-          <Text
-            {...myFont.style}
-            fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
-          >
-            003
-          </Text>
-        </Box>
-        <Stack
-          direction={"row"}
-          w={{ sm: "351px" }}
-          justifyContent={"space-between"}
-        >
-          <Box w={{ sm: "229px" }} h={{ sm: "24px" }}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Хянах, зөвшөөрөх
-            </Text>
-          </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
-        </Stack>
-        <Stack
-          h={{ xl: "93px" }}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "15px",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
-            >
-              Хяналтын зөвлөл нь Коммюнити менежерээс эцэслэгдэн ирсэн
-              саналуудыг The Wolves DAO-ийн зорилго болон санхүүжилтийн
-              боломжтой уялдуулан хянаад нээлттэй хэлэлцүүлэг рүү оруулах
-              эсэхийг тухай бүрд нь (ASAP горимоор) санал хурааж, энгийн олонхын
-              (тогтоосон хугацаанд санал өгсөн гишүүдийн 50+1 хувь) саналаар
-              шийдвэрлэнэ. Нэмэлт өөрчлөлт хийх шаардлагатай бол төслийн саналыг
-              төсөл гаргагчид буцаана.
-            </Text>
-          </Box>
-        </Stack>
-        <Stack
-          w={{ xl: "846px" }}
-          h={{ xl: "314px" }}
-          justifyContent={"center"}
-        >
-          <Box
-            w={{ xl: "826px" }}
-            h={{ xl: "314px" }}
-            pl={"10px"}
-            mx={"auto"}
-            py={"auto"}
-          >
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"700"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-              mt={"20px"}
-              ml={"-3px"}
-            >
-              Хяналтын зөвлөл (Monitoring council):
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              1. Хяналтын зөвлөл нь Коммюнити хариуцсан менежерээс ирүүлсэн
-              төслүүдийг тухай бүрд нь (ASAP горимоор) хянаад The Wolves DAO-аар
-              хэлэлцүүлж, санал хураалтад оруулах эсэхийг дотооддоо санал хурааж
-              шийдвэрлэнэ.
-            </Text>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              2. Хяналтын зөвлөл нь 6 болон 12 дугаар саруудад, онцгой
-              шаардлагатай тохиолдолд гишүүдийн 3-ны 2-ийн саналаар ээлжит
-              бусаар чуулж Коммюнити хариуцсан менежерийн тайланг сонсох бөгөөд
-              үргэлжлүүлэн ажиллуулах эсвэл чөлөөлөх асуудлаар The Wolves DAO-д
-              санал оруулж шийдвэрлүүлнэ.
-            </Text>
-            <Box id="started4">
-              <Text
-                fontFamily={"Rubik"}
-                fontWeight={"400"}
-                fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                color={"#E0E0E0"}
-              >
-                3. Хяналтын зөвлөл нь 15 хүний бүрэлдэхүүнтэй байх бөгөөд хагас
-                жил тутмын санал хураалтаар 3-5 гишүүнийг ротациар сэлгэн
-                ажиллуулна. Хяналтын зөвлөлийн гишүүнийг ротациар болон
-                хугацаанаас нь өмнө чөлөөлөх, томилох асуудлыг The Wolves
-                DAO-аар санал хурааж шийдвэрлэнэ.
-              </Text>
-            </Box>
-            <Text
-              fontFamily={"Rubik"}
-              fontWeight={"400"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-            >
-              4. Discourse программын Trust system-ийг ашиглан DAO-ийн идэвхтэй
-              гишүүд хэлэлцүүлгийн явцад өөрөө нэр дэвших болон бусдыг нэр
-              дэвшүүлэх эрхтэй бөгөөд санал хураалтад оруулна.
-            </Text>
-          </Box>
-        </Stack>
-      </Stack>
-      <Stack h={{ md: "121px" }} alignItems={"space-around"} id="started5">
-        <Box w={"125px"} h={"52px"}>
-          <Text
-            {...myFont.style}
-            fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
-          >
-            004
-          </Text>
-        </Box>
+      <Stack h={{ md: "135px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -488,7 +378,7 @@ function GettingStarted() {
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
             >
-              Final Proposal
+              Санал шалгах
             </Text>
           </Box>
           <Button
@@ -517,31 +407,23 @@ function GettingStarted() {
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
             mt={"20px"}
+            id="started23"
           >
-            Хяналтын зөвлөлөөр шийдэгдсэн саналуудыг Community Manager нь Public
-            тохиргоотой болгоно.
+            Комюнити менежер нь The Wolves DAO-д ирж буй бүхий л саналуудыг
+            хүлээн авч, шаардлагад нийцсэн эсэхийг шалгаж эцэслээд тухай бүрд нь
+            Хяналтын зөвлөлд танилцуулна. Загварын дагуу саналаа гаргаагүй эсвэл
+            дутуу мэдээлэл ирүүлсэн бол Комюнити менежер нь шаардлагад нийцээгүй
+            шалтгаанаар буцааж болно.
           </Text>
         </Box>
       </Stack>
-
-      <Stack h={{ sm: "193px" }} justifyContent={"space-between"}>
-        <Box w={{ sm: "125px" }} h={"52px"}>
-          <Text
-            {...myFont.style}
-            fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
-          >
-            005
-          </Text>
-        </Box>
+      <Stack h={{ md: "148px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
-          w={{ sm: "412px" }}
+          w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "300px" }} h={{ sm: "24px" }} id="started6">
+          <Box w={{ sm: "180px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -549,7 +431,7 @@ function GettingStarted() {
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
             >
-              Хэлэлцүүлэг (1-5 хоног)
+              Санал хянах
             </Text>
           </Box>
           <Button
@@ -570,54 +452,32 @@ function GettingStarted() {
             </Stack>
           </Button>
         </Stack>
-        <Stack w={{ xl: "890px" }} h={{ xl: "90px" }}>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-              fontWeight={"600"}
-            >
-              Хяналтын зөвлөлөөс зөвшөөрөгдсөн саналыг (proposal) Discourse
-              программ дээр нийт гишүүдийн дунд нээлттэй хэлэлцүүлэг явуулна.
-              Хэлэлцүүлгээс гарсан зохих үр ашигтай саналыг тусгасан төслийн
-              санал (proposal) дээр санал хураах ажиллагааг явуулна.
-            </Text>
-          </Box>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-              fontWeight={"600"}
-            >
-              Хэлэлцүүлэгт оролцож байгаа бүх хүмүүс чонотой байх ёстой.
-            </Text>
-          </Box>
-        </Stack>
-      </Stack>
-
-      <Stack h={{ md: "547px" }}>
-        <Box w={"125px"} h={"52px"}>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
-            {...myFont.style}
+            fontFamily={"Rubik"}
             fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            mt={"20px"}
+            id="started24"
           >
-            006
+            Хяналтын зөвлөл нь Комюнити менежерээс эцэслэгдэн ирсэн саналуудыг
+            The Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан
+            хянаад нээлттэй хэлэлцүүлэг рүү оруулах эсэхийг тухай бүрд нь санал
+            хурааж, энгийн олонхын (тогтоосон хугацаанд санал өгсөн гишүүдийн
+            50+1 хувь) саналаар шийдвэрлэнэ. Саналд нэмэлт эсвэл өөрчлөлт хийх
+            шаардлагатай бол төслийн саналыг буцааж болно.
           </Text>
         </Box>
+      </Stack>{" "}
+      <Stack h={{ md: "122px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
-          w={{ xl: "432px" }}
+          w={{ sm: "300px" }}
           justifyContent={"space-between"}
-          h={{ sm: "24px" }}
         >
-          <Box w={{ sm: "320px" }} h={{ sm: "24px" }}>
+          <Box w={{ sm: "180px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -625,7 +485,177 @@ function GettingStarted() {
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
             >
-              Санал хураалт (1-3 хоног)
+              Хэлэлцүүлэг хийх
+            </Text>
+          </Box>
+          <Button
+            color={"black"}
+            bg={"white"}
+            w={"105px"}
+            h="24px"
+            gap={"8px"}
+            border={"1px solid black"}
+          >
+            <Stack direction={"row"} alignItems={"center"}>
+              <Box w={"14px"} h={"14px"}>
+                <BiLogoDiscourse size="14px" />
+              </Box>
+              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                Discourse
+              </Text>
+            </Stack>
+          </Button>
+        </Stack>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+          <Text
+            fontFamily={"Rubik"}
+            fontWeight={"700"}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            mt={"20px"}
+            id="started25"
+          >
+            Хяналтын зөвлөлөөр шийдвэрлэгдсэн саналуудыг Discussion хэсэг дээр
+            нийт гишүүдийн буюу The Wolves NFT эзэмшигчдийн дунд нээлттэй
+            хэлэлцүүлнэ. Хэлэлцүүлгийн үргэлжлэх хугацаа нь саналаас шалтгаалан
+            5 хүртэлх хоног байна.
+          </Text>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "142px" }} alignItems={"space-around"}>
+        <Stack
+          direction={"row"}
+          w={{ sm: "300px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "180px" }} h={"24px"}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Санал хураах
+            </Text>
+          </Box>
+          <Button
+            color={"black"}
+            bg={"white"}
+            w={"105px"}
+            h="24px"
+            gap={"8px"}
+            border={"1px solid black"}
+          >
+            <Stack direction={"row"} alignItems={"center"}>
+              <Box w={"14px"} h={"14px"}>
+                <BiLogoDiscourse size="14px" />
+              </Box>
+              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                Discourse
+              </Text>
+            </Stack>
+          </Button>
+        </Stack>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+          <Text
+            fontFamily={"Rubik"}
+            fontWeight={"700"}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            mt={"20px"}
+            id="started26"
+          >
+            Хэлэлцүүлгийн тогтоосон хугацаа дууссаны дараа Саналын эрхтэй
+            гишүүдийн дунд санал хураалт явуулж, энгийн олонхын (тогтоосон
+            хугацаанд санал өгсөн гишүүдийн 50+1 хувь) саналаар тухайн санал
+            дэмжигдсэн эсэхийг эцэслэн тогтооно. Санал хураалт үргэлжлэх хугацаа
+            нь саналаас шалтгаалан 3 хүртэлх хоног байна.
+          </Text>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "96px" }} alignItems={"space-around"}>
+        <Stack
+          direction={"row"}
+          w={{ sm: "300px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "180px" }} h={"24px"}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Санал хэрэгжилт
+            </Text>
+          </Box>
+          <Button
+            color={"black"}
+            bg={"white"}
+            w={"105px"}
+            h="24px"
+            gap={"8px"}
+            border={"1px solid black"}
+          >
+            <Stack direction={"row"} alignItems={"center"}>
+              <Box w={"14px"} h={"14px"}>
+                <BiLogoDiscourse size="14px" />
+              </Box>
+              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                Discourse
+              </Text>
+            </Stack>
+          </Button>
+        </Stack>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+          <Text
+            fontFamily={"Rubik"}
+            fontWeight={"700"}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            mt={"20px"}
+            id="started3"
+          >
+            Комюнити менежер нь батлагдсан саналуудын хэрэгжилтэд хяналт тавьж
+            шаардлагатай мэдээллүүдийг санал тус бүрийн Report хэсэгт оруулна.
+          </Text>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "161px" }}>
+        <Box h={{ sm: "52px" }}>
+          <Text
+            {...myFont.style}
+            fontWeight={"700"}
+            fontSize={{ base: "24px", sm: "32px" }}
+            lineHeight={{ base: "24px", sm: "32px" }}
+            color={"#DFFF24"}
+          >
+            003{" "}
+            <span style={{ fontFamily: "sans-serif" }}>
+              The Wolves DAO Governance
+            </span>
+          </Text>
+        </Box>
+        <Stack
+          direction={"row"}
+          w={{ xl: "450px" }}
+          justifyContent={"space-between"}
+          h={{ sm: "24px" }}
+        >
+          <Box w={{ sm: "374px" }} h={{ sm: "24px" }}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              The Wolves NFT эзэмшигчид
             </Text>
           </Box>
           <Button
@@ -652,179 +682,22 @@ function GettingStarted() {
               lineHeight={{ base: "13.8px", sm: "20.7px" }}
               color={"#E0E0E0"}
               fontWeight={"600"}
+              id="started32"
             >
-              Саналын эрхтэй гишүүдийн дунд санал хураалт явуулж, энгийн олонхын
-              (тогтоосон хугацаанд санал өгсөн гишүүдийн 50+1 хувь) саналаар
-              тухайн санал дэмжигдсэн эсэхийг эцэслэн тогтооно.
+              The Wolves NFT эзэмшигч хүн бүр The Wolves DAO санал гаргах,
+              Хэлэлцүүлэгт нээлттэй оролцох, комюнити менежер, хяналтын зөвлөл
+              болон саналын эрхтэй гишүүнээр сонгогдох эрхтэй байна.
             </Text>
           </Box>
         </Stack>
-        <Stack h={{ xl: "391px" }} justifyContent={"space-between"}>
-          <Stack w={{ xl: "846px" }} h={{ xl: "293px" }}>
-            <Box w={{ xl: "826px" }}>
-              <Text
-                fontFamily={"Rubik"}
-                fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                color={"#E0E0E0"}
-              >
-                Саналын эрхтэй гишүүд (Voting members)
-              </Text>
-            </Box>
-            <Box pl={"5px"} w={{ xl: "826px" }}>
-              <Stack direction={"row"}>
-                <Box>
-                  <Text>1.</Text>
-                </Box>
-                <Box>
-                  <Text
-                    fontFamily={"Rubik"}
-                    fontWeight={"400"}
-                    fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                    lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                    color={"#E0E0E0"}
-                  >
-                    Саналын эрхтэй гишүүд нь The Wolves DAO-ийн бүхий л үйл
-                    ажиллагаанд шаардлагатай санал хураалтад оролцоно.
-                  </Text>
-                </Box>
-              </Stack>
-              <Text
-                fontFamily={"Rubik"}
-                fontWeight={"700"}
-                fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                color={"#E0E0E0"}
-              >
-                2. Саналын эрхтэй нийт 100 гишүүн байна. Квотыг дараах байдлаар
-                хуваарилна. Үүнд:
-              </Text>
-            </Box>
-
-            <Stack w={{ xl: "783px" }} h={{ xl: "203px" }} pl={"15px"}>
-              <Box h={{ xl: "84px" }} w={{ xl: "783px" }}>
-                <Text
-                  fontFamily={"Rubik"}
-                  fontWeight={"400"}
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                >
-                  a. 70 гишүүдийг Discourse программын Trust system-ийг ашиглан
-                  идэвх, санаачилгын түвшин (level), тэмдэг (badge) зэргийг нь
-                  харгалзан сонгоно.
-                </Text>
-                <Text
-                  fontWeight={"400"}
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontFamily={"Rubik"}
-                >
-                  b. 30 гишүүдийг The Wolves NFT-ийн эзэмшигчид дотроос, бусад
-                  бүтээгдэхүүн үйлчилгээг идэвхтэй хэрэглэдэг, оролцдог
-                  хүмүүсээс сонгоно. Үүнд:{" "}
-                </Text>
-              </Box>
-              <Box h={"105px"} ml={"10px"}>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                >
-                  • Мини тоглоомд түрүүлсэн гишүүн;{" "}
-                </Text>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                >
-                  {" "}
-                  • The Wolves DAO-аас санаачилж буй үйл ажиллагаанд биечлэн
-                  идэвхтэй оролцдог гишүүд;
-                </Text>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                >
-                  {" "}
-                  • Ultra rare-1,Very rare-2, rare-3 мөн volume ихтэй чононууд;{" "}
-                </Text>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                >
-                  {" "}
-                  • Цаашдаа Ховор badge-тай чононууд;{" "}
-                </Text>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  color={"#E0E0E0"}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                >
-                  {" "}
-                  • Санаачилсан төсөл нь The Wolves DAO-аас дэмжигдсэн гишүүд;
-                </Text>
-              </Box>
-            </Stack>
-          </Stack>
-          <Box h={{ lg: "84px" }} pl={"5px"}>
-            <Stack direction={"row"}>
-              <Box>
-                <Text> 3.</Text>
-              </Box>
-              <Box>
-                <Text
-                  fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-                  lineHeight={{ base: "13.8px", sm: "20.7px" }}
-                  fontWeight={"400"}
-                  fontFamily={"Rubik"}
-                  color={"#E0E0E0"}
-                >
-                  Саналын эрхтэй нийт 100 гишүүд нь нээлттэй хэлэлцүүлэгт
-                  оролцож байгаа идэвх, санаачилга, санал хураалтад оролцож буй
-                  оролцооны түвшин (level) зэргээсээ шалтгаалж итгэлцлийн
-                  тогтолцоонд (Trust system) түвшингээр нь эрэмбэлж, улирал
-                  тутамд 90-ээс 100-ын хооронд (relegation zone 90-100) байрлаж
-                  буй гишүүдийг чөлөөлж өөр саналын эрхгүй The Wolves DAO-ийн
-                  гишүүдээс нөхнө.
-                </Text>
-              </Box>
-            </Stack>
-          </Box>
-        </Stack>
       </Stack>
-
-      <Stack h={"145px"} id="started7">
-        <Box w={"125px"} h={"52px"}>
-          <Text
-            {...myFont.style}
-            fontWeight={"700"}
-            fontSize={"32px"}
-            lineHeight={"32px"}
-            color={"#DFFF24"}
-          >
-            007
-          </Text>
-        </Box>
+      <Stack h={{ md: "215px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
-          w={{ sm: "360px" }}
+          w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "300px" }} h={{ sm: "24px" }}>
+          <Box w={{ sm: "300px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -832,42 +705,228 @@ function GettingStarted() {
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
             >
-              Саналын хэрэгжилт
+              Комюнити менежер
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Voting Page
-              </Text>
-            </Stack>
-          </Button>
         </Stack>
-        <Stack w={{ xl: "749px" }} h={"62px"} justifyContent={"center"}>
-          <Box>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }} pb="10px">
+          <Text
+            fontFamily={"Golos Text"}
+            lineHeight={{
+              base: "15px",
+              sm: "22px",
+              xl: "22px",
+            }}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            fontWeight={"600"}
+            color={"white"}
+            id="started33"
+          >
+            Комюнити менежер нь The Wolves DAO-ийн өдөр тутмын үйл ажиллагааг
+            хариуцан сарын тогтмол цалинтайгаар ажиллана. Цалингийн хэмжээ,
+            урамшуулал олгох талаарх асуудлыг The Wolves DAO-аар санал хурааж
+            шийдвэрлэнэ. Комюнити менежер нь The Wolves DAO-д ирж буй саналуудыг
+            хүлээн авах, Хяналтын зөвлөлд танилцуулах, хэлэлцүүлэг болон санал
+            хураалтыг зохион байгуулах үүрэгтэй. Үүнтэй уялдуулан шаардлагад
+            нийцээгүй саналуудыг буцаах, санал хураалтаар дэмжигдсэн саналуудад
+            шаардлагатай санхүүжилтийг олгох, саналын хэрэгжилтэд хяналт тавих
+            эрхтэй байна. Комюнити менежер нь 6 сар тутамд сонгогдох ба нийт 2
+            удаа сонгогдон ажиллах боломжтой. Комюнити менежерт өөрийгөө эсвэл
+            Discussion хэсгийн Trust system-ийг ашиглан идэвхтэй гишүүд дундаас
+            нэр дэвшүүлэх боломжтой бөгөөд The Wolves DAO-аар санал хурааж
+            шийдвэрлэнэ.
+          </Text>
+        </Box>
+      </Stack>
+      <Stack
+        h={{ md: "265px", lg: "" }}
+        alignItems={"space-around"}
+        mb={"10px"}
+      >
+        <Stack
+          direction={"row"}
+          w={{ sm: "300px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "300px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "15px",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
             >
-              DAO-р дэмжигдсэн саналуудын хэрэгжилтийн репортыг Community
-              manager санал тус бүрийн доор статус оруулж өгнө.
+              Хяналтын зөвлөл
             </Text>
           </Box>
         </Stack>
+        <Box w={{ xl: "846px" }} h={{ xl: "272px" }} pb="10px">
+          <Text
+            fontFamily={"Golos Text"}
+            lineHeight={{
+              base: "15px",
+              sm: "22px",
+              xl: "22px",
+            }}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            fontWeight={"600"}
+            color={"white"}
+          >
+            Хяналтын зөвлөл нь 15 хүний бүрэлдэхүүнтэй байх ба саналуудыг The
+            Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан хянаж
+            шийдвэрлэнэ. Хяналтын зөвлөл нь Комюнити менежерээс ирүүлсэн
+            саналуудыг тухай бүрд нь хянаад The Wolves DAO-аар хэлэлцүүлж, санал
+            хураалтад оруулах эсэхийг дотооддоо санал хурааж шийдвэрлэх эрхтэй.
+            Мөн Хяналтын зөвлөл нь 6 болон 12 дугаар саруудад, шаардлагатай
+            тохиолдолд гишүүдийн 2/3-ийн саналаар ээлжит бусаар хуралдаж
+            Комюнити менежерийн тайланг сонсох бөгөөд үргэлжлүүлэн ажиллуулах
+            эсвэл чөлөөлөх асуудлаар The Wolves DAO-д санал оруулж
+            шийдвэрлүүлнэ. Хагас жил тутмын санал хураалтаар Хяналтын зөвлөлийн
+            3-5 гишүүнийг ротациар сэлгэн ажиллуулна. Хяналтын зөвлөлийн
+            гишүүнийг ротациар болон хугацаанаас нь өмнө чөлөөлөх, томилох
+            асуудлыг The Wolves DAO-аар санал хурааж шийдвэрлэнэ. Хяналтын
+            зөвлөлд өөрийгөө эсвэл Discussion хэсгийн Trust system-ийг ашиглан
+            идэвхтэй гишүүд дундаас нэр дэвшүүлэх боломжтой бөгөөд The Wolves
+            DAO-аар санал хурааж шийдвэрлэнэ.
+          </Text>
+        </Box>
+      </Stack>
+      <Stack h={{ md: "344px" }} alignItems={"space-around"} id="started34">
+        <Stack
+          direction={"row"}
+          w={{ sm: "300px" }}
+          justifyContent={"space-between"}
+        >
+          <Box w={{ sm: "300px" }} h={"24px"}>
+            <Text
+              fontFamily={"Golos Text"}
+              fontWeight={"700"}
+              fontSize={{ sm: "24px" }}
+              lineHeight={{ sm: "24px" }}
+              color={"#DFFF24"}
+            >
+              Саналын эрхтэй гишүүд
+            </Text>
+          </Box>
+        </Stack>
+        <Box w={{ xl: "846px" }} h={{ xl: "294px" }}>
+          <Text
+            fontFamily={"Golos Text"}
+            lineHeight={{
+              base: "15px",
+              sm: "22px",
+              xl: "22px",
+            }}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            fontWeight={"600"}
+            color={"white"}
+          >
+            Саналын эрхтэй гишүүд нь The Wolves DAO-ийн бүхий л санал хураалтад
+            оролцож шийдвэр гаргах эрхтэй байна. Саналын эрхтэй нийт 100 гишүүн
+            байх ба улирал тутамд тодорхой шалгуурын дагуу гишүүнчлэлийг
+            шинэчилнэ. Санал хураах эрхтэй гишүүдийг сонгохдоо доорх шалгуурыг
+            баримтална. Үүнд:
+          </Text>
+        </Box>
+        <Box h={{ sm: "294px" }} ml={"10px"}>
+          <Text
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            fontWeight={"400"}
+            fontFamily={"Rubik"}
+          >
+            •70 гишүүдийг Discussion хэсгийн Trust system-ийг ашиглан идэвх,
+            санаачилгын түвшин (level), тэмдэг (badge) зэргийг нь харгалзан
+            сонгоно.
+          </Text>
+          <Text
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            fontWeight={"400"}
+            fontFamily={"Rubik"}
+          >
+            {" "}
+            • 30 гишүүдийг The Wolves NFT-ийн эзэмшигчид дотроос, бусад
+            бүтээгдэхүүн үйлчилгээг идэвхтэй хэрэглэдэг, оролцдог хүмүүсээс
+            Хяналтын зөвлөл сонгоно. Үүнд:
+          </Text>
+          <Text
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            fontWeight={"400"}
+            fontFamily={"Rubik"}
+          >
+            {" "}
+            • Сайн үйлсийн аян, хандив, мод тарих зэрэг нийгэм болон байгальд
+            тустай үйл ажиллагаа хэрэгжүүлэх саналууд;
+          </Text>
+          <Box h="160px">
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              - The Wolves DAO-ийн санаачилсан мини тоглоомд түрүүлсэн гишүүн;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              - The Wolves DAO-аас санаачилж буй үйл ажиллагаанд биечлэн
+              идэвхтэй оролцдог гишүүд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              - Ultra rare-1, Very rare-2, rare-3 мөн volume ихтэй чононууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              - Ховор badge-тай чононууд;
+            </Text>
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              - Санаачилсан төсөл нь The Wolves DAO-аас дэмжигдсэн гишүүд;
+            </Text>
+
+            <Text
+              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+              lineHeight={{ base: "13.8px", sm: "20.7px" }}
+              color={"#E0E0E0"}
+              fontWeight={"400"}
+              fontFamily={"Rubik"}
+            >
+              {" "}
+              - Бусад нэмэлт шалгуурууд
+            </Text>
+          </Box>
+        </Box>
       </Stack>
     </Stack>
   );

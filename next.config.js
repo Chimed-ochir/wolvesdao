@@ -7,6 +7,7 @@ const {
 const ANALYZE = process.env.ANALYZE;
 
 const nextConfig = {
+  reactStrictMode: false,
   modularizeImports: {
     lodash: {
       transform: "lodash/{{member}}",

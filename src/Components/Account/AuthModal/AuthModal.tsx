@@ -6,6 +6,8 @@ import {
   useModalContext,
   HStack,
   Link,
+  InputRightElement,
+  Text,
 } from "@chakra-ui/react";
 // import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 // import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
@@ -20,80 +22,75 @@ import { BuildLoginFormValidationSchema } from "./AuthModal.schema";
 // import { useAuthContext } from "@/contexts/AuthContext";
 // import { useConfirmWithResend } from "@/services/auth/confirm.service";
 import { useToast } from "@/utils/toast";
-
+import localFont from "next/font/local";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
 import { LoginDataType } from "..";
+import { MfaModal } from "../MfaModal";
 // const LoginFormBody = ({ isLoading }: { isLoading: boolean }) => {
+const satFont = localFont({
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+});
 const LoginFormBody = ({ loading }: { loading: boolean }) => {
   const [type, setType] = useState("password");
-
   //   const { openLogin, seeLogin } = useAuthContext();
-  //   const changePassword = () => {
-  //     if (type === "password") {
-  //       setType("text");
-  //     } else {
-  //       setType("password");
-  //     }
-  //   };
+  const changePassword = () => {
+    if (type === "password") {
+      setType("text");
+    } else {
+      setType("password");
+    }
+  };
 
   return (
     <Stack spacing="lg" pb="sm">
-      <HStack position="relative">
-        <Divider />
-        <HiOutlineUserCircle size="40" opacity={0.1} />
-        <Divider />
-      </HStack>
+      <Stack h="96px" justifyContent={"space-evenly"}>
+        <Text
+          {...satFont.style}
+          fontSize={"22px"}
+          color={"#FBFBFB"}
+          lineHeight={"30px"}
+          fontWeight="700"
+        >
+          Voting login
+        </Text>
+        <Text
+          fontFamily={"Golos Text"}
+          fontSize="14"
+          lineHeight={"17px"}
+          fontWeight={"600px"}
+          color="#8A8A8A"
+        >
+          Та MongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!
+        </Text>
+      </Stack>
       <FormInput
         fontWeight="500"
         fontSize="14"
-        label={"Email"}
+        label={"Нэвтрэх нэр"}
         name="email"
-        placeholder={"Email"}
+        placeholder={"Нэвтрэх нэр оруулах"}
+        // mt={"5px"}
         // isLoading={isLoading}
       />
-      <Box>
-        <FormInput
-          label={"Password"}
-          name="password"
-          placeholder={"Password"}
-          type={type}
-          autoComplete="current-password"
-          //   isLoading={isLoading}
-        />
 
-        {/* {type === "password" ? (
-          <Box
-            style={{
-              position: "absolute",
-              top: "53px",
-              right: "10px",
-              cursor: "pointer",
-              marginBottom: "33px",
-              zIndex: "1",
-            }}
-            onClick={changePassword}
-          >
-            <AiFillEyeInvisible />
-          </Box>
-        ) : (
-          <Box
-            style={{
-              position: "absolute",
-              top: "53px",
-              right: "10px",
-              cursor: "pointer",
-              marginBottom: "33px",
-              zIndex: "1",
-            }}
-            onClick={changePassword}
-          >
-            <AiFillEye />
-          </Box>
-        )} */}
-      </Box>
+      <FormInput
+        label={"Нууц үг"}
+        name="password"
+        placeholder={"Нууц үг оруулах"}
+        type={type}
+        autoComplete="current-password"
+        // mt={"5px"}
+        //   isLoading={isLoading}
+
+        inputRightElement={
+          <InputRightElement onClick={changePassword} cursor={"pointer"}>
+            {type === "password" ? <AiFillEyeInvisible /> : <AiFillEye />}
+          </InputRightElement>
+        }
+      />
 
       {/* <Button variant="white" size="sm" type="submit" isLoading={isLoading}> */}
 
@@ -107,7 +104,7 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
         my={"20px"}
         isLoading={loading}
       >
-        Login
+        Нэвтрэх
       </Button>
     </Stack>
   );
@@ -119,6 +116,7 @@ const LoginForm = () => {
   const { login } = useAuth();
   const [sessionData, setSessionData] = useState<any>(null);
   const [isOp, setIsOp] = useState(false);
+  const [mfa, setMfa] = useState(false);
   const [ner, setNer] = useState("");
   let spell: any = "bat";
   //   const { confirmWithResend } = useConfirmWithResend(
@@ -162,7 +160,14 @@ const LoginForm = () => {
   const onSubmit = (values: any) => {
     request(values)
       .then((res: any) => {
-        login(res);
+        if (res.session && res.username) {
+          setSessionData({
+            session: res?.session,
+            username: res.username,
+          });
+          setMfa(true);
+        }
+        // login(res);
       })
       .catch((error) => {
         console.log("error", error);
@@ -196,19 +201,19 @@ const LoginForm = () => {
           </Form>
         )}
       </Formik>
-      {/* <MfaModal
+      <MfaModal
         isOpen={!!sessionData}
         onClose={() => setSessionData(null)}
         sessionData={sessionData}
         onFinish={onFinish}
-      /> */}
+      />
     </Stack>
   );
 };
 
 export const AuthModal = ({ children }: PropsWithChildren) => {
   return (
-    <Modal title={"Login"} controlElement={children} msize="md">
+    <Modal title={"Login"} controlElement={children} msize="sm">
       {<LoginForm />}
     </Modal>
   );

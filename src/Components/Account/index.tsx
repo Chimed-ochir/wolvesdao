@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   });
 
   useEffect(() => {
-    async function loadUserFromCookies() {
+    function loadUserFromCookies() {
       const refreshToken = Cookies.get("token");
       const idToken = Cookies.get("idToken");
 
@@ -61,10 +61,12 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   }, []);
 
   const login = (data: LoginDataType, isRefresh?: boolean) => {
+    console.log("data.accessToken", data);
     if (data.accessToken) {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
+
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
       Cookies.set("access", data.accessToken, {
@@ -89,6 +91,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   };
 
   const logout = () => {
+    requestLogout({ accessToken: access });
+
     setUser(null);
     setAccess(null);
     Cookies.remove("token");
@@ -103,7 +107,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       duration: 5000,
       isClosable: true,
     });
-    return requestLogout({ accessToken: access });
+
+    // return requestLogout({ accessToken: access });
   };
 
   const toLogin = (path?: string) => {
@@ -135,6 +140,8 @@ export interface LoginDataType {
   accessToken: string;
   refreshToken: string;
   idToken: string;
+  session: string;
+  username: string;
 }
 
 type PayloadType = {

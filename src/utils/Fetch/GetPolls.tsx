@@ -6,52 +6,52 @@ import api from "../CustomAxios";
 export interface UseQueryProps {
   uri: string;
   manual?: boolean;
-  param?: any;
+  params?: any;
 }
 
 export interface UseQueryValue<T> {
   data: T;
   error: any;
   loading: boolean;
-  fetchData: (path?: string) => Promise<any>;
+  pageCount: number;
+  fetchData: (path?: string, params?: any) => Promise<any>;
 }
 
 export const useQuery = <T,>({
   uri,
   manual,
-  param,
+  params,
 }: UseQueryProps): UseQueryValue<T> => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [pageCount, setPageCount] = useState<number>(0);
   const [response, setResponse] = useState<T | null>(null);
   const [error, setError] = useState();
 
   useEffect(() => {
-    if (!loading && !manual) fetchData(uri);
+    // if (!loading && !manual) fetchData(uri);
   }, [manual]);
-  9;
-  const fetchData = useCallback(
-    (path: string = uri, params: string = param) => {
-      setLoading(true);
-      return api
-        .get(`${path}`, {
-          params,
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-        })
-        .then((res: any) => {
-          setLoading(false);
-          setResponse(res.data as T);
-          return res.data;
-        })
-        .catch((e) => {
-          setLoading(false);
-          setError(e);
-          return e;
-        });
-    },
-    []
-  );
 
-  return { data: response as T, loading, error, fetchData };
+  const fetchData = useCallback((path: string = uri, fetchParams?: any) => {
+    setLoading(true);
+    return api
+      .get(`${path}`, {
+        params: { ...params, ...fetchParams },
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
+      })
+      .then((res: any) => {
+        setLoading(false);
+        setPageCount(res.pageCount);
+        setResponse(res.data as T);
+        return res.data;
+      })
+      .catch((e) => {
+        setLoading(false);
+        setError(e);
+        return e;
+      });
+  }, []);
+
+  return { data: response as T, loading, pageCount, error, fetchData };
 };

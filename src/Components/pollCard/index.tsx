@@ -1,5 +1,6 @@
+"use client";
 import { Box, Image, Show, Stack, Text, useToast } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -11,16 +12,18 @@ import {
 } from "react-icons/bs";
 import { isDate } from "moment";
 import { useRouter } from "next/navigation";
-import { CalcPercent } from "@/utils";
+import { CalcPercent, CalcStatus } from "@/utils";
 import { useAuth } from "../Account";
 // import Image from "next/image";
 function PollCard(el: any) {
   const data = el.el;
   var moment = require("moment");
   const { user } = useAuth();
+  // const [state1, setState1] = useState("");
   const router = useRouter();
   const currentDate = new Date();
   const futureDate = new Date(moment.utc(data.endDate).format("MM-DD-YYYY"));
+  const startDate = new Date(moment.utc(data.startDate).format("MM-DD-YYYY"));
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   const toast = useToast();
@@ -31,6 +34,9 @@ function PollCard(el: any) {
   //   (timeDifference % (1000 * 3600)) / (1000 * 60)
   // console.log("user---", user);
   // );
+  // useEffect(() => {
+  //   setState1(CalcStatus(startDate, currentDate,futureDate));
+  // }, []);
   return (
     <Stack
       w="100%"
@@ -55,10 +61,10 @@ function PollCard(el: any) {
         }
       }}
     >
-      <Stack ml={{ base: "10px", sm: "33px" }} mt={"20px"} mb={"20px"}>
+      <Stack ml={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
         <Stack>
           <Stack
-            w={{ base: "93%", md: "93%", lg: "800px" }}
+            w={{ base: "93%", sm: "100%", md: "93%", lg: "800px" }}
             direction={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
@@ -150,6 +156,8 @@ function PollCard(el: any) {
               fontSize={{ base: "10px", sm: "12px" }}
               py={{ base: "2px" }}
               px={{ base: "auto", lg: "2px" }}
+              // ml={{ sm: "35px" }}
+              mr={{ sm: "3px", md: "" }}
               bg={
                 data.status === "active"
                   ? "#228200"

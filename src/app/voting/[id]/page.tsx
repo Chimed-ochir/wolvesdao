@@ -1031,8 +1031,10 @@ function Page({ params: { id } }: { params: { id: string } }) {
             <Stack justifyContent={"space-around"}>
               <Stack
                 direction={"row"}
-                justifyContent={"space-around"}
+                justifyContent={"space-between"}
                 // h={"148px"}
+                w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
+                mx={"auto"}
               >
                 <Stack justifyContent={"space-around"}>
                   <Text
@@ -1194,7 +1196,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 value={data?.data.count}
                 size="xs"
                 borderRadius={"15px"}
-                w={{ base: "300px", sm: "360px", md: "400px", lg: "251px" }}
+                w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
                 mx={"auto"}
                 mb={"20px"}
               />

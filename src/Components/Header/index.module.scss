@@ -83,10 +83,13 @@
 .btn {
   width: 20px;
   height: 20px;
+  font-size: 20px;
   padding: 0;
   z-index: 103;
-  position: relative;
-  margin-left: 20px;
+  // position: relative;
+  margin-left: 10px;
+  // margin-right: 24px;
+  overflow: auto;
 }
 
 .stroke {
@@ -99,8 +102,10 @@
 
 .stroke_one {
   transform-origin: left center;
+  // margin-top: "-3px";
   &.rotate {
     margin-right: 0;
+
     transform: rotate(45deg);
   }
 }
@@ -143,21 +148,26 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  // width: 100px;
 }
 
 .sideBar {
   display: flex;
   flex-direction: column;
   padding: 80px 20px;
-  width: 90vw;
+  width: 40vw;
   z-index: 102;
   background-color: var(--body-background-color);
+  // background-color: "red";
   transition: all 200ms ease-in-out 0s;
   position: fixed;
   right: -400vw;
   bottom: 0;
   top: 0;
   overflow: auto;
+  @media (max-width: 480px) {
+    width: 80vw;
+  }
 }
 
 .open {
