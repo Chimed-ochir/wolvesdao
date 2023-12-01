@@ -52,13 +52,13 @@ function Getting() {
           newIdx = 7;
         } else if (scrollY >= 1214) {
           newIdx = 8;
-        } else if (scrollY >= 1049) {
+        } else if (scrollY >= 1031) {
           newIdx = 9;
-        } else if (scrollY >= 790) {
+        } else if (scrollY >= 793) {
           newIdx = 10;
         } else if (scrollY >= 524) {
           newIdx = 11;
-        } else if (scrollY >= 273) {
+        } else if (scrollY >= 246) {
           newIdx = 12;
         } else {
           newIdx = 13;
@@ -220,7 +220,7 @@ function Getting() {
                 fontWeight={"700"}
                 fontSize={"16px"}
                 lineHeight={"18px"}
-                color={idx >= 5 && idx <= 11 ? "#FBFBFB" : "#949494"}
+                color={idx >= 5 && idx < 11 ? "#FBFBFB" : "#949494"}
               >
                 САНАЛЫН ПРОЦЕСС
               </Text>
