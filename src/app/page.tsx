@@ -25,6 +25,7 @@ export default function Home() {
           // }
         >
           <div className={styles.circle}>
+            {/* <div> */}
             <Box
               bgGradient={
                 " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
@@ -54,8 +55,12 @@ export default function Home() {
                 w={{ base: "688.66px", sm: "1183px" }}
                 h={{ base: "688.66px", sm: "1183px" }}
                 display={"fixed"}
-                margin={"auto"}
+                m={"auto"}
+                marginX={"auto"}
+                // paddingTop={"50px"}
+                marginY={{ sm: "211px" }}
                 border={"1px solid black"}
+                // bg="red"
                 bgGradient={
                   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
                 }
@@ -66,6 +71,7 @@ export default function Home() {
                   h={{ base: "455.55px", sm: "782px" }}
                   display={"fixed"}
                   margin={"auto"}
+                  marginY={{ sm: "200px" }}
                   border={"1px solid black"}
                   bgGradient={
                     " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
