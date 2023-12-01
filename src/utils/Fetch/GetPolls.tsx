@@ -28,7 +28,7 @@ export const useQuery = <T,>({
   const [error, setError] = useState();
 
   useEffect(() => {
-    // if (!loading && !manual) fetchData(uri);
+    if (!loading && !manual) fetchData(uri);
   }, [manual]);
 
   const fetchData = useCallback((path: string = uri, fetchParams?: any) => {
