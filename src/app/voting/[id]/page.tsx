@@ -68,7 +68,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
       setVoteId(false);
     }
   }, [data]);
-  console.log("12345678998data7654321", data);
+  console.log("12345678998data7654321 data: ", data);
 
   console.log("----", loading);
   useEffect(() => {
