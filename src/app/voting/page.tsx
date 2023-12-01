@@ -160,6 +160,7 @@ export default function Voting() {
               fontWeight={"900"}
               fontSize={"24px"}
               lineHeight={"32px"}
+              color={"white"}
             >
               Voting
             </Text>
