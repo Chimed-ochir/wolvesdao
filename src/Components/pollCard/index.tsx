@@ -215,7 +215,11 @@ function PollCard(el: any) {
                 key={id}
               >
                 <Stack
-                  w={`${CalcPercent(data.count, el.votes.length)}%`}
+                  w={`${
+                    el.votes.length !== 0
+                      ? CalcPercent(data.count, el.votes.length)
+                      : 0
+                  }%`}
                   bg={"#303030"}
                   borderRadius={"6px"}
                   justifyContent={"center"}
@@ -243,7 +247,10 @@ function PollCard(el: any) {
                       lineHeight={"18px"}
                       fontSize={"15px"}
                     >
-                      {CalcPercent(data.count, el.votes.length)}%
+                      {el.votes.length !== 0
+                        ? CalcPercent(data.count, el.votes.length)
+                        : 0}
+                      %
                     </Text>
                   </Stack>
                 </Stack>
