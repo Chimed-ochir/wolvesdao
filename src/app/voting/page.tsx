@@ -114,7 +114,7 @@ export default function Voting() {
     manual: true,
     params: {
       // status: tags,
-      // page: page,
+      page: page,
       limit: 5,
     },
   });
