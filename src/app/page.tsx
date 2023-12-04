@@ -2,7 +2,8 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Logo from "../../public/assets/svgs/logo.svg";
-import wolf from "../../public/assets/images/youngWolf.png";
+import wolf from "../../public/assets/youngWolf.png";
+
 import localFont from "next/font/local";
 const mFont = localFont({
   src: "../Components/fonts/revolution/revolution-bold.otf",
