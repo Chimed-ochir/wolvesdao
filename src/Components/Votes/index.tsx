@@ -137,7 +137,7 @@ function Votes(idx: any) {
           fontSize={"15px"}
           color={"#FBFBFB"}
         >
-          View all
+          Бүгдийг харуулах
         </Text>
       </Stack>
       <VoteViewModal

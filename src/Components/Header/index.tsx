@@ -32,6 +32,7 @@ const mortendFont = localFont({ src: "../fonts/mortend/mortend-bold.otf" });
 type SideBarProp = {
   src: string;
   name: string;
+  valu: string;
 };
 
 export const FooterData = [
@@ -83,18 +84,22 @@ const sideBarData: SideBarProp[] = [
   {
     src: "/",
     name: "home",
+    valu: "Нүүр",
   },
   {
     src: "/rules",
     name: "rules",
+    valu: "Дүрэм",
   },
   {
-    src: "/discussion",
+    src: "https://wolf.discourse.group/",
     name: "discussion",
+    valu: "Хэлэлцүүлэг",
   },
   {
     src: "/voting",
     name: "voting",
+    valu: "Санал хураалт",
   },
 ];
 export const Header = () => {
@@ -187,7 +192,7 @@ export const Header = () => {
           </Stack>
         </a>
         <div className={`hideMobile ${styles.menu}`}>
-          {sideBarData.map((el, ind) => (
+          {sideBarData.map((el, ind) =>
             // <a
             //   key={ind}
             //   style={{
@@ -199,24 +204,44 @@ export const Header = () => {
             // >
             //   {el.name}
             // </a>
-            <Box
-              key={ind}
-              onClick={() => {
-                router.push(el.src);
-              }}
-              cursor="pointer"
-            >
+
+            el.name === "discussion" ? (
+              <Link key={ind} href={el.src} target="_blank">
+                <Text
+                  onClick={() => {
+                    router.push(el.src);
+                  }}
+                  cursor="pointer"
+                  {...mortendFont.style}
+                  color={el.name === act ? "#DFFF24" : "#FCFCFC"}
+                  fontWeight={"700"}
+                  fontSize="9px"
+                  lineHeight={"22px"}
+                  p={"3px"}
+                  marginX={"3px"}
+                >
+                  {el.valu.toUpperCase()}
+                </Text>
+              </Link>
+            ) : (
               <Text
+                key={ind}
+                onClick={() => {
+                  router.push(el.src);
+                }}
+                cursor="pointer"
                 {...mortendFont.style}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
                 fontWeight={"700"}
-                fontSize="14px"
+                fontSize="9px"
                 lineHeight={"22px"}
+                p={"3px"}
+                marginX={"3px"}
               >
-                {el.name.toUpperCase()}
+                {el.valu.toUpperCase()}
               </Text>
-            </Box>
-          ))}
+            )
+          )}
           {/* <a
             href="#"
             // href="https://opensea.io/collection/the-wolves-of-crypto-street"
@@ -255,17 +280,19 @@ export const Header = () => {
               </MenuList>
             </Menu>
           ) : (
-            <AuthModal>
-              <Button
-                style={{ ...myFont.style }}
-                bg={"#dfff24"}
-                h={{ sm: "24px", lg: "43px" }}
-                color="black"
-                w="100px"
-              >
-                LOG IN
-              </Button>
-            </AuthModal>
+            <Box w="100px">
+              <AuthModal>
+                <Button
+                  style={{ ...myFont.style }}
+                  bg={"#dfff24"}
+                  h={{ sm: "24px", lg: "43px" }}
+                  color="black"
+                  w="100px"
+                >
+                  LOG IN
+                </Button>
+              </AuthModal>
+            </Box>
           )}
         </div>
         <Show below="lg">
@@ -359,7 +386,7 @@ const SideBar = ({ open }: { open: boolean }) => (
   <div className={`${styles.sideBar} ${open && styles.open}`}>
     {sideBarData.map((el, ind) => (
       <a key={ind} className={styles.headerClick} href={el.src}>
-        {el.name}
+        {el.valu}
       </a>
     ))}
     <div style={{ marginTop: "40px" }}>

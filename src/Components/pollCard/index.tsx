@@ -124,7 +124,9 @@ function PollCard(el: any) {
                 // fontSize={{ base: "10px", lg: "12px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
               >
-                <span style={{ color: "#95999D", fontWeight: "500" }}>by</span>{" "}
+                <span style={{ color: "#95999D", fontWeight: "500" }}>
+                  Хэнээс
+                </span>{" "}
                 {data.userName}
               </Text>
               <Show above="sm">
@@ -136,7 +138,7 @@ function PollCard(el: any) {
                   lineHeight={{ base: "12px", sm: "18px" }}
                   fontSize={{ base: "8px", sm: "12px" }}
                 >
-                  ID {data._id}
+                  Дугаар {data._id}
                 </Text>
               </Show>
               <Text>•</Text>
@@ -146,7 +148,7 @@ function PollCard(el: any) {
                 lineHeight={{ base: "12px", sm: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
               >
-                Proposed on: {moment.utc(data.startDate).format("MM-DD-YYYY")}
+                Огноо: {moment.utc(data.startDate).format("MM-DD-YYYY")}
               </Text>
             </Stack>
             <Text
@@ -339,10 +341,10 @@ function PollCard(el: any) {
           fontWeight="500"
         >
           {daysDifference === 0
-            ? "Today"
+            ? "Өнөөдөр"
             : daysDifference < 0
-            ? "Expired"
-            : `Ends in ${daysDifference} day${daysDifference > 1 ? "s" : ""}`}
+            ? "Хугацаа дууссан"
+            : `${daysDifference} өдрийн дараа хаагдана`}
 
           {/* {hoursDifference < 0 ? 0 : hoursDifference} hours{" "}
           {minutesDifference < 0 ? 0 : minutesDifference} minutes */}
