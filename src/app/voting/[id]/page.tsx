@@ -24,7 +24,7 @@ import { BsChevronLeft } from "react-icons/bs";
 import { useQuery } from "@/utils";
 import api from "@/utils/CustomAxios";
 import Image from "next/image";
-import wolves from "../../../../public/assets/images/wolf1.png";
+import wolves from "../../../../public/assets/wolf1.png";
 import { useRouter } from "next/navigation";
 import { VoteModal } from "@/Components/VoteModal";
 import Votes from "@/Components/Votes";
