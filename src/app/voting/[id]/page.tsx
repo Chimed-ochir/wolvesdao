@@ -704,7 +704,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
               lineHeight={"32px"}
               fontWeight="900"
             >
-              Proposals
+              Саналууд
             </Text>
           </Show>
           <Show below="lg">
@@ -851,7 +851,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
           <Button
             variant={"outline"}
             border={"1px solid white"}
-            w={"125px"}
+            w={"135px"}
             color={"white"}
             mx={"auto"}
             bg={"#282828"}
@@ -862,7 +862,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
               cont === false ? <MdOutlineExpandMore /> : <MdExpandLess />
             }
           >
-            {cont === false ? " Show more" : "More less"}
+            {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
         {period === "active" ? (
@@ -888,7 +888,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   ml={"20px"}
                   color={"#F2F2F2"}
                 >
-                  Cast your vote
+                  Санал өгнө үү
                 </Text>
               </Stack>
               <Stack justifyContent={"center"} my={"10px"}>
@@ -940,12 +940,12 @@ function Page({ params: { id } }: { params: { id: string } }) {
                     }
                   >
                     {voteId
-                      ? "Vote update"
+                      ? "Санал шинэчлэх"
                       : data && "meVotedId" in data
                       ? data?.meVotedId
-                        ? "Voted"
-                        : "Vote"
-                      : "Vote"}
+                        ? "Санал өгсөн"
+                        : "Санал өгөх"
+                      : "Санал өгөх"}
                   </Button>
                 </VoteModal>
               </Stack>
@@ -985,7 +985,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 ml={"20px"}
                 color={"#F2F2F2"}
               >
-                Details
+                Дэлгэрэнгүй мэдээлэл
               </Text>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"}>
@@ -1039,9 +1039,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"12px"}
                   color={"#949494"}
                 >
-                  Token
+                  Tокен
                 </Text>
-                <Text
+                {/* <Text
                   {...satFont.style}
                   fontWeight={"700"}
                   lineHeight={"18px"}
@@ -1049,6 +1049,15 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   color={"#949494"}
                 >
                   Voting system
+                </Text> */}
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={"18px"}
+                  fontSize={"12px"}
+                  color={"#949494"}
+                >
+                  Эхлэх огноо
                 </Text>
                 <Text
                   {...satFont.style}
@@ -1057,7 +1066,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"12px"}
                   color={"#949494"}
                 >
-                  Start date
+                  Дуусах огноо
                 </Text>
                 <Text
                   {...satFont.style}
@@ -1066,7 +1075,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"12px"}
                   color={"#949494"}
                 >
-                  End date
+                  Хэлэлцүүлэгийн линк
                 </Text>
                 <Text
                   {...satFont.style}
@@ -1075,16 +1084,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"12px"}
                   color={"#949494"}
                 >
-                  Discussion link
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Voting poll
+                  Саналын явц
                 </Text>
               </Stack>
               <Stack
@@ -1119,7 +1119,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                     The Wolves
                   </Text>
                 </Stack>
-                <Text
+                {/* <Text
                   {...satFont.style}
                   fontWeight={"500"}
                   lineHeight={"18px"}
@@ -1128,7 +1128,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   textAlign={"right"}
                 >
                   Single choice voting
-                </Text>
+                </Text> */}
                 <Text
                   {...satFont.style}
                   fontWeight={"700"}
@@ -1298,13 +1298,13 @@ function Page({ params: { id } }: { params: { id: string } }) {
             justifyContent={"space-evenly"}
             h={"316px"}
             my={"auto"}
-            w={{ base: "95%", sm: "460px", md: "500px", lg: "210px" }}
+            w={{ base: "95%", sm: "460px", md: "500px", lg: "230px" }}
             mx={"auto"}
           >
             <Stack
               direction={"row"}
               mx={{ lg: "auto" }}
-              w={{ base: "210px" }}
+              w={{ base: "230px" }}
               h="58px"
               alignItems={"center"}
               justifyContent={"space-between"}
@@ -1334,7 +1334,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   />
                 </Stack>
               </Stack>
-              <Box h="58px" justifyContent={"space-evenly"} w={"154px"}>
+              <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
                 <Text
                   //   {...satFont.style}
                   fontWeight={"500"}
@@ -1351,7 +1351,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"15px"}
                   color={period === "active" ? "#228200" : "#949494"}
                 >
-                  Voting period started
+                  Санал хураалт эхэлсэн
                 </Text>
                 <Text
                   //   {...satFont.style}
@@ -1372,7 +1372,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             <Stack
               direction={"row"}
               mx={{ lg: "auto" }}
-              w={"210px"}
+              w={"230px"}
               h="58px"
               alignItems={"center"}
               justifyContent={"space-between"}
@@ -1400,7 +1400,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   />
                 </Stack>
               </Stack>
-              <Box h="58px" justifyContent={"space-evenly"} w={"154px"}>
+              <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
                 <Text
                   //   {...satFont.style}
                   fontWeight={"500"}
@@ -1417,7 +1417,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   fontSize={"15px"}
                   color={period === "end" ? "#228200" : "#949494"}
                 >
-                  End voting period
+                  Санал хураалт дууссан
                 </Text>
                 <Text
                   //   {...satFont.style}
@@ -1437,7 +1437,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
 
             <Stack
               direction={"row"}
-              w={"186px"}
+              w={"230px"}
               h="58px"
               alignItems={"center"}
               justifyContent={"space-between"}
@@ -1462,9 +1462,10 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 fontWeight={period === "pending" ? "900" : "700"}
                 lineHeight={"18px"}
                 fontSize={"15px"}
+                w="190px"
                 color={period === "pending" ? "#228200" : "#949494"}
               >
-                Pending proposal
+                Дэмжигдсэн саналууд
               </Text>
             </Stack>
 
@@ -1473,7 +1474,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             <Stack
               direction={"row"}
               //   mx={"auto"}
-              w={"186px"}
+              w={"230px"}
               h="58px"
               alignItems={"center"}
               justifyContent={"space-between"}
@@ -1499,9 +1500,10 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 fontWeight={period === "executed" ? "900" : "700"}
                 lineHeight={"18px"}
                 fontSize={"15px"}
+                w={"190px"}
                 color={period === "executed" ? "#228200" : "#949494"}
               >
-                Executed proposal
+                Хэрэгжсэн санал
               </Text>
               {/* </Box> */}
             </Stack>

@@ -119,7 +119,7 @@ const VoteForm = ({
                 fontSize={"12px"}
                 lineHeight={"18px"}
               >
-                Choice
+                Сонголт
               </Text>
             </Box>
             <Box>

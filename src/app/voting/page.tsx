@@ -55,13 +55,13 @@ export default function Voting() {
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page, setPage] = useState(1);
-  const [prop, setProp] = useState(" All propsals");
+  const [prop, setProp] = useState("Бүх санал");
   //   const pathname = usePathname();
 
   //   const router = useRouter();
   const array = [
     {
-      label: "All proposals",
+      label: "Бүх санал",
       query: "all_propsal",
       onclick: () => {
         setTags("all_propsal");
@@ -76,7 +76,7 @@ export default function Voting() {
     },
 
     {
-      label: " Active",
+      label: "Идэвхтэй",
       query: "active",
       onclick: () => {
         setTags("active");
@@ -84,7 +84,7 @@ export default function Voting() {
       },
     },
     {
-      label: "Pending",
+      label: "Дэмжигдсэн",
       query: "pending",
       onclick: () => {
         setTags("pending");
@@ -92,7 +92,7 @@ export default function Voting() {
       },
     },
     {
-      label: "Executed",
+      label: "Хэрэгжсэн",
       query: "executed",
       onclick: () => {
         setTags("executed");
@@ -100,7 +100,7 @@ export default function Voting() {
       },
     },
     {
-      label: "Rejected",
+      label: "Татгалзсан",
       query: "rejected",
       onclick: () => {
         setTags("rejected");
@@ -152,7 +152,7 @@ export default function Voting() {
       mx={"auto"}
     >
       {" "}
-      <Show above="sm">
+      <Show above="md">
         <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
           <Box w={{ lg: "790px" }}>
             <Text
@@ -205,7 +205,7 @@ export default function Voting() {
           </Stack>
         </Stack>
       </Show>
-      <Show below="sm">
+      <Show below="md">
         <Stack alignSelf={"start"}>
           <Menu>
             <MenuButton
@@ -221,11 +221,11 @@ export default function Voting() {
                 bg={"#101010"}
                 onClick={() => {
                   setTags("all_propsal");
-                  setProp("All propsals");
+                  setProp("Бүх санал");
                 }}
                 _hover={{ bg: "#303030" }}
               >
-                All propsals
+                Бүх санал
               </MenuItem>
               <MenuItem
                 bg={"#101010"}
@@ -241,41 +241,41 @@ export default function Voting() {
                 bg={"#101010"}
                 onClick={() => {
                   setTags("active");
-                  setProp("Active");
+                  setProp("Идэвхтэй");
                 }}
                 _hover={{ bg: "#303030" }}
               >
-                Active
+                Идэвхтэй
               </MenuItem>
               <MenuItem
                 bg={"#101010"}
                 onClick={() => {
                   setTags("pending");
-                  setProp("Pending");
+                  setProp("Дэмжигдсэн");
                 }}
                 _hover={{ bg: "#303030" }}
               >
-                Pending
+                Дэмжигдсэн
               </MenuItem>
               <MenuItem
                 bg={"#101010"}
                 onClick={() => {
                   setTags("executed");
-                  setProp("Executed");
+                  setProp("Хэрэгжсэн");
                 }}
                 _hover={{ bg: "#303030" }}
               >
-                Executed
+                Хэрэгжсэн
               </MenuItem>
               <MenuItem
                 bg={"#101010"}
                 onClick={() => {
                   setTags("rejected");
-                  setProp("Rejected");
+                  setProp("Татгалзсан");
                 }}
                 _hover={{ bg: "#303030" }}
               >
-                Rejected
+                Татгалзсан
               </MenuItem>
             </MenuList>
           </Menu>
