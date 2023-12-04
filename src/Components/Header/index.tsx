@@ -192,7 +192,7 @@ export const Header = () => {
           </Stack>
         </a>
         <div className={`hideMobile ${styles.menu}`}>
-          {sideBarData.map((el, ind) =>
+          {sideBarData.map((el, ind) => (
             // <a
             //   key={ind}
             //   style={{
@@ -205,30 +205,16 @@ export const Header = () => {
             //   {el.name}
             // </a>
 
-            el.name === "discussion" ? (
-              <Link key={ind} href={el.src} target="_blank">
-                <Text
-                  onClick={() => {
-                    router.push(el.src);
-                  }}
-                  cursor="pointer"
-                  {...mortendFont.style}
-                  color={el.name === act ? "#DFFF24" : "#FCFCFC"}
-                  fontWeight={"700"}
-                  fontSize="9px"
-                  lineHeight={"22px"}
-                  p={"3px"}
-                  marginX={"3px"}
-                >
-                  {el.valu.toUpperCase()}
-                </Text>
-              </Link>
-            ) : (
+            // el.name === "discussion" ? (
+            <Link
+              key={ind}
+              href={el.src}
+              target={el.name === "discussion" ? "_blank" : undefined}
+            >
               <Text
-                key={ind}
-                onClick={() => {
-                  router.push(el.src);
-                }}
+                // onClick={() => {
+                //   router.push(el.src);
+                // }}
                 cursor="pointer"
                 {...mortendFont.style}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
@@ -240,17 +226,8 @@ export const Header = () => {
               >
                 {el.valu.toUpperCase()}
               </Text>
-            )
-          )}
-          {/* <a
-            href="#"
-            // href="https://opensea.io/collection/the-wolves-of-crypto-street"
-            className={styles.jumpButton}
-            style={{ ...myFont.style, color: "black" }}
-            target=""
-          >
-            LOG IN
-          </a> */}
+            </Link>
+          ))}
 
           {user ? (
             <Menu>
