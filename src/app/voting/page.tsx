@@ -112,11 +112,11 @@ export default function Voting() {
   const { data, loading, fetchData, pageCount } = useQuery<{ data: any }>({
     uri: `/poll`,
     manual: true,
-    params: {
-      // status: tags,
-      page: page,
-      limit: 5,
-    },
+    // params: {
+    //   // status: tags,
+    //   page: page,
+    //   limit: 5,
+    // },
   });
   // scroll data fetching section
 
@@ -282,7 +282,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && !data && (
+        {!loading && !data && polls.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
@@ -300,7 +300,7 @@ export default function Voting() {
             </Text>
           </Stack>
         )}
-        {polls.map((el: any, id: number) => (
+        {polls?.map((el: any, id: number) => (
           <PollCard key={id} el={el} />
         ))}
         {/* {loading && ( */}

@@ -123,6 +123,7 @@ function PollCard(el: any) {
                 lineHeight={{ base: "12px", sm: "18px" }}
                 // fontSize={{ base: "10px", lg: "12px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
+                color={"white"}
               >
                 <span style={{ color: "#95999D", fontWeight: "500" }}>
                   Хэнээс
@@ -137,6 +138,7 @@ function PollCard(el: any) {
                   fontWeight={"500"}
                   lineHeight={{ base: "12px", sm: "18px" }}
                   fontSize={{ base: "8px", sm: "12px" }}
+                  color={"white"}
                 >
                   Дугаар {data._id}
                 </Text>
@@ -147,6 +149,7 @@ function PollCard(el: any) {
                 fontWeight={"500"}
                 lineHeight={{ base: "12px", sm: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
+                color={"white"}
               >
                 Огноо: {moment.utc(data.startDate).format("MM-DD-YYYY")}
               </Text>
@@ -193,7 +196,7 @@ function PollCard(el: any) {
         </Stack>
         <div
           dangerouslySetInnerHTML={{ __html: `${data.listContent}` }}
-          style={{ maxHeight: "200px", overflow: "hidden" }}
+          style={{ maxHeight: "200px", overflow: "hidden", color: "white" }}
         />
         {/* <Text
           fontWeight={"500"}
@@ -240,14 +243,15 @@ function PollCard(el: any) {
                         <BsCheckSquareFill color="#228200" size="18px" />
                       </Box> */}
                       <Image src={el?.icon} w="18px" />
-                      <Text>{el.option}: </Text>
-                      <Text>{el.votes.length} Wolves</Text>
+                      <Text color={"white"}>{el.option}: </Text>
+                      <Text color={"white"}>{el.votes.length} Wolves</Text>
                     </Stack>
                     <Text
                       {...satFont.style}
                       fontWeight={"700"}
                       lineHeight={"18px"}
                       fontSize={"15px"}
+                      color={"white"}
                     >
                       {el.votes.length !== 0
                         ? CalcPercent(data.count, el.votes.length)
