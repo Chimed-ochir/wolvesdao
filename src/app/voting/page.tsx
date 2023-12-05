@@ -14,7 +14,6 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import axios from "axios";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
 // import { useParams, usePathname, useRouter } from "next/navigation";
@@ -23,6 +22,7 @@ import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
+// import { useAuth } from "@/Components/Account";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -52,6 +52,7 @@ const satFont = localFont({
 // }
 export default function Voting() {
   // const [status, setStatus] = useState<string>("");
+  // const { loadi } = useAuth();
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page, setPage] = useState(1);
@@ -112,17 +113,18 @@ export default function Voting() {
   const { data, loading, fetchData, pageCount } = useQuery<{ data: any }>({
     uri: `/poll`,
     manual: true,
-    // params: {
-    //   // status: tags,
-    //   page: page,
-    //   limit: 5,
-    // },
+    params: {
+      // status: tags,
+      page: page,
+      limit: 5,
+    },
   });
   // scroll data fetching section
-
+  // console.log("data---99111205", data);
+  // console.log("polls---99111205", polls);
   const { ref, inView } = useInView();
   useEffect(() => {
-    if (inView) {
+    if (inView && !loading) {
       // something happens after it reaches 80% of the screen
       setPage((prevPage) => prevPage + 1);
       fetchData(`/poll`, {
@@ -282,7 +284,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && !data && polls.length === 0 && (
+        {!loading && data?.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
@@ -294,17 +296,18 @@ export default function Voting() {
               fontWeight={"500"}
               fontSize={"24px"}
               lineHeight={"32px"}
+              color={"white"}
               // ml={{ sm: "250px" }}
             >
               No results
             </Text>
           </Stack>
         )}
-        {polls?.map((el: any, id: number) => (
+        {polls.map((el: any, id: number) => (
           <PollCard key={id} el={el} />
         ))}
         {/* {loading && ( */}
-        {pageCount > page ? (
+        {pageCount >= page ? (
           <Stack w="100%" ref={ref}>
             <SkeletonCard />
             <SkeletonCard />
@@ -313,7 +316,7 @@ export default function Voting() {
             <SkeletonCard />
           </Stack>
         ) : null}
-        {/* )} */}
+        {/* )}  */}
       </Stack>
     </Stack>
   );

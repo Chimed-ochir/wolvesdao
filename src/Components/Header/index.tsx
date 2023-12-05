@@ -251,7 +251,7 @@ export const Header = () => {
                 </Text>
               </MenuButton>
               <MenuList bg="#010101">
-                <MenuItem onClick={() => logout()} bg="#010101">
+                <MenuItem onClick={() => logout()} bg="#010101" color={"white"}>
                   LOG OUT
                 </MenuItem>
               </MenuList>
@@ -295,7 +295,11 @@ export const Header = () => {
                   </Text>
                 </MenuButton>
                 <MenuList bg="#010101">
-                  <MenuItem onClick={() => logout()} bg="#010101">
+                  <MenuItem
+                    onClick={() => logout()}
+                    bg="#010101"
+                    color={"white"}
+                  >
                     LOG OUT
                   </MenuItem>
                 </MenuList>
