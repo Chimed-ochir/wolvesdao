@@ -100,11 +100,11 @@ export const FormInput = ({
               textAlign="center"
               color={"white"}
             >
-              <TooltipIcon color={"white"} />
+              <TooltipIcon />
             </Tooltip>
           ) : tooltipLink ? (
             <Link href={tooltipLink} target="_blank" w="fit-content">
-              <TooltipIcon color={"white"} />
+              <TooltipIcon />
             </Link>
           ) : null}
         </HStack>

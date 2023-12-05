@@ -110,7 +110,7 @@ export default function Voting() {
     },
   ];
 
-  const { data, loading, fetchData, pageCount } = useQuery<{ data: any }>({
+  const { data, loading, fetchData, pageCount } = useQuery<{ data: any[] }>({
     uri: `/poll`,
     manual: true,
     params: {
@@ -284,7 +284,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && data?.length === 0 && (
+        {!loading && polls.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
