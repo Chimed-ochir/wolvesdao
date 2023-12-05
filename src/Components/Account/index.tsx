@@ -61,7 +61,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   }, []);
 
   const login = (data: LoginDataType, isRefresh?: boolean) => {
-    console.log("data.accessToken", data);
     if (data.accessToken) {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });

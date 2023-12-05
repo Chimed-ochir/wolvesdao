@@ -84,12 +84,22 @@ export const FormInput = ({
     <Box w="100%" mt={"15px"}>
       {label ? (
         <HStack alignItems="center" pb="sm">
-          <Text opacity={opacity} fontWeight={500} lineHeight="150%">
+          <Text
+            opacity={opacity}
+            fontWeight={500}
+            lineHeight="150%"
+            color={"white"}
+          >
             {label}
             {isRequired ? "*" : null}
           </Text>
           {tooltipText ? (
-            <Tooltip label={tooltipText} hasArrow textAlign="center">
+            <Tooltip
+              label={tooltipText}
+              hasArrow
+              textAlign="center"
+              color={"white"}
+            >
               <TooltipIcon />
             </Tooltip>
           ) : tooltipLink ? (
@@ -118,6 +128,7 @@ export const FormInput = ({
             _e.target.value = format(_e.target.value) as any;
             field.onChange(_e);
           }}
+          color={"white"}
           isDisabled={isLoading}
           {...additionalProps}
           {...(omit("form", props) as any)}
@@ -145,6 +156,7 @@ export const FormInput = ({
             justifyContent="center"
             alignItems="center"
             h="100%"
+            color={"white"}
           >
             {inputRightElement}
           </InputRightElement>

@@ -72,6 +72,7 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
         label={"Нэвтрэх нэр"}
         name="email"
         placeholder={"Нэвтрэх нэр оруулах"}
+        color={"white"}
         // mt={"5px"}
         // isLoading={isLoading}
       />
@@ -82,12 +83,17 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
         placeholder={"Нууц үг оруулах"}
         type={type}
         autoComplete="current-password"
+        color={"white"}
         // mt={"5px"}
         //   isLoading={isLoading}
 
         inputRightElement={
           <InputRightElement onClick={changePassword} cursor={"pointer"}>
-            {type === "password" ? <AiFillEyeInvisible /> : <AiFillEye />}
+            {type === "password" ? (
+              <AiFillEyeInvisible color={"white"} />
+            ) : (
+              <AiFillEye color={"white"} />
+            )}
           </InputRightElement>
         }
       />
@@ -166,8 +172,9 @@ const LoginForm = () => {
             username: res.username,
           });
           setMfa(true);
+        } else {
+          login(res);
         }
-        // login(res);
       })
       .catch((error) => {
         console.log("error", error);

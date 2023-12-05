@@ -20,6 +20,7 @@ const MfaFormBody = ({ isLoading }: { isLoading: boolean }) => {
           "Та өөрийн холбосон authenticator апп-с гаргаж өгсөн 6 оронтой кодыг оруулна уу."
         }
         mt={"10px"}
+        color={"white"}
         isMfa
       />
       {/* <FormInput

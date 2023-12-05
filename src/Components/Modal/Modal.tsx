@@ -62,7 +62,7 @@ export const Modal = ({
       >
         <ModalOverlay bg="none" backdropFilter="blur(10px)" />
         {/* <ModalOverlay zIndex={1500} backdropFilter='blur(10px)' /> */}
-        <ModalContent bg="#1A1A1C">
+        <ModalContent bg="#1A1A1C" color={"white"}>
           {title ? (
             <ModalHeader
               borderBottom={title !== "Votes" ? "1px solid #0D0D0D" : undefined}

@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import api from "../CustomAxios";
 
@@ -32,7 +31,6 @@ export const useQuery = <T,>({
   }, [manual]);
 
   const fetchData = useCallback((path: string = uri, fetchParams?: any) => {
-    console.log("----fetchdata---");
     setLoading(true);
     return api
       .get(`${path}`, {
