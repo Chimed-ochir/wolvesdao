@@ -164,7 +164,7 @@ export default function Voting() {
               lineHeight={"32px"}
               color={"white"}
             >
-              Voting
+              Санал хураалт
             </Text>
           </Box>{" "}
           <Stack
@@ -307,7 +307,7 @@ export default function Voting() {
               color={"white"}
               // ml={{ sm: "250px" }}
             >
-              No results
+              Илэрц олдсонгүй
             </Text>
           </Stack>
         )}

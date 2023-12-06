@@ -60,32 +60,43 @@ function Votes(idx: any) {
       </Stack>
       {data?.map((e: any, id: number) => (
         <Stack justifyContent={"center"} my={"10px"} key={id}>
-          <Stack
-            mx={"auto"}
-            w={{ base: "90%", sm: "448px", md: "492px" }}
-            h="42px"
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-          >
-            <Stack direction="row" alignItems={"center"}>
-              <Box
-                w={{ base: "24px", sm: "32px" }}
-                h={{ base: "24px", sm: "32px" }}
-                // borderRadius={"50%"}
-                // bg={"red"}
-              >
-                <Images
-                  src={e?.profile}
-                  alt="Profile Picture"
+          {id < 4 ? (
+            <Stack
+              mx={"auto"}
+              w={{ base: "90%", sm: "448px", md: "492px" }}
+              h="42px"
+              direction="row"
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Stack direction="row" alignItems={"center"}>
+                <Box
                   w={{ base: "24px", sm: "32px" }}
-                  minH={{ base: "24px", sm: "32px" }}
-                  minW={{ base: "24px", sm: "32px" }}
                   h={{ base: "24px", sm: "32px" }}
-                  my={"auto"}
-                  borderRadius={"100%"}
-                ></Images>
-              </Box>
+                  // borderRadius={"50%"}
+                  // bg={"red"}
+                >
+                  <Images
+                    src={e?.profile}
+                    alt="Profile Picture"
+                    w={{ base: "24px", sm: "32px" }}
+                    minH={{ base: "24px", sm: "32px" }}
+                    minW={{ base: "24px", sm: "32px" }}
+                    h={{ base: "24px", sm: "32px" }}
+                    my={"auto"}
+                    borderRadius={"100%"}
+                  ></Images>
+                </Box>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"400"}
+                  lineHeight={"18px"}
+                  fontSize={"12px"}
+                  color={"#95999D"}
+                >
+                  {e?.userName}
+                </Text>
+              </Stack>
               <Text
                 {...satFont.style}
                 fontWeight={"400"}
@@ -93,28 +104,19 @@ function Votes(idx: any) {
                 fontSize={"12px"}
                 color={"#95999D"}
               >
-                {e?.userName}
+                {e?.optionName}
+              </Text>
+              <Text
+                {...satFont.style}
+                fontWeight={"400"}
+                lineHeight={"18px"}
+                fontSize={"12px"}
+                color={"#95999D"}
+              >
+                {moment.utc(e?.updatedAt).format("MM-DD-YYYY")}
               </Text>
             </Stack>
-            <Text
-              {...satFont.style}
-              fontWeight={"400"}
-              lineHeight={"18px"}
-              fontSize={"12px"}
-              color={"#95999D"}
-            >
-              {e?.optionName}
-            </Text>
-            <Text
-              {...satFont.style}
-              fontWeight={"400"}
-              lineHeight={"18px"}
-              fontSize={"12px"}
-              color={"#95999D"}
-            >
-              {moment.utc(e?.updatedAt).format("MM-DD-YYYY")}
-            </Text>
-          </Stack>
+          ) : null}
         </Stack>
       ))}
 

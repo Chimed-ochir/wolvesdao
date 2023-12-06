@@ -81,11 +81,11 @@ export const FooterData = [
   },
 ];
 const sideBarData: SideBarProp[] = [
-  {
-    src: "/",
-    name: "home",
-    valu: "Нүүр",
-  },
+  // {
+  //   src: "/",
+  //   name: "home",
+  //   valu: "Нүүр",
+  // },
   {
     src: "/rules",
     name: "rules",
@@ -197,10 +197,10 @@ export const Header = () => {
             >
               <Text
                 cursor="pointer"
-                {...mortendFont.style}
+                // {...mortendFont.style}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
                 fontWeight={"700"}
-                fontSize="9px"
+                fontSize="15px"
                 lineHeight={"22px"}
                 p={"3px"}
                 marginX={"3px"}

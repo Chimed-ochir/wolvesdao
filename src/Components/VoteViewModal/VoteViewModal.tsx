@@ -144,7 +144,7 @@ const VoteViewForm = ({
             </InputLeftElement>
             <Input
               // type="tel"
-              placeholder="Search names"
+              placeholder="Нэрээр хайх"
               onChange={(e) => {
                 if (e.target.value) {
                   setView(e.target.value);
@@ -217,7 +217,7 @@ const VoteViewForm = ({
             </Stack>
           ) : (
             <Stack alignItems={"center"} mt={"20px"}>
-              <Text>No results</Text>
+              <Text color={"white"}> Илэрц олдсонгүй</Text>
             </Stack>
           )}
         </Stack>
@@ -236,7 +236,12 @@ export const VoteViewModal = ({
   onClose: () => any;
 }) => {
   return (
-    <Modal title={"Votes"} isOpen={isOpen} onClose={onClose} msize="md">
+    <Modal
+      title={"Өгсөн саналууд"}
+      isOpen={isOpen}
+      onClose={onClose}
+      msize="md"
+    >
       <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} />
       {/* <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} /> */}
     </Modal>
