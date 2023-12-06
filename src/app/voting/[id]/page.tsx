@@ -68,7 +68,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
       setVoteId(false);
     }
   }, [data]);
-  console.log("12345678998data7654321 data: ", data);
 
   console.log("----", loading);
   useEffect(() => {
@@ -804,29 +803,33 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 lineHeight={{ base: "18px" }}
                 // fontSize={{ base: "10px", lg: "12px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
+                color="white"
               >
-                <span style={{ color: "#95999D", fontWeight: "500" }}>by</span>{" "}
+                <span style={{ color: "#95999D", fontWeight: "500" }}>
+                  Хэнээс
+                </span>{" "}
                 {data?.data.userName}
               </Text>
-              <Text>•</Text>
+              <Text color="white">•</Text>
 
               <Text
                 {...satFont.style}
                 fontWeight={"500"}
                 lineHeight={{ base: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
+                color="white"
               >
-                ID {data?.data._id}
+                Дугаар {data?.data._id}
               </Text>
-              <Text>•</Text>
+              <Text color="white">•</Text>
               <Text
                 {...satFont.style}
                 fontWeight={"500"}
                 lineHeight={{ base: "18px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
+                color="white"
               >
-                Proposed on:{" "}
-                {moment.utc(data?.data.startDate).format("MM-DD-YYYY")}
+                Огноо: {moment.utc(data?.data.startDate).format("MM-DD-YYYY")}
               </Text>
             </Stack>
           </Box>
@@ -839,6 +842,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
           maxHeight={cont === false ? "200px" : ""}
           minHeight={"50px"}
           overflow={"hidden"}
+          color="white"
         >
           <div dangerouslySetInnerHTML={{ __html: `${data?.data.content}` }} />
         </Stack>
@@ -851,7 +855,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
           <Button
             variant={"outline"}
             border={"1px solid white"}
-            w={"135px"}
+            w={"140px"}
             color={"white"}
             mx={"auto"}
             bg={"#282828"}
@@ -881,7 +885,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 <Text
                   {...satFont.style}
                   fontWeight={"700"}
-                  lineHeight={"42px"}
+                  lineHeight={{ base: "27px", lg: "42px" }}
                   fontSize={{ base: "16px", sm: "24px" }}
                   py={"2px"}
                   px={"6px"}
@@ -898,6 +902,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                     mx={"auto"}
                     key={id}
                     w={{ base: "85%", sm: "458px", md: "498px" }}
+                    color="white"
                     onClick={() => {
                       setVote(`${e?.option}`);
                       // setVoteId(`${e?._id}`);
@@ -978,7 +983,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
               <Text
                 {...satFont.style}
                 fontWeight={"700"}
-                lineHeight={"42px"}
+                lineHeight={{ base: "27px", lg: "42px" }}
                 fontSize={{ base: "16px", sm: "24px" }}
                 py={"2px"}
                 px={"6px"}
@@ -991,7 +996,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             <Stack justifyContent={"center"} alignItems={"center"}>
               <div
                 dangerouslySetInnerHTML={{ __html: `${data?.data.notes}` }}
-                style={{ width: "85%" }}
+                style={{ width: "85%", color: "white" }}
               />
             </Stack>
           </Stack>
@@ -1361,8 +1366,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   color={"#949494"}
                 >
                   {startDate < 0
-                    ? "Not started yet"
-                    : `Started ${startDate} days ago`}
+                    ? "Хараахан эхлээгүй байна"
+                    : `${startDate} хоногийн өмнө эхэлсэн`}
                 </Text>
               </Box>
             </Stack>
@@ -1427,8 +1432,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   color={"#949494"}
                 >
                   {daysDifference === 0
-                    ? `Today ends`
-                    : ` Expires in ${daysDifference}  days`}
+                    ? `Өнөөдөр дуусна`
+                    : `${daysDifference} хоногийн дараа дуусна `}
                 </Text>
               </Box>
             </Stack>

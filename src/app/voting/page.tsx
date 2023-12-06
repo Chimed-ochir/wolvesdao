@@ -215,6 +215,8 @@ export default function Voting() {
               border={"1px solid white"}
               bg="#010101"
               rightIcon={<MdOutlineExpandMore />}
+              color={"white"}
+              _hover={{ bg: "#303030" }}
             >
               {prop}
             </MenuButton>
@@ -225,6 +227,7 @@ export default function Voting() {
                   setTags("all_propsal");
                   setProp("Бүх санал");
                 }}
+                color={"white"}
                 _hover={{ bg: "#303030" }}
               >
                 Бүх санал
@@ -235,6 +238,7 @@ export default function Voting() {
                   setTags("waiting");
                   setProp("Waiting");
                 }}
+                color={"white"}
                 _hover={{ bg: "#303030" }}
               >
                 Waiting
@@ -245,6 +249,7 @@ export default function Voting() {
                   setTags("active");
                   setProp("Идэвхтэй");
                 }}
+                color={"white"}
                 _hover={{ bg: "#303030" }}
               >
                 Идэвхтэй
@@ -255,6 +260,7 @@ export default function Voting() {
                   setTags("pending");
                   setProp("Дэмжигдсэн");
                 }}
+                color={"white"}
                 _hover={{ bg: "#303030" }}
               >
                 Дэмжигдсэн
@@ -265,6 +271,7 @@ export default function Voting() {
                   setTags("executed");
                   setProp("Хэрэгжсэн");
                 }}
+                color={"white"}
                 _hover={{ bg: "#303030" }}
               >
                 Хэрэгжсэн
@@ -276,6 +283,7 @@ export default function Voting() {
                   setProp("Татгалзсан");
                 }}
                 _hover={{ bg: "#303030" }}
+                color={"white"}
               >
                 Татгалзсан
               </MenuItem>

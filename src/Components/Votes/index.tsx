@@ -19,26 +19,27 @@ function Votes(idx: any) {
 
   return (
     <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
-      <Stack borderBottom={"1px solid  #282828"}>
+      <Stack borderBottom={"1px solid  #282828"} w={"100%"}>
         <Stack
-          justifyContent={"space-evenly"}
+          justifyContent={"space-around"}
           alignItems="center"
           direction={"row"}
-          w="166px"
+          w={{ base: "170px", sm: "230px" }}
           h="50px"
-          // ml="20px"
+          ml="20px"
         >
           <Text
             {...satFont.style}
             fontWeight={"700"}
-            lineHeight={"42px"}
+            lineHeight={{ base: "27px", lg: "42px" }}
             fontSize={{ base: "16px", sm: "24px" }}
             py={"2px"}
             px={"6px"}
             color={"#F2F2F2"}
           >
-            Votes{" "}
+            Өгсөн саналууд{" "}
           </Text>
+
           {Array.isArray(data) ? (
             <Text
               {...satFont.style}
@@ -49,7 +50,7 @@ function Votes(idx: any) {
               px="6px"
               bg="#228200"
               borderRadius="4px"
-              ml="-15px"
+              // ml="-10px"
               color="#F2F2F2"
             >
               {data.length}
