@@ -1026,7 +1026,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
               color={"#F2F2F2"}
               ml={"10px"}
             >
-              Information
+              Саналын мэдээлэл
             </Text>
           </Stack>
           <Stack justifyContent={"space-around"}>
@@ -1178,7 +1178,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                       </Text>
                     </Link>
                   </Box>
-                  <AiOutlineLink size="16px" />
+                  <AiOutlineLink size="16px" color="white" />
                 </Stack>
                 <Text
                   {...satFont.style}

@@ -164,7 +164,7 @@ export default function Voting() {
               lineHeight={"32px"}
               color={"white"}
             >
-              Voting
+              Санал хураалт
             </Text>
           </Box>{" "}
           <Stack

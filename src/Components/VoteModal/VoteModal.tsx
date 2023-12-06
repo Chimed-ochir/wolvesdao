@@ -74,7 +74,7 @@ const VoteForm = ({
           if (voteId) {
             showSuccessToast("Санал амжилттай шинэчлэгдлээ");
           } else {
-            showSuccessToast("Санал амжилттай хадгалагдлаа");
+            showSuccessToast("Та амжилттай саналаа өглөө.");
           }
         }
       })
@@ -188,8 +188,8 @@ const VoteForm = ({
           border={"1px solid #282828"}
           px={"8px"}
           pt="10px"
-          mx={"-5px"}
-          w="275px"
+          mx={"-10px"}
+          w="290px"
         >
           <Text
             {...satFont.style}
@@ -205,8 +205,10 @@ const VoteForm = ({
               display={"inline-block"}
             />
             {/* </Box> */}
-            You do not meet the minimum balance requirement of 1 ( Wolves NFT )
-            to vote on this proposal. Learn more
+            Та санал өгөхийн тулд MongolNFT хэтэвчиндээ The Wolves NFT-тэй,
+            DAO-ийн саналын эрхтэй гишүүн байх шаардлагатай.(To vote, ensure
+            you're a voting member and have The Wolves NFT in your MongolNFT
+            wallet.)
           </Text>
         </Alert>
         <Stack
@@ -224,7 +226,7 @@ const VoteForm = ({
               onClose();
             }}
           >
-            Cancel
+            Буцах
           </Button>
 
           <Button
@@ -237,7 +239,7 @@ const VoteForm = ({
               onVote(send);
             }}
           >
-            Confirm
+            Санал өгөх
           </Button>
         </Stack>
       </Stack>
