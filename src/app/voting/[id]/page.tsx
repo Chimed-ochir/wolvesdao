@@ -859,6 +859,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             color={"white"}
             mx={"auto"}
             bg={"#282828"}
+            _hover={{ bg: "#303030" }}
             onClick={() => {
               setCont(!cont);
             }}
@@ -1433,6 +1434,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 >
                   {daysDifference === 0
                     ? `Өнөөдөр дуусна`
+                    : daysDifference < 0
+                    ? `${-daysDifference} хоногийн өмнө дууссан `
                     : `${daysDifference} хоногийн дараа дуусна `}
                 </Text>
               </Box>

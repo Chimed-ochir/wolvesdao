@@ -54,7 +54,7 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
           lineHeight={"30px"}
           fontWeight="700"
         >
-          Voting login
+          Санал хураалтын хэсэгт нэвтрэх
         </Text>
         <Text
           fontFamily={"Golos Text"}

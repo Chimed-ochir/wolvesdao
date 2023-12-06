@@ -2,6 +2,8 @@ import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import localFont from "next/font/local";
 import { BiLogoDiscourse } from "react-icons/bi";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 function GettingStarted() {
   return (
@@ -76,23 +78,33 @@ function GettingStarted() {
               Хүлээн авах саналын төрлүүд
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            minW={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
+          <Link
+            href={`${process.env.NEXT_PUBLIC_DISCUSSION_URL}`}
+            target="_blank"
           >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Box w={"14px"} h={"14px"}>
+                  <BiLogoDiscourse size="14px" color="black" />
+                </Box>
+                <Text
+                  fontWeight={"700"}
+                  fontSize={"15px"}
+                  lineHeight={"18px"}
+                  color="black"
+                >
+                  Discourse
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
 
         <Box w={{ xl: "826px" }}>
@@ -183,23 +195,33 @@ function GettingStarted() {
               Саналын загвар
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
+          <Link
+            href={`${process.env.NEXT_PUBLIC_DISCUSSION_URL}`}
+            target="_blank"
           >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Box w={"14px"} h={"14px"}>
+                  <BiLogoDiscourse size="14px" color="black" />
+                </Box>
+                <Text
+                  fontWeight={"700"}
+                  fontSize={"15px"}
+                  lineHeight={"18px"}
+                  color="black"
+                >
+                  Discourse
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Stack
           h={{ xl: "93px" }}
@@ -330,23 +352,22 @@ function GettingStarted() {
               Санал гаргах
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -381,23 +402,22 @@ function GettingStarted() {
               Санал шалгах
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -434,23 +454,22 @@ function GettingStarted() {
               Санал хянах
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -488,23 +507,22 @@ function GettingStarted() {
               Хэлэлцүүлэг хийх
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -540,23 +558,22 @@ function GettingStarted() {
               Санал хураах
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -593,23 +610,22 @@ function GettingStarted() {
               Санал хэрэгжилт
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"14px"} h={"14px"}>
-                <BiLogoDiscourse size="14px" />
-              </Box>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Discourse
-              </Text>
-            </Stack>
-          </Button>
+          <Link href={"/voting"}>
+            <Button
+              color={"black"}
+              bg={"white"}
+              w={"105px"}
+              h="24px"
+              gap={"8px"}
+              border={"1px solid black"}
+            >
+              <Stack direction={"row"} alignItems={"center"}>
+                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
+                  Voting Page
+                </Text>
+              </Stack>
+            </Button>
+          </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
           <Text
@@ -658,20 +674,6 @@ function GettingStarted() {
               The Wolves NFT эзэмшигчид
             </Text>
           </Box>
-          <Button
-            color={"black"}
-            bg={"white"}
-            w={"105px"}
-            h="24px"
-            gap={"8px"}
-            border={"1px solid black"}
-          >
-            <Stack direction={"row"} alignItems={"center"}>
-              <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                Voting Page
-              </Text>
-            </Stack>
-          </Button>
         </Stack>
 
         <Stack w={{ xl: "897px" }} h={{ xl: "62px" }} justifyContent={"center"}>

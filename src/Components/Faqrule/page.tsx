@@ -37,7 +37,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state1 ? undefined : "1px solid #949494"}
-        mb={state1 ? "10px" : undefined}
+        my={state1 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -86,7 +86,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state2 ? undefined : "1px solid #949494"}
-        mb={state2 ? "10px" : undefined}
+        my={state2 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -133,7 +133,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state3 ? undefined : "1px solid #949494"}
-        mb={state3 ? "10px" : undefined}
+        my={state3 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -270,7 +270,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state4 ? undefined : "1px solid #949494"}
-        mb={state4 ? "10px" : undefined}
+        my={state4 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -382,7 +382,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state5 ? undefined : "1px solid #949494"}
-        mb={state5 ? "10px" : undefined}
+        my={state5 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -429,7 +429,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state6 ? undefined : "1px solid #949494"}
-        mb={state6 ? "10px" : undefined}
+        my={state6 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -476,7 +476,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state7 ? undefined : "1px solid #949494"}
-        mb={state7 ? "10px" : undefined}
+        my={state7 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -522,7 +522,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state8 ? undefined : "1px solid #949494"}
-        mb={state8 ? "10px" : undefined}
+        my={state8 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -578,7 +578,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state9 ? undefined : "1px solid #949494"}
-        mb={state9 ? "10px" : undefined}
+        my={state9 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -627,7 +627,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state10 ? undefined : "1px solid #949494"}
-        mb={state10 ? "10px" : undefined}
+        my={state10 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -678,7 +678,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state11 ? undefined : "1px solid #949494"}
-        mb={state11 ? "10px" : undefined}
+        my={state11 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -728,7 +728,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state12 ? undefined : "1px solid #949494"}
-        mb={state12 ? "10px" : undefined}
+        my={state12 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -777,7 +777,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state13 ? undefined : "1px solid #949494"}
-        mb={state13 ? "10px" : undefined}
+        my={state13 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -826,7 +826,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state14 ? undefined : "1px solid #949494"}
-        mb={state14 ? "10px" : undefined}
+        my={state14 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -877,7 +877,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state15 ? undefined : "1px solid #949494"}
-        mb={state15 ? "10px" : undefined}
+        my={state15 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -927,7 +927,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state16 ? undefined : "1px solid #949494"}
-        mb={state16 ? "10px" : undefined}
+        my={state16 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -975,7 +975,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state17 ? undefined : "1px solid #949494"}
-        mb={state17 ? "10px" : undefined}
+        my={state17 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -1029,7 +1029,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state18 ? undefined : "1px solid #949494"}
-        mb={state18 ? "10px" : undefined}
+        my={state18 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -1081,7 +1081,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state19 ? undefined : "1px solid #949494"}
-        mb={state19 ? "10px" : undefined}
+        my={state19 ? "10px" : undefined}
       >
         <Stack
           direction="row"
@@ -1131,7 +1131,7 @@ function Faq() {
         py="20px"
         bg={"#090909"}
         borderBottom={state20 ? undefined : "1px solid #949494"}
-        mb={state20 ? "10px" : undefined}
+        my={state20 ? "10px" : undefined}
       >
         <Stack
           direction="row"

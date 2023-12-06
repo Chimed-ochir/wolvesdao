@@ -65,9 +65,11 @@ export const Modal = ({
         <ModalContent bg="#1A1A1C" color={"white"}>
           {title ? (
             <ModalHeader
-              borderBottom={title !== "Votes" ? "1px solid #0D0D0D" : undefined}
+              borderBottom={
+                title !== "Өгсөн саналууд" ? "1px solid #0D0D0D" : undefined
+              }
             >
-              {title === "Та саналаа өгнө үү" || title === "Votes" ? (
+              {title === "Та саналаа өгнө үү" || title === "Өгсөн саналууд" ? (
                 <Stack alignItems={"center"}>
                   <Text size="h5" cursor="default" fontWeight={600}>
                     {title}

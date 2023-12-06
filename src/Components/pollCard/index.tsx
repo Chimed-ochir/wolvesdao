@@ -52,8 +52,8 @@ function PollCard(el: any) {
         } else {
           toast({
             title: "Та нэвтэрнэ үү",
-            description: "We've created your account for you.",
-            // status: "success",
+            // description: "We've created your account for you.",
+            // status: "danger",
 
             duration: 5000,
             isClosable: true,

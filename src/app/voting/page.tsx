@@ -307,7 +307,7 @@ export default function Voting() {
               color={"white"}
               // ml={{ sm: "250px" }}
             >
-              No results
+              Илэрц олдсонгүй
             </Text>
           </Stack>
         )}
