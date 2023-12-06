@@ -261,7 +261,7 @@ export const VoteModal = ({
   onFinish: () => void;
 }) => {
   return (
-    <Modal title={"Cast your vote"} controlElement={children} msize="xs">
+    <Modal title={"Та саналаа өгнө үү"} controlElement={children} msize="xs">
       <VoteForm
         choice={choice}
         send={send}

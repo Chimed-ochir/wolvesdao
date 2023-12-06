@@ -67,7 +67,7 @@ export const Modal = ({
             <ModalHeader
               borderBottom={title !== "Votes" ? "1px solid #0D0D0D" : undefined}
             >
-              {title === "Cast your vote" || title === "Votes" ? (
+              {title === "Та саналаа өгнө үү" || title === "Votes" ? (
                 <Stack alignItems={"center"}>
                   <Text size="h5" cursor="default" fontWeight={600}>
                     {title}
@@ -110,10 +110,10 @@ export const Modal = ({
               )}
             </ModalHeader>
           ) : null}
-          {title === "Cast your vote" || title === "Login" ? null : (
+          {title === "Та саналаа өгнө үү" || title === "Login" ? null : (
             <ModalCloseButton />
           )}
-          <ModalBody pt={title === "Cast your vote" ? "" : "14px"}>
+          <ModalBody pt={title === "Та саналаа өгнө үү" ? "" : "14px"}>
             {children}
           </ModalBody>
         </ModalContent>

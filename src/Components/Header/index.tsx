@@ -111,9 +111,6 @@ export const Header = () => {
   const router = useRouter();
   let a: string = "home";
 
-  // const router = useRouter();
-  // const params = useParams();
-  console.log("path", path);
   useEffect(() => {
     if (path === "/") {
       setAct("home");
@@ -193,28 +190,12 @@ export const Header = () => {
         </a>
         <div className={`hideMobile ${styles.menu}`}>
           {sideBarData.map((el, ind) => (
-            // <a
-            //   key={ind}
-            //   style={{
-            //     ...mortendFont.style,
-            //     color: el.name === act ? "#DFFF24" : "#FCFCFC",
-            //   }}
-            //   className={styles.headerClick}
-            //   href={el.src}
-            // >
-            //   {el.name}
-            // </a>
-
-            // el.name === "discussion" ? (
             <Link
               key={ind}
               href={el.src}
               target={el.name === "discussion" ? "_blank" : undefined}
             >
               <Text
-                // onClick={() => {
-                //   router.push(el.src);
-                // }}
                 cursor="pointer"
                 {...mortendFont.style}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
@@ -313,7 +294,6 @@ export const Header = () => {
                     h={{ sm: "24px", lg: "43px" }}
                     color="black"
                     w="100px"
-                    // mr={"20px"}
                     alignSelf={"right"}
                   >
                     LOG IN
@@ -341,21 +321,8 @@ export const Header = () => {
               }`}
             ></span>
           </button>
-          {/* {/* {open ? <GiHamburgerMenu /> : <MdClear size={20} />} */}
         </div>
       </div>
-      {/* <Stack
-        display={"flex"}
-        bg="red"
-        zIndex={100}
-        position="fixed"
-        top="0"
-        right={"0"}
-      >
-        <Box>
-          <Text>LOG OUT</Text>
-        </Box>
-      </Stack> */}
       <div className="hideDesktop">
         <SideBar open={open} />
       </div>
@@ -366,7 +333,12 @@ export const Header = () => {
 const SideBar = ({ open }: { open: boolean }) => (
   <div className={`${styles.sideBar} ${open && styles.open}`}>
     {sideBarData.map((el, ind) => (
-      <a key={ind} className={styles.headerClick} href={el.src}>
+      <a
+        key={ind}
+        className={styles.headerClick}
+        href={el.src}
+        target={el.name === "discussion" ? "_blank" : undefined}
+      >
         {el.valu}
       </a>
     ))}
