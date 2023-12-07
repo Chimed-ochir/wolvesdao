@@ -6,7 +6,7 @@ export const BuildMfaFormValidationSchema = () =>
     userCode: string()
       .required("Уг талбар хоосон байж болохгүй")
       .length(6, "Урт 6 тэмдэгт байх ёстой")
-      .label("2FA код"),
+      .label("2FA кодоо оруулна уу! "),
     // verifyCode: string()
     // 	.required()
     // 	.length(8)

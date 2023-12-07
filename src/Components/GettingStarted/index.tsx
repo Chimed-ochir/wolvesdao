@@ -62,12 +62,13 @@ function GettingStarted() {
       <Stack justifyContent={"space-between"}>
         <Stack
           direction={"row"}
-          w={{ sm: "500px" }}
+          w={{ md: "500px" }}
+          maxW={"500px"}
           justifyContent={"space-between"}
           h="48px"
           alignItems={"center"}
         >
-          <Box w={{ sm: "380px" }} h={"24px"}>
+          <Box w={{ md: "355px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}

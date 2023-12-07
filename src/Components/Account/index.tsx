@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (!isRefresh) {
         toast({
           title: "Амжилттай нэвтэрлээ.",
-          description: "You successfully logged in.",
+          description: "Та идэвхтэй саналуудыг сонгон саналаа өгнө үү.",
           status: "success",
           duration: 5000,
           isClosable: true,

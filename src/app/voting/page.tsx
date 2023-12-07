@@ -119,9 +119,7 @@ export default function Voting() {
       limit: 5,
     },
   });
-  // scroll data fetching section
-  // console.log("data---99111205", data);
-  // console.log("polls---99111205", polls);
+
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
@@ -138,6 +136,7 @@ export default function Voting() {
 
   useEffect(() => {
     setPage(1);
+    setPolls([]);
     if (!loading) {
       fetchData(`/poll`, {
         ...(tags === "all_propsal" ? {} : { status: tags }),
@@ -292,7 +291,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && polls.length === 0 && (
+        {!loading && polls?.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
@@ -311,11 +310,11 @@ export default function Voting() {
             </Text>
           </Stack>
         )}
-        {polls.map((el: any, id: number) => (
+        {polls?.map((el: any, id: number) => (
           <PollCard key={id} el={el} />
         ))}
         {/* {loading && ( */}
-        {pageCount >= page ? (
+        {pageCount > page || loading ? (
           <Stack w="100%" ref={ref}>
             <SkeletonCard />
             <SkeletonCard />

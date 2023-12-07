@@ -712,7 +712,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
               alignItems={"center"}
               h="42px"
               cursor="pointer"
-              w="50px"
+              w="80px"
               onClick={() => {
                 router.push("/voting");
               }}
@@ -725,7 +725,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 lineHeight={"18px"}
                 fontWeight="700"
               >
-                Back
+                Буцах
               </Text>
             </Stack>
           </Show>
