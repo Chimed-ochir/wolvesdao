@@ -124,13 +124,13 @@ export default function Voting() {
   useEffect(() => {
     if (inView && !loading) {
       // something happens after it reaches 80% of the screen
-      setPage((prevPage) => prevPage + 1);
       fetchData(`/poll`, {
         ...(tags === "all_propsal" ? {} : { status: tags }),
         page,
       }).then((res) => {
         setPolls([...polls, ...res]);
       });
+      setPage((prevPage) => prevPage + 1);
     }
   }, [inView]);
 
