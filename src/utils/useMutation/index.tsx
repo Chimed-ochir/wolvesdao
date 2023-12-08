@@ -12,7 +12,7 @@ export interface UseMutationProps {
 export interface UseMutationValue {
   error: any;
   loading: boolean;
-  request: (data: any) => Promise<AxiosResponse<any, any>>;
+  request: (data?: any) => Promise<AxiosResponse<any, any>>;
 }
 
 export const useMutation = ({

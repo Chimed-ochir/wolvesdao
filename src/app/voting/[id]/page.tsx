@@ -3,14 +3,9 @@ import {
   Box,
   Button,
   Show,
-  Progress,
   Stack,
   Text,
   Image as Images,
-  Link,
-  Skeleton,
-  SkeletonCircle,
-  SkeletonText,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
@@ -23,11 +18,16 @@ import { SlEnergy } from "react-icons/sl";
 import { BsChevronLeft } from "react-icons/bs";
 import { useQuery } from "@/utils";
 import api from "@/utils/CustomAxios";
-import Image from "next/image";
+
 import wolves from "../../../../public/assets/wolf1.png";
 import { useRouter } from "next/navigation";
 import { VoteModal } from "@/Components/VoteModal";
 import Votes from "@/Components/Votes";
+import SkeletonId from "./SkeletonId";
+import Information from "./Information/page";
+import { useAuth } from "@/Components/Account";
+import { UpdateModal } from "@/Components/Account/UpdateModal";
+import { DeleteModal } from "@/Components/Account/deleteModal";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -40,27 +40,17 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const onFinish = () => {
     fetchData();
   };
-
+  const { admin } = useAuth();
   var moment = require("moment");
   const router = useRouter();
-  const currentDate = new Date();
-  const futureDate = new Date(
-    moment.utc(data?.data?.endDate).format("MM-DD-YYYY")
-  );
-  const nowDate = new Date(
-    moment.utc(data?.data?.startDate).format("MM-DD-YYYY")
-  );
-  const timeDifference = futureDate.getTime() - currentDate.getTime();
-  const now = currentDate.getTime() - nowDate.getTime();
-  const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-  const startDate = Math.floor(now / (1000 * 3600 * 24));
+
   const [vote, setVote] = useState("");
   const [voteId, setVoteId] = useState(false);
   const [send, setSend] = useState("");
   const [first, setFirst] = useState("");
   const [myId, setMyId] = useState("");
   const [cont, setCont] = useState(false);
-  const period: string = data?.data.status;
+  const period: string = data?.data?.status;
   useEffect(() => {
     if (data && "meVotedId" in data) {
       setSend(data?.meVotedId as string);
@@ -68,8 +58,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
       setVoteId(false);
     }
   }, [data]);
-
-  console.log("----", loading);
+  console.log("admin", admin);
   useEffect(() => {
     if (voteId === true) {
       data?.data?.options.map((e: any, id: number) => {
@@ -82,618 +71,39 @@ function Page({ params: { id } }: { params: { id: string } }) {
     }
   }, [voteId]);
   return !data || loading ? (
-    <Stack
-      mx={{ base: "auto" }}
-      w={{ base: "95%", sm: "480px", md: "768px", lg: "960px" }}
-      direction={{ base: "column", lg: "row" }}
-      justifyContent={"space-evenly"}
-    >
-      <Stack w={{ md: "550px" }}>
-        <Skeleton
-          h="22px"
-          w={"30%"}
-          alignSelf={"start"}
-          mt="10px"
-          // ml="30px"
-        />
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ md: "550px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          justifyContent={"center"}
-        >
-          <Skeleton
-            h="22px"
-            w={"25%"}
-            alignSelf={"start"}
-            borderRadius={"6px"}
-            mt="10px"
-            ml="30px"
-          />
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-            mb="20px"
-          >
-            <Stack
-              direction="row"
-              alignItems={"center"}
-              justifyContent={"center"}
-              w="20%"
-            >
-              <SkeletonCircle size="10" />
-              <Skeleton
-                h="22px"
-                borderRadius={"6px"}
-                mt={"2px"}
-                w={{ base: "50%" }}
-              ></Skeleton>
-            </Stack>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-            ></Skeleton>
-          </Stack>
-        </Stack>
-        <Stack
-          // bg="black"
-          my="10px"
-          w={{ base: "100%" }}
-          // alignItems={"center"}
-        >
-          <SkeletonText h="100px" noOfLines={5} />
-          <Skeleton h="100px" borderRadius={"6px"}></Skeleton>
-        </Stack>
-
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ md: "550px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-        >
-          {/* <SkeletonText h="220px" noOfLines={5} /> */}
-          <Skeleton
-            h="42px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-          <Skeleton
-            h="42px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-          <Skeleton
-            h="42px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-          <Skeleton
-            h="42px"
-            borderRadius={"6px"}
-            my={"10px"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          ></Skeleton>
-        </Stack>
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ md: "550px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          justifyContent={"center"}
-          pb={"15px"}
-        >
-          {/* <SkeletonText h="220px" noOfLines={5} /> */}
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-          ></Skeleton>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          >
-            <Stack
-              direction="row"
-              ml="10px"
-              alignItems={"center"}
-              justifyContent={"center"}
-              w="20%"
-            >
-              <SkeletonCircle size="10" />
-              <Skeleton
-                h="22px"
-                borderRadius={"6px"}
-                mt={"2px"}
-                w={{ base: "50%" }}
-              ></Skeleton>
-            </Stack>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          >
-            <Stack
-              direction="row"
-              ml="10px"
-              alignItems={"center"}
-              justifyContent={"center"}
-              w="20%"
-            >
-              <SkeletonCircle size="10" />
-              <Skeleton
-                h="22px"
-                borderRadius={"6px"}
-                mt={"2px"}
-                w={{ base: "50%" }}
-              ></Skeleton>
-            </Stack>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%", sm: "458px", md: "498px" }}
-          >
-            <Stack
-              direction="row"
-              ml="10px"
-              alignItems={"center"}
-              justifyContent={"center"}
-              w="20%"
-            >
-              <SkeletonCircle size="10" />
-              <Skeleton
-                h="22px"
-                borderRadius={"6px"}
-                mt={"2px"}
-                w={{ base: "50%" }}
-              ></Skeleton>
-            </Stack>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="22px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "30%" }}
-            ></Skeleton>
-          </Stack>
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"2px"}
-            w={"40%"}
-            mb="10px"
-          ></Skeleton>
-        </Stack>
-      </Stack>
-      <Stack mt={{ lg: "50px" }}>
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ sm: "480px", md: "550px", lg: "282px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          justifyContent={"center"}
-        >
-          {/* <SkeletonText h="220px" noOfLines={5} /> */}
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-          ></Skeleton>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-          <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            w={{ base: "85%" }}
-          >
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-              // ml={"40px"}
-            ></Skeleton>
-            <Skeleton
-              h="18px"
-              borderRadius={"6px"}
-              mt={"2px"}
-              w={{ base: "40%" }}
-            ></Skeleton>
-          </Stack>
-
-          <Skeleton
-            h="14px"
-            borderRadius={"6px"}
-            mt={"2px"}
-            w={"85%"}
-            mb="10px"
-          ></Skeleton>
-        </Stack>
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ sm: "480px", md: "550px", lg: "282px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          justifyContent={"center"}
-        >
-          {/* <SkeletonText h="220px" noOfLines={5} /> */}
-          <Skeleton
-            h="22px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-          ></Skeleton>
-
-          <Skeleton
-            h="14px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-            mb="10px"
-          ></Skeleton>
-          <Skeleton
-            h="14px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-            mb="10px"
-          ></Skeleton>
-          <Skeleton
-            h="14px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-            mb="30px"
-          ></Skeleton>
-        </Stack>
-        <Stack
-          mt="10px"
-          bg={"#101010"}
-          w={{ sm: "480px", md: "550px", lg: "282px" }}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          justifyContent={"center"}
-        >
-          <Skeleton
-            h="40px"
-            borderRadius={"6px"}
-            mt={"10px"}
-            w={"85%"}
-          ></Skeleton>
-          <Stack
-            direction="row"
-            justifyContent={"center"}
-            w="85%"
-            alignItems={"center"}
-            mt="20px"
-          >
-            <Skeleton
-              h="40px"
-              borderRadius={"6px"}
-              mt={"10px"}
-              w={"40px"}
-            ></Skeleton>
-            <Stack justifyContent={"space-between"} w="80%" h="58px">
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"30%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"70%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"45%"}
-              ></Skeleton>
-            </Stack>
-          </Stack>
-          <Skeleton
-            h={"30px"}
-            w="2px"
-            alignSelf={"start"}
-            ml={{ base: "40px", sm: "70px", md: "80px", lg: "40px" }}
-          />
-          <Stack
-            direction="row"
-            justifyContent={"center"}
-            w="85%"
-            alignItems={"center"}
-          >
-            <Skeleton
-              h="40px"
-              borderRadius={"6px"}
-              mt={"10px"}
-              w={"40px"}
-            ></Skeleton>
-            <Stack justifyContent={"space-between"} w="80%" h="58px">
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"30%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"70%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"45%"}
-              ></Skeleton>
-            </Stack>
-          </Stack>
-          <Skeleton
-            h={"30px"}
-            w="2px"
-            alignSelf={"start"}
-            ml={{ base: "40px", sm: "70px", md: "80px", lg: "40px" }}
-          />
-          <Stack
-            direction="row"
-            justifyContent={"center"}
-            w="85%"
-            alignItems={"center"}
-          >
-            <Skeleton
-              h="40px"
-              borderRadius={"6px"}
-              mt={"10px"}
-              w={"40px"}
-            ></Skeleton>
-            <Stack justifyContent={"space-between"} w="80%" h="58px">
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"30%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"70%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"45%"}
-              ></Skeleton>
-            </Stack>
-          </Stack>
-          <Skeleton
-            h={"30px"}
-            w="2px"
-            alignSelf={"start"}
-            ml={{ base: "40px", sm: "70px", md: "80px", lg: "40px" }}
-          />
-          <Stack
-            direction="row"
-            justifyContent={"center"}
-            w="85%"
-            alignItems={"center"}
-            mb="20px"
-          >
-            <Skeleton
-              h="40px"
-              borderRadius={"6px"}
-              mt={"10px"}
-              w={"40px"}
-            ></Skeleton>
-            <Stack justifyContent={"space-between"} w="80%" h="58px">
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"30%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"70%"}
-              ></Skeleton>
-              <Skeleton
-                h="14px"
-                borderRadius={"6px"}
-                my={"2px"}
-                w={"45%"}
-              ></Skeleton>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
-    </Stack>
+    <SkeletonId />
   ) : (
     <Stack
       mx={{ base: "auto" }}
-      w={{ base: "95%", sm: "480px", md: "768px", lg: "960px" }}
+      w={{ base: "95%", sm: "480px", md: "550px", lg: "960px" }}
       direction={{ base: "column", lg: "row" }}
       justifyContent={"space-evenly"}
     >
       <Stack w={{ md: "550px" }}>
-        {/* <Stack h={{ base: "206px", sm: "277px" }}> */}
+        {admin ? (
+          <Stack direction="row" justifyContent={"space-between"} w={"60%"}>
+            <UpdateModal data={data} onFinish={onFinish}>
+              <Button
+                bg="white"
+                minW={"88px"}
+                variant={"solid"}
+                color={"black"}
+              >
+                Өөрчлөх
+              </Button>
+            </UpdateModal>
+            <DeleteModal id={id}>
+              <Button
+                bg="white"
+                minW={"88px"}
+                variant={"outline"}
+                color={"black"}
+              >
+                Устгах
+              </Button>
+            </DeleteModal>
+          </Stack>
+        ) : null}
         <Stack>
           <Show above="lg">
             <Text
@@ -729,9 +139,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
               </Text>
             </Stack>
           </Show>
+
           <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
             <Stack
-              // h={{ base: "106px", sm: "160px" }}
               py={"20px"}
               justifyContent={"space-around"}
               borderBottom={"1px solid  #282828"}
@@ -755,7 +165,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 borderRadius={"4px"}
                 w={{ base: "55px", sm: "70px" }}
                 ml={{ base: "10px", sm: "28px" }}
-                //   ml={{ base: "10px", sm: "28px" }}
                 textAlign={"center"}
                 color={data?.data.status === "pending" ? "black" : "white"}
               >
@@ -958,18 +367,15 @@ function Page({ params: { id } }: { params: { id: string } }) {
             </Box>
           </Stack>
         ) : null}
-        {/* <Stack h={{ base: "298px", sm: "322px" }} mt={{ base: "10px", sm: "" }}> */}
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
         {data?.data.notes ? (
           <Stack
-            // h={{ base: "289px", sm: "392px" }}
             borderRadius={"6px"}
             border={"1px solid #282828"}
             bg={"#101010"}
             justifyContent={{ base: "space-evenly", sm: "space-between" }}
-            // w={{ lg: "521px" }}
             mb={{ base: "38px", sm: "" }}
             maxHeight={cont === false ? "200px" : ""}
             minHeight={"50px"}
@@ -1003,521 +409,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
           </Stack>
         ) : null}
       </Stack>
-      <Stack mt={{ lg: "50px" }}>
-        <Stack
-          borderRadius={"6px"}
-          border={"1px solid #282828"}
-          bg={"#101010"}
-          w={{ sm: "480px", md: "550px", lg: "282px" }}
-          // h={"225px"}
-          mt={{ base: "10px", lg: "" }}
-        >
-          <Stack
-            alignItems={"left"}
-            borderBottom={"1px solid  #282828"}
-            justifyContent={"center"}
-            h="40px"
-          >
-            <Text
-              {...satFont.style}
-              fontWeight={"700"}
-              lineHeight={"18px"}
-              fontSize={"16px"}
-              color={"#F2F2F2"}
-              ml={"10px"}
-            >
-              Саналын мэдээлэл
-            </Text>
-          </Stack>
-          <Stack justifyContent={"space-around"}>
-            <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              // h={"148px"}
-              w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
-              mx={"auto"}
-            >
-              <Stack justifyContent={"space-around"}>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Tокен
-                </Text>
-                {/* <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Voting system
-                </Text> */}
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Эхлэх огноо
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Дуусах огноо
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Хэлэлцүүлэгийн линк
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  Саналын явц
-                </Text>
-              </Stack>
-              <Stack
-                justifyContent={"space-around"}
-                maxWidth={"153px"}
-                alignItems={"right"}
-              >
-                <Stack
-                  direction="row"
-                  justifyContent={"right"}
-                  alignItems={"center"}
-                >
-                  {/* <Box
-                  
-                 
-                  bg="red"
-                ></Box> */}
-                  <Image
-                    src={wolves}
-                    alt="the wolves"
-                    // height={"18px"}
-                    // width={"18px"}
-                    // border
-                  ></Image>
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"500"}
-                    lineHeight={"24px"}
-                    fontSize={"12px"}
-                    color={"#FFFFFF"}
-                  >
-                    The Wolves
-                  </Text>
-                </Stack>
-                {/* <Text
-                  {...satFont.style}
-                  fontWeight={"500"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#FFFFFF"}
-                  textAlign={"right"}
-                >
-                  Single choice voting
-                </Text> */}
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#FFFFFF"}
-                  textAlign={"right"}
-                >
-                  {moment.utc(data?.data.startDate).format("MM-DD-YYYY")}
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#FFFFFF"}
-                  textAlign={"right"}
-                >
-                  {moment.utc(data?.data.endDate).format("MM-DD-YYYY")}
-                </Text>
-
-                <Stack
-                  direction="row"
-                  alignItems={"center"}
-                  justifyContent={"right"}
-                  maxW={"153px"}
-                >
-                  <Box maxW={"129px"}>
-                    <Link href={data?.data?.withLink} isExternal>
-                      <Text
-                        {...satFont.style}
-                        fontWeight={"700"}
-                        lineHeight={"18px"}
-                        fontSize={"11px"}
-                        color={"#FFFFFF"}
-                        textAlign={"right"}
-                        // textDecoration={"underline"}
-                        as="u"
-                      >
-                        {data?.data?.withLink}
-                      </Text>
-                    </Link>
-                  </Box>
-                  <AiOutlineLink size="16px" color="white" />
-                </Stack>
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#FFFFFF"}
-                  textAlign={"right"}
-                >
-                  {data?.data.count}/ 100
-                </Text>
-              </Stack>
-            </Stack>
-            <Progress
-              colorScheme={"yellow"}
-              value={data?.data.count}
-              size="xs"
-              borderRadius={"15px"}
-              w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
-              mx={"auto"}
-              mb={"20px"}
-            />
-          </Stack>
-        </Stack>
-        <Stack
-          borderRadius={"6px"}
-          border={"1px solid #282828"}
-          bg={"#101010"}
-          w={{ sm: "480px", md: "550px", lg: "282px" }}
-          // h={"213px"}
-          mt={{ base: "10px", lg: "" }}
-        >
-          <Stack
-            alignItems={"left"}
-            borderBottom={"1px solid  #282828"}
-            justifyContent={"center"}
-            h="40px"
-          >
-            <Text
-              {...satFont.style}
-              fontWeight={"700"}
-              lineHeight={"18px"}
-              fontSize={"16px"}
-              color={"#F2F2F2"}
-              ml={"10px"}
-            >
-              Current results
-            </Text>
-          </Stack>
-          <Stack justifyContent={"space-between"} mt="10px" mb="20px">
-            {data?.data?.options.map((e: any, id: number) => (
-              <Box
-                w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
-                mx="auto"
-                key={id}
-              >
-                <Stack
-                  direction="row"
-                  justifyContent={"space-between"}
-                  h="29px"
-                >
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"700"}
-                    lineHeight={"18px"}
-                    fontSize={"16px"}
-                    color={"#F2F2F2"}
-                  >
-                    {e.option}
-                  </Text>
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"700"}
-                    lineHeight={"18px"}
-                    fontSize={"16px"}
-                    color={"#F2F2F2"}
-                  >
-                    {data?.data?.count !== 0
-                      ? e?.votes?.length && e?.votes?.length / data?.data?.count
-                      : 0}
-                    %
-                  </Text>
-                </Stack>
-                <Progress
-                  colorScheme={"green"}
-                  value={e.votes.length}
-                  size="xs"
-                  borderRadius={"15px"}
-                  w={{ base: "100%" }}
-                  mx={"auto"}
-                />
-              </Box>
-            ))}
-          </Stack>
-        </Stack>
-
-        <Stack
-          borderRadius={"6px"}
-          border={"1px solid #282828"}
-          bg={"#101010"}
-          w={{ base: "100%", sm: "480px", md: "550px", lg: "282px" }}
-          h={"408px"}
-          mt={{ base: "10px", lg: "" }}
-        >
-          <Stack
-            alignItems={"left"}
-            borderBottom={"1px solid  #282828"}
-            justifyContent={"center"}
-            h="40px"
-          >
-            <Text
-              {...satFont.style}
-              fontWeight={"700"}
-              lineHeight={"18px"}
-              fontSize={"16px"}
-              color={"#F2F2F2"}
-              ml={"10px"}
-            >
-              Status
-            </Text>
-          </Stack>
-          <Stack
-            justifyContent={"space-evenly"}
-            h={"316px"}
-            my={"auto"}
-            w={{ base: "95%", sm: "460px", md: "500px", lg: "230px" }}
-            mx={"auto"}
-          >
-            <Stack
-              direction={"row"}
-              mx={{ lg: "auto" }}
-              w={{ base: "230px" }}
-              h="58px"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <Stack
-                w="40px"
-                h="40px"
-                borderRadius={"6px"}
-                bg={period === "active" ? "#FBFBFB" : "#2B2B2B"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <Stack
-                  borderRadius="100%"
-                  border={`1px solid ${
-                    period === "active" ? "black" : "#949494"
-                  }`}
-                  w="24px"
-                  h="24px"
-                  justifyContent="center"
-                  alignItems="center"
-                >
-                  <BiRightArrow
-                    size="14px"
-                    color={period === "active" ? "black" : "#949494"}
-                    mx="auto"
-                  />
-                </Stack>
-              </Stack>
-              <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
-                <Text
-                  //   {...satFont.style}
-                  fontWeight={"500"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  {moment.utc(data?.data.startDate).format("MM-DD-YYYY")}
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={period === "active" ? "900" : "700"}
-                  lineHeight={"18px"}
-                  fontSize={"15px"}
-                  color={period === "active" ? "#228200" : "#949494"}
-                >
-                  Санал хураалт эхэлсэн
-                </Text>
-                <Text
-                  //   {...satFont.style}
-                  fontWeight={"450"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  {startDate < 0
-                    ? "Хараахан эхлээгүй байна"
-                    : `${startDate} хоногийн өмнө эхэлсэн`}
-                </Text>
-              </Box>
-            </Stack>
-
-            <Box w="1px" bg={"#949494"} h="31px" ml="20px" my={"-9px"}></Box>
-
-            <Stack
-              direction={"row"}
-              mx={{ lg: "auto" }}
-              w={"230px"}
-              h="58px"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <Stack
-                w="40px"
-                h="40px"
-                borderRadius={"6px"}
-                bg={period === "end" ? "#FBFBFB" : "#2B2B2B"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <Stack
-                  borderRadius={"100%"}
-                  border={`1px solid ${period === "end" ? "black" : "#949494"}`}
-                  w={"24px"}
-                  h={"24px"}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                >
-                  <RiSquareLine
-                    size="14px"
-                    color={period === "end" ? "black" : "#949494"}
-                    mx="auto"
-                  />
-                </Stack>
-              </Stack>
-              <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
-                <Text
-                  //   {...satFont.style}
-                  fontWeight={"500"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  {moment.utc(data?.data.endDate).format("MM-DD-YYYY")}
-                </Text>
-                <Text
-                  {...satFont.style}
-                  fontWeight={period === "end" ? "900" : "700"}
-                  lineHeight={"18px"}
-                  fontSize={"15px"}
-                  color={period === "end" ? "#228200" : "#949494"}
-                >
-                  Санал хураалт дууссан
-                </Text>
-                <Text
-                  //   {...satFont.style}
-                  fontWeight={"450"}
-                  lineHeight={"18px"}
-                  fontSize={"12px"}
-                  color={"#949494"}
-                >
-                  {daysDifference === 0
-                    ? `Өнөөдөр дуусна`
-                    : daysDifference < 0
-                    ? `${-daysDifference} хоногийн өмнө дууссан `
-                    : `${daysDifference} хоногийн дараа дуусна `}
-                </Text>
-              </Box>
-            </Stack>
-
-            <Box w="1px" bg={"#949494"} h="31px" ml="20px" my={"-9px"}></Box>
-
-            <Stack
-              direction={"row"}
-              w={"230px"}
-              h="58px"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <Stack
-                w="40px"
-                h="40px"
-                borderRadius={"6px"}
-                bg={period === "pending" ? "#FBFBFB" : "#2B2B2B"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <PiHourglassSimpleLight
-                  size="24px"
-                  color={period === "pending" ? "black" : "#949494"}
-                  mx="auto"
-                />
-              </Stack>
-
-              <Text
-                {...satFont.style}
-                fontWeight={period === "pending" ? "900" : "700"}
-                lineHeight={"18px"}
-                fontSize={"15px"}
-                w="190px"
-                color={period === "pending" ? "#228200" : "#949494"}
-              >
-                Дэмжигдсэн саналууд
-              </Text>
-            </Stack>
-
-            <Box w="1px" bg={"#949494"} h="31px" ml="20px" my={"-9px"}></Box>
-
-            <Stack
-              direction={"row"}
-              //   mx={"auto"}
-              w={"230px"}
-              h="58px"
-              alignItems={"center"}
-              justifyContent={"space-between"}
-              //   ml={"1px"}
-            >
-              <Stack
-                w="40px"
-                h="40px"
-                borderRadius={"6px"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                bg={period === "executed" ? "#FBFBFB" : "#2B2B2B"}
-              >
-                <SlEnergy
-                  size="24px"
-                  color={period === "executed" ? "black" : "#949494"}
-                  mx="auto"
-                />
-              </Stack>
-              {/* <Box h="58px" justifyContent={"space-evenly"} w={"154px"}> */}
-              <Text
-                {...satFont.style}
-                fontWeight={period === "executed" ? "900" : "700"}
-                lineHeight={"18px"}
-                fontSize={"15px"}
-                w={"190px"}
-                color={period === "executed" ? "#228200" : "#949494"}
-              >
-                Хэрэгжсэн санал
-              </Text>
-              {/* </Box> */}
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
+      <Information data={data} />
     </Stack>
   );
 }

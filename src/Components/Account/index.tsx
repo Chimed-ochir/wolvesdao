@@ -13,6 +13,7 @@ import { usePathname, useRouter } from "next/navigation";
 interface AuthProviderValueType {
   isAuth: boolean;
   loading: boolean;
+  admin: boolean;
   logout: () => void;
   access: string | null;
   user: string | null;
@@ -34,6 +35,7 @@ const AuthContext = createContext({ isAuth: false } as AuthProviderValueType);
 export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const [access, setAccess] = useState<string | null>(null);
   const [user, setUser] = useState<string | null>(null);
+  const [admin, setAdmin] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const toast = useToast();
@@ -65,7 +67,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
-
+      setAdmin(true);
+      // setAdmin(data?.admin);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
       Cookies.set("access", data.accessToken, {
@@ -94,6 +97,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
 
     setUser(null);
     setAccess(null);
+    setAdmin(false);
     Cookies.remove("token");
     Cookies.remove("idToken");
     Cookies.remove("access");
@@ -126,6 +130,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         loading: loading,
         // loading: loading || loadingRefresh || loadingLogout,
         access,
+        admin,
       }}
     >
       {children}
@@ -141,6 +146,7 @@ export interface LoginDataType {
   idToken: string;
   session: string;
   username: string;
+  admin: boolean;
 }
 
 type PayloadType = {
@@ -156,4 +162,5 @@ type PayloadType = {
   sub: string;
   token_use: string;
   username: string;
+  admin: boolean;
 };

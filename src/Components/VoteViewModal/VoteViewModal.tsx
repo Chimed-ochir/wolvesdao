@@ -37,8 +37,6 @@ import { LoginDataType } from "../Account";
 import localFont from "next/font/local";
 import { usePathname, useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
-// import { useRouter } from "next/router";
-// const LoginFormBody = ({ isLoading }: { isLoading: boolean }) => {
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -55,69 +53,7 @@ const VoteViewForm = ({
   // const { onClose } = useModalContext();
   const [view, setView] = useState("");
   const { showErrorToast, showSuccessToast } = useToast();
-  // const viewFilter = (people?: string) => {
-  // const data = [
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7cc042e31cdfe5947b9",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "tiim",
-  //     createdAt: "2023-11-13T10:17:48.845Z",
-  //     updatedAt: "2023-11-25T09:50:45.408Z",
-  //   },
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7d2042e31cdfe5947be",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "ugui",
-  //     createdAt: "2023-11-13T10:17:54.631Z",
-  //     updatedAt: "2023-11-25T09:50:45.203Z",
-  //   },
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7d2042e31cdfe5947be",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "ugui",
-  //     createdAt: "2023-11-13T10:17:54.631Z",
-  //     updatedAt: "2023-11-25T09:50:45.203Z",
-  //   },
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7cc042e31cdfe5947b9",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "tiim",
-  //     createdAt: "2023-11-13T10:17:48.845Z",
-  //     updatedAt: "2023-11-25T09:50:45.408Z",
-  //   },
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7d2042e31cdfe5947be",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "ugui",
-  //     createdAt: "2023-11-13T10:17:54.631Z",
-  //     updatedAt: "2023-11-25T09:50:45.203Z",
-  //   },
-  //   {
-  //     userId: "ef18e373-f4be-4a76-b4d2-8c0614281cb2",
-  //     userName: "discodisco",
-  //     optionId: "6551f7d2042e31cdfe5947be",
-  //     profile:
-  //       "https://placehold.co/150X150/EEE/31343C?font=playfair-display&text=U",
-  //     optionName: "ugui",
-  //     createdAt: "2023-11-13T10:17:54.631Z",
-  //     updatedAt: "2023-11-25T09:50:45.203Z",
-  //   },
-  // ];
+
   const [result, setResult] = useState<any[]>([]); // Initialize 'result' state as an empty array
   var moment = require("moment");
   // Assuming 'data' is another state or a prop provided to this component

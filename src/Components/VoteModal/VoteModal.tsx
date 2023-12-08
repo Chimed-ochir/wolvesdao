@@ -65,10 +65,6 @@ const VoteForm = ({
         if (res.success === false) {
           showErrorToast(res.message);
         } else {
-          // router.reload();
-          // window.location.reload();
-          // router.push(`${pathname}`);
-          // router.reload();
           onFinish();
           onClose();
           if (voteId) {
