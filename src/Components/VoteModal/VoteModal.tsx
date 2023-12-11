@@ -65,10 +65,6 @@ const VoteForm = ({
         if (res.success === false) {
           showErrorToast(res.message);
         } else {
-          // router.reload();
-          // window.location.reload();
-          // router.push(`${pathname}`);
-          // router.reload();
           onFinish();
           onClose();
           if (voteId) {
@@ -206,8 +202,8 @@ const VoteForm = ({
             />
             {/* </Box> */}
             Та санал өгөхийн тулд MongolNFT хэтэвчиндээ The Wolves NFT-тэй,
-            DAO-ийн саналын эрхтэй гишүүн байх шаардлагатай.(To vote, ensure
-            you're a voting member and have The Wolves NFT in your MongolNFT
+            DAO-ийн саналын эрхтэй гишүүн байх шаардлагатай.(To vote, ensure you
+            `&apos;`re a voting member and have The Wolves NFT in your MongolNFT
             wallet.)
           </Text>
         </Alert>

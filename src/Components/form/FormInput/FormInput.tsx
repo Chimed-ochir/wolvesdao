@@ -73,13 +73,7 @@ export const FormInput = ({
       };
     return {};
   }, [isMfa]);
-  // const changePassword = () => {
-  // 	if (type === 'password') {
-  // 		type = 'text';
-  // 	} else {
-  // 		type = 'password';
-  // 	}
-  // };
+
   return (
     <Box w="100%" mt={"15px"}>
       {label ? (
@@ -133,22 +127,6 @@ export const FormInput = ({
           {...additionalProps}
           {...(omit("form", props) as any)}
         />
-
-        {/* {name === 'password' || name === 'confirmPassword' ? (
-					<ViewIcon
-						ml='-30px'
-						mt='9px'
-						w='20px'
-						h='20px'
-						cursor='pointer'
-						zIndex={1}
-						onClick={() => {
-							changePassword;
-						}}
-					/>
-				) : (
-					''
-				)} */}
         {inputRightElement ? (
           <InputRightElement
             pr="10px"

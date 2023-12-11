@@ -21,7 +21,7 @@ function Votes(idx: any) {
     <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
       <Stack borderBottom={"1px solid  #282828"} w={"100%"}>
         <Stack
-          justifyContent={"space-around"}
+          justifyContent={"space-between"}
           alignItems="center"
           direction={"row"}
           w={{ base: "170px", sm: "230px" }}

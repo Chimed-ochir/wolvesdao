@@ -25,16 +25,6 @@ import { CalcPercent, CalcStatus } from "@/utils";
 import { useAuth } from "../Account";
 // import Image from "next/image";
 function SkeletonCard(el: any) {
-  // const hoursDifference = Math.floor(
-  //   (timeDifference % (1000 * 3600 * 24)) / (1000 * 3600)
-  // );
-  // const minutesDifference = Math.floor(
-  //   (timeDifference % (1000 * 3600)) / (1000 * 60)
-  // console.log("user---", user);
-  // );
-  // useEffect(() => {
-  //   setState1(CalcStatus(startDate, currentDate,futureDate));
-  // }, []);
   return (
     <Stack
       w="100%"

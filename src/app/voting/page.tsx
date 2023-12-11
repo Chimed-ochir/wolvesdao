@@ -55,7 +55,7 @@ export default function Voting() {
   // const { loadi } = useAuth();
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
-  const [page, setPage] = useState(1);
+  const [page1, setPage1] = useState(2);
   const [prop, setProp] = useState("Бүх санал");
   //   const pathname = usePathname();
 
@@ -115,30 +115,32 @@ export default function Voting() {
     manual: true,
     params: {
       // status: tags,
-      page: page,
+      page: 1,
       limit: 5,
     },
   });
-  // scroll data fetching section
-  // console.log("data---99111205", data);
-  // console.log("polls---99111205", polls);
+
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
       // something happens after it reaches 80% of the screen
-      setPage((prevPage) => prevPage + 1);
+      console.log("page1", page1);
       fetchData(`/poll`, {
         ...(tags === "all_propsal" ? {} : { status: tags }),
-        page,
+        page: page1,
       }).then((res) => {
         setPolls([...polls, ...res]);
       });
+      setPage1((prevPage) => prevPage + 1);
+
+      console.log("pageCount", pageCount);
     }
   }, [inView]);
 
   useEffect(() => {
-    setPage(1);
     if (!loading) {
+      setPage1(2);
+      setPolls([]);
       fetchData(`/poll`, {
         ...(tags === "all_propsal" ? {} : { status: tags }),
       }).then(setPolls);
@@ -292,7 +294,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && polls.length === 0 && (
+        {!loading && polls?.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
@@ -311,11 +313,11 @@ export default function Voting() {
             </Text>
           </Stack>
         )}
-        {polls.map((el: any, id: number) => (
+        {polls?.map((el: any, id: number) => (
           <PollCard key={id} el={el} />
         ))}
         {/* {loading && ( */}
-        {pageCount >= page ? (
+        {pageCount >= page1 || loading ? (
           <Stack w="100%" ref={ref}>
             <SkeletonCard />
             <SkeletonCard />

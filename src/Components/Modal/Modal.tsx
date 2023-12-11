@@ -58,7 +58,7 @@ export const Modal = ({
         onClose={onModalClose as () => any}
         isCentered={isCentered}
         {...props}
-        size={msize}
+        size={{ base: "xs", sm: msize }}
       >
         <ModalOverlay bg="none" backdropFilter="blur(10px)" />
         {/* <ModalOverlay zIndex={1500} backdropFilter='blur(10px)' /> */}
@@ -97,8 +97,8 @@ export const Modal = ({
 
                   <Text
                     {...myFont.style}
-                    lineHeight={"42px"}
-                    fontSize={"45px"}
+                    lineHeight={{ sm: "42px" }}
+                    fontSize={{ base: "36px", sm: "45px" }}
                     color={"white"}
                     // textAlign={"center"}
                   >

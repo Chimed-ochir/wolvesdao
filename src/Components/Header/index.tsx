@@ -198,9 +198,10 @@ export const Header = () => {
               <Text
                 cursor="pointer"
                 // {...mortendFont.style}
+                fontFamily={"Golos Text"}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
                 fontWeight={"700"}
-                fontSize="15px"
+                fontSize="16px"
                 lineHeight={"22px"}
                 p={"3px"}
                 marginX={"3px"}

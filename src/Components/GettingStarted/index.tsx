@@ -62,12 +62,13 @@ function GettingStarted() {
       <Stack justifyContent={"space-between"}>
         <Stack
           direction={"row"}
-          w={{ sm: "500px" }}
+          w={{ md: "500px" }}
+          maxW={"500px"}
           justifyContent={"space-between"}
           h="48px"
           alignItems={"center"}
         >
-          <Box w={{ sm: "380px" }} h={"24px"}>
+          <Box w={{ md: "355px" }} h={"24px"}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -78,33 +79,6 @@ function GettingStarted() {
               Хүлээн авах саналын төрлүүд
             </Text>
           </Box>
-          <Link
-            href={`${process.env.NEXT_PUBLIC_DISCUSSION_URL}`}
-            target="_blank"
-          >
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Box w={"14px"} h={"14px"}>
-                  <BiLogoDiscourse size="14px" color="black" />
-                </Box>
-                <Text
-                  fontWeight={"700"}
-                  fontSize={"15px"}
-                  lineHeight={"18px"}
-                  color="black"
-                >
-                  Discourse
-                </Text>
-              </Stack>
-            </Button>
-          </Link>
         </Stack>
 
         <Box w={{ xl: "826px" }}>
@@ -195,33 +169,6 @@ function GettingStarted() {
               Саналын загвар
             </Text>
           </Box>
-          <Link
-            href={`${process.env.NEXT_PUBLIC_DISCUSSION_URL}`}
-            target="_blank"
-          >
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Box w={"14px"} h={"14px"}>
-                  <BiLogoDiscourse size="14px" color="black" />
-                </Box>
-                <Text
-                  fontWeight={"700"}
-                  fontSize={"15px"}
-                  lineHeight={"18px"}
-                  color="black"
-                >
-                  Discourse
-                </Text>
-              </Stack>
-            </Button>
-          </Link>
         </Stack>
         <Stack
           h={{ xl: "93px" }}
@@ -341,32 +288,18 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Санал гаргах
-            </Text>
-          </Box>
           <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+            <Box w={{ sm: "180px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Санал гаргах
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
@@ -391,32 +324,19 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Санал шалгах
-            </Text>
-          </Box>
+          {" "}
           <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+            <Box w={{ sm: "180px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Санал шалгах
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
@@ -443,32 +363,18 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Санал хянах
-            </Text>
-          </Box>
           <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+            <Box w={{ sm: "180px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Санал хянах
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
@@ -496,32 +402,22 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Хэлэлцүүлэг хийх
-            </Text>
-          </Box>
-          <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+          {" "}
+          <Link
+            href={`${process.env.NEXT_PUBLIC_DISCUSSION_URL}`}
+            target="_blank"
+          >
+            <Box w={{ sm: "230px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Хэлэлцүүлэг хийх
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
@@ -547,32 +443,18 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Санал хураах
-            </Text>
-          </Box>
           <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+            <Box w={{ sm: "180px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Санал хураах
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
@@ -599,32 +481,18 @@ function GettingStarted() {
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "180px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Санал хэрэгжилт
-            </Text>
-          </Box>
           <Link href={"/voting"}>
-            <Button
-              color={"black"}
-              bg={"white"}
-              w={"105px"}
-              h="24px"
-              gap={"8px"}
-              border={"1px solid black"}
-            >
-              <Stack direction={"row"} alignItems={"center"}>
-                <Text fontWeight={"700"} fontSize={"15px"} lineHeight={"18px"}>
-                  Voting Page
-                </Text>
-              </Stack>
-            </Button>
+            <Box w={{ sm: "220px" }} h={"24px"}>
+              <Text
+                fontFamily={"Golos Text"}
+                fontWeight={"700"}
+                fontSize={{ sm: "24px" }}
+                lineHeight={{ sm: "24px" }}
+                color={"#DFFF24"}
+              >
+                Санал хэрэгжилт
+              </Text>
+            </Box>
           </Link>
         </Stack>
         <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>

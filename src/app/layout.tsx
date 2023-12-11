@@ -8,13 +8,10 @@ import "@/styles/globals.scss";
 import { ChakraProvider, Box } from "@chakra-ui/react";
 import { Footer } from "@/Components/Footer";
 const inter = Inter({ subsets: ["latin"] });
-// const globalFont = localFont({
-//   src: "@/Components/fonts/mortend/mortend-bolf.ttf",
-// });
+
 import localFont from "next/font/local";
 import { AuthProvider } from "@/Components/Account";
 import { ThemeContextProvider } from "@/contexts/ThemeContext";
-import Getting from "@/Components/Getting";
 export const metadata: Metadata = {
   title: "Wolves DAO",
   description: "Wolves DAO description",

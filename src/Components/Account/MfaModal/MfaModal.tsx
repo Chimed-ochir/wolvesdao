@@ -13,7 +13,7 @@ const MfaFormBody = ({ isLoading }: { isLoading: boolean }) => {
   return (
     <Stack spacing="md">
       <FormInput
-        label={"2FA код"}
+        label={"2FA кодоо оруулна уу!"}
         name="userCode"
         isLoading={isLoading}
         tooltipText={

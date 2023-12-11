@@ -51,8 +51,8 @@ function PollCard(el: any) {
           router.replace(`voting/${data._id}`);
         } else {
           toast({
-            title: "Та нэвтэрнэ үү",
-            // description: "We've created your account for you.",
+            title: "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
+            description: "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
             // status: "danger",
 
             duration: 5000,
