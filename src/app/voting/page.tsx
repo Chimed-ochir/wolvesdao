@@ -22,6 +22,7 @@ import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
+import { NewModal } from "@/Components/Account/NewModal";
 // import { useAuth } from "@/Components/Account";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -119,7 +120,9 @@ export default function Voting() {
       limit: 5,
     },
   });
-
+  const onFinish = () => {
+    fetchData();
+  };
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
@@ -158,17 +161,23 @@ export default function Voting() {
       {" "}
       <Show above="md">
         <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
-          <Box w={{ lg: "790px" }}>
+          <Stack w={{ lg: "790px" }} direction="row">
             <Text
               {...satFont.style}
               fontWeight={"900"}
               fontSize={"24px"}
               lineHeight={"32px"}
               color={"white"}
+              minW={"190px"}
             >
               Санал хураалт
             </Text>
-          </Box>{" "}
+            <NewModal onFinish={onFinish}>
+              <Button bg="white" w={"120px"} variant={"solid"} color={"black"}>
+                Санал нэмэх
+              </Button>
+            </NewModal>
+          </Stack>{" "}
           <Stack
             w={{ sm: "100%" }}
             h={"42px"}
@@ -210,7 +219,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Show below="md">
-        <Stack alignSelf={"start"}>
+        <Stack alignSelf={"start"} direction={"row"}>
           <Menu>
             <MenuButton
               as={Button}
@@ -219,6 +228,7 @@ export default function Voting() {
               rightIcon={<MdOutlineExpandMore />}
               color={"white"}
               _hover={{ bg: "#303030" }}
+              minW={"140px"}
             >
               {prop}
             </MenuButton>
@@ -291,6 +301,11 @@ export default function Voting() {
               </MenuItem>
             </MenuList>
           </Menu>
+          <NewModal onFinish={onFinish}>
+            <Button bg="white" w={"120px"} variant={"solid"} color={"black"}>
+              Санал нэмэх
+            </Button>
+          </NewModal>
         </Stack>
       </Show>
       <Stack alignItems={"center"}>

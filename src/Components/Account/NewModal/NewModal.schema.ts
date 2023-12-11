@@ -1,10 +1,10 @@
 import { object, string } from "yup";
 import * as Yup from "yup";
 
-export const BuildUpdateFormValidationSchema = () =>
+export const BuildNewFormValidationSchema = () =>
   object().shape({
     content: string()
-      .required("Уг талбар хоосон байж болохгүй")
+      // .required("Уг талбар хоосон байж болохгүй")
       .label("content"),
     description: string()
       .required("Уг талбар хоосон байж болохгүй")
@@ -15,7 +15,9 @@ export const BuildUpdateFormValidationSchema = () =>
     listContent: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("listContent"),
-
+    notes: string()
+      // .required("Уг талбар хоосон байж болохгүй")
+      .label("notes"),
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),
@@ -27,8 +29,4 @@ export const BuildUpdateFormValidationSchema = () =>
         "зөв хаяг оруулна уу!"
       )
       .label("withLink"),
-    voteCount: string()
-      .required("Уг талбар хоосон байж болохгүй")
-      .label("voteCount"),
-    id: string().required("Уг талбар хоосон байж болохгүй").label("id"),
   });

@@ -28,6 +28,7 @@ import Information from "./Information/page";
 import { useAuth } from "@/Components/Account";
 import { UpdateModal } from "@/Components/Account/UpdateModal";
 import { DeleteModal } from "@/Components/Account/deleteModal";
+import { Editor } from "@tinymce/tinymce-react";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -272,6 +273,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             onClick={() => {
               setCont(!cont);
             }}
+            mt={cont ? "20px" : ""}
             rightIcon={
               cont === false ? <MdOutlineExpandMore /> : <MdExpandLess />
             }
