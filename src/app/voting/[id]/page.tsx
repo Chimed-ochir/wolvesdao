@@ -286,125 +286,129 @@ function Page({ params: { id } }: { params: { id: string } }) {
             {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
-        {/* {period === "active" ? ( */}
-        <Stack
-        // h={{ base: "241px", sm: "301px" }}
-        >
-          <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
-            <Stack
-              justifyContent={"space-around"}
-              borderBottom={"1px solid  #282828"}
-              direction={"row"}
-              alignItems="center"
+        {period === "active" ? (
+          <Stack
+          // h={{ base: "241px", sm: "301px" }}
+          >
+            <Box
+              borderRadius={"6px"}
+              border={"1px solid #282828"}
+              bg={"#101010"}
             >
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={{ base: "27px", lg: "42px" }}
-                fontSize={{ base: "16px", sm: "24px" }}
-                py={"2px"}
-                px={"6px"}
-                ml={"20px"}
-                my="8px"
-                color={"#F2F2F2"}
+              <Stack
+                justifyContent={"space-around"}
+                borderBottom={"1px solid  #282828"}
+                direction={"row"}
+                alignItems="center"
               >
-                Санал өгнө үү
-              </Text>
-              <Button
-                bg="white"
-                minW={"88px"}
-                variant={"outline"}
-                color={"black"}
-              >
-                Нэмэх
-              </Button>
-            </Stack>
-            <Stack justifyContent={"center"} my={"10px"}>
-              {data?.data?.options.map((e: any, id: number) => (
-                <Stack key={id} direction={"row"}>
-                  <Button
-                    variant={"outline"}
-                    mx={"auto"}
-                    w={{ base: "85%", sm: "458px", md: "498px" }}
-                    color="white"
-                    onClick={() => {
-                      setVote(`${e?.option}`);
-                      // setVoteId(`${e?._id}`);
-                      setSend(`${e._id}`);
-                      if (first !== null && first !== e._id) {
-                        setVoteId(true);
-                      } else {
-                        setVoteId(false);
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={{ base: "27px", lg: "42px" }}
+                  fontSize={{ base: "16px", sm: "24px" }}
+                  py={"2px"}
+                  px={"6px"}
+                  ml={"20px"}
+                  my="8px"
+                  color={"#F2F2F2"}
+                >
+                  Санал өгнө үү
+                </Text>
+                <Button
+                  bg="white"
+                  minW={"88px"}
+                  variant={"outline"}
+                  color={"black"}
+                >
+                  Нэмэх
+                </Button>
+              </Stack>
+              <Stack justifyContent={"center"} my={"10px"}>
+                {data?.data?.options.map((e: any, id: number) => (
+                  <Stack key={id} direction={"row"}>
+                    <Button
+                      variant={"outline"}
+                      mx={"auto"}
+                      w={{ base: "85%", sm: "458px", md: "498px" }}
+                      color="white"
+                      onClick={() => {
+                        setVote(`${e?.option}`);
+                        // setVoteId(`${e?._id}`);
+                        setSend(`${e._id}`);
+                        if (first !== null && first !== e._id) {
+                          setVoteId(true);
+                        } else {
+                          setVoteId(false);
+                        }
+                      }}
+                      leftIcon={
+                        send === e?._id ? (
+                          <AiOutlineCheck style={{ fontSize: "18px" }} />
+                        ) : undefined
                       }
-                    }}
-                    leftIcon={
-                      send === e?._id ? (
-                        <AiOutlineCheck style={{ fontSize: "18px" }} />
-                      ) : undefined
-                    }
-                  >
-                    {e.option}
-                  </Button>
-                  <DeleteModal
-                    id={e?._id}
-                    title="Сонголт устгах"
-                    option={true}
-                    onFinish={onFinish}
-                  >
+                    >
+                      {e.option}
+                    </Button>
+                    <DeleteModal
+                      id={e?._id}
+                      title="Сонголт устгах"
+                      option={true}
+                      onFinish={onFinish}
+                    >
+                      <Button
+                        bg="white"
+                        minW={"88px"}
+                        variant={"outline"}
+                        color={"black"}
+                      >
+                        Устгах
+                      </Button>
+                    </DeleteModal>
                     <Button
                       bg="white"
                       minW={"88px"}
                       variant={"outline"}
                       color={"black"}
                     >
-                      Устгах
+                      Өөрчлөх
                     </Button>
-                  </DeleteModal>
+                  </Stack>
+                ))}
+
+                <VoteModal
+                  choice={vote}
+                  send={send}
+                  voteId={voteId}
+                  optionId={myId}
+                  onFinish={onFinish}
+                >
                   <Button
                     bg="white"
-                    minW={"88px"}
-                    variant={"outline"}
+                    mx={"auto"}
+                    w={{ base: "85%", sm: "458px", md: "498px" }}
+                    variant={"solid"}
                     color={"black"}
+                    // onClick={() => {
+                    //   voteSubmit();
+                    // }}
+                    // {vote === ""?isDisabled:''}
+                    isDisabled={
+                      send === null || (voteId === false && first !== null)
+                    }
                   >
-                    Өөрчлөх
+                    {voteId
+                      ? "Санал шинэчлэх"
+                      : data && "meVotedId" in data
+                      ? data?.meVotedId
+                        ? "Санал өгсөн"
+                        : "Санал өгөх"
+                      : "Санал өгөх"}
                   </Button>
-                </Stack>
-              ))}
-
-              <VoteModal
-                choice={vote}
-                send={send}
-                voteId={voteId}
-                optionId={myId}
-                onFinish={onFinish}
-              >
-                <Button
-                  bg="white"
-                  mx={"auto"}
-                  w={{ base: "85%", sm: "458px", md: "498px" }}
-                  variant={"solid"}
-                  color={"black"}
-                  // onClick={() => {
-                  //   voteSubmit();
-                  // }}
-                  // {vote === ""?isDisabled:''}
-                  isDisabled={
-                    send === null || (voteId === false && first !== null)
-                  }
-                >
-                  {voteId
-                    ? "Санал шинэчлэх"
-                    : data && "meVotedId" in data
-                    ? data?.meVotedId
-                      ? "Санал өгсөн"
-                      : "Санал өгөх"
-                    : "Санал өгөх"}
-                </Button>
-              </VoteModal>
-            </Stack>
-          </Box>
-        </Stack>
-        {/* ) : null} */}
+                </VoteModal>
+              </Stack>
+            </Box>
+          </Stack>
+        ) : null}
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
