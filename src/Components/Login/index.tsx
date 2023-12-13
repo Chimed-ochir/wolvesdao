@@ -26,6 +26,7 @@ function InitialFocus() {
 
   return (
     <>
+      {/* <Button onClick={onOpen}>Нэвтрэх</Button> */}
       <Button onClick={onOpen}>LOG IN</Button>
 
       <Modal

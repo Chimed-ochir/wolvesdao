@@ -239,16 +239,18 @@ export const Header = () => {
               </MenuList>
             </Menu>
           ) : (
-            <Box w="100px">
+            <Box w="110px">
               <AuthModal>
                 <Button
-                  style={{ ...myFont.style }}
+                  // style={{ ...myFont.style }}
                   bg={"#dfff24"}
                   h={{ sm: "24px", lg: "43px" }}
                   color="black"
-                  w="100px"
+                  w="110px"
+                  pt="3px"
+                  fontWeight={"900"}
                 >
-                  LOG IN
+                  Нэвтрэх
                 </Button>
               </AuthModal>
             </Box>
@@ -267,7 +269,7 @@ export const Header = () => {
                   <Text
                     {...myFont.style}
                     lineHeight={"24px"}
-                    fontWeight={"700px"}
+                    fontWeight={"700"}
                     fontSize={"14px"}
                     color="#FCFCFC"
                     py={"auto"}
@@ -287,17 +289,19 @@ export const Header = () => {
                 </MenuList>
               </Menu>
             ) : (
-              <Box w="100px">
+              <Box w="110px">
                 <AuthModal>
                   <Button
-                    style={{ ...myFont.style }}
+                    // style={{ ...myFont.style }}
                     bg={"#dfff24"}
                     h={{ sm: "24px", lg: "43px" }}
                     color="black"
-                    w="100px"
+                    w="110px"
                     alignSelf={"right"}
+                    pt="5px"
+                    fontWeight={"900"}
                   >
-                    LOG IN
+                    Нэвтрэх
                   </Button>
                 </AuthModal>
               </Box>
