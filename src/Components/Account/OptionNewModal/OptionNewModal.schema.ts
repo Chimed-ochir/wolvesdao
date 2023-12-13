@@ -3,7 +3,6 @@ import * as Yup from "yup";
 
 export const BuildNewFormValidationSchema = () =>
   object().shape({
-    // pollId: string().required("Уг талбар хоосон байж болохгүй").label("pollId"),
     option: string().required("Уг талбар хоосон байж болохгүй").label("option"),
     icon: string()
       .required("Уг талбар хоосон байж болохгүй")
@@ -13,4 +12,3 @@ export const BuildNewFormValidationSchema = () =>
       )
       .label("icon"),
   });
-// /^(https?):\/\/[\w\-]+(\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$/,

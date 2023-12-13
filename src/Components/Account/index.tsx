@@ -1,10 +1,8 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
-// import { notification } from "antd";
 
 import Cookies from "js-cookie";
 
-// import { usePathname, useRouter } from "@/components";
 import { useMutation } from "@/utils";
 import api from "@/utils/CustomAxios";
 import { useToast } from "@chakra-ui/react";
@@ -73,7 +71,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
       setAdmin(data?.isAdmin);
-      // setAdmin(false);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
       Cookies.set("access", data.accessToken, {
@@ -92,7 +89,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
           duration: 5000,
           isClosable: true,
         });
-        // router.push(Cookies.get("redirect") || "/");
       }
     }
   };
@@ -121,8 +117,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       duration: 5000,
       isClosable: true,
     });
-
-    // return requestLogout({ accessToken: access });
   };
 
   const toLogin = (path?: string) => {

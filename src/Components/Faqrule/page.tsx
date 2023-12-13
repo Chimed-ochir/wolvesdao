@@ -2,10 +2,7 @@
 
 import { Box, Button, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
-// import localFont from "next/font/local";
-// const satFont = localFont({
-//   src: "../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-// });
+
 import { Fade, ScaleFade, Slide, SlideFade, Collapse } from "@chakra-ui/react";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 

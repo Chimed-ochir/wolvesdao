@@ -10,9 +10,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
-// import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
 
 import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import { Form, Formik } from "formik";
@@ -33,15 +30,6 @@ const satFont = localFont({
 const OptionFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
-      {/* <FormInput
-        label={"pollId"}
-        name="pollId"
-        placeholder={"pollId оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-        // isDisabled
-      /> */}
       <FormInput
         label={"Option"}
         name="option"
@@ -84,9 +72,7 @@ const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
     method: "post",
   });
   var moment = require("moment");
-  console.log("id", id);
   const onSubmit = (values: any) => {
-    console.log("myvalues", values);
     request(values)
       .then((res: any) => {
         if (res?.success) {

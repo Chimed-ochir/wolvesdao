@@ -10,28 +10,15 @@ import {
   Alert,
   AlertIcon,
 } from "@chakra-ui/react";
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
-// import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
 
 import { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
-import { FormInput } from "@/Components/form/FormInput";
-// import { useLogin } from "@/services/auth/login.service";
-// import { useAuthContext } from "@/contexts/AuthContext";
-// import { useConfirmWithResend } from "@/services/auth/confirm.service";
+
 import { useToast } from "@/utils/toast";
 
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { useAuth } from "../Account";
 import { useMutation } from "@/utils";
-import { LoginDataType } from "../Account";
 import localFont from "next/font/local";
-import { usePathname, useRouter } from "next/navigation";
-// import { useRouter } from "next/router";
-// const LoginFormBody = ({ isLoading }: { isLoading: boolean }) => {
+
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -75,31 +62,14 @@ const VoteForm = ({
         }
       })
       .catch((error) => {
-        console.log("error", error);
         showErrorToast(error.message);
       });
   };
 
-  // login(res);
-  // console.log("<<<<>>>>", values);
-
-  // console.log("---", res);
-
-  // const onFinish = (data: any) => {
-  //   // const authenticationResult = login(data);
-  //   login(data);
-  //   // if (authenticationResult) {
-  //   //   showSuccessToast("Amjiltai nevterlee");
-  //   //   onClose();
-  //   // }
-  // };
   return (
     <Stack>
       <Stack spacing="lg" pb="sm">
-        <HStack position="relative">
-          {/* <HiOutlineUserCircle size="40" opacity={0.1} />
-          <Divider /> */}
-        </HStack>{" "}
+        <HStack position="relative"></HStack>{" "}
         <Stack
           h="70px"
           direction={"row"}

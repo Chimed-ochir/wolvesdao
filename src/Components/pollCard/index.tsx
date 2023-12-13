@@ -21,16 +21,7 @@ function PollCard(el: any) {
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   const toast = useToast();
-  // const hoursDifference = Math.floor(
-  //   (timeDifference % (1000 * 3600 * 24)) / (1000 * 3600)
-  // );
-  // const minutesDifference = Math.floor(
-  //   (timeDifference % (1000 * 3600)) / (1000 * 60)
-  // console.log("user---", user);
-  // );
-  // useEffect(() => {
-  //   setState1(CalcStatus(startDate, currentDate,futureDate));
-  // }, []);
+
   return (
     <Stack
       w="100%"
@@ -40,14 +31,12 @@ function PollCard(el: any) {
       mt={{ sm: "20px" }}
       cursor={"pointer"}
       onClick={() => {
-        // router.push(`voting/${data._id}`);
         if (user) {
           router.replace(`voting/${data._id}`);
         } else {
           toast({
             title: "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
             description: "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
-            // status: "danger",
 
             duration: 5000,
             isClosable: true,
@@ -62,7 +51,6 @@ function PollCard(el: any) {
             direction={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
-            // mr={{ base: "10px", sm: "28px" }}
           >
             <Stack
               direction={"row"}
@@ -90,7 +78,6 @@ function PollCard(el: any) {
                 {...satFont.style}
                 fontWeight={"700"}
                 lineHeight={{ base: "12px", sm: "18px" }}
-                // fontSize={{ base: "10px", lg: "12px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
                 color={"white"}
               >
@@ -130,7 +117,6 @@ function PollCard(el: any) {
               fontSize={{ base: "10px", sm: "12px" }}
               py={{ base: "2px" }}
               px={{ base: "auto", lg: "2px" }}
-              // ml={{ sm: "35px" }}
               mr={{ sm: "3px", md: "" }}
               bg={
                 data.status === "active"
@@ -143,7 +129,6 @@ function PollCard(el: any) {
               }
               borderRadius={"4px"}
               w={{ base: "55px", sm: "70px" }}
-              //   ml={{ base: "10px", sm: "28px" }}
               textAlign={"center"}
               color={data.status === "pending" ? "black" : "white"}
             >
@@ -157,7 +142,6 @@ function PollCard(el: any) {
             fontSize={{ base: "20px", lg: "32px" }}
             py={"2px"}
             px={{ base: "auto", lg: "6px" }}
-            // ml={{ base: "4px", sm: "20px" }}
             color={"#F2F2F2"}
           >
             {data.description}

@@ -95,7 +95,7 @@ export const Footer = () => {
           </div>
           <div className={styled.rowWrapper2}>
             <p className={styled.poweredBy}>Privacy Policy</p>
-            <p style={{ margin: "0 8px" }}>•</p>
+            <p style={{ margin: "0 8px", color: "white" }}>•</p>
             <p className={styled.poweredBy}>Terms of Service</p>
           </div>
         </div>

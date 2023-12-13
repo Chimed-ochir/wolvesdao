@@ -1,10 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-// import { BgDark } from '@/components/BgDark';
-// import { Container } from '@/components/Container';
 import styled from "@/Components/Footer/index.module.scss";
-// import { FooterData, ScrollListener } from '@/utils';
 import styles from "./index.module.scss";
 import { Container } from "../Container";
 import { BgDark } from "../BgDark";
@@ -133,13 +130,7 @@ export const Header = () => {
       <div className={`content ${styles.row} `}>
         <div className={`${styles.redCircle} hideMobile`} />
         <a href="/" className={`hideMobile ${styles.logo}`}>
-          <Box
-            // position={"absolute"}
-            alignItems={"center"}
-            h={"42.42px"}
-            w={"218px"}
-            gap={"2.42px"}
-          >
+          <Box alignItems={"center"} h={"42.42px"} w={"218px"} gap={"2.42px"}>
             <Text
               {...myFont.style}
               fontSize={"13px"}
@@ -160,13 +151,7 @@ export const Header = () => {
           </Box>
         </a>
         <a href="/" className={`hideDesktop ${styles.logo}`}>
-          <Stack
-            // position={"absolute"}
-            // alignItems={"center"}
-            h={"42.42px"}
-            w={{ sm: "218px" }}
-            gap={"2.42px"}
-          >
+          <Stack h={"42.42px"} w={{ sm: "218px" }} gap={"2.42px"}>
             <Box my={"auto"} h={"22px"}>
               <Text
                 {...myFont.style}
@@ -197,7 +182,6 @@ export const Header = () => {
             >
               <Text
                 cursor="pointer"
-                // {...mortendFont.style}
                 fontFamily={"Golos Text"}
                 color={el.name === act ? "#DFFF24" : "#FCFCFC"}
                 fontWeight={"700"}
@@ -242,7 +226,6 @@ export const Header = () => {
             <Box w="110px">
               <AuthModal>
                 <Button
-                  // style={{ ...myFont.style }}
                   bg={"#dfff24"}
                   h={{ sm: "24px", lg: "43px" }}
                   color="black"
@@ -292,7 +275,6 @@ export const Header = () => {
               <Box w="110px">
                 <AuthModal>
                   <Button
-                    // style={{ ...myFont.style }}
                     bg={"#dfff24"}
                     h={{ sm: "24px", lg: "43px" }}
                     color="black"

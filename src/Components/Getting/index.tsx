@@ -85,22 +85,16 @@ function Getting() {
   useEffect(() => {
     host();
   }, [idx]);
-  console.log("idx", idx);
   return (
     <Box
       className={`hideMobile `}
       h={"678px"}
       w={"312px"}
       zIndex={100}
-      // position="sticky"
       position="fixed"
       left={{ base: "0", "2xl": "10%" }}
-      // top={side ? "0px" : "108px"}
       top={"130px"}
-      // bottom="50px"
-      // hidden={{ base: true, lg: false }}
     >
-      {/* <Stack> */}
       <Stack
         h={pathname === "/rules" ? "678px" : "32px"}
         justifyContent={"flex-start"}
@@ -138,7 +132,6 @@ function Getting() {
               h={"32px"}
               w={"2px"}
               bg={idx == 13 ? "#FBFBFB" : "#949494"}
-              // ml={"-4px"}
             ></Box>
 
             <Link href="#started1">
@@ -245,7 +238,6 @@ function Getting() {
               h={"32px"}
               w={"2px"}
               bg={idx == 10 ? "#FBFBFB" : "#949494"}
-              // ml={"-4px"}
             ></Box>
 
             <Link href="#started2">
@@ -329,7 +321,6 @@ function Getting() {
               h={"32px"}
               w={"2px"}
               bg={idx == 7 ? "#FBFBFB" : "#949494"}
-              // ml={"-4px"}
             ></Box>
 
             <Link href="#started24">
@@ -436,7 +427,6 @@ function Getting() {
               h={"32px"}
               w={"2px"}
               bg={idx == 4 ? "#FBFBFB" : "#949494"}
-              // ml={"-4px"}
             ></Box>
 
             <Link href="#started3">
@@ -520,7 +510,6 @@ function Getting() {
               h={"32px"}
               w={"2px"}
               bg={idx == 1 ? "#FBFBFB" : "#949494"}
-              // ml={"-4px"}
             ></Box>
 
             <Link href="#started34">

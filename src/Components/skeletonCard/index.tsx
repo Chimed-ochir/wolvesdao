@@ -23,7 +23,6 @@ import { isDate } from "moment";
 import { useRouter } from "next/navigation";
 import { CalcPercent, CalcStatus } from "@/utils";
 import { useAuth } from "../Account";
-// import Image from "next/image";
 function SkeletonCard(el: any) {
   return (
     <Stack
@@ -47,7 +46,6 @@ function SkeletonCard(el: any) {
               direction="row"
               alignItems={"center"}
               justifyContent={"space-between"}
-              // w={{ base: "30%", md: "20%" }}
               w={"60%"}
             >
               <SkeletonCircle size="10" />
@@ -62,7 +60,6 @@ function SkeletonCard(el: any) {
                 borderRadius={"6px"}
                 mt={"2px"}
                 w={{ base: "30%" }}
-                // ml={"40px"}
               ></Skeleton>
               <Skeleton
                 h="18px"
@@ -76,7 +73,6 @@ function SkeletonCard(el: any) {
               justifyContent={"flex-end"}
               alignItems={"flex-end"}
               w={"30%"}
-              // mr="30px"
             >
               <Skeleton
                 h="18px"

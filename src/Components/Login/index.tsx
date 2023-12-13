@@ -15,9 +15,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
-export function loginSubmit(values: any) {
-  console.log("+++++", values);
-}
+export function loginSubmit(values: any) {}
 function InitialFocus() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
