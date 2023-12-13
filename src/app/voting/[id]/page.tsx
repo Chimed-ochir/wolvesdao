@@ -309,7 +309,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 ml={"20px"}
                 my="8px"
                 color={"#F2F2F2"}
-                minW={{ base: "210px", sm: "230px" }}
+                minW={{ base: "140px", sm: "230px" }}
               >
                 Санал өгнө үү
               </Text>
@@ -317,7 +317,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 <OptionModal onFinish={onFinish} id={data?.data._id}>
                   <Button
                     bg="white"
-                    w="140px"
+                    w={{ base: "100px", sm: "140px" }}
                     variant={"outline"}
                     color={"black"}
                   >
