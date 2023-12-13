@@ -61,7 +61,7 @@ function SkeletonId() {
               direction="row"
               alignItems={"center"}
               justifyContent={"center"}
-              w="20%"
+              w={{ base: "40%", sm: "20%" }}
             >
               <SkeletonCircle size="10" />
               <Skeleton
@@ -75,14 +75,14 @@ function SkeletonId() {
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
+              w={{ base: "25%", sm: "30%" }}
+              ml={{ sm: "40px" }}
             ></Skeleton>
             <Skeleton
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
+              w={{ base: "25%", sm: "30%" }}
             ></Skeleton>
           </Stack>
         </Stack>
@@ -150,13 +150,13 @@ function SkeletonId() {
             justifyContent={"space-between"}
             alignItems={"center"}
             w={{ base: "85%", sm: "458px", md: "498px" }}
+            mb="20px"
           >
             <Stack
               direction="row"
-              ml="10px"
               alignItems={"center"}
               justifyContent={"center"}
-              w="20%"
+              w={{ base: "40%", sm: "20%" }}
             >
               <SkeletonCircle size="10" />
               <Skeleton
@@ -170,14 +170,14 @@ function SkeletonId() {
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
+              w={{ base: "25%", sm: "30%" }}
+              ml={{ sm: "40px" }}
             ></Skeleton>
             <Skeleton
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
+              w={{ base: "25%", sm: "30%" }}
             ></Skeleton>
           </Stack>
           <Stack
@@ -185,13 +185,13 @@ function SkeletonId() {
             justifyContent={"space-between"}
             alignItems={"center"}
             w={{ base: "85%", sm: "458px", md: "498px" }}
+            mb="20px"
           >
             <Stack
               direction="row"
-              ml="10px"
               alignItems={"center"}
               justifyContent={"center"}
-              w="20%"
+              w={{ base: "40%", sm: "20%" }}
             >
               <SkeletonCircle size="10" />
               <Skeleton
@@ -205,14 +205,14 @@ function SkeletonId() {
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
+              w={{ base: "25%", sm: "30%" }}
+              ml={{ sm: "40px" }}
             ></Skeleton>
             <Skeleton
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
+              w={{ base: "25%", sm: "30%" }}
             ></Skeleton>
           </Stack>
           <Stack
@@ -220,13 +220,13 @@ function SkeletonId() {
             justifyContent={"space-between"}
             alignItems={"center"}
             w={{ base: "85%", sm: "458px", md: "498px" }}
+            mb="20px"
           >
             <Stack
               direction="row"
-              ml="10px"
               alignItems={"center"}
               justifyContent={"center"}
-              w="20%"
+              w={{ base: "40%", sm: "20%" }}
             >
               <SkeletonCircle size="10" />
               <Skeleton
@@ -240,14 +240,14 @@ function SkeletonId() {
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
-              ml={"40px"}
+              w={{ base: "25%", sm: "30%" }}
+              ml={{ sm: "40px" }}
             ></Skeleton>
             <Skeleton
               h="22px"
               borderRadius={"6px"}
               mt={"2px"}
-              w={{ base: "30%" }}
+              w={{ base: "25%", sm: "30%" }}
             ></Skeleton>
           </Stack>
           <Skeleton

@@ -61,7 +61,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
       setVoteId(false);
     }
   }, [data]);
-  console.log("admin", admin);
   useEffect(() => {
     if (voteId === true) {
       data?.data?.options.map((e: any, id: number) => {
