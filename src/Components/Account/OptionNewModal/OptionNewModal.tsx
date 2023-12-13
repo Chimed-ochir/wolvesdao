@@ -18,7 +18,7 @@ import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
-import { BuildOptionwFormValidationSchema } from "./OptionModal.schema";
+import { BuildNewFormValidationSchema } from "./OptionNewModal.schema";
 import localFont from "next/font/local";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { HiOutlineUserCircle } from "react-icons/hi";
@@ -40,7 +40,7 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
         fontWeight="500"
         fontSize="14"
         color={"white"}
-        // isDisabled
+        isDisabled
       /> */}
       <FormInput
         label={"Option"}
@@ -76,21 +76,30 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
   );
 };
 
-const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
+const OptionForm = ({
+  onFinish,
+  id,
+  option1,
+  icon,
+}: {
+  onFinish: () => void;
+  id: string;
+  option1: string;
+  icon: string;
+}) => {
   const { onClose } = useModalContext();
   const { showErrorToast, showSuccessToast } = useToast();
   const { loading, request } = useMutation({
-    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/option`,
-    method: "post",
+    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/option/${id}`,
+    method: "patch",
   });
-  var moment = require("moment");
   console.log("id", id);
   const onSubmit = (values: any) => {
     console.log("myvalues", values);
     request(values)
       .then((res: any) => {
         if (res?.success) {
-          showSuccessToast("Амжилттай шинэчлэгдлээ!");
+          showSuccessToast("Амжилттай өөрчлөгдлөө!");
           onFinish();
           onClose();
         }
@@ -104,11 +113,10 @@ const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
     <Stack>
       <Formik
         initialValues={{
-          pollId: id,
-          option: "",
-          icon: "",
+          option: option1,
+          icon: icon,
         }}
-        validationSchema={BuildOptionwFormValidationSchema()}
+        validationSchema={BuildNewFormValidationSchema()}
         onSubmit={onSubmit}
       >
         {() => (
@@ -123,16 +131,20 @@ const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
 interface UpdateModalProps {
   children: React.ReactNode;
   id: string;
+  option: string;
+  icon: string;
   onFinish: () => void;
 }
-export const OptionModal: React.FC<UpdateModalProps> = ({
+export const OptionNewModal: React.FC<UpdateModalProps> = ({
   children,
   id,
   onFinish,
+  icon,
+  option,
 }) => {
   return (
-    <Modal title={"Сонголт нэмэх"} controlElement={children} msize="lg">
-      {<OptionForm onFinish={onFinish} id={id} />}
+    <Modal title={"Сонголт өөрчлөх"} controlElement={children} msize="lg">
+      {<OptionForm onFinish={onFinish} id={id} option1={option} icon={icon} />}
     </Modal>
   );
 };

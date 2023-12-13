@@ -72,8 +72,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
-      setAdmin(true);
-      // setAdmin(data?.admin);
+      setAdmin(data?.isAdmin);
+      // setAdmin(false);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
       Cookies.set("access", data.accessToken, {
@@ -138,8 +138,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         toLogin,
         isAuth: !!user,
         user,
-        loading: loading,
-        // loading: loading || loadingRefresh || loadingLogout,
+        loading: loading || loadingRefresh || loadingLogout,
         access,
         admin,
         htma,
@@ -161,7 +160,7 @@ export interface LoginDataType {
   idToken: string;
   session: string;
   username: string;
-  admin: boolean;
+  isAdmin: boolean;
 }
 
 type PayloadType = {
@@ -177,5 +176,5 @@ type PayloadType = {
   sub: string;
   token_use: string;
   username: string;
-  admin: boolean;
+  isAdmin: boolean;
 };

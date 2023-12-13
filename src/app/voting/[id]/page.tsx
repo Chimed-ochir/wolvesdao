@@ -30,6 +30,7 @@ import { UpdateModal } from "@/Components/Account/UpdateModal";
 import { DeleteModal } from "@/Components/Account/deleteModal";
 import { Editor } from "@tinymce/tinymce-react";
 import { OptionModal } from "@/Components/Account/OptionModal";
+import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -312,16 +313,18 @@ function Page({ params: { id } }: { params: { id: string } }) {
               >
                 Санал өгнө үү
               </Text>
-              <OptionModal onFinish={onFinish} id={data?.data._id}>
-                <Button
-                  bg="white"
-                  w="140px"
-                  variant={"outline"}
-                  color={"black"}
-                >
-                  Нэмэх
-                </Button>
-              </OptionModal>
+              {admin ? (
+                <OptionModal onFinish={onFinish} id={data?.data._id}>
+                  <Button
+                    bg="white"
+                    w="140px"
+                    variant={"outline"}
+                    color={"black"}
+                  >
+                    Нэмэх
+                  </Button>
+                </OptionModal>
+              ) : null}
             </Stack>
             <Stack justifyContent={"center"} my={"10px"}>
               {data?.data?.options.map((e: any, id: number) => (
@@ -349,29 +352,40 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   >
                     {e.option}
                   </Button>
-                  <DeleteModal
-                    id={e?._id}
-                    title="Сонголт устгах"
-                    option={true}
-                    onFinish={onFinish}
-                  >
-                    <Button
-                      bg="white"
-                      minW={"88px"}
-                      variant={"outline"}
-                      color={"black"}
-                    >
-                      Устгах
-                    </Button>
-                  </DeleteModal>
-                  <Button
-                    bg="white"
-                    minW={"88px"}
-                    variant={"outline"}
-                    color={"black"}
-                  >
-                    Өөрчлөх
-                  </Button>
+                  {admin ? (
+                    <Stack direction="row">
+                      <DeleteModal
+                        id={e?._id}
+                        title="Сонголт устгах"
+                        option={true}
+                        onFinish={onFinish}
+                      >
+                        <Button
+                          bg="white"
+                          minW={"88px"}
+                          variant={"outline"}
+                          color={"black"}
+                        >
+                          Устгах
+                        </Button>
+                      </DeleteModal>
+                      <OptionNewModal
+                        id={e?._id}
+                        onFinish={onFinish}
+                        option={e.option}
+                        icon={e.icon}
+                      >
+                        <Button
+                          bg="white"
+                          minW={"88px"}
+                          variant={"outline"}
+                          color={"black"}
+                        >
+                          Өөрчлөх
+                        </Button>
+                      </OptionNewModal>
+                    </Stack>
+                  ) : null}
                 </Stack>
               ))}
 

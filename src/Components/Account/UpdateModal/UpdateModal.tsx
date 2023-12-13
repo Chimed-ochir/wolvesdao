@@ -64,7 +64,6 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         label={"startDate"}
         name="startDate"
         placeholder={"startDate оруулах"}
-        color={"white"}
         type="datetime-local"
       />
       <FormInput
@@ -73,7 +72,6 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         placeholder={"endDate оруулах"}
         fontWeight="500"
         fontSize="14"
-        color={"white"}
         type="datetime-local"
       />
       <FormInput
