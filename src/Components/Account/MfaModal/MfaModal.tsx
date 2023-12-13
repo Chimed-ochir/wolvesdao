@@ -36,7 +36,7 @@ const MfaFormBody = ({ isLoading }: { isLoading: boolean }) => {
         type="submit"
         variant="outline"
         colorScheme="gray"
-        bg="white"
+        bg="#DFFF24"
         color={"black"}
         fontWeight={"700"}
         my={"20px"}

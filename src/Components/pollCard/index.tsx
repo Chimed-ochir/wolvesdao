@@ -254,7 +254,7 @@ function PollCard(el: any) {
                       color={"white"}
                     >
                       {el.votes.length !== 0
-                        ? CalcPercent(data.count, el.votes.length)
+                        ? CalcPercent(data.count, el.votes.length).toFixed(2)
                         : 0}
                       %
                     </Text>

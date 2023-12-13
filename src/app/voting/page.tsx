@@ -130,8 +130,9 @@ export default function Voting() {
         // status: tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
         page: page1 + 1,
         limit: 5,
+        sort: "status",
         ...(admin && tags === "all_propsal"
-          ? { sort: "status" }
+          ? {}
           : {
               status:
                 tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
@@ -154,8 +155,9 @@ export default function Voting() {
       fetchData(`/poll`, {
         page: 1,
         limit: 5,
+        sort: "status",
         ...(admin && tags === "all_propsal"
-          ? { sort: "status" }
+          ? {}
           : {
               status:
                 tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
