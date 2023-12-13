@@ -298,7 +298,7 @@ export const Header = () => {
                     color="black"
                     w="110px"
                     alignSelf={"right"}
-                    pt="5px"
+                    pt="3px"
                     fontWeight={"900"}
                   >
                     Нэвтрэх
