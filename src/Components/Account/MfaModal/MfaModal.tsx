@@ -3,11 +3,9 @@ import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildMfaFormValidationSchema } from "./MfaModal.schema";
-// import { useLoginWithChallenge } from '@/services/auth/mfa.service';
 import { useToast } from "@/utils/toast";
 import { useMutation } from "@/utils";
 import { useAuth } from "..";
-// import { SendEmailButton } from '@/components/common/SendEmailButton';
 
 const MfaFormBody = ({ isLoading }: { isLoading: boolean }) => {
   return (
@@ -23,15 +21,7 @@ const MfaFormBody = ({ isLoading }: { isLoading: boolean }) => {
         color={"white"}
         isMfa
       />
-      {/* <FormInput
-				label={t('mfaModal.mfaForm.fields.verifyCode') as string}
-				name='verifyCode'
-				isLoading={isLoading}
-				inputRightElement={
-					<SendEmailButton size='sm' variant='unstyled' emailType='NFT_SALE' />
-				}
-				tooltipText={t('mfaModal.mfaForm.fields.verifyCodeTooltip')}
-			/> */}
+
       <Button
         type="submit"
         variant="outline"
@@ -68,24 +58,9 @@ const MfaForm = ({
         login(res);
       })
       .catch((error) => {
-        console.log("error", error);
         showErrorToast(error.message);
       });
   };
-  //   const { loginWithChallenge, isLoginWithChallengeLoading } =
-  //     useLoginWithChallenge(
-  //       (data) => {
-  //         onFinish(data);
-  //         onClose();
-  //       },
-  //       (error) => {
-  //         error?.message === "Invalid code received for user"
-  //           ? showErrorToast(t("authTokenModal.mismatch"))
-  //           : showErrorToast(error?.message);
-
-  //         onClose();
-  //       }
-  //     );
 
   return (
     <Formik

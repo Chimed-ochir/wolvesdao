@@ -10,23 +10,16 @@ const mFont = localFont({
 });
 export default function Home() {
   return (
-    <Box
-      h={{ lg: "1310px" }}
-      // mx={{ base: "auto", lg: "0", xl: "0", "2xl": "0" }}
-      marginY={"-162px"}
-      w={"100%"}
-    >
+    <Box h={{ lg: "1310px" }} marginY={"-162px"} w={"100%"}>
       <Flex h={{ lg: "1310px" }} w={"100vw"} zIndex={"100"}>
         <Box
           mx={"auto"}
-          // w={"100%"}
           marginTop={"-162.5px"}
           // bgGradient={
           //   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
           // }
         >
           <div className={styles.circle}>
-            {/* <div> */}
             <Box
               bgGradient={
                 " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
@@ -51,17 +44,14 @@ export default function Home() {
               border={"1px solid black"}
             >
               <Box
-                // bg="black"
                 borderRadius={"100%"}
                 w={{ base: "688.66px", sm: "1183px" }}
                 h={{ base: "688.66px", sm: "1183px" }}
                 display={"fixed"}
                 m={"auto"}
                 marginX={"auto"}
-                // paddingTop={"50px"}
                 marginY={{ sm: "211px" }}
                 border={"1px solid black"}
-                // bg="red"
                 bgGradient={
                   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%)"
                 }
@@ -90,9 +80,6 @@ export default function Home() {
             justifyContent={"center"}
             alignItems={"center"}
             animation={"none"}
-            // bgGradient={
-            //   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 22.87%, rgba(255, 23, 16, 0) 66.33%, rgba(255, 23, 16, 0.05) 87.83%);"
-            // }
             bg={"black"}
             position={"relative"}
             top={{ base: "-360px", sm: "-600px" }}

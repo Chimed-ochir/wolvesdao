@@ -1,4 +1,3 @@
-// import { TFunction } from 'next-i18next';
 import { object, string } from "yup";
 
 export const BuildMfaFormValidationSchema = () =>
@@ -7,8 +6,4 @@ export const BuildMfaFormValidationSchema = () =>
       .required("Уг талбар хоосон байж болохгүй")
       .length(6, "Урт 6 тэмдэгт байх ёстой")
       .label("2FA кодоо оруулна уу! "),
-    // verifyCode: string()
-    // 	.required()
-    // 	.length(8)
-    // 	.label(t('mfaModal.mfaForm.fields.verifyCode')),
   });

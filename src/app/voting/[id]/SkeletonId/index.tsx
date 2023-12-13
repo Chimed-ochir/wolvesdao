@@ -15,13 +15,7 @@ function SkeletonId() {
       justifyContent={"space-evenly"}
     >
       <Stack w={{ md: "550px" }}>
-        <Skeleton
-          h="22px"
-          w={"30%"}
-          alignSelf={"start"}
-          mt="10px"
-          // ml="30px"
-        />
+        <Skeleton h="22px" w={"30%"} alignSelf={"start"} mt="10px" />
         <Stack
           mt="10px"
           bg={"#101010"}
@@ -86,12 +80,7 @@ function SkeletonId() {
             ></Skeleton>
           </Stack>
         </Stack>
-        <Stack
-          // bg="black"
-          my="10px"
-          w={{ base: "100%" }}
-          // alignItems={"center"}
-        >
+        <Stack my="10px" w={{ base: "100%" }}>
           <SkeletonText h="100px" noOfLines={5} />
           <Skeleton h="100px" borderRadius={"6px"}></Skeleton>
         </Stack>
@@ -103,7 +92,6 @@ function SkeletonId() {
           alignItems={"center"}
           borderRadius={"6px"}
         >
-          {/* <SkeletonText h="220px" noOfLines={5} /> */}
           <Skeleton
             h="42px"
             borderRadius={"6px"}
@@ -286,7 +274,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"
@@ -306,7 +293,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"
@@ -326,7 +312,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"
@@ -346,7 +331,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"
@@ -366,7 +350,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"
@@ -386,7 +369,6 @@ function SkeletonId() {
               borderRadius={"6px"}
               mt={"2px"}
               w={{ base: "40%" }}
-              // ml={"40px"}
             ></Skeleton>
             <Skeleton
               h="18px"

@@ -11,9 +11,6 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
-// import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
 import { Editor } from "@tinymce/tinymce-react";
 import { PropsWithChildren, useMemo, useRef, useState } from "react";
 import { Form, Formik } from "formik";
@@ -31,16 +28,12 @@ const satFont = localFont({
   src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 const NewFormBody = ({ loading }: { loading: boolean }) => {
-  // const [type, setType] = useState("password");
   const { htma } = useAuth();
 
   const editorRef = useRef<any | null>(null);
-  // const editor1Ref = useRef<any | null>(null);
   const log = () => {
     if (editorRef.current) {
-      // if (editorRef.current && editor1Ref.current) {
       htma(editorRef.current.getContent());
-      // htma1(editor1Ref.current.getContent());
     }
   };
 
@@ -226,7 +219,6 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
 
   const onSubmit = (values: any) => {
     values.content = htm;
-    // values.listContent = htm1;
 
     request(values)
       .then((res: any) => {

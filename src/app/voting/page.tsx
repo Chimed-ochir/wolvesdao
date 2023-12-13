@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-// import { useParams, usePathname, useRouter } from "next/navigation";
 import Loading from "../loading";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
@@ -56,7 +55,6 @@ export default function Voting() {
       query: "active",
       onclick: () => {
         setTags("active");
-        console.log("898989", tags);
       },
     },
     {
@@ -64,7 +62,6 @@ export default function Voting() {
       query: "pending",
       onclick: () => {
         setTags("pending");
-        console.log("898989", tags);
       },
     },
     {
@@ -72,7 +69,6 @@ export default function Voting() {
       query: "executed",
       onclick: () => {
         setTags("executed");
-        console.log("898989", tags);
       },
     },
     {
@@ -80,7 +76,6 @@ export default function Voting() {
       query: "rejected",
       onclick: () => {
         setTags("rejected");
-        console.log("898989", tags);
       },
     },
   ];
@@ -95,11 +90,7 @@ export default function Voting() {
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
-      // something happens after it reaches 80% of the screen
-
-      console.log("page1", page1);
       fetchData(`/poll`, {
-        // status: tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
         page: page1 + 1,
         limit: 5,
         sort: "status",
@@ -113,8 +104,6 @@ export default function Voting() {
         setPolls([...polls, ...res]);
       });
       setPage1((prevPage) => prevPage + 1);
-
-      console.log("pageCount", pageCount);
     }
   }, [inView]);
 
@@ -137,13 +126,7 @@ export default function Voting() {
   }, [tags, authloading]);
 
   return (
-    <Stack
-      // justifyContent={"center"}
-      // alignItems={"center"}
-
-      w={{ base: "93%", lg: "865px" }}
-      mx={"auto"}
-    >
+    <Stack w={{ base: "93%", lg: "865px" }} mx={"auto"}>
       {" "}
       <Show above="md">
         <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
@@ -213,7 +196,7 @@ export default function Voting() {
                 );
               }
 
-              return null; // If neither condition is met, render nothing
+              return null;
             })}
           </Stack>
         </Stack>
@@ -326,7 +309,6 @@ export default function Voting() {
               fontSize={"24px"}
               lineHeight={"32px"}
               color={"white"}
-              // ml={{ sm: "250px" }}
             >
               Илэрц олдсонгүй
             </Text>
@@ -335,14 +317,12 @@ export default function Voting() {
         {polls?.map((el: any, id: number) => (
           <PollCard key={id} el={el} />
         ))}
-        {/* {loading && ( */}
         {pageCount > page1 || loading ? (
           <Stack w="100%" ref={ref}>
             <SkeletonCard />
             <SkeletonCard />
           </Stack>
         ) : null}
-        {/* )}  */}
       </Stack>
     </Stack>
   );

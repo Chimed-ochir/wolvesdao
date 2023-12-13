@@ -199,8 +199,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
               <Box
                 w={{ base: "24px", sm: "32px" }}
                 h={{ base: "24px", sm: "32px" }}
-                // borderRadius={"50%"}
-                // bg={"red"}
               >
                 <Images
                   src={data?.data?.profile}
@@ -217,7 +215,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 {...satFont.style}
                 fontWeight={"700"}
                 lineHeight={{ base: "18px" }}
-                // fontSize={{ base: "10px", lg: "12px" }}
                 fontSize={{ base: "8px", sm: "12px" }}
                 color="white"
               >
@@ -251,7 +248,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
           </Box>
         </Stack>
         <Stack
-          // h={{ base: "289px", sm: "392px" }}
           justifyContent={{ base: "space-evenly", sm: "space-between" }}
           w={{ lg: "521px" }}
           mb={{ base: "38px", sm: "" }}
@@ -287,10 +283,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
-        {/* {period === "active" ? ( */}
-        <Stack
-        // h={{ base: "241px", sm: "301px" }}
-        >
+        <Stack>
           <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
             <Stack
               justifyContent={"space-around"}
@@ -335,7 +328,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
                     color="white"
                     onClick={() => {
                       setVote(`${e?.option}`);
-                      // setVoteId(`${e?._id}`);
                       setSend(`${e._id}`);
                       if (first !== null && first !== e._id) {
                         setVoteId(true);
@@ -401,10 +393,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   w={{ base: "85%", sm: "458px", md: "498px" }}
                   variant={"solid"}
                   color={"black"}
-                  // onClick={() => {
-                  //   voteSubmit();
-                  // }}
-                  // {vote === ""?isDisabled:''}
                   isDisabled={
                     send === null || (voteId === false && first !== null)
                   }

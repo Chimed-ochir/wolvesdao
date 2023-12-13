@@ -3,12 +3,10 @@ import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildMfaFormValidationSchema } from "./DeleteModal.schema";
-// import { useLoginWithChallenge } from '@/services/auth/mfa.service';
 import { useToast } from "@/utils/toast";
 import { useMutation } from "@/utils";
 import { useAuth } from "..";
 import { useRouter } from "next/navigation";
-// import { SendEmailButton } from '@/components/common/SendEmailButton';
 
 const DeleteForm = ({
   id,

@@ -32,7 +32,6 @@ function Information(data: any) {
         border={"1px solid #282828"}
         bg={"#101010"}
         w={{ sm: "480px", md: "550px", lg: "282px" }}
-        // h={"225px"}
         mt={{ base: "10px", lg: "" }}
       >
         <Stack
@@ -56,7 +55,6 @@ function Information(data: any) {
           <Stack
             direction={"row"}
             justifyContent={"space-between"}
-            // h={"148px"}
             w={{ base: "95%", sm: "450px", md: "480px", lg: "252px" }}
             mx={"auto"}
           >
@@ -70,15 +68,7 @@ function Information(data: any) {
               >
                 Tокен
               </Text>
-              {/* <Text
-              {...satFont.style}
-              fontWeight={"700"}
-              lineHeight={"18px"}
-              fontSize={"12px"}
-              color={"#949494"}
-            >
-              Voting system
-            </Text> */}
+
               <Text
                 {...satFont.style}
                 fontWeight={"700"}
@@ -116,22 +106,12 @@ function Information(data: any) {
                 Саналын явц
               </Text>
             </Stack>
-            <Stack
-              justifyContent={"space-around"}
-              // maxWidth={"153px"}
-              alignItems={"right"}
-              w="50%"
-            >
+            <Stack justifyContent={"space-around"} alignItems={"right"} w="50%">
               <Stack
                 direction="row"
                 justifyContent={"right"}
                 alignItems={"center"}
               >
-                {/* <Box
-              
-             
-              bg="red"
-            ></Box> */}
                 <Image src={wolves} alt="the wolves"></Image>
                 <Text
                   {...satFont.style}
@@ -169,7 +149,6 @@ function Information(data: any) {
                 direction="row"
                 alignItems={"center"}
                 justifyContent={"end"}
-                // maxW={"153px"}
               >
                 <Box maxW={"85%"}>
                   <Link href={data?.data?.data?.withLink} isExternal>
@@ -180,7 +159,6 @@ function Information(data: any) {
                       fontSize={"11px"}
                       color={"#FFFFFF"}
                       textAlign={"right"}
-                      // textDecoration={"underline"}
                       as="u"
                     >
                       {data?.data?.data?.withLink}
@@ -217,7 +195,6 @@ function Information(data: any) {
         border={"1px solid #282828"}
         bg={"#101010"}
         w={{ sm: "480px", md: "550px", lg: "282px" }}
-        // h={"213px"}
         mt={{ base: "10px", lg: "" }}
       >
         <Stack
@@ -350,7 +327,6 @@ function Information(data: any) {
             </Stack>
             <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
               <Text
-                //   {...satFont.style}
                 fontWeight={"500"}
                 lineHeight={"18px"}
                 fontSize={"12px"}
@@ -368,7 +344,6 @@ function Information(data: any) {
                 Санал хураалт эхэлсэн
               </Text>
               <Text
-                //   {...satFont.style}
                 fontWeight={"450"}
                 lineHeight={"18px"}
                 fontSize={"12px"}
@@ -416,7 +391,6 @@ function Information(data: any) {
             </Stack>
             <Box h="58px" justifyContent={"space-evenly"} w={"190px"}>
               <Text
-                //   {...satFont.style}
                 fontWeight={"500"}
                 lineHeight={"18px"}
                 fontSize={"12px"}
@@ -434,7 +408,6 @@ function Information(data: any) {
                 Санал хураалт дууссан
               </Text>
               <Text
-                //   {...satFont.style}
                 fontWeight={"450"}
                 lineHeight={"18px"}
                 fontSize={"12px"}
@@ -489,12 +462,10 @@ function Information(data: any) {
 
           <Stack
             direction={"row"}
-            //   mx={"auto"}
             w={"230px"}
             h="58px"
             alignItems={"center"}
             justifyContent={"space-between"}
-            //   ml={"1px"}
           >
             <Stack
               w="40px"

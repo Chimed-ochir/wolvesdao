@@ -125,7 +125,6 @@ const LoginForm = () => {
         }
       })
       .catch((error) => {
-        console.log("error", error);
         showErrorToast(error.message);
       });
   };

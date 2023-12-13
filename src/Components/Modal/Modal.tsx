@@ -11,7 +11,6 @@ import {
   Stack,
   Box,
 } from "@chakra-ui/react";
-// import localFont from "next/dist/compiled/@next/font/dist/local";
 import { PropsWithChildren, ReactNode } from "react";
 import localFont from "next/font/local";
 const myFont = localFont({
@@ -62,7 +61,6 @@ export const Modal = ({
         trapFocus={false}
       >
         <ModalOverlay bg="none" backdropFilter="blur(10px)" />
-        {/* <ModalOverlay zIndex={1500} backdropFilter='blur(10px)' /> */}
         <ModalContent bg="#1A1A1C" color={"white"}>
           {title ? (
             <ModalHeader
@@ -78,13 +76,11 @@ export const Modal = ({
                 </Stack>
               ) : title === "Login" ? (
                 <Stack
-                  // position={"absolute"}
                   alignItems={"flex-start"}
                   justifyContent={"space-between"}
                   h={"70px"}
                   w={{ base: "100%", sm: "336px" }}
                   gap={"2.42px"}
-                  // ml={"20px"}
                   mx={"auto"}
                 >
                   <Text
@@ -101,7 +97,6 @@ export const Modal = ({
                     lineHeight={{ sm: "42px" }}
                     fontSize={{ base: "36px", sm: "45px" }}
                     color={"white"}
-                    // textAlign={"center"}
                   >
                     WOLVES<span style={{ color: "#DFFF24" }}>.</span>DAO
                   </Text>

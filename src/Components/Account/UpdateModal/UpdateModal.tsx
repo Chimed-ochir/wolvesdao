@@ -10,9 +10,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
-// import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
 
 import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
 import { Form, Formik } from "formik";
@@ -193,7 +190,6 @@ const UpdateForm = ({
   }, []);
   const onSubmit = (values: any) => {
     values.content = htm;
-    console.log("values", values);
     request(values)
       .then((res: any) => {
         if (res?.success) {

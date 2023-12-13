@@ -23,7 +23,6 @@ export const BuildUpdateFormValidationSchema = () =>
     withLink: string()
       .required("Уг талбар хоосон байж болохгүй")
       .matches(
-        // /^(https?):\/\/[\w\-]+(\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$/,
         /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
         "зөв хаяг оруулна уу!"
       )

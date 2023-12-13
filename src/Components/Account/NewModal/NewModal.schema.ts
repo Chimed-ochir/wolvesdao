@@ -3,9 +3,7 @@ import * as Yup from "yup";
 
 export const BuildNewFormValidationSchema = () =>
   object().shape({
-    content: string()
-      // .required("Уг талбар хоосон байж болохгүй")
-      .label("content"),
+    content: string().label("content"),
     description: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("description"),
@@ -15,9 +13,7 @@ export const BuildNewFormValidationSchema = () =>
     listContent: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("listContent"),
-    notes: string()
-      // .required("Уг талбар хоосон байж болохгүй")
-      .label("notes"),
+    notes: string().label("notes"),
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),

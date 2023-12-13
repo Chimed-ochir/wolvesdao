@@ -16,17 +16,10 @@ import {
   Image as Images,
 } from "@chakra-ui/react";
 
-// import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-// import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
-// import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
-
 import { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
-// import { useLogin } from "@/services/auth/login.service";
-// import { useAuthContext } from "@/contexts/AuthContext";
-// import { useConfirmWithResend } from "@/services/auth/confirm.service";
 import { useToast } from "@/utils/toast";
 
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -50,7 +43,6 @@ const VoteViewForm = ({
   isOpen: boolean;
   data: any;
 }) => {
-  // const { onClose } = useModalContext();
   const [view, setView] = useState("");
   const { showErrorToast, showSuccessToast } = useToast();
 
@@ -79,7 +71,6 @@ const VoteViewForm = ({
               <FaSearch color="gray.300" />
             </InputLeftElement>
             <Input
-              // type="tel"
               placeholder="Нэрээр хайх"
               onChange={(e) => {
                 if (e.target.value) {

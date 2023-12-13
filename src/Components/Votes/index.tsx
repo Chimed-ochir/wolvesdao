@@ -50,7 +50,6 @@ function Votes(idx: any) {
               px="6px"
               bg="#228200"
               borderRadius="4px"
-              // ml="-10px"
               color="#F2F2F2"
             >
               {data.length}
@@ -73,8 +72,6 @@ function Votes(idx: any) {
                 <Box
                   w={{ base: "24px", sm: "32px" }}
                   h={{ base: "24px", sm: "32px" }}
-                  // borderRadius={"50%"}
-                  // bg={"red"}
                 >
                   <Images
                     src={e?.profile}
