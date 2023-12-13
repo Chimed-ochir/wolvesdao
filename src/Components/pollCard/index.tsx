@@ -5,21 +5,15 @@ import localFont from "next/font/local";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-import {
-  BsCheckSquareFill,
-  BsFillXSquareFill,
-  BsDashSquareFill,
-} from "react-icons/bs";
+
 import { isDate } from "moment";
 import { useRouter } from "next/navigation";
 import { CalcPercent, CalcStatus } from "@/utils";
 import { useAuth } from "../Account";
-// import Image from "next/image";
 function PollCard(el: any) {
   const data = el.el;
   var moment = require("moment");
   const { user } = useAuth();
-  // const [state1, setState1] = useState("");
   const router = useRouter();
   const currentDate = new Date();
   const futureDate = new Date(moment.utc(data.endDate).format("MM-DD-YYYY"));
@@ -70,17 +64,6 @@ function PollCard(el: any) {
             justifyContent={"space-between"}
             // mr={{ base: "10px", sm: "28px" }}
           >
-            {/* <Stack direction={"row"} alignItems={"center"}>
-              <Box w={"32px"} h={"32px"} borderRadius={"50%"} bg={"red"}></Box>
-              <Text>
-                <span>by</span> Monopoly
-              </Text>
-              <Text>•</Text>
-
-              <Text>ID 53536475</Text>
-              <Text>•</Text>
-              <Text>Proposed on: 2023-09-22</Text>
-            </Stack> */}
             <Stack
               direction={"row"}
               alignItems={"center"}
@@ -92,20 +75,6 @@ function PollCard(el: any) {
                 w={{ base: "24px", sm: "32px" }}
                 h={{ base: "24px", sm: "32px" }}
               >
-                {/* <Box
-                  w={{ base: "24px", sm: "32px" }}
-                  h={{ base: "24px", sm: "32px" }}
-                  my={"auto"}
-                  borderRadius={"50%"}
-                  bg={"red"}
-                ></Box> */}
-                {/* <Image
-                  src={data?.profile}
-                  width={32}
-                  height={32}
-                  alt="Profile Picture"
-                ></Image> */}
-
                 <Image
                   src={data?.profile}
                   alt="Profile Picture"
@@ -198,18 +167,7 @@ function PollCard(el: any) {
           dangerouslySetInnerHTML={{ __html: `${data.listContent}` }}
           style={{ maxHeight: "200px", overflow: "hidden", color: "white" }}
         />
-        {/* <Text
-          fontWeight={"500"}
-          {...satFont.style}
-          lineHeight={{ base: "23px", lg: "30px" }}
-          fontSize={{ base: "12px", lg: "18px" }}
-          w={{ base: "93%", lg: "794px" }}
-          dangerouslySetInnerHTML={{ __html: `${data.content}` }}
-        >
-          There are a total of 4 phases that your proposal will go through from
-          its submission: After a proposal is submitted, the moderator will
-          review the proposals and provide feedback within 7 calendar days.
-        </Text> */}
+
         {data.status === "active" ? (
           <Stack>
             {data.options.map((el: any, id: number) => (
@@ -262,78 +220,6 @@ function PollCard(el: any) {
                 </Stack>
               </Box>
             ))}
-            {/* <Box
-              w={{ base: "93%", lg: "798px" }}
-              bg={"#1C1C1C"}
-              borderRadius={"6px"}
-            >
-              <Stack
-                w={"40%"}
-                bg={"#303030"}
-                borderRadius={"6px"}
-                justifyContent={"center"}
-                h={"42px"}
-              >
-                <Stack
-                  direction={"row"}
-                  justifyContent={"space-between"}
-                  w={{ base: "210px", lg: "700px" }}
-                  mx={"auto"}
-                  ml={{ base: "5px", sm: "20px" }}
-                >
-                  <Stack direction={"row"}>
-                    {" "}
-                    <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                      <BsFillXSquareFill color="red" size="18px" />
-                    </Box>
-                    <Text>No: </Text>
-                    <Text>12 Wolves</Text>
-                  </Stack>
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"700"}
-                    lineHeight={"18px"}
-                    fontSize={"15px"}
-                  >
-                    98.75%
-                  </Text>
-                </Stack>
-              </Stack>
-            </Box>
-            <Box w={{ base: "93%", lg: "798px" }} bg={"#1C1C1C"}>
-              <Stack
-                w={"70%"}
-                bg={"#303030"}
-                borderRadius={"6px"}
-                justifyContent={"center"}
-                h={"42px"}
-              >
-                <Stack
-                  direction={"row"}
-                  justifyContent={"space-between"}
-                  w={{ base: "210px", lg: "700px" }}
-                  mx={"auto"}
-                  ml={{ base: "5px", sm: "20px" }}
-                >
-                  <Stack direction={"row"}>
-                    {" "}
-                    <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                      <BsDashSquareFill color="#303030" size="18px" />
-                    </Box>
-                    <Text>Abstain: </Text>
-                    <Text>1</Text>
-                  </Stack>
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"700"}
-                    lineHeight={"18px"}
-                    fontSize={"15px"}
-                  >
-                    28.75%
-                  </Text>
-                </Stack>
-              </Stack>
-            </Box> */}
           </Stack>
         ) : null}
 

@@ -24,45 +24,17 @@ import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
 import { NewModal } from "@/Components/Account/NewModal";
 import { useAuth } from "@/Components/Account";
-// import { useAuth } from "@/Components/Account";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-// function useScrollPosition() {
-//   const [scrollPosition, setScrollPosition] = useState(0);
 
-//   function handleScroll() {
-//     const height =
-//       document.documentElement.scrollHeight -
-//       document.documentElement.clientHeight;
-
-//     const windowScroll = document.documentElement.scrollTop;
-
-//     const scrolled = (windowScroll / height) * 100;
-
-//     setScrollPosition(scrolled);
-//   }
-
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll, { passive: true });
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   });
-
-//   return scrollPosition;
-// }
 export default function Voting() {
-  // const [status, setStatus] = useState<string>("");
-  // const { loadi } = useAuth();
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
   const [page1, setPage1] = useState(1);
   const [prop, setProp] = useState("Бүх санал");
   const { admin, loading: authloading } = useAuth();
-  //   const pathname = usePathname();
 
-  //   const router = useRouter();
   const array = [
     {
       label: "Бүх санал",
@@ -147,8 +119,6 @@ export default function Voting() {
   }, [inView]);
 
   useEffect(() => {
-    // console.log("lol first effect", page1, admin, authloading);
-
     if (!loading && !authloading) {
       setPolls([]);
       setPage1(1);
