@@ -263,7 +263,9 @@ function Information(data: any) {
                 >
                   {data?.data?.data?.count !== 0
                     ? e?.votes?.length &&
-                      e?.votes?.length / data?.data?.data?.count
+                      Number(
+                        e?.votes?.length / data?.data?.data?.count
+                      ).toFixed(2)
                     : 0}
                   %
                 </Text>
