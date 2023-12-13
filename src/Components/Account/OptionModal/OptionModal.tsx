@@ -90,7 +90,7 @@ const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
     request(values)
       .then((res: any) => {
         if (res?.success) {
-          showSuccessToast("Амжилттай шинэчлэгдлээ!");
+          showSuccessToast("Амжилттай сонголт орууллаа!");
           onFinish();
           onClose();
         }

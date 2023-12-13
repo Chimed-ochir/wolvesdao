@@ -131,7 +131,7 @@ export default function Voting() {
         page: page1 + 1,
         limit: 5,
         ...(admin && tags === "all_propsal"
-          ? {}
+          ? { sort: "status" }
           : {
               status:
                 tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
@@ -155,7 +155,7 @@ export default function Voting() {
         page: 1,
         limit: 5,
         ...(admin && tags === "all_propsal"
-          ? {}
+          ? { sort: "status" }
           : {
               status:
                 tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
