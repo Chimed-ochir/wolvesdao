@@ -61,14 +61,14 @@ function PollCard(el: any) {
         }
       }}
     >
-      <Stack ml={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
+      <Stack mx={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
         <Stack>
           <Stack
-            w={{ base: "93%", sm: "100%", md: "93%", lg: "800px" }}
+            w={{ base: "100%", lg: "800px" }}
             direction={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
-            mr={{ base: "10px", sm: "28px" }}
+            // mr={{ base: "10px", sm: "28px" }}
           >
             {/* <Stack direction={"row"} alignItems={"center"}>
               <Box w={"32px"} h={"32px"} borderRadius={"50%"} bg={"red"}></Box>
@@ -214,7 +214,7 @@ function PollCard(el: any) {
           <Stack>
             {data.options.map((el: any, id: number) => (
               <Box
-                w={{ base: "93%", lg: "798px" }}
+                w={{ base: "100%", lg: "798px" }}
                 bg={"#1C1C1C"}
                 borderRadius={"6px"}
                 key={id}
