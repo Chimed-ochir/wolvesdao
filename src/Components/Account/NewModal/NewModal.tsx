@@ -8,17 +8,18 @@ import {
   Link,
   InputRightElement,
   Text,
+  Input,
 } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 // import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 // import { AiFillEye } from '@react-icons/all-files/ai/AiFillEye';
 // import { AiFillEyeInvisible } from '@react-icons/all-files/ai/AiFillEyeInvisible';
-
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
+import { Editor } from "@tinymce/tinymce-react";
+import { PropsWithChildren, useMemo, useRef, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
-import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
+import { BuildNewFormValidationSchema } from "./NewModal.schema";
 import localFont from "next/font/local";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { HiOutlineUserCircle } from "react-icons/hi";
@@ -26,19 +27,23 @@ import { useAuth } from "..";
 import { useMutation } from "@/utils";
 import { LoginDataType } from "..";
 import { MfaModal } from "../MfaModal";
-import { Editor } from "@tinymce/tinymce-react";
 const satFont = localFont({
   src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
-const UpdateFormBody = ({ loading }: { loading: boolean }) => {
-  const [type, setType] = useState("password");
-  const { htma, htm } = useAuth();
+const NewFormBody = ({ loading }: { loading: boolean }) => {
+  // const [type, setType] = useState("password");
+  const { htma } = useAuth();
+
   const editorRef = useRef<any | null>(null);
+  // const editor1Ref = useRef<any | null>(null);
   const log = () => {
     if (editorRef.current) {
+      // if (editorRef.current && editor1Ref.current) {
       htma(editorRef.current.getContent());
+      // htma1(editor1Ref.current.getContent());
     }
   };
+
   return (
     <Stack spacing="lg" pb="sm">
       <FormInput
@@ -49,21 +54,70 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
+
       <FormInput
+        fontWeight="500"
+        fontSize="14"
         label={"listContent"}
         name="listContent"
         placeholder={"listContent оруулах"}
-        fontWeight="500"
-        fontSize="14"
         color={"white"}
       />
+      {/* <Text my={"10px"}>
+        listContent :{" "}
+        <span style={{ fontSize: "12px" }}>
+          Уг талбар хоосон байж болохгүй!
+        </span>
+      </Text>
+      <Editor
+        onInit={(evt, editor) => {
+          editor1Ref.current = editor;
+        }}
+        apiKey="7eztjbt9c7vbpz8ry9g8gesq1zmab59yhw5298z3nre97kuc"
+        onFocus={(e) => {
+          e.stopImmediatePropagation();
+        }}
+        init={{
+          height: 300,
+          menubar: true,
+          auto_focus: true,
+          plugins: [
+            "advlist",
+            "autolink",
+            "lists",
+            "link",
+            "image",
+            "charmap",
+            "preview",
+            "anchor",
+            "searchreplace",
+            "visualblocks",
+            "code",
+            "fullscreen",
+            "insertdatetime",
+            "media",
+            "table",
+            "code",
+            "help",
+            "wordcount",
+          ],
+          toolbar:
+            "undo redo | blocks | " +
+            "bold italic forecolor | alignleft aligncenter " +
+            "alignright alignjustify | bullist numlist outdent indent | " +
+            "removeformat | help",
 
+          content_style:
+            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+        }}
+      /> */}
       <FormInput
         fontWeight="500"
         fontSize="14"
         label={"startDate"}
         name="startDate"
         placeholder={"startDate оруулах"}
+        color={"white"}
         type="datetime-local"
       />
       <FormInput
@@ -72,6 +126,7 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         placeholder={"endDate оруулах"}
         fontWeight="500"
         fontSize="14"
+        color={"white"}
         type="datetime-local"
       />
       <FormInput
@@ -82,22 +137,7 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      <FormInput
-        label={"voteCount"}
-        name="voteCount"
-        placeholder={"voteCount оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
-      <FormInput
-        label={"id"}
-        name="id"
-        placeholder={"id оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
+
       <FormInput
         label={"status"}
         name="status"
@@ -106,6 +146,8 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
+
+      {/* <FormInput name="content"> */}
       <Text my={"10px"}>
         Content :{" "}
         <span style={{ fontSize: "12px" }}>
@@ -120,7 +162,6 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         onFocus={(e) => {
           e.stopImmediatePropagation();
         }}
-        initialValue={htm}
         init={{
           height: 300,
           menubar: true,
@@ -173,31 +214,24 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
   );
 };
 
-const UpdateForm = ({
-  data,
-  onFinish,
-}: {
-  data: any;
-  onFinish: () => void;
-}) => {
+const NewForm = ({ onFinish }: { onFinish: () => void }) => {
   const { onClose } = useModalContext();
+  const { htm, htm1 } = useAuth();
   const { showErrorToast, showSuccessToast } = useToast();
   const { loading, request } = useMutation({
-    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/poll/${data?.data?._id}`,
-    method: "patch",
+    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/poll`,
+    method: "post",
   });
   var moment = require("moment");
-  const { htma, htm } = useAuth();
-  useEffect(() => {
-    htma(data?.data?.content);
-  }, []);
+
   const onSubmit = (values: any) => {
     values.content = htm;
-    console.log("values", values);
+    // values.listContent = htm1;
+
     request(values)
       .then((res: any) => {
         if (res?.success) {
-          showSuccessToast("Амжилттай шинэчлэгдлээ!");
+          showSuccessToast("Амжилттай үүсгэлээ!");
           onFinish();
           onClose();
         }
@@ -211,29 +245,21 @@ const UpdateForm = ({
     <Stack>
       <Formik
         initialValues={{
-          content: data?.data?.content,
-          description: data?.data?.description,
-          endDate: moment
-            .utc(data?.data?.endDate)
-            .format("YYYY-MM-DDTHH:mm")
-            .slice(0, 16),
-          listContent: data?.data?.listContent,
-          options: data?.data?.options,
-          startDate: moment
-            .utc(data?.data?.startDate)
-            .format("YYYY-MM-DDTHH:mm")
-            .slice(0, 16),
-          status: data?.data?.status,
-          withLink: data?.data?.withLink,
-          voteCount: data?.data?.__v,
-          id: data?.data?._id,
+          content: "",
+          description: "",
+          notes: "",
+          endDate: "",
+          listContent: "",
+          startDate: "",
+          status: "",
+          withLink: "",
         }}
-        validationSchema={BuildUpdateFormValidationSchema()}
+        validationSchema={BuildNewFormValidationSchema()}
         onSubmit={onSubmit}
       >
         {() => (
           <Form>
-            <UpdateFormBody loading={loading} />
+            <NewFormBody loading={loading} />
           </Form>
         )}
       </Formik>
@@ -247,18 +273,16 @@ const UpdateForm = ({
   );
 };
 interface UpdateModalProps {
-  data: any;
   children: React.ReactNode;
   onFinish: () => void;
 }
-export const UpdateModal: React.FC<UpdateModalProps> = ({
-  data,
+export const NewModal: React.FC<UpdateModalProps> = ({
   children,
   onFinish,
 }) => {
   return (
-    <Modal title={"Өөрчлөх"} controlElement={children} msize="lg">
-      {<UpdateForm data={data} onFinish={onFinish} />}
+    <Modal title={"Нэмэх"} controlElement={children} msize="lg">
+      {<NewForm onFinish={onFinish} />}
     </Modal>
   );
 };

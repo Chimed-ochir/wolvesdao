@@ -22,6 +22,8 @@ import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
+import { NewModal } from "@/Components/Account/NewModal";
+import { useAuth } from "@/Components/Account";
 // import { useAuth } from "@/Components/Account";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -55,8 +57,9 @@ export default function Voting() {
   // const { loadi } = useAuth();
   const [polls, setPolls] = useState<any[]>([]);
   const [tags, setTags] = useState("all_propsal");
-  const [page1, setPage1] = useState(2);
+  const [page1, setPage1] = useState(1);
   const [prop, setProp] = useState("Бүх санал");
+  const { admin, loading: authloading } = useAuth();
   //   const pathname = usePathname();
 
   //   const router = useRouter();
@@ -69,7 +72,7 @@ export default function Voting() {
       },
     },
     {
-      label: "Waiting",
+      label: "Хүлээгдэж байна",
       query: "waiting",
       onclick: () => {
         setTags("waiting");
@@ -110,24 +113,29 @@ export default function Voting() {
     },
   ];
 
-  const { data, loading, fetchData, pageCount } = useQuery<{ data: any[] }>({
+  const { loading, fetchData, pageCount } = useQuery<{ data: any[] }>({
     uri: `/poll`,
     manual: true,
-    params: {
-      // status: tags,
-      page: 1,
-      limit: 5,
-    },
   });
-
+  const onFinish = () => {
+    fetchData();
+  };
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
       // something happens after it reaches 80% of the screen
+
       console.log("page1", page1);
       fetchData(`/poll`, {
-        ...(tags === "all_propsal" ? {} : { status: tags }),
-        page: page1,
+        // status: tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
+        page: page1 + 1,
+        limit: 5,
+        ...(admin && tags === "all_propsal"
+          ? { sort: "status" }
+          : {
+              status:
+                tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
+            }),
       }).then((res) => {
         setPolls([...polls, ...res]);
       });
@@ -138,14 +146,23 @@ export default function Voting() {
   }, [inView]);
 
   useEffect(() => {
-    if (!loading) {
-      setPage1(2);
+    // console.log("lol first effect", page1, admin, authloading);
+
+    if (!loading && !authloading) {
       setPolls([]);
+      setPage1(1);
       fetchData(`/poll`, {
-        ...(tags === "all_propsal" ? {} : { status: tags }),
+        page: 1,
+        limit: 5,
+        ...(admin && tags === "all_propsal"
+          ? { sort: "status" }
+          : {
+              status:
+                tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
+            }),
       }).then(setPolls);
     }
-  }, [tags]);
+  }, [tags, authloading]);
 
   return (
     <Stack
@@ -158,17 +175,30 @@ export default function Voting() {
       {" "}
       <Show above="md">
         <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
-          <Box w={{ lg: "790px" }}>
+          <Stack w={{ lg: "790px" }} direction="row">
             <Text
               {...satFont.style}
               fontWeight={"900"}
               fontSize={"24px"}
               lineHeight={"32px"}
               color={"white"}
+              minW={"190px"}
             >
               Санал хураалт
             </Text>
-          </Box>{" "}
+            {admin ? (
+              <NewModal onFinish={onFinish}>
+                <Button
+                  bg="white"
+                  w={"120px"}
+                  variant={"solid"}
+                  color={"black"}
+                >
+                  Санал нэмэх
+                </Button>
+              </NewModal>
+            ) : null}
+          </Stack>{" "}
           <Stack
             w={{ sm: "100%" }}
             h={"42px"}
@@ -176,41 +206,48 @@ export default function Voting() {
             justifyContent={"space-between"}
             borderBottom={"1px solid #282828"}
           >
-            {array.map((el, id) => (
-              <Link
-                key={id}
-                href={{
-                  pathname: "/voting",
-                  query: { status: el.query },
-                }}
-              >
-                <Box
-                  mb={"-5px"}
-                  h="42px"
-                  borderBottom={el.query === tags ? "1px solid white" : ""}
-                >
-                  <Text
-                    {...satFont.style}
-                    fontWeight={"700"}
-                    fontSize={"15px"}
-                    lineHeight={"24px"}
-                    // onClick={el.onclick}
+            {array.map((el, id) => {
+              const isAdmin = el.label === "Хүлээгдэж байна" && admin;
+              const isNotWaiting = el.label !== "Хүлээгдэж байна";
 
-                    px={{ md: "10px" }}
-                    color={"#FCFCFC"}
-                    onClick={el.onclick}
-                    cursor={"pointer"}
+              if (isNotWaiting || isAdmin) {
+                return (
+                  <Link
+                    key={id}
+                    href={{
+                      pathname: "/voting",
+                      query: { status: el.query },
+                    }}
                   >
-                    {el.label}
-                  </Text>
-                </Box>
-              </Link>
-            ))}
+                    <Box
+                      mb={"-5px"}
+                      h="42px"
+                      borderBottom={el.query === tags ? "1px solid white" : ""}
+                    >
+                      <Text
+                        {...satFont.style}
+                        fontWeight={"700"}
+                        fontSize={"15px"}
+                        lineHeight={"24px"}
+                        px={{ md: "10px" }}
+                        color={"#FCFCFC"}
+                        cursor={"pointer"}
+                        onClick={el.onclick}
+                      >
+                        {el.label}
+                      </Text>
+                    </Box>
+                  </Link>
+                );
+              }
+
+              return null; // If neither condition is met, render nothing
+            })}
           </Stack>
         </Stack>
       </Show>
       <Show below="md">
-        <Stack alignSelf={"start"}>
+        <Stack alignSelf={"start"} direction={"row"}>
           <Menu>
             <MenuButton
               as={Button}
@@ -219,6 +256,7 @@ export default function Voting() {
               rightIcon={<MdOutlineExpandMore />}
               color={"white"}
               _hover={{ bg: "#303030" }}
+              minW={"140px"}
             >
               {prop}
             </MenuButton>
@@ -234,17 +272,19 @@ export default function Voting() {
               >
                 Бүх санал
               </MenuItem>
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("waiting");
-                  setProp("Waiting");
-                }}
-                color={"white"}
-                _hover={{ bg: "#303030" }}
-              >
-                Waiting
-              </MenuItem>
+              {admin ?? (
+                <MenuItem
+                  bg={"#101010"}
+                  onClick={() => {
+                    setTags("waiting");
+                    setProp("Waiting");
+                  }}
+                  color={"white"}
+                  _hover={{ bg: "#303030" }}
+                >
+                  Хүлээгдэж байна
+                </MenuItem>
+              )}
               <MenuItem
                 bg={"#101010"}
                 onClick={() => {
@@ -291,6 +331,13 @@ export default function Voting() {
               </MenuItem>
             </MenuList>
           </Menu>
+          {admin ? (
+            <NewModal onFinish={onFinish}>
+              <Button bg="white" w={"120px"} variant={"solid"} color={"black"}>
+                Санал нэмэх
+              </Button>
+            </NewModal>
+          ) : null}
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
@@ -317,11 +364,8 @@ export default function Voting() {
           <PollCard key={id} el={el} />
         ))}
         {/* {loading && ( */}
-        {pageCount >= page1 || loading ? (
+        {pageCount > page1 || loading ? (
           <Stack w="100%" ref={ref}>
-            <SkeletonCard />
-            <SkeletonCard />
-            <SkeletonCard />
             <SkeletonCard />
             <SkeletonCard />
           </Stack>

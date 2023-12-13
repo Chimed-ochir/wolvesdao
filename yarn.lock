@@ -2212,6 +2212,14 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tinymce/tinymce-react@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.npmjs.org/@tinymce/tinymce-react/-/tinymce-react-4.3.2.tgz"
+  integrity sha512-wJHZhPf2Mk3yTtdVC/uIGh+kvDgKuTw/qV13uzdChTNo68JI1l7jYMrSQOpyimDyn5LHAw0E1zFByrm1WHAVeA==
+  dependencies:
+    prop-types "^15.6.2"
+    tinymce "^6.0.0 || ^5.5.1"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"
@@ -4460,7 +4468,7 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-react-dom@^18, react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=18:
+react-dom@^18, react-dom@^18.0.0, "react-dom@^18.0.0 || ^17.0.1 || ^16.7.0", react-dom@^18.2.0, react-dom@>=18:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -4533,7 +4541,7 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-react@*, "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18, react@^18.0.0, react@^18.2.0, "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.8.0, react@>=18:
+react@*, "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18, react@^18.0.0, "react@^18.0.0 || ^17.0.1 || ^16.7.0", react@^18.2.0, "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.8.0, react@>=18:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -4927,6 +4935,11 @@ tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
+
+"tinymce@^6.0.0 || ^5.5.1":
+  version "6.8.2"
+  resolved "https://registry.npmjs.org/tinymce/-/tinymce-6.8.2.tgz"
+  integrity sha512-Lho79o2Y1Yn+XdlTEkHTEkEmzwYWTXz7IUsvPwxJF3VTtgHUIAAuBab29kik+f2KED3rZvQavr9D7sHVMJ9x4A==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"

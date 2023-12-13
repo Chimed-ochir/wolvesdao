@@ -10,12 +10,22 @@ import { useAuth } from "..";
 import { useRouter } from "next/navigation";
 // import { SendEmailButton } from '@/components/common/SendEmailButton';
 
-const DeleteForm = ({ id }: { id: string }) => {
+const DeleteForm = ({
+  id,
+  option,
+  onFinish,
+}: {
+  id: string;
+  option: boolean;
+  onFinish: () => void;
+}) => {
   const { showErrorToast, showSuccessToast } = useToast();
   const { onClose } = useModalContext();
   const router = useRouter();
   const { loading, request } = useMutation({
-    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/poll/${id}`,
+    uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/${
+      option ? "option" : "poll"
+    }/${id}`,
     method: "delete",
   });
   const onSubmit = () => {
@@ -23,7 +33,11 @@ const DeleteForm = ({ id }: { id: string }) => {
       .then((res: any) => {
         if (res?.success) {
           showSuccessToast("Амжилттай устгалаа!");
-          router.push("/voting");
+          if (option) {
+            onFinish();
+          } else {
+            router.push("/voting");
+          }
           onClose();
         }
       })
@@ -34,7 +48,9 @@ const DeleteForm = ({ id }: { id: string }) => {
 
   return (
     <Stack spacing="md">
-      <Text>Та уг саналыг устгахдаа итгэлтэй байна уу?</Text>
+      <Text>
+        Та уг {option ? "сонголтыг" : "саналыг"} устгахдаа итгэлтэй байна уу?
+      </Text>
       <Button
         type="submit"
         variant="outline"
@@ -56,11 +72,20 @@ const DeleteForm = ({ id }: { id: string }) => {
 interface DeleteModalProps {
   id: string;
   children: React.ReactNode;
+  title: string;
+  option: boolean;
+  onFinish: () => void;
 }
-export const DeleteModal: React.FC<DeleteModalProps> = ({ id, children }) => {
+export const DeleteModal: React.FC<DeleteModalProps> = ({
+  id,
+  title,
+  children,
+  option,
+  onFinish,
+}) => {
   return (
-    <Modal title={"Санал устгах"} controlElement={children} msize="sm">
-      <DeleteForm id={id} />
+    <Modal title={title} controlElement={children} msize="sm">
+      <DeleteForm id={id} option={option} onFinish={onFinish} />
     </Modal>
   );
 };

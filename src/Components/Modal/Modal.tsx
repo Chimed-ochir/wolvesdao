@@ -59,6 +59,7 @@ export const Modal = ({
         isCentered={isCentered}
         {...props}
         size={{ base: "xs", sm: msize }}
+        trapFocus={false}
       >
         <ModalOverlay bg="none" backdropFilter="blur(10px)" />
         {/* <ModalOverlay zIndex={1500} backdropFilter='blur(10px)' /> */}

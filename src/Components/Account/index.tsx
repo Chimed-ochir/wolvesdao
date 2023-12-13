@@ -19,6 +19,10 @@ interface AuthProviderValueType {
   user: string | null;
   toLogin: (pathname?: string) => void;
   login: (data: LoginDataType) => void;
+  htma: (data: any) => void;
+  htm: any | null;
+  htma1: (data: any) => void;
+  htm1: any | null;
 }
 
 function parseJwt(token: string) {
@@ -40,7 +44,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const router = useRouter();
   const toast = useToast();
   const pathname = usePathname();
-
+  const [htm, setHtm] = useState<string | null>("");
+  const [htm1, setHtm1] = useState<string | null>("");
   const { loading: loadingRefresh, request } = useMutation({
     uri: "/auth/loginWithRefreshToken",
   });
@@ -67,8 +72,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
-      setAdmin(true);
-      // setAdmin(data?.admin);
+      setAdmin(data?.isAdmin);
+      // setAdmin(false);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
       Cookies.set("access", data.accessToken, {
@@ -90,6 +95,12 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         // router.push(Cookies.get("redirect") || "/");
       }
     }
+  };
+  const htma = (data: string | null) => {
+    setHtm(data);
+  };
+  const htma1 = (data: string | null) => {
+    setHtm1(data);
   };
 
   const logout = () => {
@@ -127,10 +138,13 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         toLogin,
         isAuth: !!user,
         user,
-        loading: loading,
-        // loading: loading || loadingRefresh || loadingLogout,
+        loading: loading || loadingRefresh || loadingLogout,
         access,
         admin,
+        htma,
+        htm,
+        htma1,
+        htm1,
       }}
     >
       {children}
@@ -146,7 +160,7 @@ export interface LoginDataType {
   idToken: string;
   session: string;
   username: string;
-  admin: boolean;
+  isAdmin: boolean;
 }
 
 type PayloadType = {
@@ -162,5 +176,5 @@ type PayloadType = {
   sub: string;
   token_use: string;
   username: string;
-  admin: boolean;
+  isAdmin: boolean;
 };

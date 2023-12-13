@@ -43,6 +43,12 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
+.tox.tox-silver-sink.tox-tinymce-aux {
+  z-index: 1401;
+}
+body.tox-fullscreen .tox.tox-tinymce.tox-fullscreen {
+  z-index: 1401;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

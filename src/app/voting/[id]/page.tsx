@@ -28,6 +28,9 @@ import Information from "./Information/page";
 import { useAuth } from "@/Components/Account";
 import { UpdateModal } from "@/Components/Account/UpdateModal";
 import { DeleteModal } from "@/Components/Account/deleteModal";
+import { Editor } from "@tinymce/tinymce-react";
+import { OptionModal } from "@/Components/Account/OptionModal";
+import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -92,7 +95,12 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 Өөрчлөх
               </Button>
             </UpdateModal>
-            <DeleteModal id={id}>
+            <DeleteModal
+              id={id}
+              title="Санал устгах"
+              option={false}
+              onFinish={onFinish}
+            >
               <Button
                 bg="white"
                 minW={"88px"}
@@ -272,6 +280,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
             onClick={() => {
               setCont(!cont);
             }}
+            mt={cont ? "20px" : ""}
             rightIcon={
               cont === false ? <MdOutlineExpandMore /> : <MdExpandLess />
             }
@@ -279,38 +288,50 @@ function Page({ params: { id } }: { params: { id: string } }) {
             {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
-        {period === "active" ? (
-          <Stack
-          // h={{ base: "241px", sm: "301px" }}
-          >
-            <Box
-              borderRadius={"6px"}
-              border={"1px solid #282828"}
-              bg={"#101010"}
+        {/* {period === "active" ? ( */}
+        <Stack
+        // h={{ base: "241px", sm: "301px" }}
+        >
+          <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
+            <Stack
+              justifyContent={"space-around"}
+              borderBottom={"1px solid  #282828"}
+              direction={"row"}
+              alignItems="center"
             >
-              <Stack
-                justifyContent={"space-around"}
-                borderBottom={"1px solid  #282828"}
+              <Text
+                {...satFont.style}
+                fontWeight={"700"}
+                lineHeight={{ base: "27px", lg: "42px" }}
+                fontSize={{ base: "16px", sm: "24px" }}
+                py={"2px"}
+                px={"6px"}
+                ml={"20px"}
+                my="8px"
+                color={"#F2F2F2"}
+                minW={{ base: "210px", sm: "230px" }}
               >
-                <Text
-                  {...satFont.style}
-                  fontWeight={"700"}
-                  lineHeight={{ base: "27px", lg: "42px" }}
-                  fontSize={{ base: "16px", sm: "24px" }}
-                  py={"2px"}
-                  px={"6px"}
-                  ml={"20px"}
-                  color={"#F2F2F2"}
-                >
-                  Санал өгнө үү
-                </Text>
-              </Stack>
-              <Stack justifyContent={"center"} my={"10px"}>
-                {data?.data?.options.map((e: any, id: number) => (
+                Санал өгнө үү
+              </Text>
+              {admin ? (
+                <OptionModal onFinish={onFinish} id={data?.data._id}>
+                  <Button
+                    bg="white"
+                    w="140px"
+                    variant={"outline"}
+                    color={"black"}
+                  >
+                    Нэмэх
+                  </Button>
+                </OptionModal>
+              ) : null}
+            </Stack>
+            <Stack justifyContent={"center"} my={"10px"}>
+              {data?.data?.options.map((e: any, id: number) => (
+                <Stack key={id} direction={"row"}>
                   <Button
                     variant={"outline"}
                     mx={"auto"}
-                    key={id}
                     w={{ base: "85%", sm: "458px", md: "498px" }}
                     color="white"
                     onClick={() => {
@@ -331,42 +352,77 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   >
                     {e.option}
                   </Button>
-                ))}
+                  {admin ? (
+                    <Stack direction="row">
+                      <DeleteModal
+                        id={e?._id}
+                        title="Сонголт устгах"
+                        option={true}
+                        onFinish={onFinish}
+                      >
+                        <Button
+                          bg="white"
+                          minW={"88px"}
+                          variant={"outline"}
+                          color={"black"}
+                        >
+                          Устгах
+                        </Button>
+                      </DeleteModal>
+                      <OptionNewModal
+                        id={e?._id}
+                        onFinish={onFinish}
+                        option={e.option}
+                        icon={e.icon}
+                      >
+                        <Button
+                          bg="white"
+                          minW={"88px"}
+                          variant={"outline"}
+                          color={"black"}
+                        >
+                          Өөрчлөх
+                        </Button>
+                      </OptionNewModal>
+                    </Stack>
+                  ) : null}
+                </Stack>
+              ))}
 
-                <VoteModal
-                  choice={vote}
-                  send={send}
-                  voteId={voteId}
-                  optionId={myId}
-                  onFinish={onFinish}
+              <VoteModal
+                choice={vote}
+                send={send}
+                voteId={voteId}
+                optionId={myId}
+                onFinish={onFinish}
+              >
+                <Button
+                  bg="white"
+                  mx={"auto"}
+                  w={{ base: "85%", sm: "458px", md: "498px" }}
+                  variant={"solid"}
+                  color={"black"}
+                  // onClick={() => {
+                  //   voteSubmit();
+                  // }}
+                  // {vote === ""?isDisabled:''}
+                  isDisabled={
+                    send === null || (voteId === false && first !== null)
+                  }
                 >
-                  <Button
-                    bg="white"
-                    mx={"auto"}
-                    w={{ base: "85%", sm: "458px", md: "498px" }}
-                    variant={"solid"}
-                    color={"black"}
-                    // onClick={() => {
-                    //   voteSubmit();
-                    // }}
-                    // {vote === ""?isDisabled:''}
-                    isDisabled={
-                      send === null || (voteId === false && first !== null)
-                    }
-                  >
-                    {voteId
-                      ? "Санал шинэчлэх"
-                      : data && "meVotedId" in data
-                      ? data?.meVotedId
-                        ? "Санал өгсөн"
-                        : "Санал өгөх"
-                      : "Санал өгөх"}
-                  </Button>
-                </VoteModal>
-              </Stack>
-            </Box>
-          </Stack>
-        ) : null}
+                  {voteId
+                    ? "Санал шинэчлэх"
+                    : data && "meVotedId" in data
+                    ? data?.meVotedId
+                      ? "Санал өгсөн"
+                      : "Санал өгөх"
+                    : "Санал өгөх"}
+                </Button>
+              </VoteModal>
+            </Stack>
+          </Box>
+        </Stack>
+        {/* ) : null} */}
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
