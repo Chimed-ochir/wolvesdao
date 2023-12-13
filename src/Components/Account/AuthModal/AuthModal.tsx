@@ -73,7 +73,11 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
         mt={"5px"}
         isLoading={loading}
         inputRightElement={
-          <InputRightElement onClick={changePassword} cursor={"pointer"}>
+          <InputRightElement
+            onClick={changePassword}
+            cursor={"pointer"}
+            mt={"5px"}
+          >
             {type === "password" ? (
               <AiFillEyeInvisible color={"white"} />
             ) : (
