@@ -46,6 +46,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const [first, setFirst] = useState("");
   const [myId, setMyId] = useState("");
   const [cont, setCont] = useState(false);
+  const [cont1, setCont1] = useState(false);
   useEffect(() => {
     if (data && "meVotedId" in data) {
       setSend(data?.meVotedId as string);
@@ -64,6 +65,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
       });
     }
   }, [voteId]);
+  console.log("data?.data.notes", data?.data.notes);
   return !data || loading ? (
     <SkeletonId />
   ) : (
@@ -413,9 +415,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
             bg={"#101010"}
             justifyContent={{ base: "space-evenly", sm: "space-between" }}
             mb={{ base: "38px", sm: "" }}
-            maxHeight={cont === false ? "200px" : ""}
-            minHeight={"50px"}
-            overflow={"hidden"}
             paddingBottom={"20px"}
             marginTop={"10px"}
           >
@@ -436,11 +435,44 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 Дэлгэрэнгүй мэдээлэл
               </Text>
             </Stack>
-            <Stack justifyContent={"center"} alignItems={"center"}>
+            <Stack
+              justifyContent={"center"}
+              alignItems={"center"}
+              w={{ lg: "521px" }}
+              mb={{ base: "38px", sm: "" }}
+              maxHeight={cont1 === false ? "300px" : ""}
+              minHeight={"200px"}
+              overflow={"hidden"}
+              color="white"
+            >
               <div
                 dangerouslySetInnerHTML={{ __html: `${data?.data.notes}` }}
                 style={{ width: "85%", color: "white" }}
               />
+            </Stack>
+            <Stack
+              mt={"-70px"}
+              backdropFilter={cont1 === false ? "auto" : ""}
+              backdropBlur="2px"
+            >
+              <Button
+                variant={"outline"}
+                border={"1px solid white"}
+                w={"140px"}
+                color={"white"}
+                mx={"auto"}
+                bg={"#282828"}
+                _hover={{ bg: "#303030" }}
+                onClick={() => {
+                  setCont1(!cont1);
+                }}
+                mt={cont1 ? "20px" : ""}
+                rightIcon={
+                  cont1 === false ? <MdOutlineExpandMore /> : <MdExpandLess />
+                }
+              >
+                {cont1 === false ? " Дэлгэрэнгүй" : "Хураангуй"}
+              </Button>
             </Stack>
           </Stack>
         ) : null}

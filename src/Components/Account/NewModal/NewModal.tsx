@@ -1,39 +1,23 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-  Input,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext, Text } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 import { Editor } from "@tinymce/tinymce-react";
-import { PropsWithChildren, useMemo, useRef, useState } from "react";
+import { useRef } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildNewFormValidationSchema } from "./NewModal.schema";
-import localFont from "next/font/local";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-import { LoginDataType } from "..";
-import { MfaModal } from "../MfaModal";
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
+
 const NewFormBody = ({ loading }: { loading: boolean }) => {
-  const { htma } = useAuth();
+  const { htma, htma1 } = useAuth();
 
   const editorRef = useRef<any | null>(null);
+  const editorRef1 = useRef<any | null>(null);
   const log = () => {
-    if (editorRef.current) {
+    if (editorRef.current && editorRef1.current) {
       htma(editorRef.current.getContent());
+      htma1(editorRef1.current.getContent());
     }
   };
 
@@ -56,15 +40,15 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
         placeholder={"listContent оруулах"}
         color={"white"}
       />
-      {/* <Text my={"10px"}>
-        listContent :{" "}
+      <Text my={"10px"}>
+        notes :{" "}
         <span style={{ fontSize: "12px" }}>
           Уг талбар хоосон байж болохгүй!
         </span>
       </Text>
       <Editor
         onInit={(evt, editor) => {
-          editor1Ref.current = editor;
+          editorRef1.current = editor;
         }}
         apiKey="7eztjbt9c7vbpz8ry9g8gesq1zmab59yhw5298z3nre97kuc"
         onFocus={(e) => {
@@ -103,7 +87,7 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
           content_style:
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
-      /> */}
+      />
       <FormInput
         fontWeight="500"
         fontSize="14"
@@ -215,11 +199,10 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
     uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/poll`,
     method: "post",
   });
-  var moment = require("moment");
 
   const onSubmit = (values: any) => {
     values.content = htm;
-
+    values.notes = htm1;
     request(values)
       .then((res: any) => {
         if (res?.success) {
@@ -255,12 +238,6 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
           </Form>
         )}
       </Formik>
-      {/* <MfaModal
-        isOpen={!!sessionData}
-        onClose={() => setSessionData(null)}
-        sessionData={sessionData}
-        onFinish={onFinish}
-      /> */}
     </Stack>
   );
 };

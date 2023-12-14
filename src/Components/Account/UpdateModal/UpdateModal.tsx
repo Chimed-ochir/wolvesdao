@@ -28,12 +28,13 @@ const satFont = localFont({
   src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 const UpdateFormBody = ({ loading }: { loading: boolean }) => {
-  const [type, setType] = useState("password");
-  const { htma, htm } = useAuth();
+  const { htma, htm, htma1, htm1 } = useAuth();
   const editorRef = useRef<any | null>(null);
+  const editorRef1 = useRef<any | null>(null);
   const log = () => {
-    if (editorRef.current) {
+    if (editorRef.current && editorRef1.current) {
       htma(editorRef.current.getContent());
+      htma1(editorRef1.current.getContent());
     }
   };
   return (
@@ -54,7 +55,56 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
+      <Text my={"10px"}>
+        Notes :{" "}
+        <span style={{ fontSize: "12px" }}>
+          Уг талбар хоосон байж болохгүй!
+        </span>
+      </Text>
+      <Editor
+        onInit={(evt, editor) => {
+          editorRef1.current = editor;
+        }}
+        apiKey="7eztjbt9c7vbpz8ry9g8gesq1zmab59yhw5298z3nre97kuc"
+        onFocus={(e) => {
+          e.stopImmediatePropagation();
+        }}
+        initialValue={htm1}
+        init={{
+          height: 300,
+          menubar: true,
+          auto_focus: true,
 
+          plugins: [
+            "advlist",
+            "autolink",
+            "lists",
+            "link",
+            "image",
+            "charmap",
+            "preview",
+            "anchor",
+            "searchreplace",
+            "visualblocks",
+            "code",
+            "fullscreen",
+            "insertdatetime",
+            "media",
+            "table",
+            "code",
+            "help",
+            "wordcount",
+          ],
+          toolbar:
+            "undo redo | blocks | " +
+            "bold italic forecolor | alignleft aligncenter " +
+            "alignright alignjustify | bullist numlist outdent indent | " +
+            "removeformat | help",
+
+          content_style:
+            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+        }}
+      />
       <FormInput
         fontWeight="500"
         fontSize="14"
@@ -184,12 +234,14 @@ const UpdateForm = ({
     method: "patch",
   });
   var moment = require("moment");
-  const { htma, htm } = useAuth();
+  const { htma, htm, htm1, htma1 } = useAuth();
   useEffect(() => {
     htma(data?.data?.content);
+    htma1(data?.data?.notes);
   }, []);
   const onSubmit = (values: any) => {
     values.content = htm;
+    values.notes = htm1;
     request(values)
       .then((res: any) => {
         if (res?.success) {
@@ -209,6 +261,7 @@ const UpdateForm = ({
         initialValues={{
           content: data?.data?.content,
           description: data?.data?.description,
+          notes: data?.data?.notes,
           endDate: moment
             .utc(data?.data?.endDate)
             .format("YYYY-MM-DDTHH:mm")
