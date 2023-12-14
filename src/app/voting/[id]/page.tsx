@@ -131,7 +131,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
               cursor="pointer"
               w="80px"
               onClick={() => {
-                router.push("/voting");
+                // router.push("/voting");
+                router.back();
               }}
             >
               <BsChevronLeft color="#FBFBFB" />
