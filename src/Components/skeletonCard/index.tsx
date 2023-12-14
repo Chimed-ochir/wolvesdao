@@ -33,7 +33,7 @@ function SkeletonCard(el: any) {
       mt={{ sm: "20px" }}
       cursor={"pointer"}
     >
-      <Stack ml={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
+      <Stack mx={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
         <Stack>
           <Stack
             w={{ base: "93%", sm: "100%", md: "93%", lg: "800px" }}

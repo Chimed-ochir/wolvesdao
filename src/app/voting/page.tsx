@@ -23,6 +23,7 @@ import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
 import { NewModal } from "@/Components/Account/NewModal";
 import { useAuth } from "@/Components/Account";
+import VoteSkeleton from "./VoteSkeleton";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -80,7 +81,7 @@ export default function Voting() {
     },
   ];
 
-  const { loading, fetchData, pageCount } = useQuery<{ data: any[] }>({
+  const { loading, fetchData, data, pageCount } = useQuery<{ data: any[] }>({
     uri: `/poll`,
     manual: true,
   });
@@ -124,8 +125,11 @@ export default function Voting() {
       }).then(setPolls);
     }
   }, [tags, authloading]);
-
-  return (
+  console.log("loading", loading);
+  console.log("polls", polls);
+  return (!loading && !data) || !polls ? (
+    <VoteSkeleton />
+  ) : (
     <Stack w={{ base: "93%", lg: "865px" }} mx={"auto"}>
       {" "}
       <Show above="md">
@@ -296,7 +300,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {!loading && polls?.length === 0 && (
+        {(!loading && polls?.length === 0 && pageCount === 0) ?? (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
