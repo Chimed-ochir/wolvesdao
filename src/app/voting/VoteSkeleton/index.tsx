@@ -11,7 +11,6 @@ function VoteSkeleton() {
         mt={"2px"}
         w={{ base: "140px", sm: "30%" }}
       ></Skeleton>
-      <Show above="md"></Show>
       <Show above="md">
         <Stack
           w={{ sm: "100%" }}

@@ -125,8 +125,7 @@ export default function Voting() {
       }).then(setPolls);
     }
   }, [tags, authloading]);
-  console.log("loading", loading);
-  console.log("polls", polls);
+
   return (!loading && !data) || !polls ? (
     <VoteSkeleton />
   ) : (
@@ -300,7 +299,7 @@ export default function Voting() {
         </Stack>
       </Show>
       <Stack alignItems={"center"}>
-        {(!loading && polls?.length === 0 && pageCount === 0) ?? (
+        {!loading && polls?.length === 0 && (
           <Stack
             mt="30px"
             w={{ sm: "100%" }}
