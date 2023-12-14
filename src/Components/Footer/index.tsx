@@ -1,12 +1,8 @@
 "use client";
-import { useState } from "react";
-import moment from "moment";
 import { usePathname } from "next/navigation";
 
-import BackImg from "@/assets/images/footerAlso.png";
 import { Container } from "@/Components/Container";
 import styled from "./index.module.scss";
-import InitialFocus from "../Login";
 import { Box } from "@chakra-ui/react";
 export const FooterData = [
   {
@@ -56,52 +52,53 @@ export const FooterData = [
 
 export const Footer = () => {
   const pathname = usePathname();
-  const isHome = pathname === ("/" || "");
 
   return (
-    <Container className={styled.wrapper}>
-      <div className={`content ${styled.container}`}>
-        <Box
-          className={`hideMobile ${styled.gridWrapper}`}
-          w={pathname === "/rules" ? "793px" : "100%"}
-          ml={pathname === "/rules" ? "332px" : ""}
-        >
-          {FooterData.map((el: any, ind: any) => (
-            <div key={ind} className={styled.colWrapper}>
-              <h4 className={styled.title}>{el.title}</h4>
-              {el.children ? (
-                <>
-                  {el.children.map((child: any, idx: any) => (
-                    <a
-                      key={idx}
-                      href={child.link}
-                      className={styled.link}
-                      target={child.newTab ? "_blank" : ""}
-                    >
-                      {child.name}
-                    </a>
-                  ))}
-                </>
-              ) : null}
-            </div>
-          ))}
-        </Box>
+    <Box>
+      <Container className={styled.wrapper}>
+        <div className={`content ${styled.container}`}>
+          <Box
+            className={`hideMobile ${styled.gridWrapper}`}
+            w={pathname === "/rules" ? "793px" : "100%"}
+            ml={pathname === "/rules" ? "332px" : ""}
+          >
+            {FooterData.map((el: any, ind: any) => (
+              <div key={ind} className={styled.colWrapper}>
+                <h4 className={styled.title}>{el.title}</h4>
+                {el.children ? (
+                  <>
+                    {el.children.map((child: any, idx: any) => (
+                      <a
+                        key={idx}
+                        href={child.link}
+                        className={styled.link}
+                        target={child.newTab ? "_blank" : ""}
+                      >
+                        {child.name}
+                      </a>
+                    ))}
+                  </>
+                ) : null}
+              </div>
+            ))}
+          </Box>
 
-        <div className={styled.bottom}>
-          <div className={styled.rowWrapper2}>
-            <p className={styled.companyName}>The Wolves Community</p>
-            <p style={{ paddingLeft: "5px" }}> </p>
-            <p className={styled.poweredBy}> © 2023 All rights reserved</p>
-          </div>
-          <div className={styled.rowWrapper2}>
-            <p className={styled.poweredBy}>Privacy Policy</p>
-            <p style={{ margin: "0 8px", color: "white" }}>•</p>
-            <p className={styled.poweredBy}>Terms of Service</p>
+          <div className={styled.bottom}>
+            <div className={styled.rowWrapper2}>
+              <p className={styled.companyName}>The Wolves Community</p>
+              <p style={{ paddingLeft: "5px" }}> </p>
+              <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+            </div>
+            <div className={styled.rowWrapper2}>
+              <p className={styled.poweredBy}>Privacy Policy</p>
+              <p style={{ margin: "0 8px", color: "white" }}>•</p>
+              <p className={styled.poweredBy}>Terms of Service</p>
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
       <div className={styled.redCircle} />
-    </Container>
+    </Box>
   );
 };
 

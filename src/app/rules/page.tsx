@@ -1,6 +1,6 @@
 import Getting from "@/Components/Getting";
 import GettingStarted from "@/Components/GettingStarted";
-import { Box, Show, Stack, Text } from "@chakra-ui/react";
+import { Box, Show, Stack } from "@chakra-ui/react";
 
 export default function Rules() {
   return (

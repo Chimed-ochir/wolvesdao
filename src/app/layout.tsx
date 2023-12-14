@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Golos_Text } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/Components/Header";
 import "@/styles/colors.scss";
 import "@/styles/globals.scss";
+import styled from "@/Components/Header/index.module.scss";
 
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Footer } from "@/Components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,7 +65,7 @@ export default function RootLayout({
                 }}
               >
                 {/* <Box my={"auto"}> */}
-
+                <div className={`${styled.redCircle} hideMobile`} />
                 <Header />
 
                 {/* </Box> */}

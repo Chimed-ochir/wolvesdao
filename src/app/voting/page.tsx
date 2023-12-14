@@ -6,8 +6,6 @@ import {
   Stack,
   Text,
   Show,
-  Skeleton,
-  SkeletonCircle,
   Button,
   Menu,
   MenuButton,
@@ -16,8 +14,7 @@ import {
 } from "@chakra-ui/react";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import Loading from "../loading";
-import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
+import { MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
@@ -214,79 +211,121 @@ export default function Voting() {
               rightIcon={<MdOutlineExpandMore />}
               color={"white"}
               _hover={{ bg: "#303030" }}
-              minW={"140px"}
+              minW={"150px"}
             >
               {prop}
             </MenuButton>
             <MenuList bg={"#101010"}>
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("all_propsal");
-                  setProp("Бүх санал");
+              <Link
+                href={{
+                  pathname: "/voting",
+                  query: { status: "all_propsal" },
                 }}
-                color={"white"}
-                _hover={{ bg: "#303030" }}
               >
-                Бүх санал
-              </MenuItem>
-              {admin ?? (
                 <MenuItem
                   bg={"#101010"}
                   onClick={() => {
-                    setTags("waiting");
-                    setProp("Waiting");
+                    setTags("all_propsal");
+                    setProp("Бүх санал");
                   }}
                   color={"white"}
                   _hover={{ bg: "#303030" }}
                 >
-                  Хүлээгдэж байна
+                  Бүх санал
                 </MenuItem>
+              </Link>
+              {admin ?? (
+                <Link
+                  href={{
+                    pathname: "/voting",
+                    query: { status: "waiting" },
+                  }}
+                >
+                  <MenuItem
+                    bg={"#101010"}
+                    onClick={() => {
+                      setTags("waiting");
+                      setProp("Waiting");
+                    }}
+                    color={"white"}
+                    _hover={{ bg: "#303030" }}
+                  >
+                    Хүлээгдэж байна
+                  </MenuItem>
+                </Link>
               )}
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("active");
-                  setProp("Идэвхтэй");
+              <Link
+                href={{
+                  pathname: "/voting",
+                  query: { status: "active" },
                 }}
-                color={"white"}
-                _hover={{ bg: "#303030" }}
               >
-                Идэвхтэй
-              </MenuItem>
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("pending");
-                  setProp("Дэмжигдсэн");
+                <MenuItem
+                  bg={"#101010"}
+                  onClick={() => {
+                    setTags("active");
+                    setProp("Идэвхтэй");
+                  }}
+                  color={"white"}
+                  _hover={{ bg: "#303030" }}
+                >
+                  Идэвхтэй
+                </MenuItem>
+              </Link>
+              <Link
+                href={{
+                  pathname: "/voting",
+                  query: { status: "pending" },
                 }}
-                color={"white"}
-                _hover={{ bg: "#303030" }}
               >
-                Дэмжигдсэн
-              </MenuItem>
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("executed");
-                  setProp("Хэрэгжсэн");
+                <MenuItem
+                  bg={"#101010"}
+                  onClick={() => {
+                    setTags("pending");
+                    setProp("Дэмжигдсэн");
+                  }}
+                  color={"white"}
+                  _hover={{ bg: "#303030" }}
+                >
+                  Дэмжигдсэн
+                </MenuItem>
+              </Link>
+              <Link
+                href={{
+                  pathname: "/voting",
+                  query: { status: "executed" },
                 }}
-                color={"white"}
-                _hover={{ bg: "#303030" }}
               >
-                Хэрэгжсэн
-              </MenuItem>
-              <MenuItem
-                bg={"#101010"}
-                onClick={() => {
-                  setTags("rejected");
-                  setProp("Татгалзсан");
+                <MenuItem
+                  bg={"#101010"}
+                  onClick={() => {
+                    setTags("executed");
+                    setProp("Хэрэгжсэн");
+                  }}
+                  color={"white"}
+                  _hover={{ bg: "#303030" }}
+                >
+                  Хэрэгжсэн
+                </MenuItem>
+              </Link>
+              <Link
+                href={{
+                  pathname: "/voting",
+                  query: { status: "rejected" },
                 }}
-                _hover={{ bg: "#303030" }}
-                color={"white"}
               >
-                Татгалзсан
-              </MenuItem>
+                <MenuItem
+                  bg={"#101010"}
+                  onClick={() => {
+                    setTags("rejected");
+                    setProp("Татгалзсан");
+                  }}
+                  _hover={{ bg: "#303030" }}
+                  color={"white"}
+                >
+                  Татгалзсан
+                </MenuItem>
+              </Link>
             </MenuList>
           </Menu>
           {admin ? (

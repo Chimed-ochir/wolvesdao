@@ -12,13 +12,7 @@ export default function Home() {
   return (
     <Box h={{ lg: "1310px" }} marginY={"-162px"} w={"100%"}>
       <Flex h={{ lg: "1310px" }} w={"100vw"} zIndex={"100"}>
-        <Box
-          mx={"auto"}
-          marginTop={"-162.5px"}
-          // bgGradient={
-          //   " linear-gradient(270deg, rgba(255, 23, 16, 0.2) 0%, rgba(255, 23, 16, 0) 42.87%, rgba(255, 23, 16, 0) 56.33%, rgba(255, 23, 16, 0.05) 87.83%);"
-          // }
-        >
+        <Box mx={"auto"} marginTop={"-162.5px"}>
           <div className={styles.circle}>
             <Box
               bgGradient={
