@@ -42,9 +42,7 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
       />
       <Text my={"10px"}>
         notes :{" "}
-        <span style={{ fontSize: "12px" }}>
-          Уг талбар хоосон байж болохгүй!
-        </span>
+        <span style={{ fontSize: "12px" }}>Уг талбар хоосон байж болно</span>
       </Text>
       <Editor
         onInit={(evt, editor) => {
