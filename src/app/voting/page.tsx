@@ -6,8 +6,6 @@ import {
   Stack,
   Text,
   Show,
-  Skeleton,
-  SkeletonCircle,
   Button,
   Menu,
   MenuButton,
@@ -16,15 +14,13 @@ import {
 } from "@chakra-ui/react";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
-import Loading from "../loading";
-import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
+import { MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import SkeletonCard from "@/Components/skeletonCard";
 import { NewModal } from "@/Components/Account/NewModal";
 import { useAuth } from "@/Components/Account";
 import VoteSkeleton from "./VoteSkeleton";
-import { usePathname, useRouter } from "next/navigation";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -35,8 +31,7 @@ export default function Voting() {
   const [page1, setPage1] = useState(1);
   const [prop, setProp] = useState("Бүх санал");
   const { admin, loading: authloading } = useAuth();
-  const router = useRouter();
-  const pathname = usePathname();
+
   const array = [
     {
       label: "Бүх санал",

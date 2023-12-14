@@ -1,5 +1,5 @@
 import { Stack, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import Faq from "@/Components/Faqrule/page";
 import localFont from "next/font/local";
 const satFont = localFont({

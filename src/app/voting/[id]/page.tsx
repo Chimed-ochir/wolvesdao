@@ -9,17 +9,11 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
-import { AiOutlineCheck, AiOutlineLink } from "react-icons/ai";
+import { AiOutlineCheck } from "react-icons/ai";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
-import { BiRightArrow } from "react-icons/bi";
-import { RiSquareLine } from "react-icons/ri";
-import { PiHourglassSimpleLight } from "react-icons/pi";
-import { SlEnergy } from "react-icons/sl";
 import { BsChevronLeft } from "react-icons/bs";
 import { useQuery } from "@/utils";
-import api from "@/utils/CustomAxios";
 
-import wolves from "../../../../public/assets/wolf1.png";
 import { useRouter } from "next/navigation";
 import { VoteModal } from "@/Components/VoteModal";
 import Votes from "@/Components/Votes";
@@ -28,7 +22,6 @@ import Information from "./Information/page";
 import { useAuth } from "@/Components/Account";
 import { UpdateModal } from "@/Components/Account/UpdateModal";
 import { DeleteModal } from "@/Components/Account/deleteModal";
-import { Editor } from "@tinymce/tinymce-react";
 import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 
@@ -53,7 +46,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const [first, setFirst] = useState("");
   const [myId, setMyId] = useState("");
   const [cont, setCont] = useState(false);
-  const period: string = data?.data?.status;
   useEffect(() => {
     if (data && "meVotedId" in data) {
       setSend(data?.meVotedId as string);

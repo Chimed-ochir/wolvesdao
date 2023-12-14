@@ -18,14 +18,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import InitialFocus from "../Login";
 import { AuthModal } from "../Account/AuthModal";
 import { useAuth } from "@/Components/Account/index";
-import { useParams, usePathname, useRouter } from "next/navigation";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { usePathname } from "next/navigation";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
-import { MdClear } from "react-icons/md";
-const mortendFont = localFont({ src: "../fonts/mortend/mortend-bold.otf" });
 type SideBarProp = {
   src: string;
   name: string;
@@ -102,11 +98,8 @@ const sideBarData: SideBarProp[] = [
 export const Header = () => {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState(false);
   const [act, setAct] = useState("home");
   const path = usePathname();
-  const router = useRouter();
-  let a: string = "home";
 
   useEffect(() => {
     if (path === "/") {

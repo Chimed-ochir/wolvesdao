@@ -263,7 +263,7 @@
 
 .bottom {
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -362,7 +362,7 @@
   left: 50%;
   pointer-events: none;
   transform: translate(-50%, 115%);
-  @media all and (max-width: 992px) {
-    display: none;
-  }
+  // @media all and (max-width: 992px) {
+  //   display: none;
+  // }
 }
