@@ -588,7 +588,7 @@ function GettingStarted() {
               xl: "22px",
             }}
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            fontWeight={"600"}
+            fontWeight={"400"}
             color={"white"}
             id="started33"
           >
@@ -612,6 +612,7 @@ function GettingStarted() {
         h={{ md: "265px", lg: "" }}
         alignItems={"space-around"}
         mb={"10px"}
+        mt={{ md: "5px" }}
       >
         <Stack
           direction={"row"}
@@ -639,7 +640,7 @@ function GettingStarted() {
               xl: "22px",
             }}
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-            fontWeight={"600"}
+            fontWeight={"400"}
             color={"white"}
           >
             Хяналтын зөвлөл нь 15 хүний бүрэлдэхүүнтэй байх ба саналуудыг The
@@ -661,7 +662,12 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "344px" }} alignItems={"space-around"} id="started34">
+      <Stack
+        h={{ md: "344px" }}
+        alignItems={"space-around"}
+        id="started34"
+        mt={{ md: "10px" }}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}

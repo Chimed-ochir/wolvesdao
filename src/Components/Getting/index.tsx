@@ -36,29 +36,29 @@ function Getting() {
         const scrollY = window.scrollY;
         let newIdx = 0;
 
-        if (scrollY >= 2809) {
+        if (scrollY >= 2791) {
           newIdx = 1;
-        } else if (scrollY >= 2394) {
+        } else if (scrollY >= 2389) {
           newIdx = 2;
-        } else if (scrollY >= 2227) {
+        } else if (scrollY >= 2226) {
           newIdx = 3;
-        } else if (scrollY >= 2025) {
+        } else if (scrollY >= 2029) {
           newIdx = 4;
-        } else if (scrollY >= 1817) {
+        } else if (scrollY >= 1825) {
           newIdx = 5;
-        } else if (scrollY >= 1629) {
+        } else if (scrollY >= 1625) {
           newIdx = 6;
-        } else if (scrollY >= 1415) {
+        } else if (scrollY >= 1433) {
           newIdx = 7;
-        } else if (scrollY >= 1214) {
+        } else if (scrollY >= 1236) {
           newIdx = 8;
-        } else if (scrollY >= 1031) {
+        } else if (scrollY >= 1061) {
           newIdx = 9;
-        } else if (scrollY >= 793) {
+        } else if (scrollY >= 837) {
           newIdx = 10;
-        } else if (scrollY >= 524) {
+        } else if (scrollY >= 561) {
           newIdx = 11;
-        } else if (scrollY >= 246) {
+        } else if (scrollY >= 261) {
           newIdx = 12;
         } else {
           newIdx = 13;
@@ -87,8 +87,8 @@ function Getting() {
   }, [idx]);
   return (
     <Box
-      className={`hideMobile `}
-      h={"678px"}
+      className={`hideMobile`}
+      minH="678px"
       w={"312px"}
       zIndex={100}
       position="fixed"
@@ -107,7 +107,7 @@ function Getting() {
                 fontWeight={"700"}
                 fontSize={"16px"}
                 lineHeight={"18px"}
-                color={idx >= 11 ? "#FBFBFB" : "#949494"}
+                color={idx >= 11 ? "#DFFF24" : "#949494"}
               >
                 THE WOLVES DAO
               </Text>
@@ -131,7 +131,7 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 13 ? "#FBFBFB" : "#949494"}
+              bg={idx == 13 ? "#DFFF24" : "#949494"}
             ></Box>
 
             <Link href="#started1">
@@ -139,7 +139,7 @@ function Getting() {
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx === 13 ? "#FBFBFB" : "#949494"}
+                    color={idx === 13 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -160,14 +160,14 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 12 ? "#FBFBFB" : "#949494"}
+              bg={idx == 12 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started12">
               <Box h={"18px"} w={"250px"}>
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx == 12 ? "#FBFBFB" : "#949494"}
+                    color={idx == 12 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -188,13 +188,13 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 11 ? "#FBFBFB" : "#949494"}
+              bg={idx == 11 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started13">
               <Box h={"18px"} w={"250px"}>
                 <Text
                   fontFamily={"Golos Text"}
-                  color={idx == 11 ? "#FBFBFB" : "#949494"}
+                  color={idx == 11 ? "#DFFF24" : "#949494"}
                   fontSize={"15px"}
                   fontWeight={"700"}
                   lineHeight={"18px"}
@@ -213,7 +213,7 @@ function Getting() {
                 fontWeight={"700"}
                 fontSize={"16px"}
                 lineHeight={"18px"}
-                color={idx >= 5 && idx < 11 ? "#FBFBFB" : "#949494"}
+                color={idx >= 5 && idx < 11 ? "#DFFF24" : "#949494"}
               >
                 САНАЛЫН ПРОЦЕСС
               </Text>
@@ -237,7 +237,7 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 10 ? "#FBFBFB" : "#949494"}
+              bg={idx == 10 ? "#DFFF24" : "#949494"}
             ></Box>
 
             <Link href="#started2">
@@ -245,7 +245,7 @@ function Getting() {
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx === 10 ? "#FBFBFB" : "#949494"}
+                    color={idx === 10 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -266,14 +266,14 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 9 ? "#FBFBFB" : "#949494"}
+              bg={idx == 9 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started22">
               <Box h={"18px"} w={"250px"}>
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx == 9 ? "#FBFBFB" : "#949494"}
+                    color={idx == 9 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -294,13 +294,13 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 8 ? "#FBFBFB" : "#949494"}
+              bg={idx == 8 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started23">
               <Box h={"18px"} w={"250px"}>
                 <Text
                   fontFamily={"Golos Text"}
-                  color={idx == 8 ? "#FBFBFB" : "#949494"}
+                  color={idx == 8 ? "#DFFF24" : "#949494"}
                   fontSize={"15px"}
                   fontWeight={"700"}
                   lineHeight={"18px"}
@@ -320,7 +320,7 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 7 ? "#FBFBFB" : "#949494"}
+              bg={idx == 7 ? "#DFFF24" : "#949494"}
             ></Box>
 
             <Link href="#started24">
@@ -328,7 +328,7 @@ function Getting() {
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx === 7 ? "#FBFBFB" : "#949494"}
+                    color={idx === 7 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -349,14 +349,14 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 6 ? "#FBFBFB" : "#949494"}
+              bg={idx == 6 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started25">
               <Box h={"18px"} w={"250px"}>
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx == 6 ? "#FBFBFB" : "#949494"}
+                    color={idx == 6 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -377,13 +377,13 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 5 ? "#FBFBFB" : "#949494"}
+              bg={idx == 5 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started26">
               <Box h={"18px"} w={"250px"}>
                 <Text
                   fontFamily={"Golos Text"}
-                  color={idx == 5 ? "#FBFBFB" : "#949494"}
+                  color={idx == 5 ? "#DFFF24" : "#949494"}
                   fontSize={"15px"}
                   fontWeight={"700"}
                   lineHeight={"18px"}
@@ -402,7 +402,7 @@ function Getting() {
                 fontWeight={"700"}
                 fontSize={"16px"}
                 lineHeight={"18px"}
-                color={idx <= 4 && idx >= 1 ? "#FBFBFB" : "#949494"}
+                color={idx <= 4 && idx >= 1 ? "#DFFF24" : "#949494"}
               >
                 THE WOLVES DAO GOVERNANCE
               </Text>
@@ -426,7 +426,7 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 4 ? "#FBFBFB" : "#949494"}
+              bg={idx == 4 ? "#DFFF24" : "#949494"}
             ></Box>
 
             <Link href="#started3">
@@ -434,7 +434,7 @@ function Getting() {
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx === 4 ? "#FBFBFB" : "#949494"}
+                    color={idx === 4 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -455,14 +455,14 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 3 ? "#FBFBFB" : "#949494"}
+              bg={idx == 3 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started32">
               <Box h={"18px"} w={"250px"}>
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx == 3 ? "#FBFBFB" : "#949494"}
+                    color={idx == 3 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}
@@ -483,13 +483,13 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 2 ? "#FBFBFB" : "#949494"}
+              bg={idx == 2 ? "#DFFF24" : "#949494"}
             ></Box>
             <Link href="#started33">
               <Box h={"18px"} w={"250px"}>
                 <Text
                   fontFamily={"Golos Text"}
-                  color={idx == 2 ? "#FBFBFB" : "#949494"}
+                  color={idx == 2 ? "#DFFF24" : "#949494"}
                   fontSize={"15px"}
                   fontWeight={"700"}
                   lineHeight={"18px"}
@@ -509,7 +509,7 @@ function Getting() {
             <Box
               h={"32px"}
               w={"2px"}
-              bg={idx == 1 ? "#FBFBFB" : "#949494"}
+              bg={idx == 1 ? "#DFFF24" : "#949494"}
             ></Box>
 
             <Link href="#started34">
@@ -517,7 +517,7 @@ function Getting() {
                 <Box h={"18px"} w={"250px"}>
                   <Text
                     fontFamily={"Golos Text"}
-                    color={idx === 1 ? "#FBFBFB" : "#949494"}
+                    color={idx === 1 ? "#DFFF24" : "#949494"}
                     fontSize={"15px"}
                     fontWeight={"700"}
                     lineHeight={"18px"}

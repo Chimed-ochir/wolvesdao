@@ -20,7 +20,7 @@ import {
 import Link from "next/link";
 import { AuthModal } from "../Account/AuthModal";
 import { useAuth } from "@/Components/Account/index";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
   src: string;
@@ -96,11 +96,12 @@ const sideBarData: SideBarProp[] = [
   },
 ];
 export const Header = () => {
-  const { user, logout } = useAuth();
+  const { user, admin, logout } = useAuth();
   const [open, setOpen] = useState(false);
   const [act, setAct] = useState("home");
+  const [admin1, setAdmin1] = useState(admin);
   const path = usePathname();
-
+  const router = useRouter();
   useEffect(() => {
     if (path === "/") {
       setAct("home");
@@ -115,6 +116,9 @@ export const Header = () => {
   useEffect(() => {
     document.body.classList.toggle("lock", open);
   }, [open]);
+  useEffect(() => {
+    setAdmin1(admin);
+  }, [admin]);
 
   const click = () => setOpen(!open);
   return (
@@ -123,7 +127,12 @@ export const Header = () => {
       <div className={`content ${styles.row} `}>
         <div className={`${styles.redCircle} hideMobile`} />
         <a href="/" className={`hideMobile ${styles.logo}`}>
-          <Box alignItems={"center"} h={"42.42px"} w={"218px"} gap={"2.42px"}>
+          <Box
+            alignItems={"center"}
+            h={"42.42px"}
+            w={{ lg: "218px" }}
+            gap={"2.42px"}
+          >
             <Text
               {...myFont.style}
               fontSize={"13px"}
@@ -144,7 +153,7 @@ export const Header = () => {
           </Box>
         </a>
         <a href="/" className={`hideDesktop ${styles.logo}`}>
-          <Stack h={"42.42px"} w={{ sm: "218px" }} gap={"2.42px"}>
+          <Stack h={"42.42px"} w={{ lg: "218px" }} gap={"2.42px"}>
             <Box my={"auto"} h={"22px"}>
               <Text
                 {...myFont.style}
@@ -166,6 +175,22 @@ export const Header = () => {
             </Box>
           </Stack>
         </a>
+        {admin1 ? (
+          <Button
+            bg={"#dfff24"}
+            h={{ sm: "24px", lg: "43px" }}
+            color="black"
+            w="110px"
+            pt="3px"
+            ml={{ base: "10px", sm: "" }}
+            fontWeight={"900"}
+            onClick={() => {
+              router.push("/admin");
+            }}
+          >
+            Admin
+          </Button>
+        ) : null}
         <div className={`hideMobile ${styles.menu}`}>
           {sideBarData.map((el, ind) => (
             <Link
@@ -232,7 +257,7 @@ export const Header = () => {
             </Box>
           )}
         </div>
-        <Show below="lg">
+        <Show below="991px">
           <Stack w="100%" justifyContent={"center"} alignItems={"flex-end"}>
             {user ? (
               <Menu>

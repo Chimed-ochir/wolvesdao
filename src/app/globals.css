@@ -133,7 +133,7 @@ a {
   min-height: 61vh;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 993px) {
   .mybody {
     min-height: 82vh;
   }

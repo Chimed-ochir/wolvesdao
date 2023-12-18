@@ -1,19 +1,28 @@
 "use client";
 import { useQuery } from "@/utils";
 import { Box, Stack, Text, Image as Images } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
 import { VoteViewModal } from "../VoteViewModal";
+import { useAuth } from "../Account";
 const satFont = localFont({
   src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 function Votes(idx: any) {
-  const { data, loading } = useQuery<{
+  const { user } = useAuth();
+  const { data, loading, fetchData } = useQuery<{
     map(arg0: (e: any, id: number) => React.JSX.Element): React.ReactNode;
     data: any;
   }>({
     uri: `/option/poll/${idx?.idx}`,
+    manual: true,
   });
+  useEffect(() => {
+    if (user) {
+      fetchData();
+    }
+  }, [user]);
+
   var moment = require("moment");
   const [view, setView] = useState(false);
 
