@@ -15,10 +15,10 @@ function Information(data: any) {
   var moment = require("moment");
   const currentDate = new Date();
   const futureDate = new Date(
-    moment.utc(data?.data?.data?.endDate).format("MM-DD-YYYY")
+    moment.utc(data?.data?.data?.endDate).format("YYYY-MM-DD")
   );
   const nowDate = new Date(
-    moment.utc(data?.data?.data?.startDate).format("MM-DD-YYYY")
+    moment.utc(data?.data?.data?.startDate).format("YYYY-MM-DD")
   );
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const now = currentDate.getTime() - nowDate.getTime();
@@ -132,7 +132,7 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.startDate).format("MM-DD-YYYY")}
+                {moment.utc(data?.data.data?.startDate).format("YYYY-MM-DD")}
               </Text>
               <Text
                 {...satFont.style}
@@ -142,7 +142,7 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.endDate).format("MM-DD-YYYY")}
+                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD")}
               </Text>
 
               <Stack
@@ -224,7 +224,7 @@ function Information(data: any) {
               <Stack direction="row" justifyContent={"space-between"} h="29px">
                 <Text
                   {...satFont.style}
-                  fontWeight={"700"}
+                  fontWeight={"500"}
                   lineHeight={"18px"}
                   fontSize={"16px"}
                   color={"#F2F2F2"}
@@ -241,9 +241,9 @@ function Information(data: any) {
                   {data?.data?.data?.count !== 0
                     ? e?.votes?.length &&
                       Number(
-                        e?.votes?.length / data?.data?.data?.count
-                      ).toFixed(2)
-                    : 0}
+                        (e?.votes?.length * 100) / data?.data?.data?.count
+                      ).toFixed(0)
+                    : 0}{" "}
                   %
                 </Text>
               </Stack>
@@ -332,7 +332,7 @@ function Information(data: any) {
                 fontSize={"12px"}
                 color={"#949494"}
               >
-                {moment.utc(data?.data?.data.startDate).format("MM-DD-YYYY")}
+                {moment.utc(data?.data?.data.startDate).format("YYYY-MM-DD")}
               </Text>
               <Text
                 {...satFont.style}
@@ -396,7 +396,7 @@ function Information(data: any) {
                 fontSize={"12px"}
                 color={"#949494"}
               >
-                {moment.utc(data?.data?.data?.endDate).format("MM-DD-YYYY")}
+                {moment.utc(data?.data?.data?.endDate).format("YYYY-MM-DD")}
               </Text>
               <Text
                 {...satFont.style}

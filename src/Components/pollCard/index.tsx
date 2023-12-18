@@ -16,8 +16,8 @@ function PollCard(el: any) {
   const { user } = useAuth();
   const router = useRouter();
   const currentDate = new Date();
-  const futureDate = new Date(moment.utc(data.endDate).format("MM-DD-YYYY"));
-  const startDate = new Date(moment.utc(data.startDate).format("MM-DD-YYYY"));
+  const futureDate = new Date(moment.utc(data.endDate).format("YYYY-MM-DD"));
+  const startDate = new Date(moment.utc(data.startDate).format("YYYY-MM-DD"));
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   const toast = useToast();
@@ -107,7 +107,7 @@ function PollCard(el: any) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color={"white"}
               >
-                Огноо: {moment.utc(data.startDate).format("MM-DD-YYYY")}
+                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD")}
               </Text>
             </Stack>
             <Text

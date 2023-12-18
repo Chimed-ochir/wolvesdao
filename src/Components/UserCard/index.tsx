@@ -22,7 +22,7 @@ function UserCard({ data }: { data: any }) {
           lineHeight={"30px"}
           color={"white"}
         >
-          Id :{data._id}
+          Нэр : {data.user}
         </Text>
       </Stack>
       <Stack direction="row" w={{ base: "30%", lg: "" }}>
