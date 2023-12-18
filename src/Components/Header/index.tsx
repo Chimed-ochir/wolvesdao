@@ -185,7 +185,7 @@ export const Header = () => {
             ml={{ base: "10px", sm: "" }}
             fontWeight={"900"}
             onClick={() => {
-              router.push("/admin");
+              router.push("/users");
             }}
           >
             Admin

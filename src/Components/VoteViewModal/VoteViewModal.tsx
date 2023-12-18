@@ -136,7 +136,7 @@ const VoteViewForm = ({
                       fontSize={"12px"}
                       color={"#95999D"}
                     >
-                      {moment.utc(e?.updatedAt).format("MM-DD-YYYY")}
+                      {moment.utc(e?.updatedAt).format("YYYY-MM-DD")}
                     </Text>
                   </Stack>
                 </Stack>
