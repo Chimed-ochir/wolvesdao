@@ -21,7 +21,6 @@ function PollCard(el: any) {
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   const toast = useToast();
-
   return (
     <Stack
       w="100%"
@@ -31,17 +30,18 @@ function PollCard(el: any) {
       mt={{ sm: "20px" }}
       cursor={"pointer"}
       onClick={() => {
-        if (user) {
-          router.replace(`voting/${data._id}`);
-        } else {
-          toast({
-            title: "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
-            description: "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
+        router.push(`voting/${data._id}`);
+        // if (user) {
 
-            duration: 5000,
-            isClosable: true,
-          });
-        }
+        // } else {
+        //   toast({
+        //     title: "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
+        //     description: "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
+
+        //     duration: 5000,
+        //     isClosable: true,
+        //   });
+        // }
       }}
     >
       <Stack mx={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
@@ -175,7 +175,8 @@ function PollCard(el: any) {
                   <Stack
                     direction={"row"}
                     justifyContent={"space-between"}
-                    w={{ base: "210px", lg: "700px" }}
+                    // w={{ base: "210px", lg: "700px" }}
+                    w={"90%"}
                     mx={"auto"}
                     ml={{ base: "5px", sm: "20px" }}
                   >

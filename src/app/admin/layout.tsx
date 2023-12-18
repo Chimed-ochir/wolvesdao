@@ -7,11 +7,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { user } = useAuth();
+  const { admin } = useAuth();
   const router = useRouter();
 
-  if (!user) {
-    router.push("/voting");
+  if (!admin) {
+    router.push("/");
   }
 
   return <>{children}</>;

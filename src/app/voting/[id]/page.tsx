@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   Image as Images,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
@@ -36,7 +37,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const onFinish = () => {
     fetchData();
   };
-  const { admin } = useAuth();
+  const { admin, user } = useAuth();
   var moment = require("moment");
   const router = useRouter();
 
@@ -47,6 +48,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const [myId, setMyId] = useState("");
   const [cont, setCont] = useState(false);
   const [cont1, setCont1] = useState(false);
+  const toast = useToast();
   useEffect(() => {
     if (data && "meVotedId" in data) {
       setSend(data?.meVotedId as string);
@@ -65,7 +67,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
       });
     }
   }, [voteId]);
-  console.log("data?.data.notes", data?.data.notes);
+  // console.log("data", data);
   return !data || loading ? (
     <SkeletonId />
   ) : (
@@ -322,12 +324,24 @@ function Page({ params: { id } }: { params: { id: string } }) {
                     w={{ base: "85%", sm: "458px", md: "498px" }}
                     color="white"
                     onClick={() => {
-                      setVote(`${e?.option}`);
-                      setSend(`${e._id}`);
-                      if (first !== null && first !== e._id) {
-                        setVoteId(true);
+                      if (user) {
+                        setVote(`${e?.option}`);
+                        setSend(`${e._id}`);
+                        if (first !== null && first !== e._id) {
+                          setVoteId(true);
+                        } else {
+                          setVoteId(false);
+                        }
                       } else {
-                        setVoteId(false);
+                        toast({
+                          title:
+                            "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
+                          description:
+                            "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
+
+                          duration: 5000,
+                          isClosable: true,
+                        });
                       }
                     }}
                     leftIcon={
@@ -389,7 +403,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
                   variant={"solid"}
                   color={"black"}
                   isDisabled={
-                    send === null || (voteId === false && first !== null)
+                    send === null ||
+                    (voteId === false && first !== null) ||
+                    !user
                   }
                 >
                   {voteId
@@ -408,7 +424,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
-        {data?.data.notes ? (
+        {data?.data?.notes ? (
           <Stack
             borderRadius={"6px"}
             border={"1px solid #282828"}

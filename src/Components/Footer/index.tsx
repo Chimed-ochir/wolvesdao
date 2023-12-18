@@ -52,7 +52,6 @@ export const FooterData = [
 
 export const Footer = () => {
   const pathname = usePathname();
-
   return (
     <Box>
       <Container className={styled.wrapper}>
@@ -97,18 +96,7 @@ export const Footer = () => {
           </div>
         </div>
       </Container>
-      <div className={styled.redCircle} />
+      {/* <div className={styled.redCircle} /> */}
     </Box>
   );
 };
-
-const ContactMail = () => (
-  <div className={styled.banner}>
-    <h5 className={styled.bannerTitle}>
-      WANT TO PARTNER WITH US? CONTACT US{" "}
-      <a className={styled.linkedMail} href="mailto:info@thewolves.io">
-        HERE
-      </a>
-    </h5>
-  </div>
-);
