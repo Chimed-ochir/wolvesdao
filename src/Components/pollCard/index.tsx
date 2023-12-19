@@ -31,17 +31,6 @@ function PollCard(el: any) {
       cursor={"pointer"}
       onClick={() => {
         router.push(`voting/${data._id}`);
-        // if (user) {
-
-        // } else {
-        //   toast({
-        //     title: "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
-        //     description: "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
-
-        //     duration: 5000,
-        //     isClosable: true,
-        //   });
-        // }
       }}
     >
       <Stack mx={{ base: "10px", md: "33px" }} mt={"20px"} mb={"20px"}>
@@ -176,18 +165,22 @@ function PollCard(el: any) {
                     direction={"row"}
                     justifyContent={"space-between"}
                     // w={{ base: "210px", lg: "700px" }}
-                    w={"90%"}
+                    // w={"90%"}
+                    minW={"300px"}
                     mx={"auto"}
                     ml={{ base: "5px", sm: "20px" }}
+                    alignItems="center"
                   >
-                    <Stack direction={"row"}>
+                    <Stack direction={"row"} alignItems="center">
                       {" "}
                       {/* <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
                         <BsCheckSquareFill color="#228200" size="18px" />
                       </Box> */}
                       <Image src={el?.icon} w="18px" />
                       <Text color={"white"}>{el.option}: </Text>
-                      <Text color={"white"}>{el.votes.length} Wolves</Text>
+                      <Text color={"white"} minW={"60px"} h="21px">
+                        {el.votes.length} Wolves
+                      </Text>
                     </Stack>
                     <Text
                       {...satFont.style}
@@ -195,9 +188,10 @@ function PollCard(el: any) {
                       lineHeight={"18px"}
                       fontSize={"15px"}
                       color={"white"}
+                      h="21px"
                     >
                       {el.votes.length !== 0
-                        ? CalcPercent(data.count, el.votes.length).toFixed(2)
+                        ? CalcPercent(data.count, el.votes.length).toFixed(0)
                         : 0}
                       %
                     </Text>
@@ -220,9 +214,6 @@ function PollCard(el: any) {
             : daysDifference < 0
             ? "Хугацаа дууссан"
             : `${daysDifference} өдрийн дараа хаагдана`}
-
-          {/* {hoursDifference < 0 ? 0 : hoursDifference} hours{" "}
-          {minutesDifference < 0 ? 0 : minutesDifference} minutes */}
         </Text>
       </Stack>
     </Stack>

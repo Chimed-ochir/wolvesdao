@@ -24,24 +24,24 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
       <FormInput
-        label={"description"}
+        label={"Саналын нэр оруулах"}
         name="description"
-        placeholder={"description оруулах"}
+        placeholder={"Саналын нэр оруулах"}
         fontWeight="500"
         fontSize="14"
         color={"white"}
       />
 
       <FormInput
+        label={"Саналын мэдээлэл хураангуй"}
+        name="listContent"
+        placeholder={"Саналын  хураангуй мэдээлэл оруулах"}
         fontWeight="500"
         fontSize="14"
-        label={"listContent"}
-        name="listContent"
-        placeholder={"listContent оруулах"}
         color={"white"}
       />
       <Text my={"10px"}>
-        notes :{" "}
+        Саналын хэрэгжилтын явц оруулах :{" "}
         <span style={{ fontSize: "12px" }}>Уг талбар хоосон байж болно</span>
       </Text>
       <Editor
@@ -89,33 +89,30 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
       <FormInput
         fontWeight="500"
         fontSize="14"
-        label={"startDate"}
+        label={"Санал хураалт эхлэх хугацаа оруулах"}
         name="startDate"
-        placeholder={"startDate оруулах"}
-        color={"white"}
+        placeholder={"Эхлэх хугацаа оруулах"}
         type="datetime-local"
       />
       <FormInput
-        label={"endDate"}
+        label={"Санал хураалт дуусах хугацаа оруулах"}
         name="endDate"
-        placeholder={"endDate оруулах"}
+        placeholder={"Дуусах хугацаа оруулах"}
         fontWeight="500"
         fontSize="14"
-        color={"white"}
         type="datetime-local"
       />
       <FormInput
-        label={"withLink"}
+        label={"Саналын хэлэлцүүлэгчийн линк оруулах"}
         name="withLink"
-        placeholder={"withLink оруулах"}
+        placeholder={"Саналын хэлэлцүүлэгчийн линк оруулах"}
         fontWeight="500"
         fontSize="14"
         color={"white"}
       />
-
       {/* <FormInput name="content"> */}
       <Text my={"10px"}>
-        Content :{" "}
+        Саналын талаарх мэдээлэл оруулах :{" "}
         <span style={{ fontSize: "12px" }}>
           Уг талбар хоосон байж болохгүй!
         </span>

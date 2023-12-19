@@ -31,9 +31,9 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
       <FormInput
-        label={"Option"}
+        label={"Сонголт оруулах"}
         name="option"
-        placeholder={"option оруулах"}
+        placeholder={"Сонголт оруулах"}
         fontWeight="500"
         fontSize="14"
         color={"white"}
@@ -42,9 +42,9 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
       <FormInput
         fontWeight="500"
         fontSize="14"
-        label={"Icon Link"}
+        label={"Тэмдэглэгээ оруула"}
         name="icon"
-        placeholder={"icon оруулах"}
+        placeholder={"Тэмдэглэгээ оруула"}
         color={"white"}
       />
 
@@ -58,7 +58,7 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
         my={"20px"}
         isLoading={loading}
       >
-        Илгээх
+        Тохируулах
       </Button>
     </Stack>
   );

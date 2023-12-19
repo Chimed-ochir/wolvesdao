@@ -224,7 +224,7 @@ function Information(data: any) {
               <Stack direction="row" justifyContent={"space-between"} h="29px">
                 <Text
                   {...satFont.style}
-                  fontWeight={"500"}
+                  fontWeight={"700"}
                   lineHeight={"18px"}
                   fontSize={"12px"}
                   color={"#F2F2F2"}
@@ -233,7 +233,7 @@ function Information(data: any) {
                 </Text>
                 <Text
                   {...satFont.style}
-                  fontWeight={"500"}
+                  fontWeight={"700"}
                   lineHeight={"18px"}
                   fontSize={"12px"}
                   color={"#F2F2F2"}
