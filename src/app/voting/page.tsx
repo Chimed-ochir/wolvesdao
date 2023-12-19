@@ -131,7 +131,7 @@ export default function Voting() {
       <Show above="md">
         <Stack alignSelf={"left"} h={"114px"} justifyContent={"space-between"}>
           <Stack w={{ lg: "790px" }} direction="row">
-            <Text
+            {/* <Text
               {...satFont.style}
               fontWeight={"900"}
               fontSize={"24px"}
@@ -140,7 +140,7 @@ export default function Voting() {
               minW={"190px"}
             >
               Санал хураалт
-            </Text>
+            </Text> */}
             {admin ? (
               <NewModal onFinish={onFinish}>
                 <Button
@@ -185,7 +185,7 @@ export default function Voting() {
                         fontSize={"15px"}
                         lineHeight={"24px"}
                         px={{ md: "10px" }}
-                        color={"#FCFCFC"}
+                        color={el.query === tags ? "#DFFF24" : "#FCFCFC"}
                         cursor={"pointer"}
                         onClick={el.onclick}
                       >

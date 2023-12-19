@@ -226,16 +226,16 @@ function Information(data: any) {
                   {...satFont.style}
                   fontWeight={"500"}
                   lineHeight={"18px"}
-                  fontSize={"16px"}
+                  fontSize={"12px"}
                   color={"#F2F2F2"}
                 >
                   {e.option}
                 </Text>
                 <Text
                   {...satFont.style}
-                  fontWeight={"700"}
+                  fontWeight={"500"}
                   lineHeight={"18px"}
-                  fontSize={"16px"}
+                  fontSize={"12px"}
                   color={"#F2F2F2"}
                 >
                   {data?.data?.data?.count !== 0

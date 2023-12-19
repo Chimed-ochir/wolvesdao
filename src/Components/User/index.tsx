@@ -11,13 +11,25 @@ function User() {
     manual: true,
   });
   const onFinish = () => {
-    fetchData();
+    fetchData(`/user`, {
+      page: page1,
+      limit: 2,
+    });
   };
   const [page1, setPage1] = useState(1);
+  const [count, setCount] = useState(1);
   const [view, setView] = useState(false);
-  console.log("data", data);
+
   useEffect(() => {
-    if (pageCount >= page1) {
+    if (pageCount) {
+      setCount(pageCount as number);
+    }
+    console.log("page1", page1);
+    console.log("pageCount", count);
+    console.log("view", view);
+    if (count >= page1) {
+      console.log("----");
+
       fetchData(`/user`, {
         page: page1,
         limit: 2,
@@ -25,6 +37,10 @@ function User() {
     }
   }, [view]);
   useEffect(() => {
+    if (pageCount) {
+      setCount(pageCount as number);
+    }
+
     fetchData(`/user`, {
       page: 1,
       limit: 2,
@@ -76,7 +92,7 @@ function User() {
         </Text>
 
         {data?.map((user: any, index: number) => (
-          <UserCard data={user} key={index} />
+          <UserCard data={user} key={index} onFinish={onFinish} />
         ))}
         <Stack direction="row" w="180px" mx="auto" my="10px">
           <Button

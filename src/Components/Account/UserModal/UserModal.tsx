@@ -10,9 +10,9 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
       <FormInput
-        label={"name"}
-        name="name"
-        placeholder={"name оруулах"}
+        label={"user"}
+        name="user"
+        placeholder={"user оруулах"}
         fontWeight="500"
         fontSize="14"
         color={"white"}
@@ -46,11 +46,11 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
   const onSubmit = (values: any) => {
     request(values)
       .then((res: any) => {
-        if (res?.success) {
-          showSuccessToast("Амжилттай хэрэглэгч нэмлээ!");
-          onFinish();
-          onClose();
-        }
+        // if (res?.success) {
+        showSuccessToast("Амжилттай хэрэглэгч нэмлээ!");
+        onFinish();
+        onClose();
+        // }
       })
       .catch((error) => {
         showErrorToast(error.message);
@@ -61,7 +61,7 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
     <Stack>
       <Formik
         initialValues={{
-          name: "",
+          user: "",
         }}
         validationSchema={BuildNewFormValidationSchema()}
         onSubmit={onSubmit}

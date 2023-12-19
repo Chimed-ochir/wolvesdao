@@ -35,13 +35,14 @@ function Votes(idx: any) {
           direction={"row"}
           w={{ base: "170px", sm: "230px" }}
           h="50px"
-          ml="20px"
+          ml="10px"
         >
           <Text
             {...satFont.style}
             fontWeight={"700"}
-            lineHeight={{ base: "27px", lg: "42px" }}
-            fontSize={{ base: "16px", sm: "24px" }}
+            lineHeight={{ base: "18px" }}
+            my="8px"
+            fontSize={{ base: "16px" }}
             py={"2px"}
             px={"6px"}
             color={"#F2F2F2"}

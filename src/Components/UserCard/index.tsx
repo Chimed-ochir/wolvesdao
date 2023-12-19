@@ -1,7 +1,9 @@
 import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import React from "react";
+import { RemoveModal } from "../Account/RemoveModal";
+import { ChangeModal } from "../Account/ChangeModal ";
 
-function UserCard({ data }: { data: any }) {
+function UserCard({ data, onFinish }: { data: any; onFinish: () => void }) {
   return (
     <Stack
       direction={"row"}
@@ -55,26 +57,30 @@ function UserCard({ data }: { data: any }) {
         )}
       </Stack>
       <Stack direction="row" w={{ base: "30%", lg: "" }}>
-        <Button
-          bg="white"
-          w={"80px"}
-          variant={"solid"}
-          color={"black"}
-          fontSize={"14px"}
-          h="30px"
-        >
-          Устгах
-        </Button>
-        <Button
-          bg="white"
-          w={"80px"}
-          variant={"solid"}
-          color={"black"}
-          fontSize={"14px"}
-          h="30px"
-        >
-          Өөрчлөх
-        </Button>
+        <RemoveModal onFinish={onFinish} id={data?._id}>
+          <Button
+            bg="white"
+            w={"80px"}
+            variant={"solid"}
+            color={"black"}
+            fontSize={"14px"}
+            h="30px"
+          >
+            Устгах
+          </Button>
+        </RemoveModal>
+        <ChangeModal id={data?._id} admin={data?.isAdmin} onFinish={onFinish}>
+          <Button
+            bg="white"
+            w={"80px"}
+            variant={"solid"}
+            color={"black"}
+            fontSize={"14px"}
+            h="30px"
+          >
+            Өөрчлөх
+          </Button>
+        </ChangeModal>
       </Stack>
     </Stack>
   );
