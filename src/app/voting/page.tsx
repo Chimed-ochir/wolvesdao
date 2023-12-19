@@ -83,8 +83,10 @@ export default function Voting() {
     manual: true,
   });
   const onFinish = () => {
+    console.log("Finish");
+    setPolls([]);
     fetchData(`/poll`, {
-      page: page1 + 1,
+      page: page1,
       limit: 5,
       sort: "-createAt",
       ...(admin && tags === "all_propsal"
@@ -93,14 +95,12 @@ export default function Voting() {
             status:
               tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
           }),
-    }).then((res) => {
-      setPolls([...polls, ...res]);
-    });
-    setPage1((prevPage) => prevPage + 1);
+    }).then(setPolls);
   };
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
+      console.log("inView");
       fetchData(`/poll`, {
         page: page1 + 1,
         limit: 5,
@@ -120,6 +120,7 @@ export default function Voting() {
 
   useEffect(() => {
     if (!loading && !authloading) {
+      console.log("inView");
       setPolls([]);
       setPage1(1);
       fetchData(`/poll`, {
