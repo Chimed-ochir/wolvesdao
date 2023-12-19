@@ -20,10 +20,10 @@ export const BuildNewFormValidationSchema = () =>
     status: string().label("status"),
     withLink: string()
       .required("Уг талбар хоосон байж болохгүй")
-      .matches(
-        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-za-z0-9#]+)*\/?(\?[a-za-z0-9-_]+=[a-za-z0-9-%]+&?)?$/,
+      // .matches(
+      //   /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-za-z0-9#]+)*\/?(\?[a-za-z0-9-_]+=[a-za-z0-9-%]+&?)?$/,
 
-        "зөв хаяг оруулна уу!"
-      )
+      //   "зөв хаяг оруулна уу!"
+      // )
       .label("withLink"),
   });
