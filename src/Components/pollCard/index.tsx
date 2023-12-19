@@ -16,10 +16,14 @@ function PollCard(el: any) {
   const { user } = useAuth();
   const router = useRouter();
   const currentDate = new Date();
+  const formattedCurrentDate = new Date(
+    moment(currentDate).format("YYYY-MM-DD")
+  );
   const futureDate = new Date(moment.utc(data.endDate).format("YYYY-MM-DD"));
   const startDate = new Date(moment.utc(data.startDate).format("YYYY-MM-DD"));
-  const timeDifference = futureDate.getTime() - currentDate.getTime();
+  const timeDifference = futureDate.getTime() - formattedCurrentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+
   const toast = useToast();
   return (
     <Stack
