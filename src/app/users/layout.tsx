@@ -1,18 +1,15 @@
 "use client";
-// import { useAuth } from "@/Components/Account";
-import { useRouter } from "next/navigation";
+import { useAuth } from "@/Components/Account";
+import { redirect } from "next/navigation";
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // const { admin } = useAuth();
-  const router = useRouter();
+function AdminLayout({ children }: { children: React.ReactNode }) {
+  const { admin } = useAuth();
 
-  // if (!admin) {
-  //   router.push("/");
-  // }
+  if (!admin) {
+    redirect("/");
+  }
 
   return <>{children}</>;
 }
+
+export default AdminLayout;

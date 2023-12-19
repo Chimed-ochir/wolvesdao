@@ -127,30 +127,15 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      <FormInput
+      {/* <FormInput
         label={"voteCount"}
         name="voteCount"
         placeholder={"voteCount оруулах"}
         fontWeight="500"
         fontSize="14"
         color={"white"}
-      />
-      <FormInput
-        label={"id"}
-        name="id"
-        placeholder={"id оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
-      <FormInput
-        label={"status"}
-        name="status"
-        placeholder={"status оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
+      /> */}
+
       <Text my={"10px"}>
         Content :{" "}
         <span style={{ fontSize: "12px" }}>

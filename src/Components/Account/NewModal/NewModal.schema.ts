@@ -17,7 +17,7 @@ export const BuildNewFormValidationSchema = () =>
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),
-    status: string().required("Уг талбар хоосон байж болохгүй").label("status"),
+    status: string().label("status"),
     withLink: string()
       .required("Уг талбар хоосон байж болохгүй")
       .matches(

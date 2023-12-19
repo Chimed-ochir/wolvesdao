@@ -113,15 +113,6 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
         color={"white"}
       />
 
-      <FormInput
-        label={"status"}
-        name="status"
-        placeholder={"status оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
-
       {/* <FormInput name="content"> */}
       <Text my={"10px"}>
         Content :{" "}

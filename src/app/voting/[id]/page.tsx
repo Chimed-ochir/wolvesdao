@@ -108,17 +108,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
           </Stack>
         ) : null}
         <Stack>
-          <Show above="lg">
-            <Text
-              {...satFont.style}
-              color={"#F2F2F2"}
-              fontSize="24px"
-              lineHeight={"32px"}
-              fontWeight="900"
-            >
-              Саналууд
-            </Text>
-          </Show>
           <Show below="lg">
             <Stack
               direction="row"
@@ -291,14 +280,13 @@ function Page({ params: { id } }: { params: { id: string } }) {
               <Text
                 {...satFont.style}
                 fontWeight={"700"}
-                lineHeight={{ base: "27px", lg: "42px" }}
-                fontSize={{ base: "16px", sm: "24px" }}
+                lineHeight={{ base: "18px" }}
+                fontSize={{ base: "16px" }}
                 py={"2px"}
                 px={"6px"}
-                ml={"20px"}
                 my="8px"
                 color={"#F2F2F2"}
-                minW={{ base: "140px", sm: "230px" }}
+                minW={{ base: "130px", sm: "130px" }}
               >
                 Санал өгнө үү
               </Text>
@@ -306,9 +294,11 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 <OptionModal onFinish={onFinish} id={data?.data._id}>
                   <Button
                     bg="white"
-                    w={{ base: "100px", sm: "140px" }}
+                    w={{ base: "100px", sm: "120px" }}
                     variant={"outline"}
                     color={"black"}
+                    fontSize={"14px"}
+                    h={"30px"}
                   >
                     Нэмэх
                   </Button>
@@ -365,6 +355,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
                           minW={"88px"}
                           variant={"outline"}
                           color={"black"}
+                          fontSize={"14px"}
+                          h={"30px"}
                         >
                           Устгах
                         </Button>
@@ -380,6 +372,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
                           minW={"88px"}
                           variant={"outline"}
                           color={"black"}
+                          fontSize={"14px"}
+                          h={"30px"}
                         >
                           Өөрчлөх
                         </Button>
@@ -441,11 +435,12 @@ function Page({ params: { id } }: { params: { id: string } }) {
               <Text
                 {...satFont.style}
                 fontWeight={"700"}
-                lineHeight={{ base: "27px", lg: "42px" }}
-                fontSize={{ base: "16px", sm: "24px" }}
+                lineHeight={{ base: "18px" }}
+                fontSize={{ base: "16px" }}
                 py={"2px"}
                 px={"6px"}
-                ml={"20px"}
+                ml={"10px"}
+                my="8px"
                 color={"#F2F2F2"}
               >
                 Дэлгэрэнгүй мэдээлэл
