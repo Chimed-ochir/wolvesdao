@@ -212,7 +212,7 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
           endDate: "",
           listContent: "",
           startDate: "",
-          status: "",
+
           withLink: "",
         }}
         validationSchema={BuildNewFormValidationSchema()}
