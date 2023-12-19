@@ -7,10 +7,10 @@ export const BuildOptionwFormValidationSchema = () =>
     option: string().required("Уг талбар хоосон байж болохгүй").label("option"),
     icon: string()
       .required("Уг талбар хоосон байж болохгүй")
-      .matches(
-        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-za-z0-9#]+)*\/?(\?[a-za-z0-9-_]+=[a-za-z0-9-%]+&?)?$/,
+      // .matches(
+      //   /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-za-z0-9#]+)*\/?(\?[a-za-z0-9-_]+=[a-za-z0-9-%]+&?)?$/,
 
-        "зөв icon хаяг оруулна уу!"
-      )
+      //   "зөв icon хаяг оруулна уу!"
+      // )
       .label("icon"),
   });
