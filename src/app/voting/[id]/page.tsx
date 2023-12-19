@@ -25,6 +25,7 @@ import { UpdateModal } from "@/Components/Account/UpdateModal";
 import { DeleteModal } from "@/Components/Account/deleteModal";
 import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
+import { ProgressModal } from "@/Components/Account/ProgressModal";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -418,7 +419,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
-        {data?.data?.notes ? (
+        {(data?.data?.status as string) === "executed" ||
+        (data?.data?.status as string) === "pending" ? (
           <Stack
             borderRadius={"6px"}
             border={"1px solid #282828"}
@@ -429,8 +431,10 @@ function Page({ params: { id } }: { params: { id: string } }) {
             marginTop={"10px"}
           >
             <Stack
+              direction="row"
               justifyContent={"space-around"}
               borderBottom={"1px solid  #282828"}
+              alignItems={"center"}
             >
               <Text
                 {...satFont.style}
@@ -442,49 +446,86 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 ml={"10px"}
                 my="8px"
                 color={"#F2F2F2"}
+                minW={"200px"}
               >
                 Дэлгэрэнгүй мэдээлэл
               </Text>
+              {admin ? (
+                <ProgressModal onFinish={onFinish} data={data}>
+                  <Button
+                    bg="white"
+                    w={"110px"}
+                    variant={"outline"}
+                    color={"black"}
+                    fontSize={"14px"}
+                    h={"30px"}
+                  >
+                    Явц оруулах
+                  </Button>
+                </ProgressModal>
+              ) : null}
             </Stack>
-            <Stack
-              justifyContent={"center"}
-              alignItems={"center"}
-              w={{ lg: "521px" }}
-              mb={{ base: "38px", sm: "" }}
-              maxHeight={cont1 === false ? "300px" : ""}
-              minHeight={"200px"}
-              overflow={"hidden"}
-              color="white"
-            >
-              <div
-                dangerouslySetInnerHTML={{ __html: `${data?.data.notes}` }}
-                style={{ width: "85%", color: "white" }}
-              />
-            </Stack>
-            <Stack
-              mt={"-70px"}
-              backdropFilter={cont1 === false ? "auto" : ""}
-              backdropBlur="2px"
-            >
-              <Button
-                variant={"outline"}
-                border={"1px solid white"}
-                w={"140px"}
-                color={"white"}
-                mx={"auto"}
-                bg={"#282828"}
-                _hover={{ bg: "#303030" }}
-                onClick={() => {
-                  setCont1(!cont1);
-                }}
-                mt={cont1 ? "20px" : ""}
-                rightIcon={
-                  cont1 === false ? <MdOutlineExpandMore /> : <MdExpandLess />
-                }
+            {data?.data.notes ? (
+              <>
+                <Stack
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  w={{ lg: "521px" }}
+                  mb={{ base: "38px", sm: "" }}
+                  maxHeight={cont1 === false ? "300px" : ""}
+                  minHeight={"200px"}
+                  overflow={"hidden"}
+                  color="white"
+                >
+                  <div
+                    dangerouslySetInnerHTML={{ __html: `${data?.data.notes}` }}
+                    style={{ width: "85%", color: "white" }}
+                  />
+                </Stack>
+                <Stack
+                  mt={"-70px"}
+                  backdropFilter={cont1 === false ? "auto" : ""}
+                  backdropBlur="2px"
+                >
+                  <Button
+                    variant={"outline"}
+                    border={"1px solid white"}
+                    w={"140px"}
+                    color={"white"}
+                    mx={"auto"}
+                    bg={"#282828"}
+                    _hover={{ bg: "#303030" }}
+                    onClick={() => {
+                      setCont1(!cont1);
+                    }}
+                    mt={cont1 ? "20px" : ""}
+                    rightIcon={
+                      cont1 === false ? (
+                        <MdOutlineExpandMore />
+                      ) : (
+                        <MdExpandLess />
+                      )
+                    }
+                  >
+                    {cont1 === false ? " Дэлгэрэнгүй" : "Хураангуй"}
+                  </Button>
+                </Stack>
+              </>
+            ) : (
+              <Text
+                {...satFont.style}
+                fontWeight={"500"}
+                lineHeight={{ base: "18px" }}
+                fontSize={{ base: "16px" }}
+                py={"2px"}
+                px={"6px"}
+                ml={"10px"}
+                my="8px"
+                color={"#F2F2F2"}
               >
-                {cont1 === false ? " Дэлгэрэнгүй" : "Хураангуй"}
-              </Button>
-            </Stack>
+                Одоогоор хийгдсэн ажил байхгүй.
+              </Text>
+            )}
           </Stack>
         ) : null}
       </Stack>
