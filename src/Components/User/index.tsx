@@ -13,7 +13,7 @@ function User() {
   const onFinish = () => {
     fetchData(`/user`, {
       page: page1,
-      limit: 2,
+      limit: 10,
     });
   };
   const [page1, setPage1] = useState(1);
@@ -28,11 +28,9 @@ function User() {
     console.log("pageCount", count);
     console.log("view", view);
     if (count >= page1) {
-      console.log("----");
-
       fetchData(`/user`, {
         page: page1,
-        limit: 2,
+        limit: 10,
       });
     }
   }, [view]);
@@ -43,7 +41,7 @@ function User() {
 
     fetchData(`/user`, {
       page: 1,
-      limit: 2,
+      limit: 10,
     });
   }, []);
   return (
