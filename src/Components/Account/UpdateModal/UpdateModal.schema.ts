@@ -19,13 +19,12 @@ export const BuildUpdateFormValidationSchema = () =>
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),
-    status: string().required("Уг талбар хоосон байж болохгүй").label("status"),
     withLink: string()
       .required("Уг талбар хоосон байж болохгүй")
-      .matches(
-        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
-        "зөв хаяг оруулна уу!"
-      )
+      // .matches(
+      //   /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+      //   "зөв хаяг оруулна уу!"
+      // )
       .label("withLink"),
     voteCount: string()
       .required("Уг талбар хоосон байж болохгүй")

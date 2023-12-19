@@ -255,7 +255,6 @@ const UpdateForm = ({
             .utc(data?.data?.startDate)
             .format("YYYY-MM-DDTHH:mm")
             .slice(0, 16),
-          status: data?.data?.status,
           withLink: data?.data?.withLink,
           voteCount: data?.data?.__v,
           id: data?.data?._id,
