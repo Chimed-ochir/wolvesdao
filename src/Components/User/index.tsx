@@ -47,7 +47,12 @@ function User() {
   }, []);
   return (
     <>
-      <Stack w="70%" mx="auto" direction={"row"} mb="10px">
+      <Stack
+        w="70%"
+        mx="auto"
+        direction={{ base: "column", md: "row" }}
+        mb="10px"
+      >
         <Text
           fontWeight={"700"}
           fontSize={"16px"}
@@ -57,30 +62,34 @@ function User() {
         >
           Админ хуудас
         </Text>
-        <UserModal onFinish={onFinish}>
-          <Button
-            bg="white"
-            w={"130px"}
-            variant={"solid"}
-            color={"black"}
-            fontSize={"14px"}
-            // h="30px"
-          >
-            Хэрэглэгч нэмэх
-          </Button>
-        </UserModal>
-        <DeleteAllModal onFinish={onFinish}>
-          <Button
-            bg="white"
-            w={"130px"}
-            variant={"solid"}
-            color={"black"}
-            fontSize={"14px"}
-            // h="30px"
-          >
-            Бүх хэрэглэгч устгах
-          </Button>
-        </DeleteAllModal>
+        <Stack direction={"row"}>
+          <UserModal onFinish={onFinish}>
+            <Button
+              bg="white"
+              w={{ base: "", md: "130px" }}
+              maxW={"130px"}
+              variant={"solid"}
+              color={"black"}
+              fontSize={{ base: "12", md: "14px" }}
+              // h="30px"
+            >
+              Хэрэглэгч нэмэх
+            </Button>
+          </UserModal>
+          <DeleteAllModal onFinish={onFinish}>
+            <Button
+              bg="white"
+              w={{ base: "", md: "155px" }}
+              variant={"solid"}
+              color={"black"}
+              fontSize={{ base: "12", md: "14px" }}
+              maxW={"155px"}
+              // h="30px"
+            >
+              Бүх хэрэглэгч устгах
+            </Button>
+          </DeleteAllModal>
+        </Stack>
       </Stack>
       <Box
         w={{ base: "90%", md: "70%" }}
