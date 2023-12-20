@@ -27,14 +27,14 @@ const satFont = localFont({
 const UpdateFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
-      <FormInput
+      {/* <FormInput
         fontWeight="500"
         fontSize="14"
         label={"userId"}
         name="userId"
         placeholder={"userId оруулах"}
         type="string"
-      />
+      /> */}
       <FormInput
         label={"isAdmin"}
         name="isAdmin"
@@ -94,7 +94,7 @@ const UpdateForm = ({
     <Stack>
       <Formik
         initialValues={{
-          userId: id,
+          // userId: id,
           isAdmin: admin,
         }}
         validationSchema={BuildUpdateFormValidationSchema()}

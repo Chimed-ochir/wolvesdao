@@ -5,6 +5,7 @@ import UserCard from "../UserCard";
 import { useQuery } from "@/utils";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UserModal } from "@/Components/Account/UserModal/UserModal";
+import { DeleteAllModal } from "../Account/DeleteAllModal";
 function User() {
   const { loading, data, fetchData, pageCount } = useQuery<any>({
     uri: "/user",
@@ -68,9 +69,21 @@ function User() {
             Хэрэглэгч нэмэх
           </Button>
         </UserModal>
+        <DeleteAllModal onFinish={onFinish}>
+          <Button
+            bg="white"
+            w={"130px"}
+            variant={"solid"}
+            color={"black"}
+            fontSize={"14px"}
+            // h="30px"
+          >
+            Бүх хэрэглэгч устгах
+          </Button>
+        </DeleteAllModal>
       </Stack>
       <Box
-        w="70%"
+        w={{ base: "90%", md: "70%" }}
         mx="auto"
         bg="dark"
         border={"1px solid #282828"}
