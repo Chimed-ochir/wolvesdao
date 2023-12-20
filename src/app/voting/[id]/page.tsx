@@ -59,13 +59,10 @@ function Page({ params: { id } }: { params: { id: string } }) {
   }, [data]);
   useEffect(() => {
     if (voteId === true) {
-      data?.data?.options.map((e: any, id: number) => {
-        e.votes.map((el: any, idx: number) => {
-          if (el.optionId === first) {
-            setMyId(el._id);
-          }
-        });
-      });
+      const myVote = data?.data?.options.find((op: any) => op._id === first);
+      const vote = myVote?.votes.find((v: any) => v.userName === user);
+      console.log({ vote, user, voteId, data });
+      setMyId(vote?._id);
     }
   }, [voteId]);
   // console.log("data", data);
