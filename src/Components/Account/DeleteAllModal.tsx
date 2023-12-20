@@ -62,7 +62,7 @@ export const DeleteAllModal: React.FC<DeleteModalProps> = ({
   onFinish,
 }) => {
   return (
-    <Modal title={"БҮх хэрэглэгч устгах"} controlElement={children} msize="sm">
+    <Modal title={"Бүх хэрэглэгч устгах"} controlElement={children} msize="sm">
       <DeleteForm onFinish={onFinish} />
     </Modal>
   );

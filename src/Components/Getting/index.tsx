@@ -36,29 +36,29 @@ function Getting() {
         const scrollY = window.scrollY;
         let newIdx = 0;
 
-        if (scrollY >= 2791) {
+        if (scrollY >= 2841) {
           newIdx = 1;
-        } else if (scrollY >= 2389) {
+        } else if (scrollY >= 2382) {
           newIdx = 2;
         } else if (scrollY >= 2226) {
           newIdx = 3;
-        } else if (scrollY >= 2029) {
+        } else if (scrollY >= 2015) {
           newIdx = 4;
-        } else if (scrollY >= 1825) {
+        } else if (scrollY >= 1808) {
           newIdx = 5;
-        } else if (scrollY >= 1625) {
+        } else if (scrollY >= 1621) {
           newIdx = 6;
-        } else if (scrollY >= 1433) {
+        } else if (scrollY >= 1409) {
           newIdx = 7;
-        } else if (scrollY >= 1236) {
+        } else if (scrollY >= 1209) {
           newIdx = 8;
-        } else if (scrollY >= 1061) {
+        } else if (scrollY >= 1027) {
           newIdx = 9;
-        } else if (scrollY >= 837) {
+        } else if (scrollY >= 791) {
           newIdx = 10;
-        } else if (scrollY >= 561) {
+        } else if (scrollY >= 523) {
           newIdx = 11;
-        } else if (scrollY >= 261) {
+        } else if (scrollY >= 246) {
           newIdx = 12;
         } else {
           newIdx = 13;
@@ -93,7 +93,7 @@ function Getting() {
       zIndex={100}
       position="fixed"
       left={{ base: "0", "2xl": "10%" }}
-      top={"130px"}
+      top={"100px"}
     >
       <Stack
         h={pathname === "/rules" ? "678px" : "32px"}
@@ -115,7 +115,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"122px"}
+          h={"102px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}
@@ -221,7 +221,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"248px"}
+          h={"208px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}
@@ -410,7 +410,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"164px"}
+          h={"144px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}
