@@ -267,152 +267,157 @@ function Page({ params: { id } }: { params: { id: string } }) {
             {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
-        <Stack>
-          <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
-            <Stack
-              justifyContent={"space-around"}
-              borderBottom={"1px solid  #282828"}
-              direction={"row"}
-              alignItems="center"
+        {(data?.data?.status as string) === "active" ? (
+          <Stack>
+            <Box
+              borderRadius={"6px"}
+              border={"1px solid #282828"}
+              bg={"#101010"}
             >
-              <Text
-                {...satFont.style}
-                fontWeight={"700"}
-                lineHeight={{ base: "18px" }}
-                fontSize={{ base: "16px" }}
-                py={"2px"}
-                px={"6px"}
-                my="8px"
-                color={"#F2F2F2"}
-                minW={{ base: "130px", sm: "130px" }}
+              <Stack
+                justifyContent={"space-around"}
+                borderBottom={"1px solid  #282828"}
+                direction={"row"}
+                alignItems="center"
               >
-                Санал өгнө үү
-              </Text>
-              {admin ? (
-                <OptionModal onFinish={onFinish} id={data?.data._id}>
+                <Text
+                  {...satFont.style}
+                  fontWeight={"700"}
+                  lineHeight={{ base: "18px" }}
+                  fontSize={{ base: "16px" }}
+                  py={"2px"}
+                  px={"6px"}
+                  my="8px"
+                  color={"#F2F2F2"}
+                  minW={{ base: "130px", sm: "130px" }}
+                >
+                  Санал өгнө үү
+                </Text>
+                {admin ? (
+                  <OptionModal onFinish={onFinish} id={data?.data._id}>
+                    <Button
+                      bg="white"
+                      w={{ base: "100px", sm: "120px" }}
+                      variant={"outline"}
+                      color={"black"}
+                      fontSize={"14px"}
+                      h={"30px"}
+                    >
+                      Нэмэх
+                    </Button>
+                  </OptionModal>
+                ) : null}
+              </Stack>
+              <Stack justifyContent={"center"} my={"10px"}>
+                {data?.data?.options.map((e: any, id: number) => (
+                  <Stack key={id} direction={"row"}>
+                    <Button
+                      variant={"outline"}
+                      mx={"auto"}
+                      w={{ base: "85%", sm: "458px", md: "498px" }}
+                      color="white"
+                      onClick={() => {
+                        if (user) {
+                          setVote(`${e?.option}`);
+                          setSend(`${e._id}`);
+                          if (first !== null && first !== e._id) {
+                            setVoteId(true);
+                          } else {
+                            setVoteId(false);
+                          }
+                        } else {
+                          toast({
+                            title:
+                              "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
+                            description:
+                              "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
+
+                            duration: 5000,
+                            isClosable: true,
+                          });
+                        }
+                      }}
+                      leftIcon={
+                        send === e?._id ? (
+                          <AiOutlineCheck style={{ fontSize: "18px" }} />
+                        ) : undefined
+                      }
+                    >
+                      {e.option}
+                    </Button>
+                    {admin ? (
+                      <Stack direction="row">
+                        <DeleteModal
+                          id={e?._id}
+                          title="Сонголт устгах"
+                          option={true}
+                          onFinish={onFinish}
+                        >
+                          <Button
+                            bg="white"
+                            minW={"88px"}
+                            variant={"outline"}
+                            color={"black"}
+                            fontSize={"14px"}
+                            h={"30px"}
+                          >
+                            Устгах
+                          </Button>
+                        </DeleteModal>
+                        <OptionNewModal
+                          id={e?._id}
+                          onFinish={onFinish}
+                          option={e.option}
+                          icon={e.icon}
+                        >
+                          <Button
+                            bg="white"
+                            minW={"88px"}
+                            variant={"outline"}
+                            color={"black"}
+                            fontSize={"14px"}
+                            h={"30px"}
+                          >
+                            Өөрчлөх
+                          </Button>
+                        </OptionNewModal>
+                      </Stack>
+                    ) : null}
+                  </Stack>
+                ))}
+
+                <VoteModal
+                  choice={vote}
+                  send={send}
+                  voteId={voteId}
+                  optionId={myId}
+                  onFinish={onFinish}
+                >
                   <Button
                     bg="white"
-                    w={{ base: "100px", sm: "120px" }}
-                    variant={"outline"}
-                    color={"black"}
-                    fontSize={"14px"}
-                    h={"30px"}
-                  >
-                    Нэмэх
-                  </Button>
-                </OptionModal>
-              ) : null}
-            </Stack>
-            <Stack justifyContent={"center"} my={"10px"}>
-              {data?.data?.options.map((e: any, id: number) => (
-                <Stack key={id} direction={"row"}>
-                  <Button
-                    variant={"outline"}
                     mx={"auto"}
                     w={{ base: "85%", sm: "458px", md: "498px" }}
-                    color="white"
-                    onClick={() => {
-                      if (user) {
-                        setVote(`${e?.option}`);
-                        setSend(`${e._id}`);
-                        if (first !== null && first !== e._id) {
-                          setVoteId(true);
-                        } else {
-                          setVoteId(false);
-                        }
-                      } else {
-                        toast({
-                          title:
-                            "Та МongolNFT хэрэглэгчийн бүртгэлээ ашиглан нэвтэрнэ үү!",
-                          description:
-                            "Нэвтэрч орсны дараагаар саналаа өгөх боломжтой.",
-
-                          duration: 5000,
-                          isClosable: true,
-                        });
-                      }
-                    }}
-                    leftIcon={
-                      send === e?._id ? (
-                        <AiOutlineCheck style={{ fontSize: "18px" }} />
-                      ) : undefined
+                    variant={"solid"}
+                    color={"black"}
+                    isDisabled={
+                      send === null ||
+                      (voteId === false && first !== null) ||
+                      !user
                     }
                   >
-                    {e.option}
+                    {voteId
+                      ? "Санал шинэчлэх"
+                      : data && "meVotedId" in data
+                      ? data?.meVotedId
+                        ? "Санал өгсөн"
+                        : "Санал өгөх"
+                      : "Санал өгөх"}
                   </Button>
-                  {admin ? (
-                    <Stack direction="row">
-                      <DeleteModal
-                        id={e?._id}
-                        title="Сонголт устгах"
-                        option={true}
-                        onFinish={onFinish}
-                      >
-                        <Button
-                          bg="white"
-                          minW={"88px"}
-                          variant={"outline"}
-                          color={"black"}
-                          fontSize={"14px"}
-                          h={"30px"}
-                        >
-                          Устгах
-                        </Button>
-                      </DeleteModal>
-                      <OptionNewModal
-                        id={e?._id}
-                        onFinish={onFinish}
-                        option={e.option}
-                        icon={e.icon}
-                      >
-                        <Button
-                          bg="white"
-                          minW={"88px"}
-                          variant={"outline"}
-                          color={"black"}
-                          fontSize={"14px"}
-                          h={"30px"}
-                        >
-                          Өөрчлөх
-                        </Button>
-                      </OptionNewModal>
-                    </Stack>
-                  ) : null}
-                </Stack>
-              ))}
-
-              <VoteModal
-                choice={vote}
-                send={send}
-                voteId={voteId}
-                optionId={myId}
-                onFinish={onFinish}
-              >
-                <Button
-                  bg="white"
-                  mx={"auto"}
-                  w={{ base: "85%", sm: "458px", md: "498px" }}
-                  variant={"solid"}
-                  color={"black"}
-                  isDisabled={
-                    send === null ||
-                    (voteId === false && first !== null) ||
-                    !user
-                  }
-                >
-                  {voteId
-                    ? "Санал шинэчлэх"
-                    : data && "meVotedId" in data
-                    ? data?.meVotedId
-                      ? "Санал өгсөн"
-                      : "Санал өгөх"
-                    : "Санал өгөх"}
-                </Button>
-              </VoteModal>
-            </Stack>
-          </Box>
-        </Stack>
-        {/* ) : null} */}
+                </VoteModal>
+              </Stack>
+            </Box>
+          </Stack>
+        ) : null}
         <Stack mt={{ base: "10px", sm: "" }}>
           <Votes idx={id} />
         </Stack>
