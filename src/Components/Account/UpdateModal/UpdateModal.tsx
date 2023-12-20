@@ -53,7 +53,14 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-
+      <FormInput
+        label={"status"}
+        name="status"
+        placeholder={"Status оруулах"}
+        fontWeight="500"
+        fontSize="14"
+        color={"white"}
+      />
       <FormInput
         fontWeight="500"
         fontSize="14"
@@ -78,14 +85,6 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      {/* <FormInput
-        label={"voteCount"}
-        name="voteCount"
-        placeholder={"voteCount оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      /> */}
 
       <Text my={"10px"}>
         Саналын талаарх мэдээлэл оруулах :{" "}
@@ -195,7 +194,7 @@ const UpdateForm = ({
         initialValues={{
           content: data?.data?.content,
           description: data?.data?.description,
-          // notes: data?.data?.notes,
+          status: data?.data?.status,
           endDate: moment
             .utc(data?.data?.endDate)
             .format("YYYY-MM-DDTHH:mm")

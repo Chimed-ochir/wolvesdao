@@ -15,7 +15,7 @@ export const BuildUpdateFormValidationSchema = () =>
     listContent: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("listContent"),
-    // notes: string().label("notes"),
+    status: string().required("Уг талбар хоосон байж болохгүй").label("status"),
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),
