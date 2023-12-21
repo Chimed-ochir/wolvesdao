@@ -25,9 +25,7 @@ function User() {
     if (pageCount) {
       setCount(pageCount as number);
     }
-    console.log("page1", page1);
-    console.log("pageCount", count);
-    console.log("view", view);
+
     if (count >= page1) {
       fetchData(`/user`, {
         page: page1,

@@ -26,6 +26,7 @@ import { DeleteModal } from "@/Components/Account/deleteModal";
 import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 import { ProgressModal } from "@/Components/Account/ProgressModal";
+import { StatusModal } from "@/Components/Account/StatusModal";
 
 const satFont = localFont({
   src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -61,11 +62,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
     if (voteId === true) {
       const myVote = data?.data?.options.find((op: any) => op._id === first);
       const vote = myVote?.votes.find((v: any) => v.userName === user);
-      console.log({ vote, user, voteId, data });
       setMyId(vote?._id);
     }
   }, [voteId]);
-  // console.log("data", data);
   return !data || loading ? (
     <SkeletonId />
   ) : (
@@ -103,6 +102,16 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 Устгах
               </Button>
             </DeleteModal>
+            <StatusModal data={data} onFinish={onFinish}>
+              <Button
+                bg="white"
+                minW={"88px"}
+                variant={"solid"}
+                color={"black"}
+              >
+                Статус Өөрчлөх
+              </Button>
+            </StatusModal>
           </Stack>
         ) : null}
         <Stack>
@@ -247,6 +256,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
           mt={"-70px"}
           backdropFilter={cont === false ? "auto" : ""}
           backdropBlur="2px"
+          boxShadow="xl"
+          p="6"
         >
           <Button
             variant={"outline"}

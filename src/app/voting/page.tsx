@@ -83,7 +83,6 @@ export default function Voting() {
     manual: true,
   });
   const onFinish = () => {
-    console.log("Finish");
     setPolls([]);
     fetchData(`/poll`, {
       page: page1,
@@ -100,7 +99,6 @@ export default function Voting() {
   const { ref, inView } = useInView();
   useEffect(() => {
     if (inView && !loading) {
-      console.log("inView");
       fetchData(`/poll`, {
         page: page1 + 1,
         limit: 5,
@@ -120,7 +118,6 @@ export default function Voting() {
 
   useEffect(() => {
     if (!loading && !authloading) {
-      console.log("inView");
       setPolls([]);
       setPage1(1);
       fetchData(`/poll`, {
