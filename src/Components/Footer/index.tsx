@@ -7,13 +7,15 @@ import { Box } from "@chakra-ui/react";
 export const FooterData = [
   {
     title: "The Wolves",
+    link: "https://www.thewolves.io/",
+    newTab: true,
   },
   {
     title: "General",
     children: [
       {
         name: "Home",
-        link: "#",
+        link: "/#",
         newTab: false,
       },
       {
@@ -63,7 +65,14 @@ export const Footer = () => {
           >
             {FooterData.map((el: any, ind: any) => (
               <div key={ind} className={styled.colWrapper}>
-                <h4 className={styled.title}>{el.title}</h4>
+                <a
+                  href={el?.link}
+                  target={el?.newTab ? "_blank" : ""}
+                  className={styled.link}
+                >
+                  <h4 className={styled.title}>{el.title}</h4>
+                </a>
+
                 {el.children ? (
                   <>
                     {el.children.map((child: any, idx: any) => (

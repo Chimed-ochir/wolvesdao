@@ -210,6 +210,9 @@
   font-weight: 900;
   line-height: 18px;
 }
+.title:hover {
+  color: #dfff17;
+}
 
 .link {
   color: #fff;
@@ -218,6 +221,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
+}
+
+.link:hover {
+  color: #dfff17;
 }
 
 .colWrapper {

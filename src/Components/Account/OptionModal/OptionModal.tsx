@@ -28,7 +28,6 @@ const satFont = localFont({
 const OptionFormBody = ({ loading }: { loading: boolean }) => {
   const [text, setText] = useState("");
   const { emoji1 } = useAuth();
-  console.log("setText,", text);
   const log = () => {
     if (text) {
       emoji1(text);
@@ -77,7 +76,6 @@ const OptionForm = ({ onFinish, id }: { onFinish: () => void; id: string }) => {
     uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/option`,
     method: "post",
   });
-  console.log("emo", emo);
   const onSubmit = (values: any) => {
     values.icon = emo;
     request(values)

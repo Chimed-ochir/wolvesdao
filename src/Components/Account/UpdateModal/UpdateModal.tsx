@@ -8,6 +8,10 @@ import {
   Link,
   InputRightElement,
   Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
@@ -17,7 +21,7 @@ import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
 import localFont from "next/font/local";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { MdOutlineExpandMore } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
@@ -53,14 +57,7 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      <FormInput
-        label={"status"}
-        name="status"
-        placeholder={"Status оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-      />
+
       <FormInput
         fontWeight="500"
         fontSize="14"
@@ -85,7 +82,32 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-
+      <FormInput
+        label={"Саналын статус оруулах"}
+        name="status"
+        placeholder={"Саналын статус оруулах"}
+        fontWeight="500"
+        fontSize="14"
+        color={"white"}
+        inputRightElement={
+          <Menu>
+            <MenuButton
+              as={Button}
+              bg={"black"}
+              rightIcon={<MdOutlineExpandMore />}
+              zIndex={"1600"}
+            ></MenuButton>
+            <MenuList bg={"black"} zIndex={"1600"}>
+              <MenuItem minH="48px" bg={"black"} zIndex={"1600"}>
+                executed
+              </MenuItem>
+              <MenuItem minH="40px" bg={"black"} zIndex={"1600"}>
+                rejected
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        }
+      />
       <Text my={"10px"}>
         Саналын талаарх мэдээлэл оруулах :{" "}
         <span style={{ fontSize: "12px" }}>
