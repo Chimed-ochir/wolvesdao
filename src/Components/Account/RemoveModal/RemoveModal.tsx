@@ -27,11 +27,9 @@ const DeleteForm = ({
       .then((res: any) => {
         if (res?.success) {
           showSuccessToast("Амжилттай устгалаа!");
-          // if (option) {
+
           onFinish();
-          // } else {
-          //   router.push("/voting");
-          // }
+
           onClose();
         }
       })

@@ -31,7 +31,6 @@ const OptionFormBody = ({
 }) => {
   const [text, setText] = useState<string>("");
 
-  // Set the initial value when the icon prop changes or on mount
   useEffect(() => {
     setText(icon || "");
   }, [icon]);

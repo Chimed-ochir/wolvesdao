@@ -10,22 +10,16 @@ function Getting() {
   const [fragmentIdentifier, setFragmentIdentifier] = useState("");
   const pathname = usePathname();
   useEffect(() => {
-    // Function to handle changes in the URL hash
-
     const handleHashChange = () => {
       const fragment = window.location.hash;
       const newFragmentIdentifier = fragment.substring(1);
-      // Update the state with the new fragment identifier
       setFragmentIdentifier(newFragmentIdentifier);
     };
 
-    // Add an event listener for hash changes
     window.addEventListener("hashchange", handleHashChange);
 
-    // Initial call to set the fragment on the first render
     handleHashChange();
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
@@ -73,10 +67,8 @@ function Getting() {
         }
       };
 
-      // Attach the event listener
       window.addEventListener("scroll", handleScroll);
 
-      // Clean up the event listener when the component unmounts
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };

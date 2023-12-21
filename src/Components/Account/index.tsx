@@ -73,7 +73,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
-      // setAdmin(true);
       setAdmin(data?.isAdmin);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
