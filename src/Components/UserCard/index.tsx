@@ -15,6 +15,7 @@ function UserCard({ data, onFinish }: { data: any; onFinish: () => void }) {
       alignItems={"center"}
       mx="auto"
       p={"5px"}
+      justifyContent={"space-between"}
     >
       {" "}
       <Stack

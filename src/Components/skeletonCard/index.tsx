@@ -1,28 +1,8 @@
 "use client";
-import {
-  Box,
-  Image,
-  Show,
-  Skeleton,
-  SkeletonCircle,
-  Stack,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Skeleton, SkeletonCircle, Stack } from "@chakra-ui/react";
+import React from "react";
 import localFont from "next/font/local";
-const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
-import {
-  BsCheckSquareFill,
-  BsFillXSquareFill,
-  BsDashSquareFill,
-} from "react-icons/bs";
-import { isDate } from "moment";
-import { useRouter } from "next/navigation";
-import { CalcPercent, CalcStatus } from "@/utils";
-import { useAuth } from "../Account";
+
 function SkeletonCard(el: any) {
   return (
     <Stack
