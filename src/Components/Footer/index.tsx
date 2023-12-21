@@ -91,7 +91,7 @@ export const Footer = () => {
             ))}
           </Box>
           <Box
-            ml={pathname === "/rules" ? "332px" : ""}
+            ml={pathname === "/rules" ? "332px" : "0"}
             w={pathname === "/rules" ? "793px" : "100%"}
           >
             <div className={styled.bottom}>

@@ -118,11 +118,9 @@ const UpdateForm = ({
   const { htma, htm } = useAuth();
   useEffect(() => {
     htma(data?.data?.notes);
-    // htma1(data?.data?.notes);
   }, []);
   const onSubmit = (values: any) => {
     values.notes = htm;
-    // values.notes = htm1;
     request(values)
       .then((res: any) => {
         if (res?.success) {

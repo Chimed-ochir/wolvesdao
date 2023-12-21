@@ -61,7 +61,6 @@ function User() {
               variant={"solid"}
               color={"black"}
               fontSize={{ base: "12", md: "14px" }}
-              // h="30px"
             >
               Хэрэглэгч нэмэх
             </Button>
@@ -74,7 +73,6 @@ function User() {
               color={"black"}
               fontSize={{ base: "12", md: "14px" }}
               maxW={"155px"}
-              // h="30px"
             >
               Бүх хэрэглэгч устгах
             </Button>

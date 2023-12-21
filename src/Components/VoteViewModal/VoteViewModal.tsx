@@ -48,7 +48,6 @@ const VoteViewForm = ({
 
   const [result, setResult] = useState<any[]>([]); // Initialize 'result' state as an empty array
   var moment = require("moment");
-  // Assuming 'data' is another state or a prop provided to this component
   useEffect(() => {
     if (view && data) {
       const filteredData = data.filter((e: any) => {

@@ -168,8 +168,6 @@ function PollCard(el: any) {
                   <Stack
                     direction={"row"}
                     justifyContent={"space-between"}
-                    // w={{ base: "210px", lg: "700px" }}
-                    // w={"90%"}
                     minW={"300px"}
                     mx={"auto"}
                     ml={{ base: "5px", sm: "20px" }}
@@ -177,10 +175,6 @@ function PollCard(el: any) {
                   >
                     <Stack direction={"row"} alignItems="center">
                       {" "}
-                      {/* <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                        <BsCheckSquareFill color="#228200" size="18px" />
-                      </Box> */}
-                      {/* <Image src={el?.icon} w="18px" /> */}
                       <Text>{el?.icon}</Text>
                       <Text color={"white"}>{el.option}: </Text>
                       <Text color={"white"} minW={"60px"} h="21px">

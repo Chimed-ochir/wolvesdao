@@ -94,7 +94,6 @@ const UpdateForm = ({
     <Stack>
       <Formik
         initialValues={{
-          // userId: id,
           isAdmin: admin,
         }}
         validationSchema={BuildUpdateFormValidationSchema()}

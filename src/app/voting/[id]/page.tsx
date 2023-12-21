@@ -123,7 +123,6 @@ function Page({ params: { id } }: { params: { id: string } }) {
               cursor="pointer"
               w="80px"
               onClick={() => {
-                // router.push("/voting");
                 router.back();
               }}
             >
@@ -278,7 +277,8 @@ function Page({ params: { id } }: { params: { id: string } }) {
             {cont === false ? " Дэлгэрэнгүй" : "Хураангуй"}
           </Button>
         </Stack>
-        {(data?.data?.status as string) === "active" ? (
+        {(data?.data?.status as string) === "active" ||
+        ((data?.data?.status as string) === "waiting" && admin) ? (
           <Stack>
             <Box
               borderRadius={"6px"}
