@@ -19,15 +19,10 @@ function User() {
     });
   };
   const [page1, setPage1] = useState(1);
-  const [count, setCount] = useState(1);
   const [view, setView] = useState(false);
 
   useEffect(() => {
-    if (pageCount) {
-      setCount(pageCount as number);
-    }
-
-    if (count >= page1) {
+    if (pageCount >= page1) {
       fetchData(`/user`, {
         page: page1,
         limit: 10,
@@ -35,10 +30,6 @@ function User() {
     }
   }, [view]);
   useEffect(() => {
-    if (pageCount) {
-      setCount(pageCount as number);
-    }
-
     fetchData(`/user`, {
       page: 1,
       limit: 10,
