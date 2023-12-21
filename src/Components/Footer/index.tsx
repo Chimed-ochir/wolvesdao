@@ -91,8 +91,27 @@ export const Footer = () => {
             ))}
           </Box>
           <Box
+            // ml={pathname === "/rules" ? "332px" : "0"}
+            w={"100%"}
+            className={`hideDesktop`}
+          >
+            <div className={styled.bottom}>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.companyName}>The Wolves Community</p>
+                <p style={{ paddingLeft: "5px" }}> </p>
+                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+              </div>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.poweredBy}>Privacy Policy</p>
+                <p style={{ margin: "0 8px", color: "white" }}>•</p>
+                <p className={styled.poweredBy}>Terms of Service</p>
+              </div>
+            </div>
+          </Box>
+          <Box
             ml={pathname === "/rules" ? "332px" : "0"}
-            w={pathname === "/rules" ? "793px" : "100%"}
+            w={pathname === "/rules" ? "793px" : "100"}
+            className={`hideMobile`}
           >
             <div className={styled.bottom}>
               <div className={styled.rowWrapper2}>
