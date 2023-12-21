@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Skeleton, Stack, Text } from "@chakra-ui/react";
 import UserCard from "../UserCard";
 import { useQuery } from "@/utils";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UserModal } from "@/Components/Account/UserModal/UserModal";
 import { DeleteAllModal } from "../Account/DeleteAllModal";
+import SkeletonUserCard from "../SkeletonUserCard";
 function User() {
   const { loading, data, fetchData, pageCount } = useQuery<any>({
     uri: "/user",
@@ -109,9 +110,25 @@ function User() {
           {/* : {data?.length} */}
         </Text>
 
-        {data?.map((user: any, index: number) => (
-          <UserCard data={user} key={index} onFinish={onFinish} />
-        ))}
+        {loading ? (
+          <>
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+          </>
+        ) : (
+          data?.map((user: any, index: number) => (
+            <UserCard data={user} key={index} onFinish={onFinish} />
+          ))
+        )}
         <Stack direction="row" w="180px" mx="auto" my="10px">
           <Button
             bg="white"
