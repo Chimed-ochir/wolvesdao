@@ -81,19 +81,23 @@ export const Footer = () => {
               </div>
             ))}
           </Box>
-
-          <div className={styled.bottom}>
-            <div className={styled.rowWrapper2}>
-              <p className={styled.companyName}>The Wolves Community</p>
-              <p style={{ paddingLeft: "5px" }}> </p>
-              <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+          <Box
+            ml={pathname === "/rules" ? "332px" : ""}
+            w={pathname === "/rules" ? "793px" : "100%"}
+          >
+            <div className={styled.bottom}>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.companyName}>The Wolves Community</p>
+                <p style={{ paddingLeft: "5px" }}> </p>
+                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+              </div>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.poweredBy}>Privacy Policy</p>
+                <p style={{ margin: "0 8px", color: "white" }}>•</p>
+                <p className={styled.poweredBy}>Terms of Service</p>
+              </div>
             </div>
-            <div className={styled.rowWrapper2}>
-              <p className={styled.poweredBy}>Privacy Policy</p>
-              <p style={{ margin: "0 8px", color: "white" }}>•</p>
-              <p className={styled.poweredBy}>Terms of Service</p>
-            </div>
-          </div>
+          </Box>
         </div>
       </Container>
       {/* <div className={styled.redCircle} /> */}
