@@ -1,32 +1,15 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext, Text } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
 import localFont from "next/font/local";
-import { MdOutlineExpandMore } from "react-icons/md";
-import { HiOutlineUserCircle } from "react-icons/hi";
+
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-import { LoginDataType } from "..";
-import { MfaModal } from "../MfaModal";
 import { Editor } from "@tinymce/tinymce-react";
 const satFont = localFont({
   src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
@@ -82,32 +65,7 @@ const UpdateFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      <FormInput
-        label={"Саналын статус оруулах"}
-        name="status"
-        placeholder={"Саналын статус оруулах"}
-        fontWeight="500"
-        fontSize="14"
-        color={"white"}
-        inputRightElement={
-          <Menu>
-            <MenuButton
-              as={Button}
-              bg={"black"}
-              rightIcon={<MdOutlineExpandMore />}
-              zIndex={"1600"}
-            ></MenuButton>
-            <MenuList bg={"black"} zIndex={"1600"}>
-              <MenuItem minH="48px" bg={"black"} zIndex={"1600"}>
-                executed
-              </MenuItem>
-              <MenuItem minH="40px" bg={"black"} zIndex={"1600"}>
-                rejected
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        }
-      />
+
       <Text my={"10px"}>
         Саналын талаарх мэдээлэл оруулах :{" "}
         <span style={{ fontSize: "12px" }}>
@@ -189,14 +147,12 @@ const UpdateForm = ({
     method: "patch",
   });
   var moment = require("moment");
-  const { htma, htm, htm1, htma1 } = useAuth();
+  const { htma, htm } = useAuth();
   useEffect(() => {
     htma(data?.data?.content);
-    // htma1(data?.data?.notes);
   }, []);
   const onSubmit = (values: any) => {
     values.content = htm;
-    // values.notes = htm1;
     request(values)
       .then((res: any) => {
         if (res?.success) {
@@ -216,7 +172,7 @@ const UpdateForm = ({
         initialValues={{
           content: data?.data?.content,
           description: data?.data?.description,
-          status: data?.data?.status,
+
           endDate: moment
             .utc(data?.data?.endDate)
             .format("YYYY-MM-DDTHH:mm")
@@ -240,12 +196,6 @@ const UpdateForm = ({
           </Form>
         )}
       </Formik>
-      {/* <MfaModal
-        isOpen={!!sessionData}
-        onClose={() => setSessionData(null)}
-        sessionData={sessionData}
-        onFinish={onFinish}
-      /> */}
     </Stack>
   );
 };

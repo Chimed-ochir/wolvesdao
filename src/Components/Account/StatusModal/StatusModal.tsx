@@ -32,7 +32,11 @@ const UpdateFormBody = ({
     <Stack spacing="lg" pb="sm">
       <FormControl id="status" fontWeight="500" fontSize="14" color={"white"}>
         <FormLabel>Саналын статус оруулах</FormLabel>
-        <Select value={selectedStatus} onChange={handleStatusChange}>
+        <Select
+          value={selectedStatus}
+          onChange={handleStatusChange}
+          placeholder="Саналын статус оруулах"
+        >
           <option value="executed">executed</option>
           <option value="rejected">rejected</option>
         </Select>
