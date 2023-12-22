@@ -11,7 +11,7 @@ function GettingStarted() {
       // h={{ lg: "3199px" }}
       mx={"5px"}
     >
-      <Stack h={{ sm: "150px" }} justifyContent={"space-evenly"} id="started1">
+      <Stack h={{ sm: "150px" }} justifyContent={"space-evenly"}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -35,6 +35,7 @@ function GettingStarted() {
               fontSize={{ sm: "24px" }}
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
+              id="started12"
             >
               Зорилго
             </Text>
@@ -52,7 +53,6 @@ function GettingStarted() {
               fontSize={{ base: "10px", sm: "13px", md: "15px" }}
               fontWeight={"600"}
               color={"white"}
-              id="started12"
               textAlign={"justify"}
             >
               The Wolves NFT-ийн үнэ цэнэ, хэрэглээг нэмэгдүүлэх, чонон сүргийн
@@ -322,7 +322,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "135px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -361,7 +361,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "148px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "132px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -400,7 +400,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>{" "}
-      <Stack h={{ md: "122px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "92px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -441,7 +441,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "142px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -475,11 +475,12 @@ function GettingStarted() {
             гишүүдийн дунд санал хураалт явуулж, энгийн олонхын (тогтоосон
             хугацаанд санал өгсөн гишүүдийн 50+1 хувь) саналаар тухайн санал
             дэмжигдсэн эсэхийг эцэслэн тогтооно. Санал хураалт үргэлжлэх хугацаа
-            нь саналаас шалтгаалан 3 хүртэлх хоног байна.
+            нь саналаас шалтгаалан 3 хүртэлх хоног{" "}
+            <span id="started3">байна.</span>
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "96px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "70px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -493,7 +494,6 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
-                id="started3"
               >
                 Санал хэрэгжилт
               </Text>

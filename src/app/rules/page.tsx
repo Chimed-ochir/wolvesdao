@@ -21,9 +21,10 @@ export default function Rules() {
             alignItems={"flex-start"}
             mx={"auto"}
             w={{ base: "", xl: "1010px" }}
+            mt="10px"
           >
             <Show above="lg">
-              <Box w={"1px"} h={"2470px"} bg={"white"} mr={"20px"} mt={"8px"}>
+              <Box w={"1px"} h={"2303px"} bg={"white"} mr={"20px"} mt={"8px"}>
                 <Stack
                   w={"21px"}
                   h={"21px"}
@@ -50,7 +51,7 @@ export default function Rules() {
                   borderRadius={"100%"}
                   ml={"-10px"}
                   boxShadow={"0px 0px 5px 1px   white"}
-                  mt={{ lg: "666px", xl: "606px" }}
+                  mt={{ lg: "566px", xl: "556px" }}
                 >
                   <Box
                     w={"10px"}
@@ -70,7 +71,7 @@ export default function Rules() {
                   borderRadius={"100%"}
                   ml={"-10px"}
                   boxShadow={"0px 0px 5px 1px   white"}
-                  mt={{ lg: "825px" }}
+                  mt={{ lg: "740px", xl: "725px" }}
                 >
                   <Box
                     w={"10px"}
