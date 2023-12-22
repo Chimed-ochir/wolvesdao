@@ -11,7 +11,7 @@ function GettingStarted() {
       // h={{ lg: "3199px" }}
       mx={"5px"}
     >
-      <Stack h={{ sm: "190px" }} justifyContent={"space-evenly"} id="started1">
+      <Stack h={{ sm: "150px" }} justifyContent={"space-evenly"} id="started1">
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -69,7 +69,7 @@ function GettingStarted() {
           w={{ md: "500px" }}
           maxW={"500px"}
           justifyContent={"space-between"}
-          h="48px"
+          h="24px"
           alignItems={"center"}
         >
           <Box w={{ md: "355px" }} h={"24px"}>
@@ -274,7 +274,7 @@ function GettingStarted() {
           </Box>
         </Box>
       </Stack>
-      <Stack h={{ md: "159px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "150px" }} alignItems={"space-around"}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -314,7 +314,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             textAlign={"justify"}
           >
             The Wolves NFT эзэмшигч хүн бүр (багаар байж болно) нээлттэйгээр The
@@ -351,7 +350,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started23"
             textAlign={"justify"}
           >
@@ -390,7 +388,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started24"
             textAlign={"justify"}
           >
@@ -435,7 +432,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             textAlign={"justify"}
           >
             Хяналтын зөвлөлөөр шийдвэрлэгдсэн саналуудыг Discussion хэсэг дээр
@@ -472,7 +468,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started26"
             textAlign={"justify"}
           >
@@ -512,7 +507,6 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             textAlign={"justify"}
           >
             Комюнити менежер нь батлагдсан саналуудын хэрэгжилтэд хяналт тавьж
@@ -520,7 +514,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "161px" }}>
+      <Stack h={{ md: "150px" }}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}

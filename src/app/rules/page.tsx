@@ -23,7 +23,7 @@ export default function Rules() {
             w={{ base: "", xl: "1010px" }}
           >
             <Show above="lg">
-              <Box w={"1px"} h={"2470px"} bg={"white"} mr={"20px"} mt={"15px"}>
+              <Box w={"1px"} h={"2470px"} bg={"white"} mr={"20px"} mt={"8px"}>
                 <Stack
                   w={"21px"}
                   h={"21px"}
