@@ -4,7 +4,7 @@ import { Box, Show, Stack } from "@chakra-ui/react";
 
 export default function Rules() {
   return (
-    <Box>
+    <Box mb={{ lg: "-30px" }} mr={{ lg: "8px" }}>
       <Getting />
       <Box ml={{ lg: "312px" }}>
         <Stack
@@ -12,10 +12,10 @@ export default function Rules() {
           justifyContent={"space-between"}
           mx={"auto"}
           mt={"-180px"}
-          h={{ lg: "3399px" }}
+          // h={{ lg: "3399px" }}
           w={{ xl: "1010px" }}
         >
-          <Box h={{ base: "160px", lg: "251px" }} id="started1"></Box>
+          <Box h={{ base: "160px", lg: "171px" }} id="started1"></Box>
           <Stack
             direction={"row"}
             justifyContent="space-evenly"
@@ -24,7 +24,7 @@ export default function Rules() {
             w={{ base: "", xl: "1010px" }}
           >
             <Show above="lg">
-              <Box w={"1px"} h={"3170px"} bg={"white"} mr={"20px"} mt={"15px"}>
+              <Box w={"1px"} h={"2470px"} bg={"white"} mr={"20px"} mt={"15px"}>
                 <Stack
                   w={"21px"}
                   h={"21px"}
@@ -51,7 +51,7 @@ export default function Rules() {
                   borderRadius={"100%"}
                   ml={"-10px"}
                   boxShadow={"0px 0px 5px 1px   white"}
-                  mt={"806px"}
+                  mt={{ lg: "666px", xl: "606px" }}
                 >
                   <Box
                     w={"10px"}
@@ -71,7 +71,7 @@ export default function Rules() {
                   borderRadius={"100%"}
                   ml={"-10px"}
                   boxShadow={"0px 0px 5px 1px   white"}
-                  mt={"1155px"}
+                  mt={{ lg: "825px" }}
                 >
                   <Box
                     w={"10px"}
@@ -87,11 +87,14 @@ export default function Rules() {
             </Show>
             <Stack
               maxW={"897px"}
-              h={{ lg: "3199px" }}
+              // h={{ lg: "3199px" }}
               alignItems={"flex-end"}
               justifyContent={"flex-end"}
             >
-              <Box w={{ xl: "897px" }} h={{ lg: "3199px" }}>
+              <Box
+                w={{ xl: "897px" }}
+                //  h={{ lg: "3199px" }}
+              >
                 <GettingStarted />
               </Box>
             </Stack>

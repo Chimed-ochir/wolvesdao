@@ -110,7 +110,7 @@ export const Footer = () => {
           </Box>
           <Box
             ml={pathname === "/rules" ? "332px" : "0"}
-            w={pathname === "/rules" ? "793px" : "100"}
+            w={pathname === "/rules" ? "793px" : "90%"}
             className={`hideMobile`}
           >
             <div className={styled.bottom}>

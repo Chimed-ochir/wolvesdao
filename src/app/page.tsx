@@ -12,7 +12,11 @@ export default function Home() {
   return (
     <Box h={{ lg: "1310px" }} marginY={"-162px"} w={"100%"}>
       <Flex h={{ lg: "1310px" }} w={"100vw"} zIndex={"100"}>
-        <Box mx={"auto"} marginTop={"-162.5px"}>
+        <Box
+          mx={"auto"}
+          // marginBottom={{ base: "-30px", lg: "" }}
+          marginTop={{ base: "55px", lg: "-112px" }}
+        >
           <div className={styles.circle}>
             <Box
               bgGradient={

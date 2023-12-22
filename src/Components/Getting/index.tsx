@@ -30,29 +30,29 @@ function Getting() {
         const scrollY = window.scrollY;
         let newIdx = 0;
 
-        if (scrollY >= 2841) {
+        if (scrollY >= 2164) {
           newIdx = 1;
-        } else if (scrollY >= 2382) {
+        } else if (scrollY >= 1904) {
           newIdx = 2;
-        } else if (scrollY >= 2226) {
+        } else if (scrollY >= 1651) {
           newIdx = 3;
-        } else if (scrollY >= 2015) {
+        } else if (scrollY >= 1487) {
           newIdx = 4;
-        } else if (scrollY >= 1808) {
+        } else if (scrollY >= 1389) {
           newIdx = 5;
-        } else if (scrollY >= 1621) {
+        } else if (scrollY >= 1207) {
           newIdx = 6;
-        } else if (scrollY >= 1409) {
+        } else if (scrollY >= 1103) {
           newIdx = 7;
-        } else if (scrollY >= 1209) {
+        } else if (scrollY >= 960) {
           newIdx = 8;
-        } else if (scrollY >= 1027) {
+        } else if (scrollY >= 783) {
           newIdx = 9;
-        } else if (scrollY >= 791) {
+        } else if (scrollY >= 656) {
           newIdx = 10;
-        } else if (scrollY >= 523) {
+        } else if (scrollY >= 425) {
           newIdx = 11;
-        } else if (scrollY >= 246) {
+        } else if (scrollY >= 225) {
           newIdx = 12;
         } else {
           newIdx = 13;
@@ -84,7 +84,7 @@ function Getting() {
       w={"312px"}
       zIndex={100}
       position="fixed"
-      left={{ base: "0", "2xl": "10%" }}
+      left={{ base: "0", "2xl": "8%" }}
       top={"100px"}
     >
       <Stack
