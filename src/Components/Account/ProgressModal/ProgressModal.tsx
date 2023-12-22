@@ -1,30 +1,16 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext, Text } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
-import { FormInput } from "@/Components/form/FormInput";
 import { BuildNewFormValidationSchema } from "./NewModal.schema";
-import localFont from "next/font/local";
 
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
 
 import { Editor } from "@tinymce/tinymce-react";
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
+
 const UpdateFormBody = ({ loading }: { loading: boolean }) => {
   const { htma, htm } = useAuth();
   const editorRef = useRef<any | null>(null);

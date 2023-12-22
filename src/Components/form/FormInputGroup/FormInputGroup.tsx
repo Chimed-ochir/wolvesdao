@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { useField } from "formik";
-import { InputGroup, InputGroupProps } from "@/Components/common/Input";
+import { InputGroup, InputGroupProps } from "@/common/Input";
 import { FormError } from "@/Components/form/FormError/FormError";
 
 export type FormInputGroupProps = InputGroupProps & {

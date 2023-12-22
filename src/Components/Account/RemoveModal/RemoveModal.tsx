@@ -1,10 +1,7 @@
 import { Button, Stack, Text, useModalContext } from "@chakra-ui/react";
-import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
-import { FormInput } from "@/Components/form/FormInput";
 import { useToast } from "@/utils/toast";
 import { useMutation } from "@/utils";
-import { useAuth } from "..";
 import { useRouter } from "next/navigation";
 
 const DeleteForm = ({

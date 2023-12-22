@@ -2,9 +2,9 @@ import { useField } from "formik";
 import { Box, HStack, Text, Tooltip } from "@chakra-ui/react";
 import { forwardRef } from "react";
 import { FaInfoCircle } from "react-icons/fa";
-import { Select, SelectProps } from "@/Components/common/Select";
+import { Select, SelectProps } from "@/common/Select";
 import { FormError } from "@/Components/form/FormError/FormError";
-import { Link } from "@/Components/common/Link";
+import { Link } from "@/common/Link";
 import { useThemeContext } from "@/contexts/ThemeContext";
 
 export type FormSelectProps = SelectProps & {

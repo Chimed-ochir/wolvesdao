@@ -1,10 +1,9 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import localFont from "next/font/local";
-import { BiLogoDiscourse } from "react-icons/bi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+const myFont = localFont({ src: "../../fonts/revolution/revolution-bold.otf" });
 function GettingStarted() {
   return (
     <Stack

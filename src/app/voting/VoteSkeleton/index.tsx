@@ -1,4 +1,4 @@
-import SkeletonCard from "@/Components/skeletonCard";
+import SkeletonCard from "@/Components/SkeletonCard";
 import { Show, Skeleton, Stack } from "@chakra-ui/react";
 import React from "react";
 

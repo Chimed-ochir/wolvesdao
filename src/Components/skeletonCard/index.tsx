@@ -1,7 +1,6 @@
 "use client";
 import { Skeleton, SkeletonCircle, Stack } from "@chakra-ui/react";
 import React from "react";
-import localFont from "next/font/local";
 
 function SkeletonCard(el: any) {
   return (

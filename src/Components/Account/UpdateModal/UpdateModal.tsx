@@ -6,14 +6,10 @@ import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
-import localFont from "next/font/local";
-
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
 import { Editor } from "@tinymce/tinymce-react";
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
+
 const UpdateFormBody = ({ loading }: { loading: boolean }) => {
   const { htma, htm } = useAuth();
   const editorRef = useRef<any | null>(null);

@@ -1,14 +1,4 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
 import React, { useState } from "react";
@@ -17,14 +7,10 @@ import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildOptionwFormValidationSchema } from "./OptionModal.schema";
-import localFont from "next/font/local";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
+
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
+
 const OptionFormBody = ({ loading }: { loading: boolean }) => {
   const [text, setText] = useState("");
   const { emoji1 } = useAuth();

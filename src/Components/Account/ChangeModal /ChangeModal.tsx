@@ -1,40 +1,16 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
-import { useEffect } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
-import localFont from "next/font/local";
 
-import { useAuth } from "..";
 import { useMutation } from "@/utils";
 
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
 const UpdateFormBody = ({ loading }: { loading: boolean }) => {
   return (
     <Stack spacing="lg" pb="sm">
-      {/* <FormInput
-        fontWeight="500"
-        fontSize="14"
-        label={"userId"}
-        name="userId"
-        placeholder={"userId оруулах"}
-        type="string"
-      /> */}
       <FormInput
         label={"isAdmin"}
         name="isAdmin"

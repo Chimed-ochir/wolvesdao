@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
-import { AiOutlineCheck } from "react-icons/ai";
 import { MdExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import { BsChevronLeft } from "react-icons/bs";
 import { useQuery } from "@/utils";
@@ -22,14 +21,14 @@ import SkeletonId from "./SkeletonId";
 import Information from "./Information/page";
 import { useAuth } from "@/Components/Account";
 import { UpdateModal } from "@/Components/Account/UpdateModal";
-import { DeleteModal } from "@/Components/Account/deleteModal";
+import { DeleteModal } from "@/Components/Account/DeleteModal";
 import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 import { ProgressModal } from "@/Components/Account/ProgressModal";
 import { StatusModal } from "@/Components/Account/StatusModal";
 
 const satFont = localFont({
-  src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
 function Page({ params: { id } }: { params: { id: string } }) {

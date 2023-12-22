@@ -12,7 +12,7 @@ import { useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 
-import { BuildUpdateFormValidationSchema } from "./UpdateModal.schema";
+import { BuildUpdateFormValidationSchema } from "./StatusModal.schema";
 
 import { useMutation } from "@/utils";
 
