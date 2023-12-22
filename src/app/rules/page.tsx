@@ -87,11 +87,14 @@ export default function Rules() {
             </Show>
             <Stack
               maxW={"897px"}
-              h={{ lg: "3199px" }}
+              // h={{ lg: "3199px" }}
               alignItems={"flex-end"}
               justifyContent={"flex-end"}
             >
-              <Box w={{ xl: "897px" }} h={{ lg: "3199px" }}>
+              <Box
+                w={{ xl: "897px" }}
+                //  h={{ lg: "3199px" }}
+              >
                 <GettingStarted />
               </Box>
             </Stack>

@@ -7,7 +7,11 @@ import { useRouter } from "next/navigation";
 const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
 function GettingStarted() {
   return (
-    <Stack justifyContent={"space-between"} h={{ lg: "3199px" }} mx={"5px"}>
+    <Stack
+      justifyContent={"space-between"}
+      // h={{ lg: "3199px" }}
+      mx={"5px"}
+    >
       <Stack h={{ sm: "190px" }} justifyContent={"space-evenly"} id="started1">
         <Box h={{ sm: "52px" }}>
           <Text
@@ -666,7 +670,7 @@ function GettingStarted() {
         h={{ md: "344px" }}
         alignItems={"space-around"}
         id="started34"
-        mt={{ md: "10px" }}
+        mt={{ md: "10px", lg: "40px", xl: "" }}
       >
         <Stack
           direction={"row"}
