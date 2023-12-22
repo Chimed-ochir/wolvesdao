@@ -1,37 +1,22 @@
 "use client";
 import {
   Box,
-  Divider,
-  Button,
   Stack,
-  useModalContext,
-  HStack,
-  Link,
   Text,
-  Alert,
-  AlertIcon,
   Input,
   InputGroup,
   InputLeftElement,
   Image as Images,
 } from "@chakra-ui/react";
 
-import { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import { Form, Formik } from "formik";
+import { useEffect, useState } from "react";
 import { Modal } from "@/Components/Modal";
-import { FormInput } from "@/Components/form/FormInput";
 import { useToast } from "@/utils/toast";
 
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { useAuth } from "../Account";
-import { useMutation } from "@/utils";
-import { LoginDataType } from "../Account";
 import localFont from "next/font/local";
-import { usePathname, useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
 const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
 const VoteViewForm = ({
@@ -44,7 +29,6 @@ const VoteViewForm = ({
   data: any;
 }) => {
   const [view, setView] = useState("");
-  const { showErrorToast, showSuccessToast } = useToast();
 
   const [result, setResult] = useState<any[]>([]); // Initialize 'result' state as an empty array
   var moment = require("moment");
@@ -169,7 +153,6 @@ export const VoteViewModal = ({
       msize="md"
     >
       <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} />
-      {/* <VoteViewForm isOpen={isOpen} onClose={onClose} data={data} /> */}
     </Modal>
   );
 };

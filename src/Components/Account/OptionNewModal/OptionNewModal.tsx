@@ -1,22 +1,11 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext, Text } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildNewFormValidationSchema } from "./OptionNewModal.schema";
-import localFont from "next/font/local";
 
 import { useAuth } from "..";
 import { useMutation } from "@/utils";

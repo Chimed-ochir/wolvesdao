@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Button, Skeleton, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import UserCard from "../UserCard";
 import { useQuery } from "@/utils";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UserModal } from "@/Components/Account/UserModal/UserModal";
-import { DeleteAllModal } from "../Account/DeleteAllModal";
+import { DeleteAllModal } from "../Account/DeleteAllModal/DeleteAllModal";
 import SkeletonUserCard from "../SkeletonUserCard";
 function User() {
   const { loading, data, fetchData, pageCount } = useQuery<any>({

@@ -21,7 +21,7 @@ import Link from "next/link";
 import { AuthModal } from "../Account/AuthModal";
 import { useAuth } from "@/Components/Account/index";
 import { usePathname, useRouter } from "next/navigation";
-const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+const myFont = localFont({ src: "../../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
   src: string;
   name: string;

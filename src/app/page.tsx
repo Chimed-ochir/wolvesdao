@@ -6,7 +6,7 @@ import wolf from "../../public/assets/youngWolf.png";
 
 import localFont from "next/font/local";
 const mFont = localFont({
-  src: "../Components/fonts/revolution/revolution-bold.otf",
+  src: "../fonts/revolution/revolution-bold.otf",
 });
 export default function Home() {
   return (

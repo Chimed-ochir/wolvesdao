@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 import { VoteViewModal } from "../VoteViewModal";
 import { useAuth } from "../Account";
 const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 function Votes(idx: any) {
   const { user } = useAuth();
@@ -25,7 +25,6 @@ function Votes(idx: any) {
 
   var moment = require("moment");
   const [view, setView] = useState(false);
-
   return (
     <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
       <Stack borderBottom={"1px solid  #282828"} w={"100%"}>
@@ -67,6 +66,7 @@ function Votes(idx: any) {
           ) : null}
         </Stack>
       </Stack>
+
       {(Array.isArray(data) ? data.slice(0, 3) : []).map(
         (e: any, id: number) => (
           <Stack justifyContent={"center"} my={"10px"} key={id}>

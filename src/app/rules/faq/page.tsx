@@ -3,7 +3,7 @@ import React from "react";
 import Faq from "@/Components/Faqrule/page";
 import localFont from "next/font/local";
 const satFont = localFont({
-  src: "../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 function page() {
   return (
