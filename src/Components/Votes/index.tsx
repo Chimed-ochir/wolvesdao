@@ -67,8 +67,8 @@ function Votes(idx: any) {
           ) : null}
         </Stack>
       </Stack>
-      {data?.map((e: any, id: number) => {
-        return id < 3 ? (
+      {(Array.isArray(data) ? data.slice(0, 3) : []).map(
+        (e: any, id: number) => (
           <Stack justifyContent={"center"} my={"10px"} key={id}>
             <Stack
               mx={"auto"}
@@ -124,10 +124,8 @@ function Votes(idx: any) {
               </Text>
             </Stack>
           </Stack>
-        ) : (
-          ""
-        );
-      })}
+        )
+      )}
 
       <Stack
         mx={"auto"}
