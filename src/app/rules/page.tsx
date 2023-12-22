@@ -12,7 +12,6 @@ export default function Rules() {
           justifyContent={"space-between"}
           mx={"auto"}
           mt={"-180px"}
-          // h={{ lg: "3399px" }}
           w={{ xl: "1010px" }}
         >
           <Box h={{ base: "160px", lg: "171px" }} id="started1"></Box>
