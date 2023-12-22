@@ -67,9 +67,9 @@ function Votes(idx: any) {
           ) : null}
         </Stack>
       </Stack>
-      {data?.map((e: any, id: number) => (
-        <Stack justifyContent={"center"} my={"10px"} key={id}>
-          {id < 4 ? (
+      {data?.map((e: any, id: number) => {
+        return id < 3 ? (
+          <Stack justifyContent={"center"} my={"10px"} key={id}>
             <Stack
               mx={"auto"}
               w={{ base: "90%", sm: "448px", md: "492px" }}
@@ -123,9 +123,11 @@ function Votes(idx: any) {
                 {moment.utc(e?.updatedAt).format("YYYY-MM-DD")}
               </Text>
             </Stack>
-          ) : null}
-        </Stack>
-      ))}
+          </Stack>
+        ) : (
+          ""
+        );
+      })}
 
       <Stack
         mx={"auto"}
