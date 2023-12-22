@@ -25,7 +25,7 @@ function Votes(idx: any) {
 
   var moment = require("moment");
   const [view, setView] = useState(false);
-
+  console.log("data", data);
   return (
     <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
       <Stack borderBottom={"1px solid  #282828"} w={"100%"}>
@@ -67,6 +67,7 @@ function Votes(idx: any) {
           ) : null}
         </Stack>
       </Stack>
+
       {(Array.isArray(data) ? data.slice(0, 3) : []).map(
         (e: any, id: number) => (
           <Stack justifyContent={"center"} my={"10px"} key={id}>

@@ -428,7 +428,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
           </Stack>
         ) : null}
         <Stack mt={{ base: "10px", sm: "" }}>
-          <Votes idx={id} />
+          {user ? <Votes idx={id} /> : null}
         </Stack>
         {(data?.data?.status as string) === "executed" ||
         (data?.data?.status as string) === "pending" ? (
