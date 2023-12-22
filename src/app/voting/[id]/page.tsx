@@ -138,7 +138,12 @@ function Page({ params: { id } }: { params: { id: string } }) {
             </Stack>
           </Show>
 
-          <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
+          <Box
+            borderRadius={"6px"}
+            border={"1px solid #282828"}
+            bg={"#101010"}
+            marginTop={"50px"}
+          >
             <Stack
               py={"20px"}
               justifyContent={"space-around"}
