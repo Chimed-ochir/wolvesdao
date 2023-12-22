@@ -33,7 +33,7 @@ function Votes(idx: any) {
           justifyContent={"space-between"}
           alignItems="center"
           direction={"row"}
-          w={{ base: "170px", sm: "230px" }}
+          w={{ base: "170px", sm: "190px" }}
           h="50px"
           ml="10px"
         >
