@@ -326,7 +326,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
                       variant={"outline"}
                       mx={"auto"}
                       w={{ base: "85%", sm: "458px", md: "498px" }}
-                      color="white"
+                      bg={send === e?._id ? "#dfff17" : "black"}
+                      color={send === e?._id ? "black" : "white"}
+                      borderColor={send === e?._id ? "black" : "white"}
                       onClick={() => {
                         if (user) {
                           setVote(`${e?.option}`);
@@ -348,13 +350,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
                           });
                         }
                       }}
-                      leftIcon={
-                        send === e?._id ? (
-                          <AiOutlineCheck style={{ fontSize: "18px" }} />
-                        ) : undefined
-                      }
+                      _hover={{ borderColor: "#dfff17" }}
                     >
-                      {e.option}
+                      {e.icon} {e.option}
                     </Button>
                     {admin ? (
                       <Stack direction="row">
