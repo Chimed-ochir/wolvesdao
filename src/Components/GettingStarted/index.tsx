@@ -54,6 +54,7 @@ function GettingStarted() {
               fontWeight={"600"}
               color={"white"}
               id="started12"
+              textAlign={"justify"}
             >
               The Wolves NFT-ийн үнэ цэнэ, хэрэглээг нэмэгдүүлэх, чонон сүргийн
               нэр хүндийг нийгэмд таниулах болон гишүүдийн тоог өсгөх,
@@ -124,6 +125,7 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
+              id="started13"
             >
               {" "}
               • The Wolves NFT эзэмшигчдийн хүрээг тэлэх, The Wolves NFT-ийн
@@ -135,7 +137,6 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
-              id="started13"
             >
               {" "}
               • The Wolves NFT эзэмшигчдэд бодит үр өгөөж бий болгох
@@ -300,6 +301,7 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started22"
               >
                 Санал гаргах
               </Text>
@@ -314,7 +316,7 @@ function GettingStarted() {
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
             mt={"20px"}
-            id="started22"
+            textAlign={"justify"}
           >
             The Wolves NFT эзэмшигч хүн бүр (багаар байж болно) нээлттэйгээр The
             Wolves DAO-д санал гаргах боломжтой. The Wolves NFT эзэмшигчид
@@ -352,6 +354,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             mt={"20px"}
             id="started23"
+            textAlign={"justify"}
           >
             Комюнити менежер нь The Wolves DAO-д ирж буй бүхий л саналуудыг
             хүлээн авч, шаардлагад нийцсэн эсэхийг шалгаж эцэслээд тухай бүрд нь
@@ -390,6 +393,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             mt={"20px"}
             id="started24"
+            textAlign={"justify"}
           >
             Хяналтын зөвлөл нь Комюнити менежерээс эцэслэгдэн ирсэн саналуудыг
             The Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан
@@ -418,6 +422,7 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started25"
               >
                 Хэлэлцүүлэг хийх
               </Text>
@@ -432,7 +437,7 @@ function GettingStarted() {
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
             mt={"20px"}
-            id="started25"
+            textAlign={"justify"}
           >
             Хяналтын зөвлөлөөр шийдвэрлэгдсэн саналуудыг Discussion хэсэг дээр
             нийт гишүүдийн буюу The Wolves NFT эзэмшигчдийн дунд нээлттэй
@@ -470,6 +475,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             mt={"20px"}
             id="started26"
+            textAlign={"justify"}
           >
             Хэлэлцүүлгийн тогтоосон хугацаа дууссаны дараа Саналын эрхтэй
             гишүүдийн дунд санал хураалт явуулж, энгийн олонхын (тогтоосон
@@ -493,6 +499,7 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started3"
               >
                 Санал хэрэгжилт
               </Text>
@@ -507,7 +514,7 @@ function GettingStarted() {
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
             mt={"20px"}
-            id="started3"
+            textAlign={"justify"}
           >
             Комюнити менежер нь батлагдсан саналуудын хэрэгжилтэд хяналт тавьж
             шаардлагатай мэдээллүүдийг санал тус бүрийн Report хэсэгт оруулна.
@@ -542,6 +549,7 @@ function GettingStarted() {
               fontSize={{ sm: "24px" }}
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
+              id="started32"
             >
               The Wolves NFT эзэмшигчид
             </Text>
@@ -556,7 +564,7 @@ function GettingStarted() {
               lineHeight={{ base: "13.8px", sm: "20.7px" }}
               color={"#E0E0E0"}
               fontWeight={"600"}
-              id="started32"
+              textAlign={"justify"}
             >
               The Wolves NFT эзэмшигч хүн бүр The Wolves DAO санал гаргах,
               Хэлэлцүүлэгт нээлттэй оролцох, комюнити менежер, хяналтын зөвлөл
@@ -565,7 +573,11 @@ function GettingStarted() {
           </Box>
         </Stack>
       </Stack>
-      <Stack h={{ md: "215px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "215px" }}
+        alignItems={"space-around"}
+        mb={{ lg: "40px", xl: "0" }}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -594,7 +606,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"400"}
             color={"white"}
-            id="started33"
+            textAlign={"justify"}
           >
             Комюнити менежер нь The Wolves DAO-ийн өдөр тутмын үйл ажиллагааг
             хариуцан сарын тогтмол цалинтайгаар ажиллана. Цалингийн хэмжээ,
@@ -604,19 +616,19 @@ function GettingStarted() {
             хураалтыг зохион байгуулах үүрэгтэй. Үүнтэй уялдуулан шаардлагад
             нийцээгүй саналуудыг буцаах, санал хураалтаар дэмжигдсэн саналуудад
             шаардлагатай санхүүжилтийг олгох, саналын хэрэгжилтэд хяналт тавих
-            эрхтэй байна. Комюнити менежер нь 6 сар тутамд сонгогдох ба нийт 2
-            удаа сонгогдон ажиллах боломжтой. Комюнити менежерт өөрийгөө эсвэл
-            Discussion хэсгийн Trust system-ийг ашиглан идэвхтэй гишүүд дундаас
-            нэр дэвшүүлэх боломжтой бөгөөд The Wolves DAO-аар санал хурааж
-            шийдвэрлэнэ.
+            эрхтэй байна. Комюнити менежер нь 6 сар тутамд сонгогдох ба
+            <span id="started33"> нийт</span> 2 удаа сонгогдон ажиллах
+            боломжтой. Комюнити менежерт өөрийгөө эсвэл Discussion хэсгийн Trust
+            system-ийг ашиглан идэвхтэй гишүүд дундаас нэр дэвшүүлэх боломжтой
+            бөгөөд The Wolves DAO-аар санал хурааж шийдвэрлэнэ.
           </Text>
         </Box>
       </Stack>
       <Stack
         h={{ md: "265px", lg: "" }}
         alignItems={"space-around"}
-        mb={"10px"}
-        mt={{ md: "5px" }}
+        mb={{ base: "10px", lg: "30px", xl: "0" }}
+        mt={{ md: "15px" }}
       >
         <Stack
           direction={"row"}
@@ -646,6 +658,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"400"}
             color={"white"}
+            textAlign={"justify"}
           >
             Хяналтын зөвлөл нь 15 хүний бүрэлдэхүүнтэй байх ба саналуудыг The
             Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан хянаж
@@ -657,20 +670,20 @@ function GettingStarted() {
             Комюнити менежерийн тайланг сонсох бөгөөд үргэлжлүүлэн ажиллуулах
             эсвэл чөлөөлөх асуудлаар The Wolves DAO-д санал оруулж
             шийдвэрлүүлнэ. Хагас жил тутмын санал хураалтаар Хяналтын зөвлөлийн
-            3-5 гишүүнийг ротациар сэлгэн ажиллуулна. Хяналтын зөвлөлийн
-            гишүүнийг ротациар болон хугацаанаас нь өмнө чөлөөлөх, томилох
-            асуудлыг The Wolves DAO-аар санал хурааж шийдвэрлэнэ. Хяналтын
-            зөвлөлд өөрийгөө эсвэл Discussion хэсгийн Trust system-ийг ашиглан
-            идэвхтэй гишүүд дундаас нэр дэвшүүлэх боломжтой бөгөөд The Wolves
-            DAO-аар санал хурааж шийдвэрлэнэ.
+            3-5 гишүүнийг ротациар сэлгэн ажиллуулна.
+            <span id="started34">Хяналтын </span> зөвлөлийн гишүүнийг ротациар
+            болон хугацаанаас нь өмнө чөлөөлөх, томилох асуудлыг The Wolves
+            DAO-аар санал хурааж шийдвэрлэнэ. Хяналтын зөвлөлд өөрийгөө эсвэл
+            Discussion хэсгийн Trust system-ийг ашиглан идэвхтэй гишүүд дундаас
+            нэр дэвшүүлэх боломжтой бөгөөд The Wolves DAO-аар санал хурааж
+            шийдвэрлэнэ.
           </Text>
         </Box>
       </Stack>
       <Stack
         h={{ md: "344px" }}
         alignItems={"space-around"}
-        id="started34"
-        mt={{ md: "10px", lg: "40px", xl: "" }}
+        mt={{ md: "10px", lg: "40px", xl: "0" }}
       >
         <Stack
           direction={"row"}
@@ -700,6 +713,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"600"}
             color={"white"}
+            textAlign={"justify"}
           >
             Саналын эрхтэй гишүүд нь The Wolves DAO-ийн бүхий л санал хураалтад
             оролцож шийдвэр гаргах эрхтэй байна. Саналын эрхтэй нийт 100 гишүүн
@@ -715,6 +729,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             •70 гишүүдийг Discussion хэсгийн Trust system-ийг ашиглан идэвх,
             санаачилгын түвшин (level), тэмдэг (badge) зэргийг нь харгалзан
@@ -726,6 +741,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             {" "}
             • 30 гишүүдийг The Wolves NFT-ийн эзэмшигчид дотроос, бусад
@@ -738,6 +754,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             {" "}
             • Сайн үйлсийн аян, хандив, мод тарих зэрэг нийгэм болон байгальд
@@ -760,6 +777,7 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
+              textAlign={"justify"}
             >
               {" "}
               - The Wolves DAO-аас санаачилж буй үйл ажиллагаанд биечлэн
