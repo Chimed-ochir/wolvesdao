@@ -30,7 +30,7 @@ function Getting() {
         const scrollY = window.scrollY;
         let newIdx = 0;
 
-        if (scrollY >= 1785) {
+        if (scrollY >= 1735) {
           newIdx = 1;
         } else if (scrollY >= 1667) {
           newIdx = 2;
