@@ -90,11 +90,7 @@ export const Footer = () => {
               </div>
             ))}
           </Box>
-          <Box
-            // ml={pathname === "/rules" ? "332px" : "0"}
-            w={"100%"}
-            className={`hideDesktop`}
-          >
+          <Box w={"100%"} className={`hideDesktop`}>
             <div className={styled.bottom}>
               <div className={styled.rowWrapper2}>
                 <p className={styled.companyName}>The Wolves Community</p>
@@ -128,7 +124,6 @@ export const Footer = () => {
           </Box>
         </div>
       </Container>
-      {/* <div className={styled.redCircle} /> */}
     </Box>
   );
 };
