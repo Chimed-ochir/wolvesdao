@@ -220,7 +220,7 @@ function Faq() {
     <Box>
       <Accordion allowToggle>
         {Array.map((el, ind) => (
-          <AccordionItem key={ind}>
+          <AccordionItem key={ind} borderColor={"#382c2d"}>
             <h2>
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
@@ -284,7 +284,7 @@ function Faq() {
                   Саналын эрхтэй гишүүдийн жагсаалт харах
                 </Text>
               </Box>
-              <AccordionIcon boxSize={"32px"} />
+              <AccordionIcon boxSize={"32px"} color={"white"} />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
