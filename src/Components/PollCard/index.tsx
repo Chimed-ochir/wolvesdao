@@ -95,7 +95,7 @@ function PollCard(el: any) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color={"white"}
               >
-                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD")}
+                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD-h:mm")}
               </Text>
             </Stack>
             <Text

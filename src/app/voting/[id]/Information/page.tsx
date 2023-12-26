@@ -132,7 +132,9 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.startDate).format("YYYY-MM-DD")}
+                {moment
+                  .utc(data?.data.data?.startDate)
+                  .format("YYYY-MM-DD-h:mm")}
               </Text>
               <Text
                 {...satFont.style}
@@ -142,7 +144,7 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD")}
+                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD-h:mm")}
               </Text>
 
               <Stack
