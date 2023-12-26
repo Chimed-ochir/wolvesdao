@@ -32,27 +32,27 @@ function Getting() {
 
         if (scrollY >= 1785) {
           newIdx = 1;
-        } else if (scrollY >= 1711) {
+        } else if (scrollY >= 1667) {
           newIdx = 2;
-        } else if (scrollY >= 1467) {
+        } else if (scrollY >= 1431) {
           newIdx = 3;
-        } else if (scrollY >= 1283) {
+        } else if (scrollY >= 1261) {
           newIdx = 4;
-        } else if (scrollY >= 1240) {
+        } else if (scrollY >= 1182) {
           newIdx = 5;
-        } else if (scrollY >= 1108) {
+        } else if (scrollY >= 1075) {
           newIdx = 6;
-        } else if (scrollY >= 1000) {
+        } else if (scrollY >= 984) {
           newIdx = 7;
-        } else if (scrollY >= 877) {
+        } else if (scrollY >= 840) {
           newIdx = 8;
-        } else if (scrollY >= 729) {
+        } else if (scrollY >= 753) {
           newIdx = 9;
         } else if (scrollY >= 602) {
           newIdx = 10;
-        } else if (scrollY >= 371) {
+        } else if (scrollY >= 386) {
           newIdx = 11;
-        } else if (scrollY >= 171) {
+        } else if (scrollY >= 175) {
           newIdx = 12;
         } else {
           newIdx = 13;
