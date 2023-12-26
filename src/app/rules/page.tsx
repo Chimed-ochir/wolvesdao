@@ -24,7 +24,7 @@ export default function Rules() {
             mt="10px"
           >
             <Show above="lg">
-              <Box w={"1px"} h={"2303px"} bg={"white"} mr={"20px"} mt={"8px"}>
+              <Box w={"1px"} h={"2253px"} bg={"white"} mr={"20px"} mt={"8px"}>
                 <Stack
                   w={"21px"}
                   h={"21px"}
@@ -71,7 +71,7 @@ export default function Rules() {
                   borderRadius={"100%"}
                   ml={"-10px"}
                   boxShadow={"0px 0px 5px 1px   white"}
-                  mt={{ lg: "740px", xl: "725px" }}
+                  mt={{ lg: "665px" }}
                 >
                   <Box
                     w={"10px"}
