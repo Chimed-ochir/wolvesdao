@@ -46,11 +46,9 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
   const onSubmit = (values: any) => {
     request(values)
       .then((res: any) => {
-        // if (res?.success) {
         showSuccessToast("Амжилттай хэрэглэгч нэмлээ!");
         onFinish();
         onClose();
-        // }
       })
       .catch((error) => {
         showErrorToast(error.message);

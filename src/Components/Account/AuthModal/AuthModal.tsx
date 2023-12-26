@@ -1,11 +1,5 @@
-import {
-  Button,
-  Stack,
-  useModalContext,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
-import { PropsWithChildren, useMemo, useState } from "react";
+import { Button, Stack, InputRightElement, Text } from "@chakra-ui/react";
+import { PropsWithChildren, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
@@ -15,10 +9,9 @@ import localFont from "next/font/local";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-import { LoginDataType } from "..";
 import { MfaModal } from "../MfaModal";
 const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 const LoginFormBody = ({ loading }: { loading: boolean }) => {
   const [type, setType] = useState("password");
@@ -104,14 +97,9 @@ const LoginFormBody = ({ loading }: { loading: boolean }) => {
 };
 
 const LoginForm = () => {
-  const { onClose } = useModalContext();
-  const { showErrorToast, showSuccessToast } = useToast();
+  const { showErrorToast } = useToast();
   const { login } = useAuth();
   const [sessionData, setSessionData] = useState<any>(null);
-  const [isOp, setIsOp] = useState(false);
-  const [mfa, setMfa] = useState(false);
-  const [ner, setNer] = useState("");
-  let spell: any = "bat";
   const { loading, request } = useMutation({
     uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
   });
@@ -123,7 +111,6 @@ const LoginForm = () => {
             session: res?.session,
             username: res.username,
           });
-          setMfa(true);
         } else {
           login(res);
         }

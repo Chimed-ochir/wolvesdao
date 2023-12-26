@@ -1,5 +1,5 @@
 "use client";
-import PollCard from "@/Components/pollCard";
+import PollCard from "@/Components/PollCard";
 import { useQuery } from "@/utils";
 import {
   Box,
@@ -17,12 +17,12 @@ import { useEffect, useState } from "react";
 import { MdOutlineExpandMore } from "react-icons/md";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import SkeletonCard from "@/Components/skeletonCard";
+import SkeletonCard from "@/Components/SkeletonCard";
 import { NewModal } from "@/Components/Account/NewModal";
 import { useAuth } from "@/Components/Account";
 import VoteSkeleton from "./VoteSkeleton";
 const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
 export default function Voting() {
@@ -83,7 +83,18 @@ export default function Voting() {
     manual: true,
   });
   const onFinish = () => {
-    fetchData();
+    setPolls([]);
+    fetchData(`/poll`, {
+      page: page1,
+      limit: 5,
+      sort: "-createAt",
+      ...(admin && tags === "all_propsal"
+        ? {}
+        : {
+            status:
+              tags === "all_propsal" && !admin ? { $ne: "waiting" } : tags,
+          }),
+    }).then(setPolls);
   };
   const { ref, inView } = useInView();
   useEffect(() => {
@@ -91,7 +102,7 @@ export default function Voting() {
       fetchData(`/poll`, {
         page: page1 + 1,
         limit: 5,
-        sort: "status",
+        sort: "-createAt",
         ...(admin && tags === "all_propsal"
           ? {}
           : {
@@ -112,7 +123,7 @@ export default function Voting() {
       fetchData(`/poll`, {
         page: 1,
         limit: 5,
-        sort: "status",
+        sort: "-createAt",
         ...(admin && tags === "all_propsal"
           ? {}
           : {

@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AxiosResponse } from "axios";
 import api from "../CustomAxios";
-// import axios from '@/lib/axios';
 
 export interface UseMutationProps {
   uri: string;

@@ -1,14 +1,17 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import localFont from "next/font/local";
-import { BiLogoDiscourse } from "react-icons/bi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+const myFont = localFont({ src: "../../fonts/revolution/revolution-bold.otf" });
 function GettingStarted() {
   return (
-    <Stack justifyContent={"space-between"} h={{ lg: "3199px" }} mx={"5px"}>
-      <Stack h={{ sm: "190px" }} justifyContent={"space-evenly"} id="started1">
+    <Stack
+      justifyContent={"space-between"}
+      // h={{ lg: "3199px" }}
+      mx={"5px"}
+    >
+      <Stack h={{ sm: "150px" }} justifyContent={"space-evenly"}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -32,6 +35,7 @@ function GettingStarted() {
               fontSize={{ sm: "24px" }}
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
+              id="started12"
             >
               Зорилго
             </Text>
@@ -49,7 +53,7 @@ function GettingStarted() {
               fontSize={{ base: "10px", sm: "13px", md: "15px" }}
               fontWeight={"600"}
               color={"white"}
-              id="started12"
+              textAlign={"justify"}
             >
               The Wolves NFT-ийн үнэ цэнэ, хэрэглээг нэмэгдүүлэх, чонон сүргийн
               нэр хүндийг нийгэмд таниулах болон гишүүдийн тоог өсгөх,
@@ -65,7 +69,7 @@ function GettingStarted() {
           w={{ md: "500px" }}
           maxW={"500px"}
           justifyContent={"space-between"}
-          h="48px"
+          h="24px"
           alignItems={"center"}
         >
           <Box w={{ md: "355px" }} h={"24px"}>
@@ -120,6 +124,7 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
+              id="started13"
             >
               {" "}
               • The Wolves NFT эзэмшигчдийн хүрээг тэлэх, The Wolves NFT-ийн
@@ -131,7 +136,6 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
-              id="started13"
             >
               {" "}
               • The Wolves NFT эзэмшигчдэд бодит үр өгөөж бий болгох
@@ -270,7 +274,7 @@ function GettingStarted() {
           </Box>
         </Box>
       </Stack>
-      <Stack h={{ md: "159px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "150px" }} alignItems={"space-around"}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -296,6 +300,7 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started22"
               >
                 Санал гаргах
               </Text>
@@ -309,8 +314,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
-            id="started22"
+            textAlign={"justify"}
           >
             The Wolves NFT эзэмшигч хүн бүр (багаар байж болно) нээлттэйгээр The
             Wolves DAO-д санал гаргах боломжтой. The Wolves NFT эзэмшигчид
@@ -318,7 +322,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "135px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -346,8 +350,8 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started23"
+            textAlign={"justify"}
           >
             Комюнити менежер нь The Wolves DAO-д ирж буй бүхий л саналуудыг
             хүлээн авч, шаардлагад нийцсэн эсэхийг шалгаж эцэслээд тухай бүрд нь
@@ -357,7 +361,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "148px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "132px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -384,8 +388,8 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started24"
+            textAlign={"justify"}
           >
             Хяналтын зөвлөл нь Комюнити менежерээс эцэслэгдэн ирсэн саналуудыг
             The Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан
@@ -396,7 +400,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>{" "}
-      <Stack h={{ md: "122px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "92px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -414,6 +418,7 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started25"
               >
                 Хэлэлцүүлэг хийх
               </Text>
@@ -427,8 +432,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
-            id="started25"
+            textAlign={"justify"}
           >
             Хяналтын зөвлөлөөр шийдвэрлэгдсэн саналуудыг Discussion хэсэг дээр
             нийт гишүүдийн буюу The Wolves NFT эзэмшигчдийн дунд нээлттэй
@@ -437,7 +441,7 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "142px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -464,18 +468,19 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
             id="started26"
+            textAlign={"justify"}
           >
             Хэлэлцүүлгийн тогтоосон хугацаа дууссаны дараа Саналын эрхтэй
             гишүүдийн дунд санал хураалт явуулж, энгийн олонхын (тогтоосон
             хугацаанд санал өгсөн гишүүдийн 50+1 хувь) саналаар тухайн санал
             дэмжигдсэн эсэхийг эцэслэн тогтооно. Санал хураалт үргэлжлэх хугацаа
-            нь саналаас шалтгаалан 3 хүртэлх хоног байна.
+            нь саналаас шалтгаалан 3 хүртэлх хоног{" "}
+            <span id="started3">байна.</span>
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "96px" }} alignItems={"space-around"}>
+      <Stack h={{ md: "70px" }} alignItems={"space-around"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -502,15 +507,14 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            mt={"20px"}
-            id="started3"
+            textAlign={"justify"}
           >
             Комюнити менежер нь батлагдсан саналуудын хэрэгжилтэд хяналт тавьж
             шаардлагатай мэдээллүүдийг санал тус бүрийн Report хэсэгт оруулна.
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "161px" }}>
+      <Stack h={{ md: "150px" }}>
         <Box h={{ sm: "52px" }}>
           <Text
             {...myFont.style}
@@ -538,6 +542,7 @@ function GettingStarted() {
               fontSize={{ sm: "24px" }}
               lineHeight={{ sm: "24px" }}
               color={"#DFFF24"}
+              id="started32"
             >
               The Wolves NFT эзэмшигчид
             </Text>
@@ -552,7 +557,7 @@ function GettingStarted() {
               lineHeight={{ base: "13.8px", sm: "20.7px" }}
               color={"#E0E0E0"}
               fontWeight={"600"}
-              id="started32"
+              textAlign={"justify"}
             >
               The Wolves NFT эзэмшигч хүн бүр The Wolves DAO санал гаргах,
               Хэлэлцүүлэгт нээлттэй оролцох, комюнити менежер, хяналтын зөвлөл
@@ -561,7 +566,11 @@ function GettingStarted() {
           </Box>
         </Stack>
       </Stack>
-      <Stack h={{ md: "215px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "215px" }}
+        alignItems={"space-around"}
+        mb={{ lg: "40px", xl: "0" }}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -590,7 +599,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"400"}
             color={"white"}
-            id="started33"
+            textAlign={"justify"}
           >
             Комюнити менежер нь The Wolves DAO-ийн өдөр тутмын үйл ажиллагааг
             хариуцан сарын тогтмол цалинтайгаар ажиллана. Цалингийн хэмжээ,
@@ -600,19 +609,19 @@ function GettingStarted() {
             хураалтыг зохион байгуулах үүрэгтэй. Үүнтэй уялдуулан шаардлагад
             нийцээгүй саналуудыг буцаах, санал хураалтаар дэмжигдсэн саналуудад
             шаардлагатай санхүүжилтийг олгох, саналын хэрэгжилтэд хяналт тавих
-            эрхтэй байна. Комюнити менежер нь 6 сар тутамд сонгогдох ба нийт 2
-            удаа сонгогдон ажиллах боломжтой. Комюнити менежерт өөрийгөө эсвэл
-            Discussion хэсгийн Trust system-ийг ашиглан идэвхтэй гишүүд дундаас
-            нэр дэвшүүлэх боломжтой бөгөөд The Wolves DAO-аар санал хурааж
-            шийдвэрлэнэ.
+            эрхтэй байна. Комюнити менежер нь 6 сар тутамд сонгогдох ба
+            <span id="started33"> нийт</span> 2 удаа сонгогдон ажиллах
+            боломжтой. Комюнити менежерт өөрийгөө эсвэл Discussion хэсгийн Trust
+            system-ийг ашиглан идэвхтэй гишүүд дундаас нэр дэвшүүлэх боломжтой
+            бөгөөд The Wolves DAO-аар санал хурааж шийдвэрлэнэ.
           </Text>
         </Box>
       </Stack>
       <Stack
         h={{ md: "265px", lg: "" }}
         alignItems={"space-around"}
-        mb={"10px"}
-        mt={{ md: "5px" }}
+        mb={{ base: "10px", lg: "30px", xl: "0" }}
+        mt={{ md: "15px" }}
       >
         <Stack
           direction={"row"}
@@ -642,6 +651,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"400"}
             color={"white"}
+            textAlign={"justify"}
           >
             Хяналтын зөвлөл нь 15 хүний бүрэлдэхүүнтэй байх ба саналуудыг The
             Wolves DAO-ийн зорилго болон санхүүжилтийн боломжтой уялдуулан хянаж
@@ -653,20 +663,20 @@ function GettingStarted() {
             Комюнити менежерийн тайланг сонсох бөгөөд үргэлжлүүлэн ажиллуулах
             эсвэл чөлөөлөх асуудлаар The Wolves DAO-д санал оруулж
             шийдвэрлүүлнэ. Хагас жил тутмын санал хураалтаар Хяналтын зөвлөлийн
-            3-5 гишүүнийг ротациар сэлгэн ажиллуулна. Хяналтын зөвлөлийн
-            гишүүнийг ротациар болон хугацаанаас нь өмнө чөлөөлөх, томилох
-            асуудлыг The Wolves DAO-аар санал хурааж шийдвэрлэнэ. Хяналтын
-            зөвлөлд өөрийгөө эсвэл Discussion хэсгийн Trust system-ийг ашиглан
-            идэвхтэй гишүүд дундаас нэр дэвшүүлэх боломжтой бөгөөд The Wolves
-            DAO-аар санал хурааж шийдвэрлэнэ.
+            3-5 гишүүнийг ротациар сэлгэн ажиллуулна.
+            <span id="started34">Хяналтын </span> зөвлөлийн гишүүнийг ротациар
+            болон хугацаанаас нь өмнө чөлөөлөх, томилох асуудлыг The Wolves
+            DAO-аар санал хурааж шийдвэрлэнэ. Хяналтын зөвлөлд өөрийгөө эсвэл
+            Discussion хэсгийн Trust system-ийг ашиглан идэвхтэй гишүүд дундаас
+            нэр дэвшүүлэх боломжтой бөгөөд The Wolves DAO-аар санал хурааж
+            шийдвэрлэнэ.
           </Text>
         </Box>
       </Stack>
       <Stack
         h={{ md: "344px" }}
         alignItems={"space-around"}
-        id="started34"
-        mt={{ md: "10px" }}
+        mt={{ md: "10px", lg: "40px", xl: "0" }}
       >
         <Stack
           direction={"row"}
@@ -696,6 +706,7 @@ function GettingStarted() {
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             fontWeight={"600"}
             color={"white"}
+            textAlign={"justify"}
           >
             Саналын эрхтэй гишүүд нь The Wolves DAO-ийн бүхий л санал хураалтад
             оролцож шийдвэр гаргах эрхтэй байна. Саналын эрхтэй нийт 100 гишүүн
@@ -711,6 +722,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             •70 гишүүдийг Discussion хэсгийн Trust system-ийг ашиглан идэвх,
             санаачилгын түвшин (level), тэмдэг (badge) зэргийг нь харгалзан
@@ -722,6 +734,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             {" "}
             • 30 гишүүдийг The Wolves NFT-ийн эзэмшигчид дотроос, бусад
@@ -734,6 +747,7 @@ function GettingStarted() {
             color={"#E0E0E0"}
             fontWeight={"400"}
             fontFamily={"Rubik"}
+            textAlign={"justify"}
           >
             {" "}
             • Сайн үйлсийн аян, хандив, мод тарих зэрэг нийгэм болон байгальд
@@ -756,6 +770,7 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
+              textAlign={"justify"}
             >
               {" "}
               - The Wolves DAO-аас санаачилж буй үйл ажиллагаанд биечлэн

@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { useField } from "formik";
 import { buildEventObject } from "@/utils/formik";
 import { FormError } from "@/Components/form/FormError/FormError";
-import { Radio, RadioProps } from "@/Components/common/Radio/Radio";
+import { Radio, RadioProps } from "@/common/Radio/Radio";
 
 export type FormRadioProps = RadioProps & {
   name: string;

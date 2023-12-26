@@ -10,22 +10,16 @@ function Getting() {
   const [fragmentIdentifier, setFragmentIdentifier] = useState("");
   const pathname = usePathname();
   useEffect(() => {
-    // Function to handle changes in the URL hash
-
     const handleHashChange = () => {
       const fragment = window.location.hash;
       const newFragmentIdentifier = fragment.substring(1);
-      // Update the state with the new fragment identifier
       setFragmentIdentifier(newFragmentIdentifier);
     };
 
-    // Add an event listener for hash changes
     window.addEventListener("hashchange", handleHashChange);
 
-    // Initial call to set the fragment on the first render
     handleHashChange();
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
@@ -36,29 +30,29 @@ function Getting() {
         const scrollY = window.scrollY;
         let newIdx = 0;
 
-        if (scrollY >= 2791) {
+        if (scrollY >= 1785) {
           newIdx = 1;
-        } else if (scrollY >= 2389) {
+        } else if (scrollY >= 1711) {
           newIdx = 2;
-        } else if (scrollY >= 2226) {
+        } else if (scrollY >= 1467) {
           newIdx = 3;
-        } else if (scrollY >= 2029) {
+        } else if (scrollY >= 1283) {
           newIdx = 4;
-        } else if (scrollY >= 1825) {
+        } else if (scrollY >= 1240) {
           newIdx = 5;
-        } else if (scrollY >= 1625) {
+        } else if (scrollY >= 1108) {
           newIdx = 6;
-        } else if (scrollY >= 1433) {
+        } else if (scrollY >= 1000) {
           newIdx = 7;
-        } else if (scrollY >= 1236) {
+        } else if (scrollY >= 877) {
           newIdx = 8;
-        } else if (scrollY >= 1061) {
+        } else if (scrollY >= 729) {
           newIdx = 9;
-        } else if (scrollY >= 837) {
+        } else if (scrollY >= 602) {
           newIdx = 10;
-        } else if (scrollY >= 561) {
+        } else if (scrollY >= 371) {
           newIdx = 11;
-        } else if (scrollY >= 261) {
+        } else if (scrollY >= 171) {
           newIdx = 12;
         } else {
           newIdx = 13;
@@ -73,10 +67,8 @@ function Getting() {
         }
       };
 
-      // Attach the event listener
       window.addEventListener("scroll", handleScroll);
 
-      // Clean up the event listener when the component unmounts
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
@@ -92,8 +84,8 @@ function Getting() {
       w={"312px"}
       zIndex={100}
       position="fixed"
-      left={{ base: "0", "2xl": "10%" }}
-      top={"130px"}
+      left={{ base: "0", "2xl": "8%" }}
+      top={"100px"}
     >
       <Stack
         h={pathname === "/rules" ? "678px" : "32px"}
@@ -115,7 +107,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"122px"}
+          h={"102px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}
@@ -221,7 +213,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"248px"}
+          h={"208px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}
@@ -410,7 +402,7 @@ function Getting() {
           </Link>
         </Flex>
         <Flex
-          h={"164px"}
+          h={"144px"}
           direction={"column"}
           pl={"12px"}
           mt={"-5px"}

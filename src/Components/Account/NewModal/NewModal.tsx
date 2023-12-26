@@ -10,14 +10,12 @@ import { useAuth } from "..";
 import { useMutation } from "@/utils";
 
 const NewFormBody = ({ loading }: { loading: boolean }) => {
-  const { htma, htma1 } = useAuth();
+  const { htma } = useAuth();
 
   const editorRef = useRef<any | null>(null);
-  const editorRef1 = useRef<any | null>(null);
   const log = () => {
-    if (editorRef.current && editorRef1.current) {
+    if (editorRef.current) {
       htma(editorRef.current.getContent());
-      htma1(editorRef1.current.getContent());
     }
   };
 
@@ -40,52 +38,7 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-      <Text my={"10px"}>
-        Саналын хэрэгжилтын явц оруулах :{" "}
-        <span style={{ fontSize: "12px" }}>Уг талбар хоосон байж болно</span>
-      </Text>
-      <Editor
-        onInit={(evt, editor) => {
-          editorRef1.current = editor;
-        }}
-        apiKey="7eztjbt9c7vbpz8ry9g8gesq1zmab59yhw5298z3nre97kuc"
-        onFocus={(e) => {
-          e.stopImmediatePropagation();
-        }}
-        init={{
-          height: 300,
-          menubar: true,
-          auto_focus: true,
-          plugins: [
-            "advlist",
-            "autolink",
-            "lists",
-            "link",
-            "image",
-            "charmap",
-            "preview",
-            "anchor",
-            "searchreplace",
-            "visualblocks",
-            "code",
-            "fullscreen",
-            "insertdatetime",
-            "media",
-            "table",
-            "code",
-            "help",
-            "wordcount",
-          ],
-          toolbar:
-            "undo redo | blocks | " +
-            "bold italic forecolor | alignleft aligncenter " +
-            "alignright alignjustify | bullist numlist outdent indent | " +
-            "removeformat | help",
 
-          content_style:
-            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-        }}
-      />
       <FormInput
         fontWeight="500"
         fontSize="14"
@@ -179,7 +132,7 @@ const NewFormBody = ({ loading }: { loading: boolean }) => {
 
 const NewForm = ({ onFinish }: { onFinish: () => void }) => {
   const { onClose } = useModalContext();
-  const { htm, htm1 } = useAuth();
+  const { htm } = useAuth();
   const { showErrorToast, showSuccessToast } = useToast();
   const { loading, request } = useMutation({
     uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/poll`,
@@ -188,7 +141,7 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
 
   const onSubmit = (values: any) => {
     values.content = htm;
-    values.notes = htm1;
+
     request(values)
       .then((res: any) => {
         if (res?.success) {
@@ -208,11 +161,11 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
         initialValues={{
           content: "",
           description: "",
-          notes: "",
+
           endDate: "",
           listContent: "",
           startDate: "",
-          status: "",
+
           withLink: "",
         }}
         validationSchema={BuildNewFormValidationSchema()}

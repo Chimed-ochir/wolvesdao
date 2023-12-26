@@ -7,13 +7,15 @@ import { Box } from "@chakra-ui/react";
 export const FooterData = [
   {
     title: "The Wolves",
+    link: "https://www.thewolves.io/",
+    newTab: true,
   },
   {
     title: "General",
     children: [
       {
         name: "Home",
-        link: "#",
+        link: "/#",
         newTab: false,
       },
       {
@@ -63,7 +65,14 @@ export const Footer = () => {
           >
             {FooterData.map((el: any, ind: any) => (
               <div key={ind} className={styled.colWrapper}>
-                <h4 className={styled.title}>{el.title}</h4>
+                <a
+                  href={el?.link}
+                  target={el?.newTab ? "_blank" : ""}
+                  className={styled.link}
+                >
+                  <h4 className={styled.title}>{el.title}</h4>
+                </a>
+
                 {el.children ? (
                   <>
                     {el.children.map((child: any, idx: any) => (
@@ -81,19 +90,42 @@ export const Footer = () => {
               </div>
             ))}
           </Box>
-
-          <div className={styled.bottom}>
-            <div className={styled.rowWrapper2}>
-              <p className={styled.companyName}>The Wolves Community</p>
-              <p style={{ paddingLeft: "5px" }}> </p>
-              <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+          <Box
+            // ml={pathname === "/rules" ? "332px" : "0"}
+            w={"100%"}
+            className={`hideDesktop`}
+          >
+            <div className={styled.bottom}>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.companyName}>The Wolves Community</p>
+                <p style={{ paddingLeft: "5px" }}> </p>
+                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+              </div>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.poweredBy}>Privacy Policy</p>
+                <p style={{ margin: "0 8px", color: "white" }}>•</p>
+                <p className={styled.poweredBy}>Terms of Service</p>
+              </div>
             </div>
-            <div className={styled.rowWrapper2}>
-              <p className={styled.poweredBy}>Privacy Policy</p>
-              <p style={{ margin: "0 8px", color: "white" }}>•</p>
-              <p className={styled.poweredBy}>Terms of Service</p>
+          </Box>
+          <Box
+            ml={pathname === "/rules" ? "332px" : "0"}
+            w={pathname === "/rules" ? "793px" : "90%"}
+            className={`hideMobile`}
+          >
+            <div className={styled.bottom}>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.companyName}>The Wolves Community</p>
+                <p style={{ paddingLeft: "5px" }}> </p>
+                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+              </div>
+              <div className={styled.rowWrapper2}>
+                <p className={styled.poweredBy}>Privacy Policy</p>
+                <p style={{ margin: "0 8px", color: "white" }}>•</p>
+                <p className={styled.poweredBy}>Terms of Service</p>
+              </div>
             </div>
-          </div>
+          </Box>
         </div>
       </Container>
       {/* <div className={styled.redCircle} /> */}

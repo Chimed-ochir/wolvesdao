@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Button, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { RemoveModal } from "../Account/RemoveModal";
 import { ChangeModal } from "../Account/ChangeModal ";
@@ -11,26 +11,31 @@ function UserCard({ data, onFinish }: { data: any; onFinish: () => void }) {
       border={"1px solid #282828"}
       bg={"#101010"}
       my={"3px"}
-      w="90%"
+      w={{ base: "100%", md: "90%" }}
       alignItems={"center"}
       mx="auto"
       p={"5px"}
+      justifyContent={"space-between"}
     >
       {" "}
-      <Stack direction="row" alignItems={"center"} w={{ base: "30%", lg: "" }}>
+      <Stack
+        direction="row"
+        alignItems={"center"}
+        w={{ base: "20%", sm: "30%", lg: "" }}
+      >
         <Text
           fontWeight={"700"}
-          fontSize={"16px"}
+          fontSize={{ base: "12", sm: "16px" }}
           lineHeight={"30px"}
           color={"white"}
         >
           Нэр : {data.user}
         </Text>
       </Stack>
-      <Stack direction="row" w={{ base: "30%", lg: "" }}>
+      <Stack direction="row" w={{ base: "20%", sm: "25%", md: "30%", lg: "" }}>
         <Text
           fontWeight={"700"}
-          fontSize={"16px"}
+          fontSize={{ base: "12", sm: "16px" }}
           lineHeight={"30px"}
           color={"white"}
         >
@@ -39,7 +44,7 @@ function UserCard({ data, onFinish }: { data: any; onFinish: () => void }) {
         {data?.isAdmin ? (
           <Text
             fontWeight={"500"}
-            fontSize={"14px"}
+            fontSize={{ base: "12", sm: "14px" }}
             lineHeight={"30px"}
             color={"white"}
           >
@@ -48,7 +53,7 @@ function UserCard({ data, onFinish }: { data: any; onFinish: () => void }) {
         ) : (
           <Text
             fontWeight={"500"}
-            fontSize={"14px"}
+            fontSize={{ base: "12", sm: "14px" }}
             lineHeight={"30px"}
             color={"white"}
           >

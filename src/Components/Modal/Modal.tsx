@@ -9,12 +9,11 @@ import {
   ModalProps as ChakraModalProps,
   Text,
   Stack,
-  Box,
 } from "@chakra-ui/react";
 import { PropsWithChildren, ReactNode } from "react";
 import localFont from "next/font/local";
 const myFont = localFont({
-  src: "../fonts/revolution/revolution-bold.otf",
+  src: "../../fonts/revolution/revolution-bold.otf",
 });
 export type ModalProps = Omit<ChakraModalProps, "isOpen" | "onClose"> &
   PropsWithChildren<{

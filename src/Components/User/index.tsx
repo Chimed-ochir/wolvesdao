@@ -5,6 +5,8 @@ import UserCard from "../UserCard";
 import { useQuery } from "@/utils";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UserModal } from "@/Components/Account/UserModal/UserModal";
+import { DeleteAllModal } from "../Account/DeleteAllModal/DeleteAllModal";
+import SkeletonUserCard from "../SkeletonUserCard";
 function User() {
   const { loading, data, fetchData, pageCount } = useQuery<any>({
     uri: "/user",
@@ -17,17 +19,10 @@ function User() {
     });
   };
   const [page1, setPage1] = useState(1);
-  const [count, setCount] = useState(1);
   const [view, setView] = useState(false);
 
   useEffect(() => {
-    if (pageCount) {
-      setCount(pageCount as number);
-    }
-    console.log("page1", page1);
-    console.log("pageCount", count);
-    console.log("view", view);
-    if (count >= page1) {
+    if (pageCount >= page1) {
       fetchData(`/user`, {
         page: page1,
         limit: 10,
@@ -35,10 +30,6 @@ function User() {
     }
   }, [view]);
   useEffect(() => {
-    if (pageCount) {
-      setCount(pageCount as number);
-    }
-
     fetchData(`/user`, {
       page: 1,
       limit: 10,
@@ -46,7 +37,12 @@ function User() {
   }, []);
   return (
     <>
-      <Stack w="70%" mx="auto" direction={"row"} mb="10px">
+      <Stack
+        w="70%"
+        mx="auto"
+        direction={{ base: "column", md: "row" }}
+        mb="10px"
+      >
         <Text
           fontWeight={"700"}
           fontSize={"16px"}
@@ -56,21 +52,35 @@ function User() {
         >
           Админ хуудас
         </Text>
-        <UserModal onFinish={onFinish}>
-          <Button
-            bg="white"
-            w={"130px"}
-            variant={"solid"}
-            color={"black"}
-            fontSize={"14px"}
-            // h="30px"
-          >
-            Хэрэглэгч нэмэх
-          </Button>
-        </UserModal>
+        <Stack direction={"row"}>
+          <UserModal onFinish={onFinish}>
+            <Button
+              bg="white"
+              w={{ base: "", md: "130px" }}
+              maxW={"130px"}
+              variant={"solid"}
+              color={"black"}
+              fontSize={{ base: "12", md: "14px" }}
+            >
+              Хэрэглэгч нэмэх
+            </Button>
+          </UserModal>
+          <DeleteAllModal onFinish={onFinish}>
+            <Button
+              bg="white"
+              w={{ base: "", md: "155px" }}
+              variant={"solid"}
+              color={"black"}
+              fontSize={{ base: "12", md: "14px" }}
+              maxW={"155px"}
+            >
+              Бүх хэрэглэгч устгах
+            </Button>
+          </DeleteAllModal>
+        </Stack>
       </Stack>
       <Box
-        w="70%"
+        w={{ base: "90%", md: "70%" }}
         mx="auto"
         bg="dark"
         border={"1px solid #282828"}
@@ -89,9 +99,25 @@ function User() {
           {/* : {data?.length} */}
         </Text>
 
-        {data?.map((user: any, index: number) => (
-          <UserCard data={user} key={index} onFinish={onFinish} />
-        ))}
+        {loading ? (
+          <>
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+            <SkeletonUserCard />
+          </>
+        ) : (
+          data?.map((user: any, index: number) => (
+            <UserCard data={user} key={index} onFinish={onFinish} />
+          ))
+        )}
         <Stack direction="row" w="180px" mx="auto" my="10px">
           <Button
             bg="white"

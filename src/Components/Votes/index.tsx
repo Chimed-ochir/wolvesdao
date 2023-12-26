@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 import { VoteViewModal } from "../VoteViewModal";
 import { useAuth } from "../Account";
 const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 function Votes(idx: any) {
   const { user } = useAuth();
@@ -25,7 +25,6 @@ function Votes(idx: any) {
 
   var moment = require("moment");
   const [view, setView] = useState(false);
-
   return (
     <Box borderRadius={"6px"} border={"1px solid #282828"} bg={"#101010"}>
       <Stack borderBottom={"1px solid  #282828"} w={"100%"}>
@@ -33,7 +32,7 @@ function Votes(idx: any) {
           justifyContent={"space-between"}
           alignItems="center"
           direction={"row"}
-          w={{ base: "170px", sm: "230px" }}
+          w={{ base: "170px", sm: "190px" }}
           h="50px"
           ml="10px"
         >
@@ -67,9 +66,10 @@ function Votes(idx: any) {
           ) : null}
         </Stack>
       </Stack>
-      {data?.map((e: any, id: number) => (
-        <Stack justifyContent={"center"} my={"10px"} key={id}>
-          {id < 4 ? (
+
+      {(Array.isArray(data) ? data.slice(0, 3) : []).map(
+        (e: any, id: number) => (
+          <Stack justifyContent={"center"} my={"10px"} key={id}>
             <Stack
               mx={"auto"}
               w={{ base: "90%", sm: "448px", md: "492px" }}
@@ -123,9 +123,9 @@ function Votes(idx: any) {
                 {moment.utc(e?.updatedAt).format("YYYY-MM-DD")}
               </Text>
             </Stack>
-          ) : null}
-        </Stack>
-      ))}
+          </Stack>
+        )
+      )}
 
       <Stack
         mx={"auto"}

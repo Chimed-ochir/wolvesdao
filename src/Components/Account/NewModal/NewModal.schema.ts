@@ -13,11 +13,10 @@ export const BuildNewFormValidationSchema = () =>
     listContent: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("listContent"),
-    notes: string().label("notes"),
+
     startDate: string()
       .required("Уг талбар хоосон байж болохгүй")
       .label("startDate"),
-    status: string().label("status"),
     withLink: string()
       .required("Уг талбар хоосон байж болохгүй")
       // .matches(

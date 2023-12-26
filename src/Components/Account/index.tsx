@@ -18,7 +18,9 @@ interface AuthProviderValueType {
   toLogin: (pathname?: string) => void;
   login: (data: LoginDataType) => void;
   htma: (data: any) => void;
+  emoji1: (data: any) => void;
   htm: any | null;
+  emo: any | null;
   htma1: (data: any) => void;
   htm1: any | null;
 }
@@ -44,6 +46,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const pathname = usePathname();
   const [htm, setHtm] = useState<string | null>("");
   const [htm1, setHtm1] = useState<string | null>("");
+  const [emo, setEmo] = useState<any | null>("");
   const { loading: loadingRefresh, request } = useMutation({
     uri: "/auth/loginWithRefreshToken",
   });
@@ -70,7 +73,6 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
       if (data.refreshToken) {
         Cookies.set("token", data.refreshToken, { expires: 1 });
       }
-      // setAdmin(true);
       setAdmin(data?.isAdmin);
       const usr = parseJwt(data.accessToken);
       Cookies.set("idToken", data.idToken, { expires: 1 });
@@ -98,6 +100,9 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   };
   const htma1 = (data: string | null) => {
     setHtm1(data);
+  };
+  const emoji1 = (data: any | null) => {
+    setEmo(data);
   };
 
   const logout = () => {
@@ -140,6 +145,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         htm,
         htma1,
         htm1,
+        emoji1,
+        emo,
       }}
     >
       {children}

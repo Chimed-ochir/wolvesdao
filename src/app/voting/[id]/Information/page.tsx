@@ -9,7 +9,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import wolves from "../../../../../public/assets/wolf1.png";
 const satFont = localFont({
-  src: "../../../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 function Information(data: any) {
   var moment = require("moment");
@@ -132,7 +132,9 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.startDate).format("YYYY-MM-DD")}
+                {moment
+                  .utc(data?.data.data?.startDate)
+                  .format("YYYY-MM-DD-h:mm")}
               </Text>
               <Text
                 {...satFont.style}
@@ -142,7 +144,7 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD")}
+                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD-h:mm")}
               </Text>
 
               <Stack

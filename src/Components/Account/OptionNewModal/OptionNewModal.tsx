@@ -1,33 +1,40 @@
-import {
-  Box,
-  Divider,
-  Button,
-  Stack,
-  useModalContext,
-  HStack,
-  Link,
-  InputRightElement,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Stack, useModalContext, Text } from "@chakra-ui/react";
 import { useToast } from "@/utils/toast";
 
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Formik } from "formik";
 import { Modal } from "@/Components/Modal";
 import { FormInput } from "@/Components/form/FormInput";
 import { BuildNewFormValidationSchema } from "./OptionNewModal.schema";
-import localFont from "next/font/local";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { HiOutlineUserCircle } from "react-icons/hi";
+
 import { useAuth } from "..";
 import { useMutation } from "@/utils";
-import { LoginDataType } from "..";
-import { MfaModal } from "../MfaModal";
-import { Editor } from "@tinymce/tinymce-react";
-const satFont = localFont({
-  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
-});
-const OptionFormBody = ({ loading }: { loading: boolean }) => {
+import InputEmoji from "react-input-emoji";
+
+const OptionFormBody = ({
+  loading,
+  icon,
+}: {
+  loading: boolean;
+  icon: string;
+}) => {
+  const [text, setText] = useState<string>("");
+
+  useEffect(() => {
+    setText(icon || "");
+  }, [icon]);
+  const { emoji1 } = useAuth();
+
+  const log = () => {
+    if (text) {
+      emoji1(text);
+    }
+  };
+
+  const handleInputChange = (newText: string) => {
+    setText(newText);
+  };
+
   return (
     <Stack spacing="lg" pb="sm">
       <FormInput
@@ -38,14 +45,12 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
         fontSize="14"
         color={"white"}
       />
-
-      <FormInput
-        fontWeight="500"
-        fontSize="14"
-        label={"Тэмдэглэгээ оруула"}
-        name="icon"
-        placeholder={"Тэмдэглэгээ оруула"}
-        color={"white"}
+      <Text>Тэмдэглэгээ: {text}</Text>
+      <InputEmoji
+        value={text}
+        onChange={handleInputChange}
+        cleanOnEnter
+        placeholder="Icon оруулах"
       />
 
       <Button
@@ -57,6 +62,7 @@ const OptionFormBody = ({ loading }: { loading: boolean }) => {
         fontWeight={"700"}
         my={"20px"}
         isLoading={loading}
+        onClick={log}
       >
         Тохируулах
       </Button>
@@ -81,7 +87,9 @@ const OptionForm = ({
     uri: `${process.env.NEXT_PUBLIC_BACKEND_URL}/option/${id}`,
     method: "patch",
   });
+  const { emo } = useAuth();
   const onSubmit = (values: any) => {
+    values.icon = emo;
     request(values)
       .then((res: any) => {
         if (res?.success) {
@@ -107,7 +115,7 @@ const OptionForm = ({
       >
         {() => (
           <Form>
-            <OptionFormBody loading={loading} />
+            <OptionFormBody loading={loading} icon={icon} />
           </Form>
         )}
       </Formik>

@@ -1,26 +1,25 @@
 "use client";
-import { Box, Image, Show, Stack, Text, useToast } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Box, Image, Show, Stack, Text } from "@chakra-ui/react";
+import React from "react";
 import localFont from "next/font/local";
 const satFont = localFont({
-  src: "../../Components/fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
+  src: "../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
-import { isDate } from "moment";
 import { useRouter } from "next/navigation";
-import { CalcPercent, CalcStatus } from "@/utils";
-import { useAuth } from "../Account";
+import { CalcPercent } from "@/utils";
 function PollCard(el: any) {
   const data = el.el;
   var moment = require("moment");
-  const { user } = useAuth();
   const router = useRouter();
   const currentDate = new Date();
+  const formattedCurrentDate = new Date(
+    moment(currentDate).format("YYYY-MM-DD")
+  );
   const futureDate = new Date(moment.utc(data.endDate).format("YYYY-MM-DD"));
-  const startDate = new Date(moment.utc(data.startDate).format("YYYY-MM-DD"));
-  const timeDifference = futureDate.getTime() - currentDate.getTime();
+  const timeDifference = futureDate.getTime() - formattedCurrentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-  const toast = useToast();
+
   return (
     <Stack
       w="100%"
@@ -96,7 +95,7 @@ function PollCard(el: any) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color={"white"}
               >
-                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD")}
+                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD-h:mm")}
               </Text>
             </Stack>
             <Text
@@ -164,8 +163,6 @@ function PollCard(el: any) {
                   <Stack
                     direction={"row"}
                     justifyContent={"space-between"}
-                    // w={{ base: "210px", lg: "700px" }}
-                    // w={"90%"}
                     minW={"300px"}
                     mx={"auto"}
                     ml={{ base: "5px", sm: "20px" }}
@@ -173,10 +170,7 @@ function PollCard(el: any) {
                   >
                     <Stack direction={"row"} alignItems="center">
                       {" "}
-                      {/* <Box bg="white" w="18px" h="18px" borderRadius={"4px"}>
-                        <BsCheckSquareFill color="#228200" size="18px" />
-                      </Box> */}
-                      <Image src={el?.icon} w="18px" />
+                      <Text>{el?.icon}</Text>
                       <Text color={"white"}>{el.option}: </Text>
                       <Text color={"white"} minW={"60px"} h="21px">
                         {el.votes.length} Wolves

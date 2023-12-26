@@ -21,7 +21,7 @@ import Link from "next/link";
 import { AuthModal } from "../Account/AuthModal";
 import { useAuth } from "@/Components/Account/index";
 import { usePathname, useRouter } from "next/navigation";
-const myFont = localFont({ src: "../fonts/revolution/revolution-bold.otf" });
+const myFont = localFont({ src: "../../fonts/revolution/revolution-bold.otf" });
 type SideBarProp = {
   src: string;
   name: string;
@@ -31,6 +31,8 @@ type SideBarProp = {
 export const FooterData = [
   {
     title: "The Wolves",
+    link: "https://www.thewolves.io/",
+    newTab: true,
   },
   {
     title: "General",
@@ -350,7 +352,13 @@ const SideBar = ({ open }: { open: boolean }) => (
     <div style={{ marginTop: "40px" }}>
       {FooterData.map((el, ind) => (
         <div key={ind} className={styled.colWrapper}>
-          <h4 className={styled.title}>{el.title}</h4>
+          <a
+            href={el?.link}
+            target={el?.newTab ? "_blank" : ""}
+            className={styled.link}
+          >
+            <h4 className={styled.title}>{el.title}</h4>
+          </a>
           {el.children ? (
             <>
               {el.children.map((child, idx) => (
