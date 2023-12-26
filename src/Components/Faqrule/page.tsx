@@ -234,7 +234,7 @@ function Faq() {
                     {el.title}
                   </Text>
                 </Box>
-                <AccordionIcon boxSize={"32px"} />
+                <AccordionIcon boxSize={"32px"} color={"white"} />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
@@ -271,7 +271,7 @@ function Faq() {
             </AccordionPanel>
           </AccordionItem>
         ))}
-        <AccordionItem>
+        <AccordionItem borderColor={"#382c2d"}>
           <h2>
             <AccordionButton>
               <Box as="span" flex="1" textAlign="left">
