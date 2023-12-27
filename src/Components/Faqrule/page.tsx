@@ -305,7 +305,7 @@ function Faq() {
                 Саналын эрхтэй гишүүдийн жагсаалтыг
                 <Link
                   textDecoration={"underline !important"}
-                  href="/doc/electer.pdf"
+                  href="/doc/THE_WOLVES_DAO_List_final.pdf"
                   target="_blank"
                 >
                   {" "}

@@ -30,7 +30,7 @@ function SkeletonUserCard() {
         alignItems={"center"}
         w={{ base: "20%", sm: "30%", lg: "" }}
       >
-        <Skeleton h="16px" borderRadius={"6px"} w={"80px"}></Skeleton>
+        <Skeleton h="16px" borderRadius={"6px"} w={"60px"}></Skeleton>
         <Text>:</Text>
         <Skeleton h="16px" borderRadius={"6px"} w={"100px"}></Skeleton>
       </Stack>
