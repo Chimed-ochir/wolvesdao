@@ -72,17 +72,15 @@ function GettingStarted() {
           h="24px"
           alignItems={"center"}
         >
-          <Box w={{ md: "355px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Хүлээн авах саналын төрлүүд
-            </Text>
-          </Box>
+          <Text
+            fontFamily={"Golos Text"}
+            fontWeight={"700"}
+            fontSize={{ sm: "24px" }}
+            lineHeight={{ sm: "24px" }}
+            color={"#DFFF24"}
+          >
+            Хүлээн авах саналын төрлүүд
+          </Text>
         </Stack>
 
         <Box w={{ xl: "826px" }} h={{ xl: "140px" }}>
