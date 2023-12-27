@@ -26,18 +26,22 @@ import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 import { ProgressModal } from "@/Components/Account/ProgressModal";
 import { StatusModal } from "@/Components/Account/StatusModal";
-
+import { redirect } from "next/navigation";
 const satFont = localFont({
   src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
 function Page({ params: { id } }: { params: { id: string } }) {
-  const { data, loading, fetchData } = useQuery<{ data: any }>({
+  const { data, loading, fetchData, success } = useQuery<{ data: any }>({
     uri: `/poll/${id}`,
   });
   const onFinish = () => {
     fetchData();
   };
+
+  if (success === false) {
+    redirect("/voting");
+  }
   const { admin, user } = useAuth();
   var moment = require("moment");
   const router = useRouter();

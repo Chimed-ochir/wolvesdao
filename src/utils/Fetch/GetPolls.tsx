@@ -13,6 +13,7 @@ export interface UseQueryValue<T> {
   error: any;
   loading: boolean;
   pageCount: number;
+  success: boolean | undefined;
   fetchData: (path?: string, params?: any) => Promise<any>;
 }
 
@@ -25,6 +26,7 @@ export const useQuery = <T,>({
   const [pageCount, setPageCount] = useState<number>(0);
   const [response, setResponse] = useState<T | null>(null);
   const [error, setError] = useState();
+  const [success, setSuccess] = useState();
 
   useEffect(() => {
     if (!loading && !manual) fetchData(uri);
@@ -42,6 +44,7 @@ export const useQuery = <T,>({
       .then((res: any) => {
         setLoading(false);
         setPageCount(res.pageCount);
+        setSuccess(res.success);
         setResponse(res.data as T);
         return res.data;
       })
@@ -52,5 +55,5 @@ export const useQuery = <T,>({
       });
   }, []);
 
-  return { data: response as T, loading, pageCount, error, fetchData };
+  return { data: response as T, loading, pageCount, error, success, fetchData };
 };
