@@ -68,7 +68,6 @@ function GettingStarted() {
           direction={"row"}
           w={{ md: "500px" }}
           maxW={"500px"}
-          justifyContent={"space-between"}
           h="24px"
           alignItems={"center"}
         >
