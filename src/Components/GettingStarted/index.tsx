@@ -11,8 +11,8 @@ function GettingStarted() {
       // h={{ lg: "3199px" }}
       mx={"5px"}
     >
-      <Stack h={{ sm: "150px" }} justifyContent={"space-evenly"}>
-        <Box h={{ sm: "52px" }}>
+      <Stack h={{ sm: "160px" }} justifyContent={"space-between"}>
+        <Box h={{ sm: "42px" }}>
           <Text
             {...myFont.style}
             fontWeight={"700"}
@@ -63,29 +63,26 @@ function GettingStarted() {
           </Box>
         </Stack>
       </Stack>
-      <Stack justifyContent={"space-between"}>
+      <Stack justifyContent={"space-between"} h={{ xl: "177px" }}>
         <Stack
           direction={"row"}
           w={{ md: "500px" }}
           maxW={"500px"}
-          justifyContent={"space-between"}
           h="24px"
           alignItems={"center"}
         >
-          <Box w={{ md: "355px" }} h={"24px"}>
-            <Text
-              fontFamily={"Golos Text"}
-              fontWeight={"700"}
-              fontSize={{ sm: "24px" }}
-              lineHeight={{ sm: "24px" }}
-              color={"#DFFF24"}
-            >
-              Хүлээн авах саналын төрлүүд
-            </Text>
-          </Box>
+          <Text
+            fontFamily={"Golos Text"}
+            fontWeight={"700"}
+            fontSize={{ sm: "24px" }}
+            lineHeight={{ sm: "24px" }}
+            color={"#DFFF24"}
+          >
+            Хүлээн авах саналын төрлүүд
+          </Text>
         </Stack>
 
-        <Box w={{ xl: "826px" }}>
+        <Box w={{ xl: "826px" }} h={{ xl: "140px" }}>
           <Box ml={"10px"}>
             <Text
               fontSize={{ base: "10px", sm: "13px", md: "15px" }}
@@ -174,31 +171,26 @@ function GettingStarted() {
             </Text>
           </Box>
         </Stack>
-        <Stack
-          h={{ xl: "93px" }}
-          alignItems={"start"}
-          justifyContent={"center"}
-          w={"100%"}
-        >
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              lineHeight={{
-                base: "12px",
-                sm: "15px",
-                xl: "18px",
-              }}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              fontWeight={"600"}
-              color={"white"}
-            >
-              Санал гаргахдаа доорх загварын дагуу мэдээллээ үнэн зөв, гүйцэт
-              бөглөж ирүүлэх шаардлагатай. Үүнд:
-            </Text>
-          </Box>
-        </Stack>
-        <Box w={{ xl: "826px" }} h={{ xl: "220px" }}>
-          <Box h={{ lg: "220px" }} ml={"10px"}>
+
+        <Box>
+          <Text
+            fontFamily={"Golos Text"}
+            lineHeight={{
+              base: "12px",
+              sm: "15px",
+              xl: "18px",
+            }}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            fontWeight={"600"}
+            color={"white"}
+          >
+            Санал гаргахдаа доорх загварын дагуу мэдээллээ үнэн зөв, гүйцэт
+            бөглөж ирүүлэх шаардлагатай. Үүнд:
+          </Text>
+        </Box>
+
+        <Box w={{ xl: "826px" }} h={{ xl: "150px" }}>
+          <Box h={{ lg: "150px" }} ml={"10px"}>
             <Text
               fontSize={{ base: "10px", sm: "13px", md: "15px" }}
               lineHeight={{ base: "13.8px", sm: "20.7px" }}
@@ -234,6 +226,7 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
+              id="started2"
             >
               {" "}
               • The Wolves комюнитид өгөх өгөөж, үр нөлөө (үндэслэл бүхий
@@ -245,7 +238,6 @@ function GettingStarted() {
               color={"#E0E0E0"}
               fontWeight={"400"}
               fontFamily={"Rubik"}
-              id="started2"
             >
               {" "}
               • Хариуцан гүйцэтгэх эзэн болон багийн гишүүдийн товч танилцуулга
@@ -274,8 +266,8 @@ function GettingStarted() {
           </Box>
         </Box>
       </Stack>
-      <Stack h={{ md: "150px" }} alignItems={"space-around"}>
-        <Box h={{ sm: "52px" }}>
+      <Stack h={{ md: "134px" }} justifyContent={"space-between"}>
+        <Box h={{ sm: "42px" }}>
           <Text
             {...myFont.style}
             fontWeight={"700"}
@@ -307,7 +299,7 @@ function GettingStarted() {
             </Box>
           </Link>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+        <Box w={{ xl: "846px" }}>
           <Text
             fontFamily={"Rubik"}
             fontWeight={"700"}
@@ -322,7 +314,11 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "115px", xl: "99px" }}
+        alignItems={"space-between"}
+        justifyContent={"space-between"}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -337,20 +333,20 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started23"
               >
                 Санал шалгах
               </Text>
             </Box>
           </Link>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+        <Box w={{ xl: "846px" }} h={{ xl: "62px" }}>
           <Text
             fontFamily={"Rubik"}
             fontWeight={"700"}
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            id="started23"
             textAlign={"justify"}
           >
             Комюнити менежер нь The Wolves DAO-д ирж буй бүхий л саналуудыг
@@ -361,7 +357,11 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "132px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "120px" }}
+        justifyContent={"space-between"}
+        alignItems={"space-around"}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -381,7 +381,7 @@ function GettingStarted() {
             </Box>
           </Link>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+        <Box w={{ xl: "846px" }} h={{ xl: "83px" }}>
           <Text
             fontFamily={"Rubik"}
             fontWeight={"700"}
@@ -400,7 +400,11 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>{" "}
-      <Stack h={{ md: "92px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "99px" }}
+        alignItems={"space-around"}
+        justifyContent={"space-between"}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -441,7 +445,11 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "115px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "99px" }}
+        alignItems={"space-around"}
+        justifyContent={"space-between"}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -455,20 +463,20 @@ function GettingStarted() {
                 fontSize={{ sm: "24px" }}
                 lineHeight={{ sm: "24px" }}
                 color={"#DFFF24"}
+                id="started26"
               >
                 Санал хураах
               </Text>
             </Box>
           </Link>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+        <Box w={{ xl: "846px" }} h={{ xl: "62px" }}>
           <Text
             fontFamily={"Rubik"}
             fontWeight={"700"}
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
             color={"#E0E0E0"}
-            id="started26"
             textAlign={"justify"}
           >
             Хэлэлцүүлгийн тогтоосон хугацаа дууссаны дараа Саналын эрхтэй
@@ -480,7 +488,11 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "70px" }} alignItems={"space-around"}>
+      <Stack
+        h={{ md: "79px" }}
+        alignItems={"space-around"}
+        justifyContent={"space-between"}
+      >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -500,7 +512,7 @@ function GettingStarted() {
             </Box>
           </Link>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }}>
+        <Box w={{ xl: "846px" }}>
           <Text
             fontFamily={"Rubik"}
             fontWeight={"700"}
@@ -514,8 +526,8 @@ function GettingStarted() {
           </Text>
         </Box>
       </Stack>
-      <Stack h={{ md: "150px" }}>
-        <Box h={{ sm: "52px" }}>
+      <Stack h={{ md: "134px" }} justifyContent={"space-between"}>
+        <Box h={{ sm: "42px" }}>
           <Text
             {...myFont.style}
             fontWeight={"700"}
@@ -549,28 +561,22 @@ function GettingStarted() {
           </Box>
         </Stack>
 
-        <Stack w={{ xl: "897px" }} h={{ xl: "62px" }} justifyContent={"center"}>
-          <Box>
-            <Text
-              fontFamily={"Golos Text"}
-              fontSize={{ base: "10px", sm: "13px", md: "15px" }}
-              lineHeight={{ base: "13.8px", sm: "20.7px" }}
-              color={"#E0E0E0"}
-              fontWeight={"600"}
-              textAlign={"justify"}
-            >
-              The Wolves NFT эзэмшигч хүн бүр The Wolves DAO санал гаргах,
-              Хэлэлцүүлэгт нээлттэй оролцох, комюнити менежер, хяналтын зөвлөл
-              болон саналын эрхтэй гишүүнээр сонгогдох эрхтэй байна.
-            </Text>
-          </Box>
-        </Stack>
+        <Box>
+          <Text
+            fontFamily={"Golos Text"}
+            fontSize={{ base: "10px", sm: "13px", md: "15px" }}
+            lineHeight={{ base: "13.8px", sm: "20.7px" }}
+            color={"#E0E0E0"}
+            fontWeight={"600"}
+            textAlign={"justify"}
+          >
+            The Wolves NFT эзэмшигч хүн бүр The Wolves DAO санал гаргах,
+            Хэлэлцүүлэгт нээлттэй оролцох, комюнити менежер, хяналтын зөвлөл
+            болон саналын эрхтэй гишүүнээр сонгогдох эрхтэй байна.
+          </Text>
+        </Box>
       </Stack>
-      <Stack
-        h={{ md: "215px" }}
-        alignItems={"space-around"}
-        mb={{ lg: "40px", xl: "0" }}
-      >
+      <Stack h={{ md: "235px" }} justifyContent={"space-between"}>
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
@@ -588,7 +594,7 @@ function GettingStarted() {
             </Text>
           </Box>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }} pb="10px">
+        <Box w={{ xl: "846px" }} h={{ xl: "198px" }} pb="10px">
           <Text
             fontFamily={"Golos Text"}
             lineHeight={{
@@ -618,17 +624,16 @@ function GettingStarted() {
         </Box>
       </Stack>
       <Stack
-        h={{ md: "265px", lg: "" }}
-        alignItems={"space-around"}
+        h={{ md: "270px", lg: "257px" }}
+        justifyContent={"space-between"}
         mb={{ base: "10px", lg: "30px", xl: "0" }}
-        mt={{ md: "15px" }}
       >
         <Stack
           direction={"row"}
           w={{ sm: "300px" }}
           justifyContent={"space-between"}
         >
-          <Box w={{ sm: "300px" }} h={"24px"}>
+          <Box w={{ sm: "300px" }}>
             <Text
               fontFamily={"Golos Text"}
               fontWeight={"700"}
@@ -640,7 +645,7 @@ function GettingStarted() {
             </Text>
           </Box>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "272px" }} pb="10px">
+        <Box w={{ xl: "846px" }} h={{ lg: "220px", xl: "220px" }}>
           <Text
             fontFamily={"Golos Text"}
             lineHeight={{
@@ -674,8 +679,8 @@ function GettingStarted() {
         </Box>
       </Stack>
       <Stack
-        h={{ md: "344px" }}
-        alignItems={"space-around"}
+        h={{ md: "350px" }}
+        justifyContent={"space-between"}
         mt={{ md: "10px", lg: "40px", xl: "0" }}
       >
         <Stack
@@ -695,7 +700,7 @@ function GettingStarted() {
             </Text>
           </Box>
         </Stack>
-        <Box w={{ xl: "846px" }} h={{ xl: "294px" }}>
+        <Box w={{ xl: "846px" }}>
           <Text
             fontFamily={"Golos Text"}
             lineHeight={{
@@ -715,7 +720,7 @@ function GettingStarted() {
             баримтална. Үүнд:
           </Text>
         </Box>
-        <Box h={{ sm: "294px" }} ml={"10px"}>
+        <Box h={{ sm: "234px" }} ml={"10px"}>
           <Text
             fontSize={{ base: "10px", sm: "13px", md: "15px" }}
             lineHeight={{ base: "13.8px", sm: "20.7px" }}
@@ -723,8 +728,9 @@ function GettingStarted() {
             fontWeight={"400"}
             fontFamily={"Rubik"}
             textAlign={"justify"}
+            pr={{ lg: "46px" }}
           >
-            •70 гишүүдийг Discussion хэсгийн Trust system-ийг ашиглан идэвх,
+            • 70 гишүүдийг Discussion хэсгийн Trust system-ийг ашиглан идэвх,
             санаачилгын түвшин (level), тэмдэг (badge) зэргийг нь харгалзан
             сонгоно.
           </Text>
@@ -735,6 +741,7 @@ function GettingStarted() {
             fontWeight={"400"}
             fontFamily={"Rubik"}
             textAlign={"justify"}
+            pr={{ lg: "46px" }}
           >
             {" "}
             • 30 гишүүдийг The Wolves NFT-ийн эзэмшигчид дотроос, бусад
@@ -748,12 +755,13 @@ function GettingStarted() {
             fontWeight={"400"}
             fontFamily={"Rubik"}
             textAlign={"justify"}
+            pr={{ lg: "46px" }}
           >
             {" "}
             • Сайн үйлсийн аян, хандив, мод тарих зэрэг нийгэм болон байгальд
             тустай үйл ажиллагаа хэрэгжүүлэх саналууд;
           </Text>
-          <Box h="160px">
+          <Box h={{ xl: "130px" }}>
             <Text
               fontSize={{ base: "10px", sm: "13px", md: "15px" }}
               lineHeight={{ base: "13.8px", sm: "20.7px" }}
