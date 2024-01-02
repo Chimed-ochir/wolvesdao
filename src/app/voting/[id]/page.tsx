@@ -141,12 +141,22 @@ function Page({ params: { id } }: { params: { id: string } }) {
               </Text>
             </Stack>
           </Show>
-
+          <Show above="lg">
+            {admin ? null : (
+              <Stack
+                direction="row"
+                alignItems={"center"}
+                h="42px"
+                cursor="pointer"
+                w="80px"
+              ></Stack>
+            )}
+          </Show>
           <Box
             borderRadius={"6px"}
             border={"1px solid #282828"}
             bg={"#101010"}
-            marginTop={admin ? "" : "50px"}
+            // marginTop={admin ? "" : "50px"}
           >
             <Stack
               py={"20px"}
