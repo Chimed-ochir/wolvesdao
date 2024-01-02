@@ -252,7 +252,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color="white"
               >
-                Огноо: {moment.utc(data?.data.startDate).format("YYYY-MM-DD")}
+                Огноо: {moment(data?.data.startDate).format("YYYY-MM-DD")}
               </Text>
             </Stack>
           </Box>
