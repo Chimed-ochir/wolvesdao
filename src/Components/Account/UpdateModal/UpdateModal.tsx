@@ -169,14 +169,12 @@ const UpdateForm = ({
           content: data?.data?.content,
           description: data?.data?.description,
 
-          endDate: moment
-            .utc(data?.data?.endDate)
+          endDate: moment(data?.data?.endDate)
             .format("YYYY-MM-DDTHH:mm")
             .slice(0, 16),
           listContent: data?.data?.listContent,
           options: data?.data?.options,
-          startDate: moment
-            .utc(data?.data?.startDate)
+          startDate: moment(data?.data?.startDate)
             .format("YYYY-MM-DDTHH:mm")
             .slice(0, 16),
           withLink: data?.data?.withLink,
