@@ -142,10 +142,9 @@ const NewForm = ({ onFinish }: { onFinish: () => void }) => {
   const onSubmit = (values: any) => {
       const endDate = new Date(values.endDate)
       const startDate = new Date(values.startDate)
-    values.content = htm;
-      console.log(endDate,startDate)
+      values.content = htm;
 
-    request({...values,endDate,startDate})
+    request({ ...values,endDate,startDate })
       .then((res: any) => {
         if (res?.success) {
           showSuccessToast("Амжилттай үүсгэлээ!");

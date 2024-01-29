@@ -148,8 +148,11 @@ const UpdateForm = ({
     htma(data?.data?.content);
   }, []);
   const onSubmit = (values: any) => {
+    const endDate = new Date(values.endDate);
+    const startDate = new Date(values.startDate);
+
     values.content = htm;
-    request(values)
+    request({ ...values, endDate, startDate })
       .then((res: any) => {
         if (res?.success) {
           showSuccessToast("Амжилттай шинэчлэгдлээ!");
