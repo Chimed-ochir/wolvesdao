@@ -95,7 +95,7 @@ export const Footer = () => {
               <div className={styled.rowWrapper2}>
                 <p className={styled.companyName}>The Wolves Community</p>
                 <p style={{ paddingLeft: "5px" }}> </p>
-                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+                <p className={styled.poweredBy}> © 2024 All rights reserved</p>
               </div>
               <div className={styled.rowWrapper2}>
                 <p className={styled.poweredBy}>Privacy Policy</p>
@@ -113,7 +113,7 @@ export const Footer = () => {
               <div className={styled.rowWrapper2}>
                 <p className={styled.companyName}>The Wolves Community</p>
                 <p style={{ paddingLeft: "5px" }}> </p>
-                <p className={styled.poweredBy}> © 2023 All rights reserved</p>
+                <p className={styled.poweredBy}> © 2024 All rights reserved</p>
               </div>
               <div className={styled.rowWrapper2}>
                 <p className={styled.poweredBy}>Privacy Policy</p>
