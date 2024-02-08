@@ -26,18 +26,22 @@ import { OptionModal } from "@/Components/Account/OptionModal";
 import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 import { ProgressModal } from "@/Components/Account/ProgressModal";
 import { StatusModal } from "@/Components/Account/StatusModal";
-
+import { redirect } from "next/navigation";
 const satFont = localFont({
   src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
 
 function Page({ params: { id } }: { params: { id: string } }) {
-  const { data, loading, fetchData } = useQuery<{ data: any }>({
+  const { data, loading, fetchData, success } = useQuery<{ data: any }>({
     uri: `/poll/${id}`,
   });
   const onFinish = () => {
     fetchData();
   };
+
+  if (success === false) {
+    redirect("/voting");
+  }
   const { admin, user } = useAuth();
   var moment = require("moment");
   const router = useRouter();
@@ -137,12 +141,22 @@ function Page({ params: { id } }: { params: { id: string } }) {
               </Text>
             </Stack>
           </Show>
-
+          <Show above="lg">
+            {admin ? null : (
+              <Stack
+                direction="row"
+                alignItems={"center"}
+                h="42px"
+                cursor="pointer"
+                w="80px"
+              ></Stack>
+            )}
+          </Show>
           <Box
             borderRadius={"6px"}
             border={"1px solid #282828"}
             bg={"#101010"}
-            marginTop={admin ? "" : "50px"}
+            // marginTop={admin ? "" : "50px"}
           >
             <Stack
               py={"20px"}
@@ -238,7 +252,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color="white"
               >
-                Огноо: {moment.utc(data?.data.startDate).format("YYYY-MM-DD")}
+                Огноо: {moment(data?.data.startDate).format("YYYY-MM-DD")}
               </Text>
             </Stack>
           </Box>

@@ -13,18 +13,21 @@ const satFont = localFont({
 });
 function Information(data: any) {
   var moment = require("moment");
-  const currentDate = new Date();
+  const currentDate1 = new Date();
+  const currentDate = new Date(moment(currentDate1).format("YYYY-MM-DD"));
   const futureDate = new Date(
-    moment.utc(data?.data?.data?.endDate).format("YYYY-MM-DD")
+    moment(data?.data?.data?.endDate).format("YYYY-MM-DD")
   );
   const nowDate = new Date(
-    moment.utc(data?.data?.data?.startDate).format("YYYY-MM-DD")
+    moment(data?.data?.data?.startDate).format("YYYY-MM-DD")
   );
+
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   const now = currentDate.getTime() - nowDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
   const startDate = Math.floor(now / (1000 * 3600 * 24));
   const period = data?.data?.data.status;
+
   return (
     <Stack mt={{ lg: "50px" }}>
       <Stack
@@ -133,8 +136,8 @@ function Information(data: any) {
                 textAlign={"right"}
               >
                 {moment
-                  .utc(data?.data.data?.startDate)
-                  .format("YYYY-MM-DD-h:mm")}
+                  (data?.data.data?.startDate)
+                  .format("YYYY-MM-DD-HH:mm")}
               </Text>
               <Text
                 {...satFont.style}
@@ -144,7 +147,7 @@ function Information(data: any) {
                 color={"#FFFFFF"}
                 textAlign={"right"}
               >
-                {moment.utc(data?.data.data?.endDate).format("YYYY-MM-DD-h:mm")}
+                {moment(data?.data.data?.endDate).format("YYYY-MM-DD-HH:mm")}
               </Text>
 
               <Stack
@@ -334,7 +337,9 @@ function Information(data: any) {
                 fontSize={"12px"}
                 color={"#949494"}
               >
-                {moment.utc(data?.data?.data.startDate).format("YYYY-MM-DD")}
+                {moment
+                  (data?.data?.data.startDate)
+                  .format("YYYY-MM-DD-h:m")}
               </Text>
               <Text
                 {...satFont.style}
@@ -398,7 +403,7 @@ function Information(data: any) {
                 fontSize={"12px"}
                 color={"#949494"}
               >
-                {moment.utc(data?.data?.data?.endDate).format("YYYY-MM-DD")}
+                {moment(data?.data?.data?.endDate).format("YYYY-MM-DD-HH:m")}
               </Text>
               <Text
                 {...satFont.style}

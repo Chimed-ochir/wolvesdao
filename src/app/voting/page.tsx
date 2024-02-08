@@ -87,7 +87,7 @@ export default function Voting() {
     fetchData(`/poll`, {
       page: page1,
       limit: 5,
-      sort: "-createAt",
+      sort: decodeURI("-createdAt status"),
       ...(admin && tags === "all_propsal"
         ? {}
         : {
@@ -102,7 +102,7 @@ export default function Voting() {
       fetchData(`/poll`, {
         page: page1 + 1,
         limit: 5,
-        sort: "-createAt",
+        sort: decodeURI("-createdAt status"),
         ...(admin && tags === "all_propsal"
           ? {}
           : {
@@ -123,7 +123,7 @@ export default function Voting() {
       fetchData(`/poll`, {
         page: 1,
         limit: 5,
-        sort: "-createAt",
+        sort: decodeURI("-createdAt status"),
         ...(admin && tags === "all_propsal"
           ? {}
           : {

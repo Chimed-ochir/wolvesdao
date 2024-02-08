@@ -148,8 +148,11 @@ const UpdateForm = ({
     htma(data?.data?.content);
   }, []);
   const onSubmit = (values: any) => {
+    const endDate = new Date(values.endDate);
+    const startDate = new Date(values.startDate);
+
     values.content = htm;
-    request(values)
+    request({ ...values, endDate, startDate })
       .then((res: any) => {
         if (res?.success) {
           showSuccessToast("Амжилттай шинэчлэгдлээ!");
@@ -169,14 +172,12 @@ const UpdateForm = ({
           content: data?.data?.content,
           description: data?.data?.description,
 
-          endDate: moment
-            .utc(data?.data?.endDate)
+          endDate: moment(data?.data?.endDate)
             .format("YYYY-MM-DDTHH:mm")
             .slice(0, 16),
           listContent: data?.data?.listContent,
           options: data?.data?.options,
-          startDate: moment
-            .utc(data?.data?.startDate)
+          startDate: moment(data?.data?.startDate)
             .format("YYYY-MM-DDTHH:mm")
             .slice(0, 16),
           withLink: data?.data?.withLink,

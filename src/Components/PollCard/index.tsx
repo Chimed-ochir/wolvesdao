@@ -16,7 +16,7 @@ function PollCard(el: any) {
   const formattedCurrentDate = new Date(
     moment(currentDate).format("YYYY-MM-DD")
   );
-  const futureDate = new Date(moment.utc(data.endDate).format("YYYY-MM-DD"));
+  const futureDate = new Date(moment(data.endDate).format("YYYY-MM-DD"));
   const timeDifference = futureDate.getTime() - formattedCurrentDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
 
@@ -95,7 +95,7 @@ function PollCard(el: any) {
                 fontSize={{ base: "8px", sm: "12px" }}
                 color={"white"}
               >
-                Огноо: {moment.utc(data.startDate).format("YYYY-MM-DD-h:mm")}
+                Огноо: {moment(data.startDate).format("YYYY-MM-DD-HH:mm")}
               </Text>
             </Stack>
             <Text

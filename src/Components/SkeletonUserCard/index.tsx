@@ -30,26 +30,26 @@ function SkeletonUserCard() {
         alignItems={"center"}
         w={{ base: "20%", sm: "30%", lg: "" }}
       >
-        <Skeleton h="16px" borderRadius={"6px"} w={"60px"}></Skeleton>
+        <Skeleton h="16px" borderRadius={"6px"} w={"40px"}></Skeleton>
         <Text>:</Text>
-        <Skeleton h="16px" borderRadius={"6px"} w={"100px"}></Skeleton>
+        <Skeleton h="16px" borderRadius={"6px"} w={"80px"}></Skeleton>
       </Stack>
       <Stack
         direction="row"
         w={{ base: "20%", sm: "25%", md: "30%", lg: "" }}
         alignItems={"center"}
       >
-        <Skeleton h="16px" borderRadius={"6px"} w={"90px"}></Skeleton>{" "}
+        <Skeleton h="16px" borderRadius={"6px"} w={"60px"}></Skeleton>{" "}
         <Text>:</Text>
-        <Skeleton h="16px" borderRadius={"6px"} w={"80px"}></Skeleton>
+        <Skeleton h="16px" borderRadius={"6px"} w={"50px"}></Skeleton>
       </Stack>
       <Stack
         direction="row"
         w={{ base: "30%", lg: "" }}
-        justifyContent={"center"}
+        justifyContent={"space-around"}
       >
-        <Skeleton h="28px" borderRadius={"6px"} w={"100px"}></Skeleton>
-        <Skeleton h="28px" borderRadius={"6px"} w={"100px"}></Skeleton>
+        <Skeleton h="28px" borderRadius={"6px"} w={"80px"}></Skeleton>
+        <Skeleton h="28px" borderRadius={"6px"} w={"80px"}></Skeleton>
       </Stack>
     </Stack>
   );
