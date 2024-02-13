@@ -55,9 +55,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const [cont1, setCont1] = useState(false);
   const toast = useToast();
   useEffect(() => {
-    if (data && "meVotedId" in data) {
-      setSend(data?.meVotedId as string);
-      setFirst(data?.meVotedId as string);
+    if (data?.data?.meVotedId) {
+      setSend(data?.data?.meVotedId as string);
+      setFirst(data?.data?.meVotedId as string);
       setVoteId(false);
     }
   }, [data]);
