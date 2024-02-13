@@ -55,17 +55,16 @@ function Page({ params: { id } }: { params: { id: string } }) {
   const [cont1, setCont1] = useState(false);
   const toast = useToast();
   useEffect(() => {
-    // console.log(data.data)
-    // if (data?.meVotedId) {
-    //   setSend(data?.meVotedId as string);
-    //   setFirst(data?.meVotedId as string);
-    //   setVoteId(false);
-    // }
-    if (data && "meVotedId" in data) {
+    if (data?.meVotedId !== null || data?.meVotedId !== undefined) {
       setSend(data?.meVotedId as string);
       setFirst(data?.meVotedId as string);
       setVoteId(false);
     }
+    // if (data && "meVotedId" in data) {
+    //   setSend(data?.meVotedId as string);
+    //   setFirst(data?.meVotedId as string);
+    //   setVoteId(false);
+    // }
   }, [data]);
   useEffect(() => {
     if (voteId === true) {

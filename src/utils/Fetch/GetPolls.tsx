@@ -9,7 +9,7 @@ export interface UseQueryProps {
 }
 
 export interface UseQueryValue<T> {
-  data: T;
+  data: T | any;
   error: any;
   loading: boolean;
   pageCount: number;
