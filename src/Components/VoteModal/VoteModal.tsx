@@ -39,10 +39,10 @@ const VoteForm = ({
   const { showErrorToast, showSuccessToast } = useToast();
 
   const { loading, request } = useMutation({
-    uri: voteId
+    uri: optionId
       ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/vote/${optionId}`
       : `${process.env.NEXT_PUBLIC_BACKEND_URL}/vote`,
-    method: voteId ? "patch" : "post",
+    method: optionId ? "patch" : "post",
   });
 
   const onVote = (data: string) => {

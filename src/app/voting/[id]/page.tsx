@@ -27,6 +27,7 @@ import { OptionNewModal } from "@/Components/Account/OptionNewModal";
 import { ProgressModal } from "@/Components/Account/ProgressModal";
 import { StatusModal } from "@/Components/Account/StatusModal";
 import { redirect } from "next/navigation";
+import moment from "moment";
 const satFont = localFont({
   src: "../../../fonts/satoshi/Fonts/Variable/Satoshi-Variable.ttf",
 });
@@ -43,7 +44,7 @@ function Page({ params: { id } }: { params: { id: string } }) {
     redirect("/voting");
   }
   const { admin, user } = useAuth();
-  var moment = require("moment");
+
   const router = useRouter();
 
   const [vote, setVote] = useState("");
@@ -70,7 +71,9 @@ function Page({ params: { id } }: { params: { id: string } }) {
     if (voteId === true) {
       const myVote = data?.data?.options.find((op: any) => op._id === first);
       const vote = myVote?.votes.find((v: any) => v.userName === user);
-      setMyId(vote?._id);
+      if(!!vote?._id) {
+        setMyId(vote?._id);
+      }
     }
   }, [voteId]);
   return !data || loading ? (
